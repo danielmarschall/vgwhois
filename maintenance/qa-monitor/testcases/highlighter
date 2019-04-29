@@ -14,8 +14,8 @@
 
 #mb_internal_encoding('utf-8');
 
-require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
-require_once __DIR__ . '/../../shared/php_includes/idna_convert.class.php';
+require_once __DIR__ . '/../../../shared/php_includes/common_functions.inc.php';
+require_once __DIR__ . '/../../../shared/php_includes/idna_convert.class.php';
 
 $punycoder = new idna_convert();
 

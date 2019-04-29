@@ -50,3 +50,9 @@ benötigtes paket: netcat-traditional, netcat oder netcat-openbsd, netcat6
 pattern-generator
 	bei existierenden domains: wenn whois server sich ändert, die alten einträge auskommentieren und den neuen eintrag einfügen
 
+gwhois umbenennen in vwhois
+
+ausgiebige OOBE tests
+
+alle copyright header auf Apache2 ändern
+

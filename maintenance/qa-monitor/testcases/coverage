@@ -17,10 +17,10 @@
 #   => this is currently our behavior
 # - Every line must be covered
 
-require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+require_once __DIR__ . '/../../../shared/php_includes/common_functions.inc.php';
 
 $testcases = array();
-$testcases_tmp = file(__DIR__ . '/../config/testcases.list');
+$testcases_tmp = file(__DIR__ . '/../../config/testcases.list');
 foreach ($testcases_tmp as &$tc) {
 	$tc = trim($tc);
 	if ($tc == '') continue;
@@ -28,7 +28,7 @@ foreach ($testcases_tmp as &$tc) {
 	$testcases[] = $tc;
 }
 
-$patterns = glob(__DIR__ . '/../../main/pattern/*');
+$patterns = glob(__DIR__ . '/../../../main/pattern/*');
 
 $count_total = 0;
 $count_covered = 0;

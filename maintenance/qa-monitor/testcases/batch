@@ -13,6 +13,8 @@
 
 DIR=$( dirname "$0" )
 
+TESTCASES_LIST="$DIR/../../config/testcases.list"
+
 ARGS=()
 
 shuffle() {
@@ -46,7 +48,7 @@ while read f; do
 	query="$f";
 
 	ARGS+=("$query")
-done < "$DIR/../../config/testcases.list"
+done < "$TESTCASES_LIST"
 
 # TODO: does not work
 #shuffle

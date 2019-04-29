@@ -18,9 +18,6 @@ require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 require_once __DIR__ . '/rirs.inc.php';
 
-define('PATTERN_DIR', __DIR__ . '/../../main/pattern');
-define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
-
 if (USE_IANA_DATA) {
 	echo "IPv4 Preparation: Get IANA delegation file\n";
 

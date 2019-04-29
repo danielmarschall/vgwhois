@@ -6,12 +6,12 @@ use strict;
 use LWP::Simple;
 
 use FindBin;
-use lib "$FindBin::Bin/../";
+use lib "$FindBin::RealBin/../";
 use GWhoIs::Utils;
 
 use List::Util 'max';
 
-$GWhoIs::Core::confdir = "$FindBin::Bin/pattern/";
+$GWhoIs::Core::confdir = "$FindBin::RealBin/pattern/";
 
 # DM 11.09.2017: There is a weird bug: If I use TOR in combination with LWP on a Gopher protocol, I get error 500.
 $GWhoIs::Core::useLWP = 0;
@@ -444,7 +444,7 @@ sub GWhoIs::Core::doquery {
 
 	elsif ($method eq 'program') {
 		my ($program) = GWhoIs::Utils::trim($host);
-		$program =~ s/\$gwhois\$/$FindBin::Bin/;
+		$program =~ s/\$gwhois\$/$FindBin::RealBin/;
 		print "Querying script $program\n\n";
 		$result = `$program $additional "$query" 2>&1`;
 		my $loc_exitcode = $?;

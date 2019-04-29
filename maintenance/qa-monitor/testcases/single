@@ -17,8 +17,7 @@
 
 DIR=$( dirname "$0" )
 
-annotfile="$DIR/../../config/testcases.annot"
-
+ANNOTATION_FILE="$DIR/../../config/testcases.annot"
 TESTCASE_CACHE_FILE="$DIR/../../.cache/testcases"
 
 # ---
@@ -57,12 +56,12 @@ function showPatternHighlighted {
 }
 
 function question {
-	if [ -f "$annotfile" ]; then
-		ANNOTS=$( cat "$annotfile" | grep -E "^$query:" )
+	if [ -f "$ANNOTATION_FILE" ]; then
+		ANNOTS=$( cat "$ANNOTATION_FILE" | grep -E "^$query:" )
 		if [ "$ANNOTS" != "" ]; then
 			echo ""
 			echo "********************"
-			echo "Notes in $annotfile :"
+			echo "Notes in $ANNOTATION_FILE :"
 			OLDIFS="$IFS"
 			IFS=$'\n'
 			for p in ${ANNOTS[@]}; do
@@ -132,7 +131,7 @@ function question {
 					echo "Cancelled"
 				else
 					echo "Note added to testcase of $query"
-					echo "$query: $note" >> "$annotfile"
+					echo "$query: $note" >> "$ANNOTATION_FILE"
 				fi
 				;;
 			[Xx]* )

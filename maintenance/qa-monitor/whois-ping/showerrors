@@ -16,9 +16,12 @@ error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
 require_once __DIR__ . '/../../../shared/php_includes/common_functions.inc.php';
 require_once __DIR__ . '/whoisping_functions.inc.php';
-require_once __DIR__ . '/config.inc.php';
+require_once __DIR__ . '/../config.inc.php';
 
-$db = new SQLite3(__DIR__.'/../../.cache/whois-server-ping/whoisping.db'); # TODO: in config auslagern
+# ---
+
+if (!is_dir(dirname(WHOISPING_DB))) mkdir(dirname(WHOISPING_DB), 0755, true);
+$db = new SQLite3(WHOISPING_DB); # TODO: in config auslagern
 if (!$db) die ($error);
 
 gwitc_initdb($db);
@@ -40,7 +43,7 @@ foreach ($pattern_files as &$pattern_file) {
 }
 
 $dead_servers = array();
-$dead_servers_raw = file(__DIR__ . '/../../config/dead-servers.list');
+$dead_servers_raw = file(DEAD_SERVER_LIST);
 foreach ($dead_servers_raw as &$server) {
 	$server = trim($server);
 	if ($server == '') continue;

@@ -16,11 +16,9 @@
 
 error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
-require_once __DIR__ . '/config.inc.phps';
+require_once __DIR__ . '/--/config.inc.phps';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.phps';
 require_once __DIR__ . '/../../shared/php_includes/idna_convert.class.php';
-
-define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
 
 # ---
 

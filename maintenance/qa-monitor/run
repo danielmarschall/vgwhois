@@ -4,12 +4,12 @@
 #
 #  generic Whois - Automatic Pattern Generator: QA Monitor
 #
-#  (c) 2012-2015 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#  (c) 2012-2019 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
 #
 #  Distribution, usage etc. pp. regulated by the current version of GPL.
 #
 #
-#  Version 2015-04-27
+#  Version 2019-04-29
 #
 
 # TODO: strikte trennung zwischen pattern entwicklung ( = im sdk enthalten ) und lokaler gwi entwicklung ( = packages, eigene vwi services )
@@ -25,15 +25,13 @@
 
 error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
-require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
-
-define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
-
 # ---
 
-// This is like __DIR__, but does not resolve symlinks
-// (useful for sharing StatMon source codes locally by symlinking)
-define('DIR', dirname($_SERVER['SCRIPT_FILENAME']));
+define('DIR', realpath(__DIR__));
+
+require_once DIR . '/../../shared/php_includes/common_functions.inc.php';
+
+define('CACHE_FILE_DIR', DIR . '/../.cache/web');
 
 $anormale_whois = array();
 require DIR . '/config.inc.php';
@@ -41,36 +39,6 @@ require DIR . '/config.inc.php';
 $pattern_cont = get_united_pattern();
 
 $global_status = 0;
-
-echo "* Checking for died whois servers and check if presumed dead whois servers (= already removed from the pattern file) have resurrected...\n";
-
-exec(__DIR__ . "/whois-ping/whoisping", $out, $ec);
-
-$loc_good = $ec == 0;
-
-if ($loc_good) {
-	echo "[ OK ]\n";
-} else {
-	echo implode("\n",$out)."\n";
-	echo "[ FAIL ]\n";
-	$global_status=1;
-}
-
-# ---
-
-echo "* Checking the testcases in background mode...\n";
-
-exec(__DIR__ . "/testcases/batch --mode b", $out, $ec);
-
-$loc_good = $ec == 0;
-
-if ($loc_good) {
-	echo "[ OK ]\n";
-} else {
-	echo implode("\n",$out)."\n";
-	echo "[ FAIL ]\n";
-	$global_status=1;
-}
 
 # ---
 
@@ -198,9 +166,9 @@ if ($loc_good) {
 
 # ---
 
-echo "* Check if there is a newer official version of gwhois which needs to be merged with the ViaThinkSoft fork ( ".DEBIAN_GWHOIS_PACKAGE_URL." )\n";
-
 define('CUR_VER', gwi_getInstalledBaseVersion());
+
+echo "* Check if there is a newer official version of gwhois which needs to be merged with the ViaThinkSoft fork ( ".DEBIAN_GWHOIS_PACKAGE_URL." , current base version ".CUR_VER.")\n";
 
 $latest_official = getLatestGWIversion();
 $latest_official = str_replace('-', '.', $latest_official); // they use the reserved '-' character in their versions (used for delimiting upstream versions)
@@ -234,30 +202,69 @@ if ($loc_good) {
 
 echo "* Check if testcases require attention\n";
 
+$loc_good = true;
+
+# First check tesetcases in background, if necessary
+
 $out = array();
-exec(__DIR__ . '/testcases/status_short', $out, $code);
-$loc_good = $code == 0;
+exec(DIR . "/testcases/batch --mode b", $out, $ec);
+
+if ($ec > 2) {
+	$loc_good = false;
+	echo "[ !! ] testcases/batch error code $ec\n";
+	echo trim(implode("\n", $out))."\n";
+}
+
+# Now check if testcases require attention
+
+$out = array();
+exec(DIR . '/testcases/status_short', $out, $ec);
+
+if ($ec != 0) {
+	$loc_good = false;
+	echo trim(implode("\n", $out))."\n";
+}
+
+# Status?
 
 if ($loc_good) {
 	echo "[ OK ]\n";
 } else {
 	$global_status=1;
-	echo trim(implode("\n", $out))."\n";
 }
 
 # ---
 
 echo "* Check the status of whois-ping\n";
 
+$loc_good = true;
+
+# First ping the servers
+
 $out = array();
-exec(__DIR__ . '/whois-ping/showerrors', $out, $code);
-$loc_good = $code == 0;
+exec(DIR . "/whois-ping/whoisping", $out, $ec);
+
+if ($ec != 0) {
+	$loc_good = false;
+	echo "[ !! ] whois-ping/whoisping error code $ec\n";
+}
+
+# Now show errors (but only if a time treshold is exceeded)
+
+$out = array();
+exec(DIR . '/whois-ping/showerrors', $out, $ec);
+
+if ($ec != 0) {
+	$loc_good = false;
+	echo trim(implode("\n", $out))."\n";
+}
+
+# Status?
 
 if ($loc_good) {
 	echo "[ OK ]\n";
 } else {
 	$global_status=1;
-	echo trim(implode("\n", $out))."\n";
 }
 
 # ---
@@ -265,8 +272,9 @@ if ($loc_good) {
 echo "* Check syntax of all script files (Perl, PHP)\n";
 
 $out = array();
-exec(__DIR__ . '/syntax/global-syntax-check', $out, $code);
-$loc_good = $code == 0;
+exec(DIR . '/syntax/global-syntax-check', $out, $ec);
+
+$loc_good = $ec == 0;
 
 if ($loc_good) {
 	echo "[ OK ]\n";

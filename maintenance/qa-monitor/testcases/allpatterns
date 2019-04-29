@@ -12,9 +12,9 @@
 #  Version 2014-11-25
 #
 
-require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+require_once __DIR__ . '/../../../shared/php_includes/common_functions.inc.php';
 
-$patterns = glob(__DIR__ . '/../../main/pattern/*');
+$patterns = glob(__DIR__ . '/../../../main/pattern/*');
 
 #$bs = '\\b';
 #$be = '\\b';

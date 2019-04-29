@@ -17,8 +17,6 @@ error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/rirs.inc.php';
 
-define('RIRSTATS_CACHE_DIR', __DIR__ . '/../.cache/pattern-generator/rirstats');
-
 function rir_get_md5_sum($url) {
 	// MD5 (/var/opt/ftp/pub/apnic/stats/apnic/delegated-apnic-extended-latest) = 82c291bb5d4363a3db254853c1602777
 	// MD5 (delegated-lacnic-extended-latest) = 2815f0b5837d5658acf1659dff98bb52

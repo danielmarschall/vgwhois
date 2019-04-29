@@ -1,6 +1,8 @@
 #
 #
 # History:
+# 2019-04-29  mar   Removed Debian package code. Distribution now via SVN!
+#                   New directory structure strictly separates between gwhois itself ("main") and the maintenance programs ("maintenance")
 # 2015-05-06  mar   pattern.d/* will now be preferred.
 #                   Last resort (.) is now built-in.
 #                   Fixed UTF-8 query input.

@@ -11,7 +11,7 @@
 #  Version 2015-04-15
 #
 
-DIR=$( dirname "$0" );
+DIR=$( dirname $(realpath "$0" ) )
 
 . "$DIR"/../config/gwhois-pattern-update.conf
 . "$DIR"/../config/urls.conf
@@ -25,28 +25,28 @@ echo "approximately 15-20 minutes!!!"
 echo "============================================================="
 
 # RIR stats are necessary for generate_ipv4 and generate_ipv6
-echo "RIR stats Synchronization ...";
+echo "RIR stats Synchronization ..."
 "$DIR"/sync_rir_stats
 
-echo "IPv4 Generation ...";
+echo "IPv4 Generation ..."
 if [ $? -eq 0 ]; then
 	echo "IPv4 Generating ..."
 	"$DIR"/generate_ipv4
 fi
 
-echo "IPv6 Generation ...";
+echo "IPv6 Generation ..."
 if [ $? -eq 0 ]; then
 	echo "IPv6 Generating ..."
 	"$DIR"/generate_ipv6
 fi
 
-echo "ASN Generation ...";
+echo "ASN Generation ..."
 if [ $? -eq 0 ]; then
 	echo "ASN Generating ..."
 	"$DIR"/generate_asn
 fi
 
-echo "TLD Generation ...";
+echo "TLD Generation ..."
 if [ $? -eq 0 ]; then
 	echo "TLD Generating ..."
 	"$DIR"/generate_tld

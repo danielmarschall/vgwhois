@@ -15,10 +15,6 @@
 require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
-define('PATTERN_DIR', __DIR__ . '/../../main/pattern');
-define('DOMAINS_PATTERN_FILE', PATTERN_DIR.'/domains');
-define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
-
 error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
 $iana_tld_data = null;

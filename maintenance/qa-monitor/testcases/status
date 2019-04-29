@@ -13,6 +13,8 @@
 
 DIR=$( dirname "$0" )
 
+TESTCASES_LIST="$DIR/../../config/testcases.list"
+
 # ---
 
 function FileAge() {
@@ -53,6 +55,8 @@ function HumanReadableAge() {
 
 . "$DIR/../../config/testcases.conf"
 
+CACHE_DIR="$DIR/../../.cache"
+
 echo "Query                          Last activity        Status"
 echo "----------------------------------------------------------------------------------"
 
@@ -71,15 +75,15 @@ while read f; do
 	# query="$( basename $f )"
 	query="$f";
 
-	if [ ! -d "$DIR/../../.cache/testcases/expected" ]; then
-		mkdir -p "$DIR/../../.cache/testcases/expected"
+	if [ ! -d "$CACHE_DIR/testcases/expected" ]; then
+		mkdir -p "$CACHE_DIR/testcases/expected"
 	fi
-	expfile="$DIR/../../.cache/testcases/expected/$query"
+	expfile="$CACHE_DIR/testcases/expected/$query"
 
-	if [ ! -d "$DIR/../../.cache/testcases/checktimestamps" ]; then
-		mkdir -p "$DIR/../../.cache/testcases/checktimestamps"
+	if [ ! -d "$CACHE_DIR/testcases/checktimestamps" ]; then
+		mkdir -p "$CACHE_DIR/testcases/checktimestamps"
 	fi
-	tsfile="$DIR/../../.cache/testcases/checktimestamps/$query"
+	tsfile="$CACHE_DIR/testcases/checktimestamps/$query"
 	if [ -f "$tsfile" ]; then
 		# lastcheck="$( date -r "$tsfile" )"
 		lastcheck=$( HumanReadableAge $( FileAge "$tsfile" ))
@@ -87,10 +91,10 @@ while read f; do
 		lastcheck="never"
 	fi
 
-	if [ ! -d "$DIR/../../.cache/testcases/problems" ]; then
-		mkdir -p "$DIR/../../.cache/testcases/problems"
+	if [ ! -d "$CACHE_DIR/testcases/problems" ]; then
+		mkdir -p "$CACHE_DIR/testcases/problems"
 	fi
-	errfile="$DIR/../../.cache/testcases/problems/$query"
+	errfile="$CACHE_DIR/testcases/problems/$query"
 	if [ -f "$errfile" ]; then
 		cat "$errfile" | grep -E "at /(bin|usr|etc|var)/\S+ line" > /dev/null
 		PERLERR=$?
@@ -127,4 +131,4 @@ while read f; do
 	fi
 
 	printf "%-30s %-20s %-20s\n" "$query" "$lastcheck" "$status"
-done < "$DIR/../../config/testcases.list"
+done < "$TESTCASES_LIST"

@@ -20,9 +20,6 @@ require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 require_once __DIR__ . '/rirs.inc.php';
 
-define('PATTERN_DIR', __DIR__ . '/../../main/pattern');
-define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
-
 echo "ASN Preparation: Get IANA delegation file\n";
 
 $iana_asn_data = explode("\n", cached_file(IANA_AS_NUMBERS, CACHE_FILE_DIR));

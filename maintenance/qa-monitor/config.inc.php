@@ -16,3 +16,6 @@ parse_config(__DIR__.'/../config/qa-monitor.conf');
 parse_config(__DIR__.'/../config/urls.conf');
 
 $anormale_whois=explode(' ', EXCLUDE_WHOIS);
+
+define('WHOISPING_DB',     __DIR__ . '/../.cache/whois-server-ping/whoisping.db');
+define('DEAD_SERVER_LIST', __DIR__ . '/../config/dead-servers.list');
