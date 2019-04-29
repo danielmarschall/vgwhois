@@ -1,7 +1,23 @@
 #!/bin/bash
 
+#
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Installer / Uninstaller
+#
+#  (c) 2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
+#
+
 DIR=$( dirname "$0" )
 REAL_DIR=$( cd "$DIR" && pwd )
+
+# --- STEP 0: Are we root?
+
+if [[ $EUID > 0 ]]; then
+	>&2 echo "You need to be root to execute this program."
+	exit 1
+fi
 
 # --- STEP 1: Install required packages
 
@@ -23,6 +39,7 @@ REAL_DIR=$( cd "$DIR" && pwd )
 #  - php7.0-sqlite3 (used by the whois-ping maintainance program)
 #
 # TODO: how can be avoid the "php7.0" name? are there generic package names?
+# TODO: check if aptitude is installed. otherwise apt-get. How to make it fit to most distros?
 
 aptitude update
 aptitude install perl libwww-perl libnet-libidn-perl curl lynx-cur libnet-ip-perl libnet-dns-perl libmath-bigint-gmp-perl php7.0-cli php7.0-gmp netcat php7.0-sqlite3
@@ -32,35 +49,38 @@ aptitude install perl libwww-perl libnet-libidn-perl curl lynx-cur libnet-ip-per
 if [ -L /usr/bin/gwhois ]; then
 	rm /usr/bin/gwhois
 fi
-# TODO: check if we may do this (root)
 ln -s "$REAL_DIR"/main/gwhois /usr/bin/gwhois
 echo "Symlink /usr/bin/gwhois created"
+
+# ---
 
 if [ -L /usr/sbin/gwhois-pattern-update ]; then
 	rm /usr/sbin/gwhois-pattern-update
 fi
-# TODO: check if we may do this (root)
 ln -s "$REAL_DIR"/maintenance/pattern-generator/gwhois-pattern-update /usr/sbin/gwhois-pattern-update
 echo "Symlink /usr/sbin/gwhois-pattern-update created"
+
+# ---
 
 if [ -L /usr/sbin/gwhois-qa-check ]; then
 	rm /usr/sbin/gwhois-qa-check
 fi
-# TODO: check if we may do this (root)
 ln -s "$REAL_DIR"/maintenance/qa-monitor/run /usr/sbin/gwhois-qa-check
 echo "Symlink /usr/sbin/gwhois-qa-check created"
+
+# ---
 
 if [ -L /usr/sbin/gwhois-update ]; then
 	rm /usr/sbin/gwhois-update
 fi
-# TODO: check if we may do this (root)
 ln -s "$REAL_DIR"/update.sh /usr/sbin/gwhois-update
 echo "Symlink /usr/sbin/gwhois-update created"
+
+# ---
 
 if [ -L /usr/share/man/man1/gwhois.1 ]; then
 	rm /usr/share/man/man1/gwhois.1
 fi
-# TODO: check if we may do this (root)
 ln -s "$REAL_DIR"/man/man1/gwhois.1 /usr/share/man/man1/gwhois.1
 echo "Symlink /usr/share/man/man1/gwhois.1 created"
 

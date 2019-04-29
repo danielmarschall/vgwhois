@@ -1,14 +1,12 @@
 <?php
 
 #
-#  generic Whois - Automatic Pattern Generator configuration
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Common functions in PHP
 #
-#  (c) 2012-2018 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#  (c) 2012-2018 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#  Version 2018-10-26
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 function parse_config($file) {

@@ -1,14 +1,12 @@
 <?php
 
 #
-#  generic Whois - Automatic Pattern Generator RIR file
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Maintenance / Developer utilities
 #
-#  (c) 2012-2013 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#  Version 2013-03-07
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 $rirs = array('afrinic', 'apnic', 'arin', 'lacnic', 'ripencc');

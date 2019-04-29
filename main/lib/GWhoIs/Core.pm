@@ -1,3 +1,14 @@
+#
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Main program
+#
+#  (c) 2010-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  based on the code (c) 1998-2010 by Juliane Holzt <debian@kju.de>
+#  Some early parts by Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.de>
+#
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
+#
+
 package GWhoIs::Core;
 
 use warnings;

@@ -1,19 +1,12 @@
 <?php
 
 #
-#  generic Whois - Maintenance Framework Common Functions
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Common functions in PHP
 #
-#  (c) 2013 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#  (c) 2011-2013 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#  Version 2013-09-24
-#
-# History:
-# 2011-06-07  mar   Initial release
-# 2012-04-13  mar   Added uc_latin1()
-# 2012-11-19  mar   Added tab2space(), trim_each_line()
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 include_once __DIR__ . '/ipv4_functions.inc.php';

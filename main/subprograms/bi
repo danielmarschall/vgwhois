@@ -1,16 +1,12 @@
 #!/usr/bin/perl
 
 #
-#  generic Whois - bi subprogram
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Subprogram: bi TLD whois
 #
-#  (c) 2015 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#  (c) 2015 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#
-# History:
-# 2015-05-15  mar   Initial release
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 use warnings;

@@ -1,17 +1,12 @@
 #!/usr/bin/perl
 
 #
-#  generic Whois - Teredo address decoder
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Subprogram: Teredo Decoder
 #
-#  (c) 2012 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#  (c) 2012 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#
-# History:
-# 2012-02-23  mar   Initial release
-# 2012-11-19  mar   Tabs -> Spaces
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 # todo: möglichkeit geben, den prefix-check per CLI zu deaktivieren

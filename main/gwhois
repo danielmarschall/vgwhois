@@ -1,13 +1,14 @@
 #!/usr/bin/perl
+
 #
-#  generic Whois
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Main program
 #
-#  (c) 1998-2010 by Juliane Holzt <debian@kju.de>
+#  (c) 2010-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  based on the code (c) 1998-2010 by Juliane Holzt <debian@kju.de>
 #  Some early parts by Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.de>
 #
-#  Modifications (c) 2010-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
-#
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 # todo

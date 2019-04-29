@@ -1,20 +1,4 @@
 
-#
-#  generic Whois pattern table
-#
-#  (c) 1998-2010 by Juliane Holzt
-#  includes contributions by Lutz Donnerhacke, Cord Beermann,
-#  Florian Weimer and other people. Many thanks.
-#
-#  GWhois 2 is a fork of GWhois by ViaThinkSoft <info@viathinksoft.de>
-#
-#
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#  Idea: Erik.Heinz@Jena.Thur.De
-#
-#  Please drop me (debian@julijane.de) any additional records...
-#  (or file a bug against the debian gwhois package).
-#
 # History:
 #
 # 2014-11-27  mar   LARGE REVISION OF THE WHOLE PATTERN FILE

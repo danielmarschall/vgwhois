@@ -2,14 +2,12 @@
 <?php
 
 #
-#  generic Whois - Automatic Pattern Generator: QA Monitor
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Maintenance / Developer utilities
 #
-#  (c) 2012-2019 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#  Version 2019-04-29
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 # TODO: strikte trennung zwischen pattern entwicklung ( = im sdk enthalten ) und lokaler gwi entwicklung ( = packages, eigene vwi services )

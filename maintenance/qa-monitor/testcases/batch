@@ -1,14 +1,12 @@
 #!/bin/bash
 
 #
-#  generic Whois - Maintenance Framework: Testcases
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Maintenance / Developer utilities
 #
-#  (c) 2012-2014 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#  Version 2014-08-19
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 DIR=$( dirname "$0" )

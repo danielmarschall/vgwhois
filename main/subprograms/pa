@@ -2,17 +2,12 @@
 <?php
 
 #
-#  generic Whois - Subprogram "pa"
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Subprogram: pa TLD whois
 #
-#  (c) 2011 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#  (c) 2011-2012 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#
-# History:
-# 2011-06-07  mar   Initial release
-# 2012-01-16  mar   Fixed uppercase().
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';

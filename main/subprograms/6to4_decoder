@@ -1,16 +1,12 @@
 #!/usr/bin/perl
 
 #
-#  generic Whois - 6to4 address decoder
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Subprogram: 6to4 address decoder
 #
-#  (c) 2012 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#  (c) 2012 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#
-# History:
-# 2012-02-24  mar   Initial release
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 # todo: möglichkeit geben, den prefix-check per CLI zu deaktivieren

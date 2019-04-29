@@ -2,20 +2,12 @@
 <?php
 
 #
-#  generic Whois - Subprogram "oid" (BETA)
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Subprogram: OID over Whois
 #
-#  (c) 2011-2019 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#  (c) 2011-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#
-# History:
-# 2011-06-07	mar	0.1	Initial release
-# 2011-07-22	mar	0.2	FT: Support for non-validated OIDs
-# 2013-12-17    mar     0.3     FT: works again + Output now UTF-8
-# 2015-01-07    mar     0.4     FT: fixed UTF-8 problem
-# 2019-03-12    mar     0.5     FT: adjusted regex
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 # OID resolution over WhoIs

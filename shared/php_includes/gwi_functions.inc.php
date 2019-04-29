@@ -1,20 +1,17 @@
 <?php
 
 #
-#  generic Whois - Maintenance Framework Common Functions
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Common functions in PHP
 #
-#  (c) 2013-2015 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#  (c) 2013-2015 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#  Version 2015-05-06
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 function getpatternfiles() {
 	$out = array();
 
-	# NEW FILES
 	$files = glob(__DIR__ . '/../../main/pattern/'.'*');
 	foreach ($files as &$file) {
 		# see /usr/bin/gwhois

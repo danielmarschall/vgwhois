@@ -2,16 +2,12 @@
 <?php
 
 #
-#  generic Whois - Subprogram "sn"
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Subprogram: sn TLD whois
 #
-#  (c) 2013 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#  (c) 2013 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#
-# History:
-# 2013-08-22  mar   Initial release
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';

@@ -2,16 +2,12 @@
 <?php
 
 #
-#  generic Whois - Subprogram "gu"
+#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  Subprogram: gu TLD whois
 #
-#  (c) 2013 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#  (c) 2013 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
-#  Distribution, usage etc. pp. regulated by the current version of GPL.
-#
-#
-#
-# History:
-# 2013-07-23  mar   Initial release
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 # TODO: check if all preg_match() did succeed
