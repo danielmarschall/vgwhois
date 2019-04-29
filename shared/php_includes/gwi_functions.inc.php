@@ -42,12 +42,26 @@ function get_united_pattern() {
 }
 
 function cached_file($url, $cache_dir, $max_age = /* 24*60*60 */ 86400) {
+	$opts = [
+	    "http" => [
+	        "method" => "GET",
+	        "header" => "User-Agent: Google Chrome Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36.\r\n"
+	    ]
+	];
+	$context = stream_context_create($opts);
+
 	$cachefile = $cache_dir . '/' . sha1($url) . '.cache';
+	if (!is_dir($cache_dir)) mkdir($cache_dir, 0755, true);
 	if (file_age($cachefile) > $max_age) {
-		$cont = file_get_contents($url);
+		$cont = file_get_contents($url, 0, $context);
 		file_put_contents($cachefile, $cont);
 	} else {
 		$cont = file_get_contents($cachefile);
 	}
+
+	if ($cont === false) {
+		throw new Exception("Failed to get contents from $url");
+	}
+
 	return $cont;
 }

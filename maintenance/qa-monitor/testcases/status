@@ -71,8 +71,14 @@ while read f; do
 	# query="$( basename $f )"
 	query="$f";
 
+	if [ ! -d "$DIR/../../.cache/testcases/expected" ]; then
+		mkdir -p "$DIR/../../.cache/testcases/expected"
+	fi
 	expfile="$DIR/../../.cache/testcases/expected/$query"
 
+	if [ ! -d "$DIR/../../.cache/testcases/checktimestamps" ]; then
+		mkdir -p "$DIR/../../.cache/testcases/checktimestamps"
+	fi
 	tsfile="$DIR/../../.cache/testcases/checktimestamps/$query"
 	if [ -f "$tsfile" ]; then
 		# lastcheck="$( date -r "$tsfile" )"
@@ -81,6 +87,9 @@ while read f; do
 		lastcheck="never"
 	fi
 
+	if [ ! -d "$DIR/../../.cache/testcases/problems" ]; then
+		mkdir -p "$DIR/../../.cache/testcases/problems"
+	fi
 	errfile="$DIR/../../.cache/testcases/problems/$query"
 	if [ -f "$errfile" ]; then
 		cat "$errfile" | grep -E "at /(bin|usr|etc|var)/\S+ line" > /dev/null

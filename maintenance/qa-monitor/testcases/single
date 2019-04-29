@@ -461,15 +461,15 @@ if [ $# -eq 0 ]; then
 fi
 
 if [ ! -d "$TESTCASE_CACHE_FILE/checktimestamps" ]; then
-	mkdir "$TESTCASE_CACHE_FILE/checktimestamps"
+	mkdir -p "$TESTCASE_CACHE_FILE/checktimestamps"
 fi
 
 if [ ! -d "$TESTCASE_CACHE_FILE/problems" ]; then
-	mkdir "$TESTCASE_CACHE_FILE/problems"
+	mkdir -p "$TESTCASE_CACHE_FILE/problems"
 fi
 
 if [ ! -d "$TESTCASE_CACHE_FILE/expected" ]; then
-	mkdir "$TESTCASE_CACHE_FILE/expected"
+	mkdir -p "$TESTCASE_CACHE_FILE/expected"
 fi
 
 # defaults

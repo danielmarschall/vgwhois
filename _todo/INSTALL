@@ -13,8 +13,7 @@
 	- /var/cache/gwhois/maintenance/whois-server-ping/
 
 
-  gwhois needs:
-
+Required for the program itself:
   - perl (used by gwhois main program. used by 6to4 and Teredo subprogram) 
   - libwww-perl (cpan LWP::Simple; used by gwhois main program) 
   - libnet-libidn-perl (cpan Net::LibIDN; used by gwhois main program) 
@@ -24,6 +23,11 @@ commented out:  - libencode-detect-perl (cpan Encode::Detect; used by gwhois mai
   - libnet-ip-perl (cpan Net::IP; used for IPv6 interpretation by Teredo subprogram and gwhois main program) 
   - libnet-dns-perl (cpan Net::DNS; used by Teredo subprogram) 
   - libmath-bigint-gmp-perl (cpan Math::BigInt; used for IPv6 masking by gwhois main program) 
-  - php5-cli (used by subprograms and pattern-generator) 
-  - php5-gmp (used by IPv6 pattern generator) 
+
+Required for the maintenance tools
+  - php7.0-cli (used by subprograms and pattern-generator) 
+  - php7.0-gmp (used by IPv6 pattern generator) 
   - netcat (used by the whois-ping maintainance program)
+
+TODO: how can be avoid the "php7.0" name? are there generic package names?
+

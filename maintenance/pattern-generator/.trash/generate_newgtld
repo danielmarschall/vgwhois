@@ -19,7 +19,8 @@ error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 require_once __DIR__ . '/config.inc.phps';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.phps';
 require_once __DIR__ . '/../../shared/php_includes/idna_convert.class.php';
-require_once __DIR__ . '/iana_functions.inc.phps';
+
+define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
 
 # ---
 
@@ -80,7 +81,10 @@ foreach ($newgtld_data as $data) {
 
 	// Only add the TLD to our pattern file if it has also been published by IANA.
 	// The reason is that the newGTLD page had temporary typos many times (e.g. calogne instead of cologne)
-	if (!isset($iana_tld_data)) $iana_tld_data = get_iana_tld_data();
+	if (!isset($iana_tld_data)) {
+		$iana_tld_data = explode("\n", cached_file(IANA_TLD_REGISTRY, CACHE_FILE_DIR));
+		$iana_tld_data = array_map('trim', $iana_tld_data);
+	}
 	if (!in_array(strtoupper($tld), $iana_tld_data)) {
 		echo "Info: Will not add $tld, since it is not yet added in IANA's registry.\n";
 		continue;
@@ -114,7 +118,10 @@ foreach ($newgtld_data as $data) {
 
 // TODO:
 // Step 3: Check if there are IANA TLDs which are not in our pattern files yet
-if (!isset($iana_tld_data)) $iana_tld_data = get_iana_tld_data();
+if (!isset($iana_tld_data)) {
+	$iana_tld_data = explode("\n", cached_file(IANA_TLD_REGISTRY, CACHE_FILE_DIR));
+	$iana_tld_data = array_map('trim', $iana_tld_data);
+}
 foreach ($iana_tld_data as $tld) {
 
 	if (does_exist($tld)) { # TODO: in allen pattern files schauen

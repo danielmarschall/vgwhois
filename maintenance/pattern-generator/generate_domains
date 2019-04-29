@@ -12,12 +12,12 @@
 #  Version 2015-07-13
 #
 
-require_once __DIR__ . '/iana_functions.inc.php';
 require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
 define('PATTERN_DIR', __DIR__ . '/../../main/pattern');
 define('DOMAINS_PATTERN_FILE', PATTERN_DIR.'/domains');
+define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
 
 error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
@@ -62,9 +62,13 @@ if ($domains_cont_original != $domains_cont_new) {
 // Step 2:
 // Search for new TLDs which are not in our pattern file
 
-if (!isset($iana_tld_data)) $iana_tld_data = get_iana_tld_data();
+if (!isset($iana_tld_data)) {
+	$iana_tld_data = explode("\n", cached_file(IANA_TLD_REGISTRY, CACHE_FILE_DIR));
+	$iana_tld_data = array_map('trim', $iana_tld_data);
+}
 
 foreach ($iana_tld_data as $tld) {
+	if ($tld == '') continue;
 	if ($tld[0] == '#') continue;
 
 	$tld = strtolower($tld);

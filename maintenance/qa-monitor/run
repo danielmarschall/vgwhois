@@ -51,6 +51,7 @@ $loc_good = $ec == 0;
 if ($loc_good) {
 	echo "[ OK ]\n";
 } else {
+	echo implode("\n",$out)."\n";
 	echo "[ FAIL ]\n";
 	$global_status=1;
 }
@@ -66,6 +67,7 @@ $loc_good = $ec == 0;
 if ($loc_good) {
 	echo "[ OK ]\n";
 } else {
+	echo implode("\n",$out)."\n";
 	echo "[ FAIL ]\n";
 	$global_status=1;
 }

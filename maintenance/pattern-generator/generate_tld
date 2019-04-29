@@ -17,7 +17,6 @@ error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 require_once __DIR__ . '/rirs.inc.php';
-require_once __DIR__ . '/iana_functions.inc.php';
 
 define('PATTERN_DIR', __DIR__ . '/../../main/pattern');
 define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
@@ -69,7 +68,8 @@ $out .= "\n";
 
 echo "TLD: Get IANA delegation file (".IANA_TLD_REGISTRY.")\n";
 
-$iana_tld_data = get_iana_tld_data();
+$iana_tld_data = explode("\n", cached_file(IANA_TLD_REGISTRY, CACHE_FILE_DIR));
+$iana_tld_data = array_map('trim', $iana_tld_data);
 
 echo "TLD: Parsing...\n";
 

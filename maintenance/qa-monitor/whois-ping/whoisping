@@ -18,7 +18,10 @@ require_once __DIR__ . '/../../../shared/php_includes/common_functions.inc.php';
 require_once __DIR__ . '/whoisping_functions.inc.php';
 require_once __DIR__ . '/config.inc.php';
 
-$db = new SQLite3(__DIR__ . '/../../.cache/whois-server-ping/whoisping.db'); # TODO: in config auslagern
+define('WHOISPING_DB', __DIR__ . '/../../.cache/whois-server-ping/whoisping.db');
+
+if (!is_dir(dirname(WHOISPING_DB))) mkdir(dirname(WHOISPING_DB), 0755, true);
+$db = new SQLite3(WHOISPING_DB); # TODO: in config auslagern
 if (!$db) die ($error);
 
 gwitc_initdb($db);
