@@ -1,0 +1,121 @@
+#!/bin/bash
+
+#
+#  generic Whois - Maintenance Framework: Testcases
+#
+#  (c) 2012-2014 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2014-08-25
+#
+
+DIR=$( dirname "$0" )
+
+# ---
+
+function FileAge() {
+	echo $((`date +%s` - `stat -c %Y $1`))
+}
+
+function HumanReadableAge() {
+	local seconds=$1
+	local days=$(($seconds/86400))
+	seconds=$(($seconds-($days*86400) ))
+	local hours=$(($seconds/3600))
+	seconds=$((seconds-($hours*3600) ))
+	local minutes=$(($seconds/60))
+	seconds=$(( $seconds-($minutes*60) ))
+
+	# echo -n "${days}D ${hours}H ${minutes}M ${seconds}S"
+	if [ $days -gt 0 ]; then
+		if [ $hours -gt 12 ]; then
+			((days++));
+		fi
+		echo -n "${days} days ago"
+	elif [ $hours -gt 0 ]; then
+		if [ $minutes -gt 30 ]; then
+			((hours++));
+		fi
+		echo -n "${hours} hours ago"
+	elif [ $minutes -gt 0 ]; then
+		if [ $seconds -gt 30 ]; then
+			((minutes++));
+		fi
+		echo -n "${minutes} minutes ago"
+	else
+		echo -n "a few seconds ago"
+	fi
+}
+
+# ---
+
+. "$DIR/../../config/testcases.conf"
+
+echo "Query                          Last activity        Status"
+echo "----------------------------------------------------------------------------------"
+
+while read f; do
+	if [ -z "$f" ]; then
+		continue;
+	fi
+
+	# Check if the line begins with an '#' (leading spaces are permitted)
+	echo "$f" | grep -E "\s*^#" > /dev/null
+	if [ $? -eq 0 ]; then
+		continue;
+	fi
+
+	# Warum? "tld jp" wird dann zu "tld"
+	# query="$( basename $f )"
+	query="$f";
+
+	expfile="$DIR/../../.cache/testcases/expected/$query"
+
+	tsfile="$DIR/../../.cache/testcases/checktimestamps/$query"
+	if [ -f "$tsfile" ]; then
+		# lastcheck="$( date -r "$tsfile" )"
+		lastcheck=$( HumanReadableAge $( FileAge "$tsfile" ))
+	else
+		lastcheck="never"
+	fi
+
+	errfile="$DIR/../../.cache/testcases/problems/$query"
+	if [ -f "$errfile" ]; then
+		cat "$errfile" | grep -E "at /(bin|usr|etc|var)/\S+ line" > /dev/null
+		PERLERR=$?
+
+		cat "$errfile" | head -n 1 | grep -E "^("$'\xEF\xBB\xBF'"){0,1}Process query: '$query'" > /dev/null
+		STARTEXP=$?
+
+		cat "$errfile" | grep "gwhois remarks: If this is a valid domainname or handle, please file a bug report." > /dev/null
+		NOPATTERNMATCH=$?
+
+		if [ $PERLERR -eq 0 ]; then
+			status="Perl-Error!"
+		elif [ $STARTEXP -ne 0 ]; then
+			status="Unexpected head line"
+		elif [ $NOPATTERNMATCH -eq 0 ]; then
+			status="No pattern match"
+		elif [ -f "$expfile" ]; then
+			status="Different output"
+		else
+			status="No expected output defined"
+		fi
+	else
+		if [ -f "$expfile" ]; then
+			status="OK"
+		else
+			status="No expected output defined"
+		fi
+	fi
+
+	if [ ! -f "$tsfile" ] || [ $( stat --format=%Y "$tsfile" ) -le $(( $( date +%s ) - $recheck_time )) ]; then
+		if [ ! -f "$errfile" ] || [ $( stat --format=%Y "$errfile" ) -le $(( $( date +%s ) - $recheck_time )) ]; then
+			status="$status, outdated"
+		fi
+	fi
+
+	printf "%-30s %-20s %-20s\n" "$query" "$lastcheck" "$status"
+done < "$DIR/../../config/testcases.list"

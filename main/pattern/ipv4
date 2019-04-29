@@ -1,0 +1,131 @@
+#: version 20120626.1.2+viathinksoft2017XXXX
+
+# IPv4
+# --------------------------------------------------------------------
+
+# Private address space (unrouteable)
+
+# IANA's output is very short and not so informative
+#:whois|whois.iana.org
+## Link local
+#=169.254/16
+## LAN
+#=10/8
+#=172.16/12
+#=192.168/16
+## Loopback
+#=127/8
+
+:whois|whois.viathinksoft.de
+=37.48.104.223/32
+
+# IANA
+:whois|whois.iana.org
+# Multicast stuff (224/8 .. 239/8)
+=224/4
+# TODO: alles hieraus adden: http://www.iana.org/assignments/multicast-addresses/multicast-addresses.xml
+# + http://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xml
+
+# RIRs
+
+# ==> See pattern/ipv4_* (automatically generated)
+
+# below RIR
+
+# Australia(?)
+#:whois|whois.connect.com.au
+#=210.8/14
+
+# Japan
+:whois|whois.nic.ad.jp|trailer=/e
+=61.192/12
+=61.208/13
+=202.23/16
+=202.24/14
+=202.208/12
+=202.224/11
+=203.136/14
+=203.140/15
+=203.178/15
+=203.180/14
+=210.136/13
+=210.144/12
+=210.160/12
+=210.188/14
+=210.196/14
+=210.224/12
+=210.248/13
+=211.0/12
+=211.16/14
+=211.120/13
+=211.128/13
+=211.140/14
+=211.144/14
+=218.216/14
+=218.220/14
+=218.224/13
+
+# Korea
+:whois|whois.nic.or.kr
+=61.72/13
+=61.80/14
+=61.84/15
+=61.96/12
+=61.248/13
+=203.224/11
+=210.90/15
+=210.92/14
+=210.96/11
+=210.128/13
+=210.178/15
+=210.180/14
+=210.204/14
+=210.216/13
+=211.32/11
+=211.104/13
+=211.112/13
+=211.168/15
+=211.170/15
+=211.172/14
+=211.176/12
+=211.192/10
+=218.36/14
+=218.48/13
+=218.144/12
+=218.232/13
+=220.72/13
+=220.80/13
+
+# Taiwan
+:whois|whois.twnic.net
+=61.216/13
+=61.224/13
+=210.17.0/17
+=210.59/16
+=210.60/14
+=210.65/16
+=210.66/15
+=210.70/15
+=210.240/14
+=211.20/14
+=211.72/14
+=218.32/16
+=218.160/14
+=218.164/15
+
+# Brazil
+:whois|whois.registro.br
+=200.128/9
+
+# --- Private enterprises which offer a whois service
+
+# ViaThinkSoft
+:whois|whois.viathinksoft.de
+=95.211.38.42/32
+=95.211.38.108/32
+
+# ---
+
+# ip last resort / everything else
+:whois|whois.arin.net|prefix=z + |
+=0.0.0.0/0

@@ -1,0 +1,75 @@
+.TH gwhois 1 "26 Apr 2012" Linux "User Manuals"
+.SH NAME
+gwhois \- generic whois client / server
+.SH SYNOPSIS
+.B gwhois [-C dir] [-h host] [-m method:host mirror] [-L] [-e] [-v] [-?] [query]
+.SH DESCRIPTION
+gwhois is a generic whois client. It strives to know for all existing
+tlds and all ip address ranges the appropriate whois server to ask. You
+can simply call gwhois with a query for some domain or some IP and it
+will ask the right server for you! It can even query webforms which
+are unfortunately the only query type supported by many bad registries.
+
+gwhois can also be used as a whois server. You can call it from the
+inetd and make it accessible via a normal standard whois client. This
+allows for example using a windows client and still make use of the
+enhanced features of gwhois.
+.SH OPTIONS
+Try find information about the query (might be multiple words).
+If no query is given, use the first line from stdin
+
+ Options:
+   \-C dir                  Setting an alternate configuration directory
+                           default: /etc/gwhois
+   \-h host                 Selecting a fixed whois server for this query
+   \-m method:host mirror   Defining a mirror for a given method and host.
+   \-L                      Use lynx \-source instead of LWP::Simple
+   \-e                      Do not protect e\-mail\-addresses
+   \-v                      Output version of pattern table(s)
+   \-?, \-\-help              Printing this text
+
+.SH FILES
+.TP
+.IB /etc/gwhois/pattern.d/*
+The pattern file(s) of gwhois. Contains the list of domain and IP to
+server mappings. It is in a machine readable regexp format but should
+be easy to understand by humans, too. If you have additions and
+corrections please report them always to the authors!
+Attention: IPv4, IPv6, TLD and ASN pattern files will be replaced
+when the script
+.B gwhois\-pattern\-update
+is executed.
+The domain pattern file will only be extended without overwriting or deleted anything.
+.TP
+.IB /etc/gwhois/debconf.inc
+File created depending on debconf question sending mail. Please do
+not change manually but instead use dpkg\-reconfigure!
+.TP
+.IB /usr/share/gwhois/maintenance/pattern\-generator/gwhois\-pattern\-update
+You can run this script to get the latest information according to IPv4, IPv6, ASN and TLD
+resources from the RIRs. The
+.B pattern.d/(ipv4_*|ipv6_*|tld|asn)
+files will be overwritten.
+.SH DIRECTORIES
+.TP
+.IB /usr/share/gwhois/maintenance/
+In this directory you will find programs which you can use to maintain the pattern files.
+.TP
+.IB /usr/share/gwhois/subprogram/
+In this directory you'll find "sub programs". They are called by gwhois by definition in the
+pattern file and can do complex parsing. You can also call the sub programs independently.
+.TP
+.IB /var/cache/gwhois/maintenance/pattern\-generator/
+In this directory,
+.B /usr/share/gwhois/maintenance/pattern\-generator/gwhois\-pattern\-update
+will save its downloaded RIR statistics files. If you run the script multiple times (e.g. via cronjob)
+and the RIR statistics file has not changed yet, this will save traffic because the file will not be
+downloaded twice.
+.SH AUTHORS
+2010\-2015 Daniel Marschall <daniel\-marschall@viathinksoft.de>
+
+1998\-2010 Juliane Holzt <debian@julijane.de>
+
+Some early parts by Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.de>
+.SH VERSION
+2015xxxx WIP

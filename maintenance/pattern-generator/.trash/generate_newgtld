@@ -1,0 +1,319 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Automatic Pattern Generator: New gTLDs
+#
+#  (c) 2012-2014 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2014-10-30
+#
+
+# TODO: ":notice||Whois server unknown (2014-03-15)" in pattern_newgtld automatisch umwandeln in :whois| wenn etwas bei IANA vorliegt.
+
+error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
+
+require_once __DIR__ . '/config.inc.phps';
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.phps';
+require_once __DIR__ . '/../../shared/php_includes/idna_convert.class.php';
+require_once __DIR__ . '/iana_functions.inc.phps';
+
+# ---
+
+$iana_tld_data = null;
+
+// Step 1:
+// Check if in the meantime TLDs without an official whois server were updated to have one
+// Attention/TODO: A change of the whois name still needs manual intervention!
+
+$newgtld_cont_original = file_get_contents(NEWGTLD_PATTERN_FILE);
+
+$newgtld_cont_new = preg_replace_callback(
+	'@# TODO: Entry generated automatically\. Needs manual check\.\n:notice\|\|Whois server unknown \((.*)\)\n\.(.*)\$\n@imU',
+	function ($treffer) {
+		$in_all = $treffer[0];
+		$in_ts  = $treffer[1];
+		$in_tld = $treffer[2];
+
+		$days_passed = (time()-strtotime($treffer[1]))/(60*60*24);
+		if ($days_passed < NEWGTLD_RECHECK_MISSING_WHOIS_SERVERS) {
+			return $in_all; // leave everything unchanged
+		}
+
+		$whois_serv = find_rootzone_whois_server($in_tld);
+
+		if (!$whois_serv) {
+			// Nothing found. Just update last check date.
+			return str_replace($in_ts, date('Y-m-d'), $in_all);
+		} else {
+			// Update the entry
+			return ":whois|$whois_serv\n.${in_tld}\$\n";
+		}
+	},
+	$newgtld_cont_original
+);
+
+if ($newgtld_cont_original != $newgtld_cont_new) {
+	file_put_contents(NEWGTLD_PATTERN_FILE, $newgtld_cont_new);
+	gwi_update_newgtld_patternfile();
+}
+
+// Step 2:
+// Search for new gTLDs which are not in our pattern file
+
+$newgtld_data = gwi_newgtld_get_all_delegated_strings();
+foreach ($newgtld_data as $data) {
+	$date        = $data[0];
+	$string      = $data[1];
+	$tld         = $data[2];
+	$tld_uc      = $data[3];
+	$explanation = $data[4];
+
+	// Is it already in our pattern file?
+	if (does_exist($tld)) {
+#		echo "Info: $tld is already in pattern.\n";
+		continue;
+	}
+
+	// Only add the TLD to our pattern file if it has also been published by IANA.
+	// The reason is that the newGTLD page had temporary typos many times (e.g. calogne instead of cologne)
+	if (!isset($iana_tld_data)) $iana_tld_data = get_iana_tld_data();
+	if (!in_array(strtoupper($tld), $iana_tld_data)) {
+		echo "Info: Will not add $tld, since it is not yet added in IANA's registry.\n";
+		continue;
+	}
+
+	$to_append  = "\n";
+	$to_append .= "# Delegated on $date\n";
+	if ($explanation) {
+		$to_append .= "# $explanation\n";
+	}
+
+	$whois_serv = find_rootzone_whois_server($tld);
+
+	if ($whois_serv) {
+		$to_append .= ":whois|$whois_serv\n";
+	} else {
+		$to_append .= "# TODO: Entry generated automatically. Needs manual check.\n";
+		$to_append .= ":notice||Whois server unknown (".date('Y-m-d').")\n";
+	}
+	$to_append .= "\\.$tld$\n";
+
+	file_put_contents(NEWGTLD_PATTERN_FILE, $to_append, FILE_APPEND);
+
+	gwi_update_newgtld_patternfile();
+}
+
+
+
+
+
+
+// TODO:
+// Step 3: Check if there are IANA TLDs which are not in our pattern files yet
+if (!isset($iana_tld_data)) $iana_tld_data = get_iana_tld_data();
+foreach ($iana_tld_data as $tld) {
+
+	if (does_exist($tld)) { # TODO: in allen pattern files schauen
+		continue;
+	}
+
+
+# echo "Does not exist: $tld\n";
+continue;
+
+	$newgtld_res = count_newgtld_applications($tld);
+	if ($newgtld_res === false) {
+		// TODO: ignore?
+	} else if ($newgtld_res > 0) {
+		// TODO: add to newgtld pattern file
+	} else {
+		// TODO: add to normal pattern file
+	}
+
+
+}
+
+
+
+# ------------------------------------------------------
+
+function gwi_update_newgtld_patternfile() {
+	$now = date('Ymd');
+
+	$pcont_original = file_get_contents(NEWGTLD_PATTERN_FILE);
+	$pcont = $pcont_original;
+
+	$count = 0;
+	$pcont = preg_replace("@#: version (\\S+)@i", "#: version $now", $pcont, 1, $count);
+
+	if ($count == 0) {
+		// Add header
+		$pcont = "#: version $now\n".
+		         "# New gTLD\n".
+		         "# see: http://newgtlds.icann.org/en/program-status/delegated-strings\n".
+		         "# This file can be updated by ".__DIR__."/generate_newgtld (only additions of new \"New gTLDs\")\n".
+		         "# --------------------------------------------------------------------\n".
+		         "\n".$pcont;
+	}
+
+	if ($pcont != $pcont_original) {
+		file_put_contents(NEWGTLD_PATTERN_FILE, $pcont);
+	}
+}
+
+function find_rootzone_whois_server($tld) {
+	$whois_serv = iana_get_rootzone_whois_server($tld);
+
+	// Try to find "secret whois servers"
+	if (TRY_FINDING_HIDDEN_WHOIS_SERVERS) {
+		// TODO: also try out to use the URL of the homepage (in IANAs root DB)
+		if (!$whois_serv) {
+			$check_server = "whois.nic.$tld";
+			if (gwitc_is_port_open($check_server, 43)) {
+				$whois_serv = $check_server;
+			}
+		}
+		if (!$whois_serv) {
+			$check_server = "whois.$tld";
+			if (gwitc_is_port_open($check_server, 43)) {
+				$whois_serv = $check_server;
+			}
+		}
+		if (!$whois_serv) {
+			$check_server = "$tld";
+			if (gwitc_is_port_open($check_server, 43)) {
+				$whois_serv = $check_server;
+			}
+		}
+	}
+
+	return $whois_serv;
+}
+
+function iana_get_rootzone_whois_server($tld) {
+	$tld  = strtolower($tld);
+	$cont = QueryWhoisServer('whois.iana.org', $tld);
+	if (!preg_match('@whois:\\s*(\\S+)@i', $cont, $m)) return false;
+	return $m[1];
+}
+
+function does_exist($tld) {
+	$cont = file_get_contents(NEWGTLD_PATTERN_FILE);
+	$tld  = strtolower($tld);
+	$cont = strtolower($cont);
+	return (strpos($cont, "\n\\.$tld\$\n") !== false);
+}
+
+function gwi_newgtld_get_all_delegated_strings() {
+	$cont = file_get_contents('http://newgtlds.icann.org/en/program-status/delegated-strings');
+
+	// Convert Unicode stuff
+	$cont = str_replace('xn'.unichr(0x2013), 'xn--', $cont);
+	$cont = str_replace('xn'.unichr(0x2015), 'xn--', $cont); // used in Samsung TLD
+	$cont = str_replace(unichr(0x2013), '-', $cont); // used in most explanations
+	$cont = str_replace(unichr(0x2015), '-', $cont);
+	$cont = str_replace(unichr(0x00fc), 'ue', $cont); // German umlaut ue (used in .koeln)
+	$cont = utf8_decode($cont);
+
+	// Do some minor corrections
+	$cont = str_replace('game (s)', 'game(s)', $cont);
+
+	$cont = explode('STRING</th>', $cont, 2);
+	$cont = $cont[1];
+
+	preg_match_all('@<tr>\s*<td[^>]*>(.*)</td>\s*<td[^>]*>(.*)</td>\s*</tr>@ismU', $cont, $m, PREG_SET_ORDER);
+
+	$m = array_reverse($m);
+
+	$out = array();
+	foreach ($m as $data) {
+		$date     = html_entity_decode(strip_tags($data[1]));
+		$string   = html_entity_decode(strip_tags($data[2]));
+
+		$string = str_replace('(', ' (', $string);
+		while (strpos($string, '  ') !== false) $string = str_replace('  ', ' ', $string);
+
+		# Fixing some misplaced white spaces
+		$string = preg_replace('@\.\s+@m', '.', $string);
+		$string = preg_replace('@\(\s+@m', '(', $string);
+		$string = preg_replace('@\s+\)@m', ')', $string);
+
+		$ary = explode(' ', $string, 3);
+		if (count($ary) > 1) {
+			$tld_uc      = trim($ary[0]); // Unicode TLD
+
+			$tld         = trim($ary[1]); // Punycode TLD
+			$tld         = substr($tld, 1, strlen($tld)-2);
+
+			$explanation = trim($ary[2]);
+			$explanation = substr($explanation, 1); // remove "-"
+			$explanation = trim($explanation);
+		} else {
+			$tld         = trim(strtolower($string));
+			$tld_uc      = $tld;
+			$explanation = '';
+		}
+
+		$out[] = array($date, $string, $tld, $tld_uc, $explanation);
+	}
+
+	return $out;
+}
+
+/**
+ * Return unicode char by its code
+ *
+ * @param int $u
+ * @return char
+ * @source http://www.php.net/manual/de/function.chr.php#88611
+ */
+function unichr($u) {
+	return mb_convert_encoding('&#' . intval($u) . ';', 'UTF-8', 'HTML-ENTITIES');
+}
+
+function count_newgtld_applications($string) {
+	#global $punycoder;
+
+	#if (is_null($punycoder))
+	$punycoder = new idna_convert();
+	$ua = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0';
+
+	if (($x = $punycoder->decode(strtolower($string))) !== false) $string = $x;
+
+	$out = array();
+	exec('curl -i -s https://gtldresult.icann.org/application-result/applicationstatus/viewstatus -H "Host: gtldresult.icann.org" -H '.escapeshellarg('User-Agent: '.$ua), $out, $code);
+	if ($code != 0) return false;
+	$html = implode("\n", $out);
+
+	if (!preg_match('@JSESSIONID=(.+);@ismU', $html, $m)) return false;
+	$jsessionid = $m[1];
+
+	if (!preg_match('@<input value="([^"]+)" name="t:formdata"@ismU', $html, $m)) return false;
+	$formdata = $m[1];
+	$formdata = str_replace('+', '%2B', $formdata);
+	$formdata = str_replace('/', '%2F', $formdata);
+
+	$out = array();
+	exec('curl -s "https://gtldresult.icann.org/application-result/applicationstatus/viewstatus.applicationstatusform" -H "Host: gtldresult.icann.org" -H '.escapeshellarg('User-Agent: '.$ua).' -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" -H "Accept-Language: de,en-US;q=0.7,en;q=0.3"  -H "Referer: https://gtldresult.icann.org/application-result/applicationstatus/viewstatus" -H '.escapeshellarg('Cookie: JSESSIONID='.$jsessionid).' -H "Connection: keep-alive" --data '.escapeshellarg('t%3Aformdata='.$formdata.'&t%3Asubmit=%5B%22searchButton%22%2C%22searchButton%22%5D&searchField='.$string.'&searchButton=Search&status=&updates=&objections=&gacew=&similar=&pic='), $out, $code);
+	if ($code != 0) return false;
+
+	$out = array();
+	exec('curl -s "https://gtldresult.icann.org/application-result/applicationstatus/viewstatus" -H "Host: gtldresult.icann.org" -H '.escapeshellarg('User-Agent: '.$ua).' -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" -H "Accept-Language: de,en-US;q=0.7,en;q=0.3"  -H "Referer: https://gtldresult.icann.org/application-result/applicationstatus/viewstatus" -H '.escapeshellarg('Cookie: JSESSIONID='.$jsessionid).' -H "DNT: 1" -H "Connection: keep-alive"', $out, $code);
+	if ($code != 0) return false;
+
+	$html = implode("\n", $out);
+
+	preg_match_all('@href="/application-result/applicationstatus/viewstatus:viewapplicationdetails/(\d+)">'.preg_quote($string, '@').'</a>@ismU', $html, $m);
+
+	# DEBUG
+	echo "$string = ".count($m[1])."\n";
+
+	# return (count($m[1]) > 0);
+	return count($m[1]);
+}
+
+#assert(count_newgtld_applications('shopping') == 2);

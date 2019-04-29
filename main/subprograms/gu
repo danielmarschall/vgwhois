@@ -1,0 +1,49 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "gu"
+#
+#  (c) 2013 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2013-07-23  mar   Initial release
+#
+
+# TODO: check if all preg_match() did succeed
+# TODO: check if the query did output exactly 1 record.
+# TODO: Is there any better way to retrieve the information of a domain without full text search engine?
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+$url = 'http://gadao.gov.gu/Scripts/dtSearch/dtisapi.dll';
+
+$post = 'cmd=search&SearchForm=C:\Inetpub\wwwroot\domainsearch_form.htm&request=Domain%20name:%20'.rawurlencode($domain).'&index=C:\dtSearch\BIN\domain&maxFiles=25&stemming=Yes';
+
+$cont = file_get_contents2($url, $post);
+
+if (!preg_match('@target="doc">(.*)\\.htm</A>@ismU', $cont, $m)) {
+	echo "Domain $domain not found or the parsing script is outdated.\n";
+	exit(1);
+}
+$a = $m[1];
+$url2 = "http://gadao.gov.gu/domain/$a.htm";
+
+preg_match('@<TD align=right>((\\d+)/(\\d+)/(\\d+))</TD>@ismU', $cont, $m);
+//$moddate = $m[1];
+$month = $m[2];
+$day   = $m[3];
+$year  = $m[4];
+$moddate = date('Y-m-d', mktime(0, 0, 0, $month, $day, $year));
+
+$cont2 = file_get_contents2($url2);
+preg_match('@<pre>(.+)</pre>@ismU', $cont2, $m);
+
+echo "Content of $url2 (Last modified: $moddate)\n\n";
+echo trim(html_entity_decode($m[1]))."\n";

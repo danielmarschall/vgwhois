@@ -1,0 +1,16 @@
+- make a Perl module (CPAN)
+
+- replace lynx -dump with  CTAN::LWP::http and selfwritten descambler
+
+- do not collect the result first but (optionally) print it in time
+  to give a better response on low connections.
+
+- caching the results in an external SQL database
+
+- Adding $confdir/config for all those pathnames
+
+- extended options of the ripe whoisd
+
+- introduce a comprehensive documentation
+
+- whois.ripe.net and option -k considered dangerous

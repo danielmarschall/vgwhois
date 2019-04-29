@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+
+#
+#  generic Whois - bm subprogram
+#
+#  (c) 2015 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2015-05-15  mar   Initial release
+#
+
+use warnings;
+use strict;
+use utf8;
+
+use FindBin;
+use lib "$FindBin::Bin/../lib/";
+use GWhoIs::Core;
+
+if (defined $ARGV[0]) {
+	$_ = join(' ', @ARGV);
+} else {
+	# If no parameter is given, await an input from STDIN
+	$_ = <>;
+	chomp;
+}
+
+my $query = $_;
+
+# my $host = "http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO";
+my $host = "http://www.bermudanic.bm/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO"; # TODO: https?
+
+my ($protocol, $hostname) = GWhoIs::Utils::splitProtocolHost($host);
+
+#print "Querying $hostname with $protocol.\n";
+
+# Get session URL
+my ($text, $exitcode) = GWhoIs::Core::wwwsgrep($host,'ACTION="(.*?)"');
+if ($exitcode) {
+	# print STDERR "Query to web server failed.\n";
+	print $text;
+	exit $exitcode;
+}
+
+# Get lookup
+($text, $exitcode) = GWhoIs::Core::doquery($query,'cgipost',"$protocol://$hostname$text",
+	"ADOM++++++=$query&_PROCESS=BMWHO+&_FUNCTION=BMWHO2+");
+
+if ($exitcode) {
+	# print STDERR "Query to web server failed.\n";
+}
+
+# Remove unnecessary stuff
+$text =~ s/\[.+\]\s+//g; # image reference
+$text =~ s/Sponsored by\s+//g;
+
+print $text;
+
+exit $exitcode;
+

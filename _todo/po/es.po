@@ -1,0 +1,134 @@
+# gwhois po-debconf translation to Spanish
+# Copyright (C) 2005, 2007, 2010 Software in the Public Interest
+# This file is distributed under the same license as the gwhois package.
+#
+# Changes:
+#   - Initial translation
+#       César Gómez Martín <cesar.gomez@gmail.com>, 2005
+#
+#   - Updates
+#       Rudy Godoy Guillén <rudy@stone-head.org>, 2007
+#       Francisco Javier Cuadrado <fcocuadrado@gmail.com>, 2010
+#
+# Traductores, si no conocen el formato PO, merece la pena leer la
+# documentación de gettext, especialmente las secciones dedicadas a este
+# formato, por ejemplo ejecutando:
+#       info -n '(gettext)PO Files'
+#       info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor, lean antes de traducir
+# los siguientes documentos:
+#
+#   - El proyecto de traducción de Debian al español
+#     http://www.debian.org/intl/spanish/
+#     especialmente las notas de traducción en
+#     http://www.debian.org/intl/spanish/notas
+#
+#   - La guía de traducción de po's de debconf:
+#     /usr/share/doc/po-debconf/README-trans
+#     o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gwhois 20100515\n"
+"Report-Msgid-Bugs-To: gwhois@packages.debian.org\n"
+"POT-Creation-Date: 2010-05-15 23:41+0200\n"
+"PO-Revision-Date: 2010-05-17 09:19+0100\n"
+"Last-Translator: Francisco Javier Cuadrado <fcocuadrado@gmail.com>\n"
+"Language-Team: Debian l10n spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Install gwhois as a whois proxy server?"
+msgstr "¿Desea instalar gwhois como un servidor proxy de whois?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If gwhois is installed as a whois proxy server (using inetd) it will listen "
+"on the standard whois port (43) allowing normal whois clients to query it."
+msgstr ""
+"Si gwhois está instalado como un servidor proxy de whois (utilizando inetd), "
+"escuchará en el puerto estándar de whois (43) y permitirá que los clientes "
+"normales de whois le hagan peticiones."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This can be interesting for example if you want to setup a generic whois "
+"server for your company or coworkers which can then use their standard whois-"
+"client (e.g. a windows client) and still make use of the intelligent "
+"features of gwhois."
+msgstr ""
+"Esto puede ser interesante, por ejemplo, si quiere instalar un servidor "
+"whois genérico para su compañía o compañeros de trabajo, que después podrán "
+"utilizar su cliente whois estándar (por ejemplo: un cliente windows) y "
+"también hacer uso de las características inteligentes de gwhois."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "Inetd or compatible replacement not installed."
+msgstr "No está instalado inetd o un sustituto compatible."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"You configured gwhois to act as a whois proxy server. This requires inetd or "
+"a compatible replacement (in particular the 'update-inetd' binary) which was "
+"not found."
+msgstr ""
+"Ha configurado gwhois para actuar como un servidor proxy de whois. De modo "
+"que es necesario tener inetd o un sustituto compatible (concretamente el "
+"binario «update-inetd»), y no se ha encontrado ninguno."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"Please install a package providing inet-superserver and reconfigure gwhois "
+"or disable proxy operation."
+msgstr ""
+"Instale un paquete que proporcione el superservidor inet y reconfigure "
+"gwhois o desactive el proxy."
+
+#~ msgid "Will delete old ERX configuration"
+#~ msgstr "Se eliminará la antigua configuración ERX"
+
+#~ msgid ""
+#~ "You are upgrading from an older gwhois version which has included network "
+#~ "block lists for the so called ERX blocks. For a major speed improvement "
+#~ "these lists will no longer be used, instead gwhois relies on ARINs "
+#~ "redirection feature. Therefore the old files should be deleted."
+#~ msgstr ""
+#~ "Está actualizando a partir de una versión antigua de gwhois que ha "
+#~ "incluido bloques de listas de red para los llamados bloques ERX. No se "
+#~ "utilizarán estas listas por más tiempo para una mayor mejora de "
+#~ "velocidad, en su lugar gwhois dependerá de la característica de "
+#~ "redirección de ARINs. Por lo tanto los ficheros antiguos deben  "
+#~ "eliminarse."
+
+#~ msgid ""
+#~ "If you made no changes to the files, the system will automatically delete "
+#~ "them. Otherwise you need to delete by hand. The files in question are:"
+#~ msgstr ""
+#~ "Si no hizo ningún cambio en los ficheros, el sistema los eliminará "
+#~ "automáticamente. De otro modo tendrá que borrarlos manualmente. Los "
+#~ "ficheros en cuestión son:"
+
+#~ msgid ""
+#~ " /etc/gwhois/pattern.apnic-erx\n"
+#~ " /etc/gwhois/pattern.lacnic-erx\n"
+#~ " /etc/gwhois/pattern.ripe-erx"
+#~ msgstr ""
+#~ " /etc/gwhois/pattern.apnic-erx\n"
+#~ " /etc/gwhois/pattern.lacnic-erx\n"
+#~ " /etc/gwhois/pattern.ripe-erx"

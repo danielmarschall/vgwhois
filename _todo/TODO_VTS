@@ -1,0 +1,52 @@
+*.po files noch aktuell?
+
+alle TODOS in /usr/bin/gwhois abarbeiten
+
+packages aufsplitten
+-- eigenes fork: "globalwhois"
+	paket: client
+	paket: maintainance tools (automatisches updaten der DB)
+	paket: developer tools (+QA)
+	achtung: maintainance ist abhängig von viathinksoft IANA watcher...
+-- debian kontaktieren bzgl. möglichkeiten eines forks oder maintainer übernehmen
+   wenn als eigenständiges package: dann gwhois als konflikt-paket kennzeichnen
+
+testcases system aufbauen
+... alle patterns systematisch testen und bewerten.
+... es gibt teilweise probleme beim highlighting
+
+herausfinden, welche GPL-Version verwendet werden soll
+
+lintian anwenden. im taeglichen QA.
+
+_debian_check_rules: pruefen ob es dateien doppelt gibt
+
+vts oids publiziern
+
+RIR bugreports
+
+dpkg-gencontrol: warning: File::FcntlLock not available; using flock which is not NFS-safe
+> https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=677865
+> libfile-fcntllock-perl
+--> nur beim builder oder auch beim client benötigt?
+
+beim update von einem alten gwhois würde der benutzer möglicherweisdie pattern file beibehalten. das wäre kontraproduktiv
+
+was mache ich mit dem "INSTALL" file? ich will doch auch dass leute die .tar.gz für andere betriebssysteme nutzen können
+
+maschinenlesbares copyright: Welchen Pfad soll ich bei "files:" verwenden? debian/ oder usr/ ?
+
+fut: ganz von php wegkommen?
+
+alle dateien: gpl-2-only im header eintragen... das ist wahrscheinlich, was Michael Holzt wollte
+
+(nn) Core: automatsich "\n\n" nach jeder ausgabe von www oder einem subprogramm einf�gen?
+
+fehler alle in stderr printen
+
+ben�tigtes paket: netcat-traditional, netcat oder netcat-openbsd, netcat6
+	ich brauche den befehl "nc"
+
+pattern-generator
+	bei existierenden domains: wenn whois server sich �ndert, die alten eintr�ge auskommentieren und den neuen eintrag einf�gen
+

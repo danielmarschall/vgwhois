@@ -1,0 +1,33 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "sn"
+#
+#  (c) 2013 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2013-08-22  mar   Initial release
+#
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+$url = 'http://whois.nic.sn/';
+
+$post = "domaine=$domain";
+
+$cont = file_get_contents2($url, $post);
+
+preg_match('@<div class="content">(.+)</div>@ismU', $cont, $m);
+
+$cont = $m[1];
+
+$cont = strip_tags($cont);
+
+echo trim(html_entity_decode($cont))."\n";

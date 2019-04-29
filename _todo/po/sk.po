@@ -1,0 +1,78 @@
+# Slovak translations for gwhois package
+# Slovenské preklady pre balík gwhois.
+# Copyright (C) 2011 THE gwhois'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gwhois package.
+# Slavko <linux@slavino.sk>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gwhois 20100728\n"
+"Report-Msgid-Bugs-To: gwhois@packages.debian.org\n"
+"POT-Creation-Date: 2010-05-15 23:41+0200\n"
+"PO-Revision-Date: 2011-08-06 00:56+0200\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: Slovak <nomail>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Install gwhois as a whois proxy server?"
+msgstr "Nainštalovať gwhois ako proxy server whois?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If gwhois is installed as a whois proxy server (using inetd) it will listen "
+"on the standard whois port (43) allowing normal whois clients to query it."
+msgstr ""
+"Ak je gwhois nainštalovaný ako proxy server whois (pomocou inetd), bude "
+"načúvať na štandardnom porte whois (43), aby mohli posielať požiadavky bežné "
+"klienty whois."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This can be interesting for example if you want to setup a generic whois "
+"server for your company or coworkers which can then use their standard whois-"
+"client (e.g. a windows client) and still make use of the intelligent "
+"features of gwhois."
+msgstr ""
+"Toto môže byť zaujímavé, napríklad, ak chcete nastaviť všeobecný server "
+"whois pre svoju spoločnosť alebo spolupracovníkov, ktorí potom môžu používať "
+"štandardné klienty whois (napr. klient Windows) a pritom stále využívať "
+"inteligentné vlastnosti gwhois."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "Inetd or compatible replacement not installed."
+msgstr "Inetd ani kompatibilná náhrada nie sú nainštalované."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"You configured gwhois to act as a whois proxy server. This requires inetd or "
+"a compatible replacement (in particular the 'update-inetd' binary) which was "
+"not found."
+msgstr ""
+"Nastavili ste gwhois tak, aby vystupoval ako proxy server whois. Tento "
+"spôsob vyžaduje inetd alebo kompatibilnú náhradu (konkrétne program „update-"
+"inetd”), ktoré neboli nájdené."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"Please install a package providing inet-superserver and reconfigure gwhois "
+"or disable proxy operation."
+msgstr ""
+"Prosím nainštalujte balík, ktorý poskytuje inet-superserver a znova nastavte "
+"gwhois alebo zakážte operácie proxy."

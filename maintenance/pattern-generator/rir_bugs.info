@@ -1,0 +1,316 @@
+(DRAFT)
+
+Last reviewed: 15 Apr 2014
+
+Following things should be corrected by the RIRs:
+
+=== APNIC specific issues ===
+technical@apnic.net
+
+a)	At ftp://ftp.apnic.net/pub/stats/apnic/README-ASSIGNED.TXT
+
+	The description says
+	"registry|cc|type||value||status|instances"
+	But actually (compared with the actual files) it should rather be
+	"registry|cc|type||value||status|||instances"
+	e.g. one line of the "assigned-apnic-latest" is
+	apnic|au|ipv4||256||assigned|||6003
+
+b)	At ftp://ftp.apnic.net/pub/stats/apnic/README-EXTENDED.TXT
+	Contains broken link to http://www.apnic.net/db/rir-stats-format.html
+	Can it be replaced by something useful? Can the link be corrected instead of just tagged as broken?
+	(Last known content from Wayback Machine: http://web.archive.org/web/20090429044024/http://www.apnic.net/db/rir-stats-format.html )
+
+c)	At ftp://ftp.apnic.net/pub/stats/apnic/assigned-apnic-latest
+	a) Why is the header commented out?
+	b) According to ISO 3166-2, the country names need to be upper case.
+
+d)	In your mirror of RIPE, you wrote "ripe-ncc" instead of "ripencc".
+	ftp://ftp.apnic.net/pub/stats/ripe-ncc/
+	should be
+	ftp://ftp.apnic.net/pub/stats/ripencc/
+
+e)	Why doesn't the file assigned-apnic-latest have a .md5 and .asc ?
+
+f)	At the following files:
+	ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-extended-20140416.md5
+	ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-extended-latest.md5
+	ftp://ftp.apnic.net/pub/stats/apnic/legacy-apnic-20140416.md5
+	ftp://ftp.apnic.net/pub/stats/apnic/legacy-apnic-latest.md5
+
+	The content is like
+	MD5 (/var/opt/ftp/pub/apnic/stats/apnic/delegated-apnic-extended-20140416) = 82990fa2eadd982eec6e39503ac32633
+
+	The path should be removed like it is done for all other *.md5 files.
+
+=== ARIN specific issues ===
+webmaster@arin.net
+
+a)	README
+	ftp://ftp.arin.net/pub/stats/arin/README
+	AfriNIC is missing in "{apnic,arin,iana,lacnic,ripencc}"
+	(2 times)
+	Should be:
+	{afrinic,apnic,arin,iana,lacnic,ripencc}
+
+b)	Please provide this file: ftp://ftp.apnic.net/pub/stats/apnic/README-EXTENDED.TXT
+	at ftp://ftp.arin.net/pub/stats/arin/README-EXTENDED.txt
+
+c)	The 2 files "delegated-arin-20081006.(asc|md5)" have a modification date of 13 AUG 2013!
+	These files are different:
+		ftp://ftp.arin.net/pub/stats/arin/delegated-arin-20081006.md5
+		ftp://ftp.arin.net/pub/stats/arin/archive/2008/delegated-arin-20081006.md5
+	It changed more than one time in the recent, e.g. 03/07/2013 .
+	What happened?
+
+d)	Error at ftp://ftp.lacnic.net/pub/stats/arin/.in.delegated-arin-20080721.ufP
+
+e)	In your mirror of APNIC, AfriNIC, RIPE and LACNIC you don't mirror subfolders. This is suboptimal.
+	ftp://ftp.arin.net/pub/stats/apnic/
+	ftp://ftp.arin.net/pub/stats/afrinic/
+	ftp://ftp.arin.net/pub/stats/ripencc/
+	ftp://ftp.arin.net/pub/stats/lacnic/
+
+=== RIPE NCC specific issues ===
+ncc@ripe.net
+
+a)	At ftp://ftp.ripe.net/pub/stats/ripencc/RIR-Statistics-Exchange-Format.txt
+	AfriNIC is missing in "{apnic,arin,iana,lacnic,ripencc}"
+	(2 times)
+	Should be:
+	{afrinic,apnic,arin,iana,lacnic,ripencc}
+
+b)	Please provide this file: ftp://ftp.apnic.net/pub/stats/apnic/README-EXTENDED.TXT
+	at ftp://ftp.ripe.net/pub/stats/ripencc/README-EXTENDED.txt
+
+c)	At ftp://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest
+	The version is noted as "2" but according to the document
+	https://www.arin.net/knowledge/statistics/nro_extended_stats_format.pdf
+	it shall be "2.3".
+
+d)	At ftp://ftp.ripe.net/pub/stats/ripencc/_README
+	Broken link: http://www.aso.icann.org/stats/index.html
+
+=== LACNIC specific issues ===
+hostmaster@lacnic.net
+
+a)	Please provide this file: ftp://ftp.apnic.net/pub/stats/apnic/README-EXTENDED.TXT
+	at ftp://ftp.lacnic.net/pub/stats/lacnic/README-EXTENDED.txt
+
+b)	Why not archive old stats in the folder ftp://ftp.lacnic.net/pub/stats/lacnic/archive/ ?
+
+c)	In your mirrors of AfriNIC, APNIC, RIPE and ARIN you don't delete files which were deleted
+	at the original destinations (e.g. because they were moved into an archive folder).
+	This is suboptimal.
+	ftp://ftp.lacnic.net/pub/stats/apnic/
+	ftp://ftp.lacnic.net/pub/stats/afrinic/
+	ftp://ftp.lacnic.net/pub/stats/ripencc/
+	ftp://ftp.lacnic.net/pub/stats/arin/
+
+=== AfriNIC specific issues ===
+contact@afrinic.net
+
+a)	Why are following files not moved into the archive?
+
+	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-20140129
+	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-20140129.asc
+	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-20140129.md5
+	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-20140130
+	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-20140130.asc
+	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-20140130.md5
+
+b)	Some *.md5 files have
+	MD5 (delegated-afrinic-latest) = ...
+	inside, even if they are extended stat files.
+
+c)	At ftp://ftp.afrinic.net/pub/stats/afrinic/README-EXTENDED.txt
+	In this file, the "current" version is described as "2.1ap". It should be "2.3".
+
+d)	At ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest
+	The version is noted as "2" but according to the document
+	https://www.arin.net/knowledge/statistics/nro_extended_stats_format.pdf
+	it shall be "2.3".
+
+e)	What is the purpose of
+	ftp://ftp.afrinic.net/pub/stats/afrinic/test ?
+
+f)	Why don't you mirror APNIC, ARIN, LACNIC and RIPE at
+	ftp://ftp.afrinic.net/pub/stats/afrinic/ ?
+	Missing:
+	ftp://ftp.afrnic.net/pub/stats/apnic/
+	ftp://ftp.afrinic.net/pub/stats/arin/
+	ftp://ftp.afrinic.net/pub/stats/lacnic/
+	ftp://ftp.afrinic.net/pub/stats/ripencc/
+
+=== IANA specific issues ===
+iana@iana.org
+
+a)	IANA should use the FTP folder
+	ftp://ftp.iana.org/pub/stats/.../
+	instead of
+	ftp://ftp.iana.org/pub/mirror/rirstats/
+	( as defined per ftp://ftp.apnic.net/pub/stats/apnic/README.TXT )
+
+b)	IANA should publish its own statistics like the ones released inofficially by APNIC:
+	ftp://ftp.apnic.net/pub/stats/iana/delegated-iana-latest
+
+c)	(Awaiting implementation) Create list of root-whois servers for all TLD, machine readable
+
+d)	Broken: ftp://ftp.iana.org/pub/mirror/rirstats/ripencc/issued
+	(not broken at the source)
+
+e)	Define a whois server for each /8 IPv4 block
+	(sent 12 APR 2012 to Mr Curran, NRO EC)
+
+	The IANA IPv4 space register ( http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.txt ) shows all /8 blocks and their respective WHOIS server. There are LEGACY blocks which have no whois server entry. In fact, RIR statistics show, that these LEGACY blocks nowadays are maintained by a RIR.
+
+	For example, according to the RIR statistic file, ARIN has assigned/allocated the whole space of the following blocks:
+	3/8, 4/8, 6/7, 8/7, 11/8, 12/7, 15/8, 16/6, 20/7, 22/8, 26/8, 28/7, 30/8, 32/6, 38/8, 40/8, 44/8, 47/8, 48/8, 52/6, 56/7, 214/7 .
+	So it is likely that their WHOIS server is the most suitable whois server for these blocks and therefore, this information should be added directly into the IANA adress space register.
+
+	At the moment, it is only possible for the IANA to add a whois server to a LEGACY block if the RIR explicitly requested this (like APNIC did for block 133/8, but not for block 43/8)
+
+	I would like to request that IANA can/should add whois servers for each /8 block . The knowledge of the respective whois server for every IP is important e.g. for reporting abuse.
+
+	For uniformly parsing, it could be possible that reserved blocks like 0/8 can get the whois server whois.iana.org (which can show additional informations) .
+
+f)	Implement an "RIR" Statistics Exchange File for IANA (low priority)
+	(sent 12 APR 2012 to Mr Curran, NRO EC)
+
+	APNIC has created a "RIR" statistics file for IANA, since IANA also allocates resources like ASN, IPv4 and IPv6. The usage of the RIR Statistics Exchange Format is useful as it enables to write a single parser instead of parsing the different registries (IPv4, IPv6, ASN) of the IANA manually with e.g. regular expressions.
+
+	The inofficial statistics file can be found here: http://ftp.apnic.net/stats/iana/delegated-iana-latest
+
+	IANA has replied to my request that they did not produce the file.
+
+	My request would be that you allow IANA to implement these statistics file (in 2.0 and/or 2.3 format version).
+
+	The URL of this statistics file should be ftp://ftp.iana.net/pub/stats/iana/delegated-iana-latest as described in the RIR Statistics File description.
+
+=== Issues for all RIRs ===
+
+a)	APNIC has following additional statistic formats:
+	"assigned" : ftp://ftp.apnic.net/pub/stats/apnic/README-ASSIGNED.TXT
+	"legacy"   : ftp://ftp.apnic.net/pub/stats/apnic/README-LEGACY.TXT
+	"delegated assigned ipv6" : ???
+	Should the other RIRs support these additional formats too?
+	(Not important)
+
+b)	Conflicting versions (as of 2014-03-31)
+
+	------------------------------------------------------------------------------------------
+	rir      version of       version of             version of   version of   version of
+	         delegated        delegated-extended     legacy       assigned     delegated assigned ivp6
+	                          (conflicting)
+	------------------------------------------------------------------------------------------
+	apnic    2                2.3                    1.0          1            2
+	afrinic  2                2 (*)                  -            -            -
+	arin     -                2.3                    -            -            -
+	lacnic   2                2.3                    -            -            -
+	ripe     2                2 (*)                  -            -            -
+	------------------------------------------------------------------------------------------
+
+	(*)
+	According to the document https://www.arin.net/knowledge/statistics/nro_extended_stats_format.pdf ,
+	the version of the extended delegation files shall be 2.3 and not 2.
+	RIPE and AFRINIC behave wrong. (written above)
+
+	Questions:
+	- AfriNIC and RIPE NCC have set the exactly same version to the extended statistics file. The versions cannot be the same if the structure is different / extended.
+	- Are the versions 2.3 by LACNIC+ARIN+APNIC compatible to the extended versions by AfriNIC and RIPE NCC (version number "2")
+
+c)	README-EXTENDED.txt comparison (as of 2012-11-17)
+
+	lacnic
+		no extended description (written above)
+	arin
+		no extended description (written above)
+	afrinic
+		ftp://ftp.afrinic.net/pub/stats/afrinic/README-EXTENDED.txt
+		AFRINIC EXTENDED ALLOCATION AND ASSIGNMENT REPORTS
+		(version 2.00 September 2012)
+		Bug: contains "2.1ap" in the chapter "Version line", not "2.3" (written above)
+	ripe ncc
+		no extended description (written above)
+	apnic
+		ftp://ftp.apnic.net/pub/stats/apnic/README-EXTENDED.TXT
+		APNIC EXTENDED ALLOCATION AND ASSIGNMENT REPORTS
+		(version 2.3 14 March 2013)
+		Bug: Broken link http://www.apnic.net/db/rir-stats-format.html (written above)
+
+d)	Transmission Protocols
+
+	RIR exchange formats over following protocols:
+
+	-------------------------------------------------
+	rir       ftp     http      https     rsync  ...
+	-------------------------------------------------
+	apnic     yes     yes(2)    no        no
+	afrinic   yes     no?       no?       no?(3)
+	arin      yes     yes(1)    no        no
+	lacnic    yes     no?       no?       no
+	ripe ncc  yes     no?       no?       no
+	iana      no      no        no        no
+	-------------------------------------------------
+
+	ARIN and APNIC publish their stats under
+	(1)	http://ftp.arin.net/pub/stats/arin/
+	(2)	http://ftp.apnic.net/stats/apnic/
+	which is not according to the original specification which recommended
+	http://www.example.net/stats/<registry>/delegated-<registry>-latest
+
+	(Quote)
+	Descriptions show as examples:
+	http://www.apnic.net/stats/<registry>/delegated-<registry>-latest
+	rsync www.apnic.net::/stats/<registry>/delegated-<registry>-latest
+	ftp://ftp.apnic.net/pub/stats/<registry>/delegated-<registry>-latest
+
+	(3)	The port of rsync is open, but I do not know the passwords.
+		Do they publish their stats with rsync?
+
+e)	Synchronisation RIR-RIR
+
+	Why do the RIRs only synchronize the delegated-* files, but not the extened-delegates?
+
+	(TODO: ist gar nicht mehr akut?)
+
+f)	Make HTTP as mandatory protocol for RIR Statistics Exchange File transfer (low priority)
+	(sent 12 APR 2012 to Mr Curran, NRO EC)
+
+	The RIR statistics definition by APNIC defines 3 protocols for exchanging the statistics: FTP, HTTP and RSYNC. While FTP is mandatory, HTTP and RSYNC are optional.
+
+	At the moment, APNIC is the only RIR which offers FTP and HTTP. All other RIRs only support FTP .
+
+	It would be wonderful if HTTP would also made mandatory since HTTP 1.1 has great features according to e.g. synchronisation (304 Not Modified to save traffic for regular synchronisations) and is usually better available. For example, the firewall in our University do block FTP connections by default.
+
+	As defined in the RIR Statistics Exchange Format description, the URL should be
+
+	http://ftp.<RIR name>.net/stats/<RIR name>/delegated-<RIR name>-latest
+
+---
+
+Overview about all READMEs
+
+	AfriNic
+		Classic		ftp://ftp.afrinic.net/pub/stats/afrinic/RIR-Statistics-Exchange-Format.txt
+		Extended	ftp://ftp.afrinic.net/pub/stats/afrinic/README-EXTENDED.txt
+	APNIC
+		Classic		ftp://ftp.apnic.net/pub/stats/apnic/README.TXT
+		Extended	ftp://ftp.apnic.net/pub/stats/apnic/README-EXTENDED.TXT
+		Legacy		ftp://ftp.apnic.net/pub/stats/apnic/README-LEGACY.TXT
+		Assigned	ftp://ftp.apnic.net/pub/stats/apnic/README-ASSIGNED.TXT
+		Delegated Assigned IPv6	missing (TODO: write above)
+	ARIN
+		Classic		ftp://ftp.arin.net/pub/stats/arin/README
+		Extended	missing (written above)
+	RIPE NCC
+		Classic		ftp://ftp.ripe.net/pub/stats/ripencc/RIR-Statistics-Exchange-Format.txt
+		Extended	missing (written above)
+	LACNIC
+		Classic		ftp://ftp.lacnic.net/pub/stats/lacnic/README
+				ftp://ftp.lacnic.net/pub/stats/lacnic/RIR-Statistics-Exchange-Format.txt
+		Extended	missing (written above)
+
+----
+
+(TODO: gibt es noch mehr mails an NRO?)

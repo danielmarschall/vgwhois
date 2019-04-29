@@ -1,0 +1,76 @@
+# Translation of gwhois debconf templates to German
+# Copyright (C) Juliane Holzt <debian@julijane.de>, 2005.
+# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2010.
+# This file is distributed under the same license as the gwhois package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gwhois 20100515\n"
+"Report-Msgid-Bugs-To: gwhois@packages.debian.org\n"
+"POT-Creation-Date: 2010-05-15 23:41+0200\n"
+"PO-Revision-Date: 2010-07-11 19:17+0200\n"
+"Last-Translator: Juliane Holzt <debian@julijane.de>\n"
+"Language-Team: German Translation Team <german-l10n-german@lists.debian.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Install gwhois as a whois proxy server?"
+msgstr "Gwhois als whois-Proxy installieren?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If gwhois is installed as a whois proxy server (using inetd) it will listen "
+"on the standard whois port (43) allowing normal whois clients to query it."
+msgstr ""
+"Wenn Gwhois als whois-Proxy (mit inetd) betrieben wird, können Abfragen mit "
+"einem normalen whois-Client über den normalen whois-Port (43) vorgenommen "
+"werden."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This can be interesting for example if you want to setup a generic whois "
+"server for your company or coworkers which can then use their standard whois-"
+"client (e.g. a windows client) and still make use of the intelligent "
+"features of gwhois."
+msgstr ""
+"Dies könnte interessant sein, um einen zentralen whois-Server für Ihre Firma "
+"oder Kollegen bereitzustellen. Diese können einen normalen whois-Client (z."
+"B. für Windows) verwenden und dennoch die intelligenten Funktionen von "
+"Gwhois nutzen."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "Inetd or compatible replacement not installed."
+msgstr "Inetd oder Kompatibilitätsersatz nicht installiert."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"You configured gwhois to act as a whois proxy server. This requires inetd or "
+"a compatible replacement (in particular the 'update-inetd' binary) which was "
+"not found."
+msgstr ""
+"Sie haben Gwhois konfiguriert, um als Proxy-Server zu agieren. Dies benötigt "
+"inetd oder einen kompatiblen Ersatz (inbesondere das Programm "
+"»update-inetd«), der aber nicht gefunden werden konnte."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"Please install a package providing inet-superserver and reconfigure gwhois "
+"or disable proxy operation."
+msgstr ""
+"Bitte installieren Sie ein Paket, das inet-superserver bereitstellt und "
+"konfigurieren Sie Gwhois neu oder deaktivieren Sie den Proxy-Betrieb."

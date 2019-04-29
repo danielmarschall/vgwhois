@@ -1,0 +1,278 @@
+#: version 20120626.1.2+viathinksoft2017XXXX
+
+# Attention: Please note that gwhois will take the first regex match only!
+# This means if you have subdomain-registries, then you must define them first before you define the main registry.
+# Correct order: .uk.com, .com
+# So you have to name this file in a way, so that it will be in front of pattern.d/domains after sorting.
+#
+
+# Subdomain-Registries for gTLD and other domains
+# --------------------------------------------------------------------
+
+:whois|whois.eu.org
+\.eu\.org$
+
+#:notice||Please visit https://manage.centralnic.com/support/view_whois/ and enter the CAPTCHA.
+:whois|whois.centralnic.net
+# [Marschall 2013-07-25] Removed .web.com and .ae.com . They are not in the ownership of CentralNIC anymore.
+# See the current list of available subdomains: https://www.centralnic.com/portfolio/registration
+# Last revision/check: 2016-01-10
+\.(co|mex|africa|eu|uk|us|cn|de|jpn|kr|no|za|br|ar|ru|sa|se|hu|gb|qc|uy|gr)\.com$
+\.(us|ae)\.org$
+\.(in|jp|uk|se|hu|gb)\.net$
+\.com\.de$
+\.com\.se$
+# The Professional Web (-> moved to pattern.d/domains to avoid confusions)
+#\.pw$
+# Los Angeles (-> moved to pattern.d/domains to avoid confusions)
+#\.la$
+
+:notice||Please go to http://www.de.ki/whois and enter the CAPTCHA.
+\.de\.ki$
+
+:cgipost|http://www.freedomain.co.nr/whois.php|account=~1~&domain=co.nr&action=whois&submit=1
+(.*)\.co\.nr$
+
+# --- <Begin third party services which all have the same design and operator>
+# This an unknown operator who offers third-party domains under many different names
+# The services are under the IPs 188.40.117.12, 188.40.70.27 and 188.40.70.29 (and probably more)
+# I would be happy to receive more information about them (especially their company name) in hope to get a complete list of all possible third-party domain registries.
+
+# Search for new places using Google search:
+# https://www.google.de/#q=Whois++%22Please+provide+the+following+information.%22
+
+:notice||Please go to http://www.nic.de.be/us/whois/ and enter the CAPTCHA.
+\.de\.be$
+
+:notice||Please go to http://www.nic.at.vu/us/whois/ and enter the CAPTCHA.
+\.at\.vu$
+
+:notice||Please go to http://www.nic.ch.vu/us/whois/ and enter the CAPTCHA.
+\.ch\.vu$
+
+:notice||Please go to http://www.nic.de.vu/us/whois/ and enter the captcha.
+\.de\.vu$
+
+:notice||Please go to http://us.cydots.com/whois/ and enter the CAPTCHA.
+\.net\.ms$
+\.info\.ms$
+\.us\.ms$
+\.shop\.ms$
+\.fr\.ms$
+\.au\.ms$
+\.com\.au\.ms$
+\.de\.ms$
+\.cn\.ms$
+\.hk\.ms$
+\.br\.ms$
+\.com\.br\.ms$
+\.net\.br\.ms$
+\.org\.br\.ms$
+\.biz\.br\.ms$
+\.info\.br\.ms$
+\.etc\.br\.ms$
+
+:notice||Please visit http://www.duonic.com/us/whois/ and enter the CAPTCHA.
+\.de\.nr$
+\.at\.nr$
+\.co\.at\.nr$
+
+:notice||Please visit http://www.lavanic.com/us/whois/ and enter the CAPTCHA.
+\.de\.lv$
+\.at\.lv$
+\.co\.at\.lv$
+\.or\.at\.lv$
+\.ch\.lv$
+
+:notice||Please visit http://www.europnic.com/us/whois/ and enter the CAPTCHA.
+\.de\.gg
+\.at\.gg
+\.co\.at\.gg
+\.ch\.gg
+\.fr\.gg
+
+:notice||Please visit http://www.homenic.com/us/whois/ and enter the CAPTCHA.
+\.at\.hm$
+\.co\.at\.hm$
+\.de\.hm$
+
+:notice||Please visit http://www.alpennic.com/us/whois/ or http://us.unonic.com/whois/ or http://us.aliasdomains.com/whois/ and enter the CAPTCHA.
+\.net\.tf$
+\.eu\.tf$
+\.int\.tf$
+\.edu\.tf$
+\.us\.tf$
+\.ca\.tf$
+\.bg\.tf$
+\.ru\.tf$
+\.pl\.tf$
+\.cz\.tf$
+\.de\.tf$
+\.at\.tf$
+\.co\.at\.tf$
+\.ch\.tf$
+\.sg\.tf$
+
+:notice||Please visit http://us.hitnic.com/whois/ or http://www.vorname.de/whois/ and enter the CAPTCHA.
+\.at\.vg$
+\.ch\.vg$
+\.info\.vg$
+\.biz\.vg$
+\.web\.vg$
+\.int\.vg$
+\.fr\.vg$
+\.us\.vg$
+\.ca\.vg$
+\.au\.vg$
+\.com\.au\.vg$
+\.jp\.vg$
+
+:notice||Please visit http://www.nic.de.nu/us/whois/ and enter the CAPTCHA.
+\.de\.nu$
+
+:notice||Please visit http://www.nic.tr.vu/us/whois/ and enter the CAPTCHA.
+\.tr\.vu$
+\.com\.tr\.vu$
+\.net\.tr\.vu$
+\.org\.tr\.vu$
+\.biz\.tr\.vu$
+\.info\.tr\.vu$
+\.web\.tr\.vu$
+\.name\.tr\.vu$
+\.gen\.tr\.vu$
+\.gov\.tr\.vu$
+\.edu\.tr\.vu$
+\.av\.tr\.vu$
+\.dr\.tr\.vu$
+\.pol\.tr\.vu$
+\.bel\.tr\.vu$
+\.tsk\.tr\.vu$
+\.k12\.tr\.vu$
+\.bbs\.tr\.vu$
+\.tel\.tr\.vu$
+
+:notice||Please visit http://www.neunic.com/us/whois/ and enter the CAPTCHA.
+\.de\.vc$
+\.at\.vc$
+\.co\.at\.vc$
+\.or\.at\.vc$
+\.ch\.vc$
+
+:notice||Please visit http://us.popnic.com/whois/ and enter the CAPTCHA.
+\.de\.pn$
+\.at\.pn$
+\.co\.at\.pn$
+\.ch\.pn$
+\.fr\.pn$
+\.it\.pn$
+\.uk\.pn$
+\.co\.uk\.pn$
+\.us\.pn$
+\.ca\.pn$
+\.au\.pn$
+\.com\.au\.pn$
+\.cn\.pn$
+\.jp\.pn$
+
+:notice||Please visit http://us.joynic.com/whois/ and enter the CAPTCHA.
+\.de\.vu$
+\.at\.vu$
+\.co\.at\.vu$
+\.or\.at\.vu$
+\.ch\.vu$
+\.nl\.vu$
+\.ca\.vu$
+\.tr\.vu$
+\.com\.tr\.vu$
+\.net\.tr\.vu$
+\.org\.tr\.vu$
+\.biz\.tr\.vu$
+\.info\.tr\.vu$
+\.web\.tr\.vu$
+\.name\.tr\.vu$
+\.gen\.tr\.vu$
+\.gov\.tr\.vu$
+\.edu\.tr\.vu$
+\.av\.tr\.vu$
+\.dr\.tr\.vu$
+\.pol\.tr\.vu$
+\.bel\.tr\.vu$
+\.tsk\.tr\.vu$
+\.k12\.tr\.vu$
+\.bbs\.tr\.vu$
+\.tel\.tr\.vu$
+\.gr\.vu$
+\.com\.gr\.vu$
+\.net\.gr\.vu$
+\.org\.gr\.vu$
+\.edu\.gr\.vu$
+\.gov\.gr\.vu$
+\.ru\.vu$
+\.pl\.vu$
+\.es\.vu$
+\.za\.vu$
+
+:notice||Please visit http://us.mediadots.com/whois/ and enter the CAPTCHA.
+\.eu\.mn$
+\.at\.mn$
+\.co\.at\.mn$
+\.fr\.mn$
+\.uk\.mn$
+\.co\.uk\.mn$
+\.us\.mn$
+\.nl\.mn$
+\.it\.mn$
+\.au\.mn$
+\.com\.au\.mn$
+\.cn\.mn$
+\.jp\.mn$
+
+:notice||Please visit http://www.nic.nl.vu/us/whois/ and enter the CAPTCHA.
+\.nl\.vu$
+
+# Seems to be defunct, see some cached version of the old site here: http://feeds.feedburner.com/copasit
+# :notice||Please visit http://us.smartdots.com/whois/ and enter the CAPTCHA.
+# \.net\.tc$
+# \.eu\.tc$
+# \.us\.tc$
+# \.uk\.tc$
+# \.co\.uk\.tc$
+# \.me\.uk\.tc$
+# \.org\.uk\.tc$
+# \.au\.tc$
+# \.com\.au\.tc$
+# \.pro\.tc$
+# \.shop\.tc$
+# \.edu\.tc$
+# \.int\.tc$
+# \.de\.tc$
+# \.at\.tc$
+# \.co\.at\.tc$
+# \.ch\.tc$
+# \.it\.tc$
+# \.es\.tc$
+# \.ru\.tc$
+# \.ua\.tc$
+# \.se\.tc$
+# \.dk\.tc$
+# \.be\.tc$
+# \.no\.tc$
+# \.pl\.tc$
+# \.bg\.tc$
+# \.cz\.tc$
+# \.hu\.tc$
+# \.ie\.tc$
+# \.mx\.tc$
+# \.br\.tc$
+# \.com\.br\.tc$
+# \.net\.br\.tc$
+# \.org\.br\.tc$
+# \.biz\.br\.tc$
+# \.info\.br\.tc$
+# \.etc\.br\.tc$
+# \.hk\.tc$
+# \.kr\.tc$
+# \.th\.tc$
+# \.ph\.tc$
+
+# --- <End third party services which all have the same design and operator>

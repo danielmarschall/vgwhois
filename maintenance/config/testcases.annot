@@ -1,0 +1,17 @@
+ati.tn: whois.ati.tn handle FSI-ATI not working
+cnnic.cn: whois.cnnic.cn handle 20030310s10001s00012956-cn not working
+cnnic.cn: whois.cnnic.cn handle s1255673574881 not working
+AS681: whois.apnic.net handle MNT-ERX-WAIKATOUNI-NON-NZ to check
+AS681: whois.apnic.net handle ERX-KAWAIHIKO-1 to check
+AS1228: Should there be a -B flag?
+AS327680: Should there be a -B flag used?
+ORG-ARIN1-AFRINIC: "-B" flag
+AFRINIC-042005: "-B" flag
+41.0.0.0: -B flag?
+andorratelecom.ad: could be better formatted.
+andorratelecom.ad: is there a better whois service? is this whois service only for government domains?
+aeda.net.ae: they write "whois.aeda.ae", but the correct address is "whois.aeda.net.ae"
+ru.ac.za: Output could be better formatted.
+nic.af: 488169-CoCCA kann nicht durch whois aufgelöst werden
+C270-LRMS: R145-LRMS auch pattern anlegen?
+intrans.ba: lat -> eng

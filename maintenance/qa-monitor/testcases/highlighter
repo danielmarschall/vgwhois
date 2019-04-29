@@ -1,0 +1,110 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Maintenance Framework: Testcases
+#
+#  (c) 2012-2015 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2015-04-17
+#
+
+#mb_internal_encoding('utf-8');
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+require_once __DIR__ . '/../../shared/php_includes/idna_convert.class.php';
+
+$punycoder = new idna_convert();
+
+$in = '';
+while($f = fgets(STDIN)) {
+	$in .= $f;
+}
+
+$pre  = generateRandomToken($in);
+$post = generateRandomToken($in);
+$plc1 = generateRandomToken($in);
+
+// to avoid that "domain......ati.tn" will be highlighted completely.
+$in = preg_replace('@\\.{2,}+@u', '<<<'.$plc1.':${0}>>>', $in);
+
+if ($argc == 1) {
+	$out = array();
+	exec(__DIR__ . '/allpatterns', $out, $code);
+	if ($code != 0) {
+		echo __DIR__ . "/allpatterns failed with code $code\n"; # TODO: STDERR
+		exit(1);
+	}
+	foreach ($out as $o) {
+		$o = trim($o);
+		if ($o == '') continue;
+		$argv[] = $o;
+	}
+}
+
+array_shift($argv);
+# $i = 0;
+foreach ($argv as $x) {
+	# TODO: problem: $x darf nicht quoted werden, darf aber auch nicht @ enthalten -> dynamisch rausfinden welcher delimiter nicht vorkommt
+	# TODO: there are several problems using this mechanism. It is very hard to highlight everything which is queryable through gwhois.
+	#       for example: (1) it is not possible to use \S+ in the pattern files, because it would match everything in the gwhois output, even though it was only meant to match everything in the query
+	#                    (2) if the rule .com.xx is applied after .xx , the .com.xx will not match, since .xx is already wrapped with $pre and $post
+
+#	$i++;
+#	$pre = "[start$i]";
+#	$post = "[end$i]";
+
+	$in = preg_replace($x, $pre.'${0}'.$post, $in);
+
+	$c = 0;
+
+	$x = preg_replace_callback("@(xn\-\-[0-9a-z\-]+)@ui", "punycodeCB", $x, -1, $c);
+	if ($c > 0) {
+		$in = preg_replace($x, $pre.'${0}'.$post, $in);
+	}
+}
+
+# Remove nesting (( x (( y )) a )) -> (( x a ))
+do {
+	$ok = true;
+	$in = preg_replace_callback("@$pre(.*$post)@Uu", "verschachtelungCB", $in);
+} while (!$ok);
+
+# colorize
+$in = str_replace($pre,  "\033[41m\033[37m", $in);
+$in = str_replace($post, "\033[0m", $in);
+
+# undo it again (see above)
+$in = preg_replace('@<<<'.$plc1.':([^>]+)>>>@u', '${1}', $in);
+
+echo $in;
+
+# ---
+
+function verschachtelungCB($treffer) {
+	global $pre, $post, $ok;
+
+	if (strpos($treffer[1], $pre) === false) {
+		return $pre.$treffer[1];
+	} else {
+		$ok = false;
+		return $pre.str_replace(array($pre,$post), '', $treffer[1]);
+	}
+}
+
+function punycodeCB($treffer) {
+	global $punycoder;
+
+	$out = "";
+	$x = $punycoder->decode(strtolower($treffer[0]));
+	preg_match_all('/./u', $x, $results);
+	foreach ($results[0] as $m) {
+		$out .= '\\x{'.dechex(_uniord($m)).'}';
+	}
+
+	return $out;
+}
+

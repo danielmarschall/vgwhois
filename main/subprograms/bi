@@ -1,0 +1,57 @@
+#!/usr/bin/perl
+
+#
+#  generic Whois - bi subprogram
+#
+#  (c) 2015 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2015-05-15  mar   Initial release
+#
+
+use warnings;
+use strict;
+use utf8;
+
+use FindBin;
+use lib "$FindBin::Bin/../lib/";
+use GWhoIs::Core;
+
+if (defined $ARGV[0]) {
+	$_ = join(' ', @ARGV);
+} else {
+	# If no parameter is given, await an input from STDIN
+	$_ = <>;
+	chomp;
+}
+
+my $query = $_;
+
+my $host = "http://whois.nic.bi/register/whois.hei"; # TODO: https?
+
+my ($protocol, $hostname) = GWhoIs::Utils::splitProtocolHost($host);
+
+#print "Querying $hostname with $protocol.\n";
+
+# Get session URL
+my ($text, $exitcode) = GWhoIs::Core::wwwsgrep($host,'name="card" value="(.*?)');
+if ($exitcode) {
+	# print STDERR "Query to web server failed.\n";
+	print $text;
+	exit $exitcode;
+}
+
+# Get lookup
+($text, $exitcode) = GWhoIs::Core::doquery($query,'cgi',"$host?card=$text&f_1.qdomain=$query&f_1.type=domain&f_1.q=Search");
+
+if ($exitcode) {
+	# print STDERR "Query to web server failed.\n";
+}
+
+print $text;
+
+exit $exitcode;

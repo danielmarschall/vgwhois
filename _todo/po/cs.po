@@ -1,0 +1,83 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gwhois\n"
+"Report-Msgid-Bugs-To: gwhois@packages.debian.org\n"
+"POT-Creation-Date: 2010-05-15 23:41+0200\n"
+"PO-Revision-Date: 2010-05-17 16:21+0200\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Install gwhois as a whois proxy server?"
+msgstr "Instalovat gwhois jako proxy server pro whois?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If gwhois is installed as a whois proxy server (using inetd) it will listen "
+"on the standard whois port (43) allowing normal whois clients to query it."
+msgstr ""
+"Pokud je gwhois nainstalován jako proxy server pro whois (pomocí inetd), "
+"bude naslouchat na standardním whois portu (43) a běžní whois klienti se jej "
+"mohou dotazovat."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This can be interesting for example if you want to setup a generic whois "
+"server for your company or coworkers which can then use their standard whois-"
+"client (e.g. a windows client) and still make use of the intelligent "
+"features of gwhois."
+msgstr ""
+"To může být zajímavé například pokud chcete nastavit obecný whois server pro "
+"celou firmu nebo pro kolegy, kteří tak mohou používat své standardní whois "
+"klienty (např. na windows) a přitom využívat inteligentní vlastnosti gwhois."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "Inetd or compatible replacement not installed."
+msgstr "Inetd nebo kompatibilní náhrada není nainstalována."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"You configured gwhois to act as a whois proxy server. This requires inetd or "
+"a compatible replacement (in particular the 'update-inetd' binary) which was "
+"not found."
+msgstr ""
+"Nastavili jste gwhois, aby se choval jako proxy server pro službu whois. To "
+"vyžaduje inetd nebo kompatibilní náhradu (přesněji binárku „update-inetd“), "
+"avšak ani jedno z toho nebylo nalezeno."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"Please install a package providing inet-superserver and reconfigure gwhois "
+"or disable proxy operation."
+msgstr ""
+"Nainstalujte si balík poskytující inet-superserver a překonfigurujte gwhois, "
+"nebo fungování jako proxy zakažte."

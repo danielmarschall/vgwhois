@@ -1,0 +1,40 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "hm"
+#
+#  (c) 2018 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2018-03-22  mar   Initial release
+#
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+# The server whois.registry.hm is not available for the public anymore.
+# The whois server runs internally, and can be accessed via the web interface.
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+# Please note that you first have to call the whois main page which sets a cookie that is required.
+$cont = file_get_contents2("http://www.registry.hm/");
+
+# Now the real call
+$cont = file_get_contents2("http://www.registry.hm/HR_whois2.php?domain_name=$domain");
+
+if (!preg_match('@<pre>(.+)</pre>@ismU', $cont, $m)) {
+	echo "Parse error\n";
+	exit(1);
+}
+
+$cont = $m[1];
+
+$cont = str_replace('<br>', "\n", $cont);
+
+echo $cont;
+

@@ -1,0 +1,64 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "gt"
+#
+#  (c) 2011 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2011-06-07  mar   Initial release
+# 2012-01-16  mar   Fixed uppercase(). Spaces between NSs.
+#
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+$url = "http://www.gt/cgi-bin/whois.cgi?domain=$domain";
+
+$res = "% Parsing via regex from '$url'\n\n";
+
+$x = file_get_contents2($url);
+$x = strip_tags($x);
+
+# $x = preg_replace('|:\s*([^\s])|ismU', ': $1', $x);
+$x = preg_replace('|^\s*([^\s])|ismU', '$1', $x);
+
+// é -> É @ strtoupper()
+/*
+$locals = array('es_ES@euro', 'es_ES', 'es');
+reset($locals);
+while (list(, $locale) = each ($locals)) {
+	if ( setlocale(LC_CTYPE, $locale) == $locale ) {
+		break; // Exit when we were successfull
+	}
+}
+*/
+
+$x = html_entity_decode($x);
+
+$special_words = array(
+	'Información del Dominio'."\n".$domain,
+	'Contactos Administrativos',
+	'Contactos Técnicos',
+	'Servidores',
+	'Fecha de Expiración (dd/mm/aaaa)'
+);
+
+foreach ($special_words as $s) {
+	$x = str_replace($s, "\n".uc_latin1($s)."\n", $x);
+}
+
+$x = str_replace('Inicio', '', $x); // Back to mainpage
+
+$x = str_replace('Primario', "Primario\n\n", $x);
+$x = str_replace('Secundario', "Secundario\n\n", $x);
+
+$x = trim($x);
+
+echo $res.trim_each_line($x)."\n";

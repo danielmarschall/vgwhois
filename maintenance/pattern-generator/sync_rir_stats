@@ -1,0 +1,97 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Automatic Pattern Generator RIR-Statistics-Synchronisation-Tool
+#
+#  (c) 2012-2015 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2015-04-14
+#
+
+error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
+
+require_once __DIR__ . '/config.inc.php';
+require_once __DIR__ . '/rirs.inc.php';
+
+define('RIRSTATS_CACHE_DIR', __DIR__ . '/../.cache/pattern-generator/rirstats');
+
+function rir_get_md5_sum($url) {
+	// MD5 (/var/opt/ftp/pub/apnic/stats/apnic/delegated-apnic-extended-latest) = 82c291bb5d4363a3db254853c1602777
+	// MD5 (delegated-lacnic-extended-latest) = 2815f0b5837d5658acf1659dff98bb52
+	// MD5 (delegated-ripencc-extended-latest) = d4caddde59952c44b584cacf720ef836
+	// MD5 (delegated-arin-latest) = 3137d635d5e647481af972ddc87e5570
+	// MD5 (delegated-afrinic-latest) = 9c1cd55e8894402062282e3ebdcf53c8             <-- WRONG FILE NAME SHOWN FOR delegated-afrinic-extended-latest.md5!
+
+	$md5_cont = file_get_contents($url.'.md5');
+
+	if (substr($md5_cont, 0, 5) != 'MD5 (') {
+		// Some older *.md5 files of AfriNIC have following formats:
+		// 73d5e32afd43eac0beb4635b6a9056c4  delegated-afrinic-latest
+		// since 2012-06-25 AfriNIC uses the "normal" format
+		// MD5 (delegated-afrinic-latest) = 9c1cd55e8894402062282e3ebdcf53c8
+		// however, the filename is wrong (delegated-afrinic-latest instead of delegated-afrinic-extended-latest)
+		return substr($md5_cont, 0, 32);
+	} else {
+		// Die anderen RIRs
+		$tmp = explode(' = ', $md5_cont);
+		return trim($tmp[1]);
+	}
+}
+
+function rir_download_report($url, $outfile, $do_md5_check = true) {
+	if (($do_md5_check) && (file_exists($outfile))) {
+		$md5_ist  = md5_file($outfile);
+		$md5_soll = rir_get_md5_sum($url);
+		if ($md5_soll == $md5_ist) {
+			touch("$outfile.success");
+			return true;
+		}
+	}
+
+	$cont = file_get_contents($url);
+
+	if (!$cont) {
+		touch("$outfile.fail");
+		return false;
+	}
+
+	if ($do_md5_check) {
+		$md5_ist = md5($cont);
+		if (!isset($md5_soll)) $md5_soll = rir_get_md5_sum($url);
+		if ($md5_soll != $md5_ist) {
+			touch("$outfile.fail");
+			return false;
+		}
+	}
+
+	$h = fopen($outfile, 'w');
+	if (!$h) return false;
+	if (!fwrite($h, $cont)) {
+		touch("$outfile.fail");
+		return false;
+	}
+	fclose($h);
+
+	touch("$outfile.success");
+	return true;
+}
+
+$rirs[] = 'iana';
+
+@mkdir(RIRSTATS_CACHE_DIR.'/', 0777, true);
+
+foreach ($rirs as $rir) {
+	$url = $rirstat_urls[$rir];
+
+	$failcounter = 0;
+	while (!rir_download_report($url, RIRSTATS_CACHE_DIR."/$rir", $rir != 'iana')) {
+		$failcounter++;
+		echo "Retry downloading $rir stats ($failcounter)...\n";
+		if ($failcounter > 100) break;
+		sleep(60);
+	}
+}

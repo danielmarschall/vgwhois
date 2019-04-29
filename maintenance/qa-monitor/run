@@ -1,0 +1,346 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Automatic Pattern Generator: QA Monitor
+#
+#  (c) 2012-2015 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2015-04-27
+#
+
+# TODO: strikte trennung zwischen pattern entwicklung ( = im sdk enthalten ) und lokaler gwi entwicklung ( = packages, eigene vwi services )
+# TODO: alles modular machen, vieles cachen
+
+# TODO: was wenn ein rwi entfernt wird? prüfung notwendig dann!
+#       --> das wird im whois-ping test geprueft
+# TODO: auch unnoetige excludes (anormalities) in config.inc.php melden
+
+# TODO pattern.d/tld --> check if all existing and disallocated TLDs are inside
+
+# TODO: konsolenfarben z.b. grün für qa-audit
+
+error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+define('CACHE_FILE_DIR', __DIR__ . '/../.cache/cache');
+
+# ---
+
+// This is like __DIR__, but does not resolve symlinks
+// (useful for sharing StatMon source codes locally by symlinking)
+define('DIR', dirname($_SERVER['SCRIPT_FILENAME']));
+
+$anormale_whois = array();
+require DIR . '/config.inc.php';
+
+$pattern_cont = get_united_pattern();
+
+$global_status = 0;
+
+echo "* Checking for died whois servers and check if presumed dead whois servers (= already removed from the pattern file) have resurrected...\n";
+
+exec(__DIR__ . "/whois-ping/whoisping", $out, $ec);
+
+$loc_good = $ec == 0;
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	echo "[ FAIL ]\n";
+	$global_status=1;
+}
+
+# ---
+
+echo "* Checking the testcases in background mode...\n";
+
+exec(__DIR__ . "/testcases/batch --mode b", $out, $ec);
+
+$loc_good = $ec == 0;
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	echo "[ FAIL ]\n";
+	$global_status=1;
+}
+
+# ---
+
+echo "* Check if every deleted TLD has a notice ( ".DELETED_TLD_LIST." )\n";
+
+# does not exist as static file at VTS server
+$del_tld_cont = explode("\n", cached_file(DELETED_TLD_LIST, CACHE_FILE_DIR));
+
+$loc_good = true;
+foreach ($del_tld_cont as $tld) {
+	$tld = trim($tld);
+	if ($tld == '') continue;
+	if ($tld[0] == '#') continue;
+	$tld = strtolower($tld);
+	if (!preg_match('@:notice\\|\\|Disallocated by IANA([^\\n]*)[\\r\\n]+\\\\.'.$tld.'\\$@smU', $pattern_cont, $m)) {
+		$loc_good = false;
+		echo "[ !! ] Does not have a notice beginning with \"Disallocated by IANA\": $tld\n";
+	}
+}
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	$global_status=1;
+}
+
+# ---
+
+echo "* Check if every TLD has a single whois entry\n";
+
+$tld_cont = explode("\n", cached_file(IANA_TLD_REGISTRY, CACHE_FILE_DIR));
+
+$loc_good = true;
+foreach ($tld_cont as $tld) {
+	$tld = trim($tld);
+	if ($tld == '') continue;
+	if ($tld[0] == '#') continue;
+	$tld = strtolower($tld);
+	$regex = '@[\r\n]\s*(?<!#)\s*[^a-zA-Z\r\n#]*\\\\.'.trim($tld).'\\$\s*[\r\n]@isU';
+	$pc = $pattern_cont;
+	$pc = preg_replace('@\\(\\?\\:[a-zA-Z\\|]+\\)@isU', '', $pc); # z.B. \.((?:ac|co|net|or|web|sch|mil|go|my|biz)\.id)$
+	$pc = str_replace('(', '', $pc);
+	$pc = str_replace(')', '', $pc); # wegen regexes, z.b. \.(pn)$
+	# if (strpos($pattern_cont, '\.'.trim($tld)) === false) {
+	# if (strpos(str_replace(')', '', $pattern_cont), '\.'.trim($tld).'$') === false) { # ')' wegen RegEx'es
+	if (!preg_match($regex, $pc)) {
+		$iana_url = sprintf(IANA_TLD_ENTRY, $tld);
+		$iana_cont = file_get_contents($iana_url);
+		if (strpos($iana_cont, 'This domain is not present in the root zone at this time.') === false) {
+			$loc_good = false;
+
+			# TODO: hier sollte man evtl schon gucken, ob bei iana.org ein whois-name vorliegt.
+			echo "[ !! ] Not in pattern-file: $tld (see $iana_url )\n";
+		}
+	}
+}
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	$global_status=1;
+}
+
+# ---
+
+echo "* Check if TLDs have the latest Root-Whois-Server URLs ( ".ROOT_WHOIS_SERVER_LIST." )\n";
+
+# TODO: geht nicht wenn 2 TLDs sich einen :whois teilen
+# geht auch nicht mit domains mit third level tlds oder regexes usw
+
+# TODO: allerdings wird keine kontrolle gemacht ob die auskommentierte Zeile wirklich zu $tld gehört!
+echo "Note: For following TLDs, the root whois server may be commented out: ".implode(', ', $anormale_whois)."\n";
+
+$loc_good = true;
+$rws_cont = rws_get_list();
+foreach ($rws_cont as $tld => $whois) {
+	$c = "$tld => $whois";
+
+	$g = false;
+	if (in_arrayi($tld, $anormale_whois)) {
+		# Sonderfälle... whois server die nicht gehen...
+		# Der Server muss dann nur irgendwo vorkommen, in Form einer auskommentierten Zeile
+		$g = (
+			(stripos($pattern_cont, ':whois|'.$whois."\n") !== false) ||
+			(stripos($pattern_cont, 'whois::'.$whois.":::") !== false) || // multiple
+			(stripos($pattern_cont, 'whois::'.$whois."\n") !== false) || // multiple
+			(stripos($pattern_cont, ':inicwhois|'.$whois."\n") !== false) ||
+			(stripos($pattern_cont, 'inicwhois::'.$whois.":::") !== false) || // multiple
+			(stripos($pattern_cont, 'inicwhois::'.$whois."\n") !== false) // multiple
+		);
+	} else {
+		# TODO: auch auskommentierte einträge erlauben, falls die RWI outdated ist
+		$regex = "@\\n:(inic){0,1}whois\\|".preg_quote($whois, '@')."(\\|.*)*\\n(#.*\n)*\\\\.".preg_quote($tld, '@')."\\$@ismU";
+		$g = preg_match($regex, $pattern_cont);
+
+		if (!$g) {
+			# Multiple?
+			# TODO: bessere pruefung auf auskommentiere eintraege
+			$regex = "@(:multiple\\|\\||:::)(inic){0,1}whois::".preg_quote($whois, '@')."(:[^\n]*|)\s*\n(#.*\n)*(\\(\\.\\*\\)){0,1}\\\\.".preg_quote($tld, '@')."\\$@ismU";
+			$g = preg_match($regex, $pattern_cont);
+		}
+	}
+
+	if (!$g) {
+		# If the data is not live, we need to check if the whois server is still official (and not changed since then)
+		if ((!rws_is_live()) && (iana_get_whois($tld) != $whois)) continue;
+
+		# If we reported it as dead, we trust that. (In case it is wrong, the whois-ping will warn about it)
+		if (reported_dead($whois)) continue;
+
+		# Whois servers which are official but are down, are not interesting. Do not warn.
+		if (!gwitc_is_port_open($whois, 43)) continue;
+
+		$loc_good = false;
+		echo "[ !! ] Not in TLD file: $c\n";
+	}
+	unset($g);
+}
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	$global_status=1;
+}
+
+# ---
+
+echo "* Check if there is a newer official version of gwhois which needs to be merged with the ViaThinkSoft fork ( ".DEBIAN_GWHOIS_PACKAGE_URL." )\n";
+
+define('CUR_VER', gwi_getInstalledBaseVersion());
+
+$latest_official = getLatestGWIversion();
+$latest_official = str_replace('-', '.', $latest_official); // they use the reserved '-' character in their versions (used for delimiting upstream versions)
+$loc_good = true;
+if (CUR_VER != $latest_official) {
+	echo '[ !! ] Latest version: '.$latest_official." (This version: ".CUR_VER.")\n";
+	$loc_good = false;
+}
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	$global_status=1;
+}
+
+# ---
+
+echo "* Check if IANA has (probably) a TLD whois list in ".IANA_TLD_FOLDER."\n";
+
+$x = cached_file(IANA_TLD_FOLDER, CACHE_FILE_DIR);
+$loc_good = substr_count($x, '.txt">') == 1;
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	$global_status=1;
+	echo "[ !! ] Something has changed ! Please change rws_*() in the QA tool!\n";
+}
+
+# ---
+
+echo "* Check if testcases require attention\n";
+
+$out = array();
+exec(__DIR__ . '/testcases/status_short', $out, $code);
+$loc_good = $code == 0;
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	$global_status=1;
+	echo trim(implode("\n", $out))."\n";
+}
+
+# ---
+
+echo "* Check the status of whois-ping\n";
+
+$out = array();
+exec(__DIR__ . '/whois-ping/showerrors', $out, $code);
+$loc_good = $code == 0;
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	$global_status=1;
+	echo trim(implode("\n", $out))."\n";
+}
+
+# ---
+
+echo "* Check syntax of all script files (Perl, PHP)\n";
+
+$out = array();
+exec(__DIR__ . '/syntax/global-syntax-check', $out, $code);
+$loc_good = $code == 0;
+
+if ($loc_good) {
+	echo "[ OK ]\n";
+} else {
+	$global_status=1;
+	echo trim(implode("\n", $out))."\n";
+}
+
+# ---
+
+exit($global_status);
+
+# ---
+
+function getLatestGWIversion() {
+	$x = cached_file(DEBIAN_GWHOIS_PACKAGE_URL, CACHE_FILE_DIR);
+	preg_match_all('@<br>(.*): all@isU', $x, $m);
+	$m = $m[1];
+	rsort($m);
+	return $m[0]; // biggest version
+}
+
+// RWS = Root Whois Server List functions
+// (needs to be updated as soon as IANA implements this service.)
+function rws_get_list() {
+	$result = array();
+
+	$tld_cont = explode("\n", cached_file(ROOT_WHOIS_SERVER_LIST, CACHE_FILE_DIR));
+
+	foreach ($tld_cont as &$c) {
+		$c = trim($c);
+		if ($c == '') continue;
+		if ($c[0] == '#') continue;
+		$ary = explode(" => ", $c);
+		$tld = $ary[0];
+		$whois = trim($ary[1]);
+
+		$result[$tld] = $whois;
+	}
+
+	return $result;
+}
+
+function rws_is_live() {
+	// The data is collected every week.
+	return false;
+}
+
+function iana_get_whois($tld) {
+	$out = QueryWhoisServer('whois.iana.org', $tld);
+
+	if (strpos($out, 'domain:') === false) return false;
+	if (!preg_match("@\nwhois:\\s*([^\\s]+)\n@ismU", $out, $m)) return false;
+	return $m[1];
+}
+
+function gwi_getInstalledBaseVersion() {
+	# TODO: auch andere dateien anschauen
+
+	$pattern = file(DIR . '/../../main/pattern/001_subdomains');
+	if (!preg_match('@#: version (.+)\+@iU', $pattern[0], $m)) return false;
+
+	return $m[1];
+}
+
+function in_arrayi($needle, $haystack) {
+	return in_array(strtolower($needle), array_map('strtolower', $haystack));
+}
+
+function reported_dead($whois) {
+	$dead_servers_raw = file(DIR . '/../config/dead-servers.list');
+	foreach ($dead_servers_raw as &$server) {
+		$server = trim($server);
+		if ($server == '') continue;
+		if ($server[0] == '#') continue;
+		if ($server == $whois) return true;
+	}
+	return false;
+}

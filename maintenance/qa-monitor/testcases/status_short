@@ -1,0 +1,53 @@
+#!/bin/bash
+
+#
+#  generic Whois - Maintenance Framework: Testcases
+#
+#  (c) 2012-2014 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2014-08-19
+#
+
+DIR=$( dirname "$0" )
+
+. "$DIR/../../config/testcases.conf"
+
+count=0
+
+while read f; do
+	if [ -z "$f" ]; then
+		continue;
+	fi
+
+	echo "$f" | grep -E "\s*^#" > /dev/null
+	if [ $? -eq 0 ]; then
+		continue;
+	fi
+
+	# Warum? "tld jp" wird dann zu "tld"
+	# query="$( basename $f )"
+	query="$f";
+
+	tsfile="$DIR/../../.cache/testcases/checktimestamps/$query"
+	errfile="$DIR/../../.cache/testcases/problems/$query"
+
+	if [ ! -f "$tsfile" ]; then
+		((count++));
+	elif [ ! -f "$tsfile" ] || [ $( stat --format=%Y "$tsfile" ) -le $(( $( date +%s ) - $recheck_time )) ]; then
+		((count++));
+	elif [ -f "$errfile" ]; then
+		((count++));
+	fi
+
+done < "$DIR/../../config/testcases.list"
+
+if [ $count -eq 0 ]; then
+	echo "[ OK ]"
+	exit 0
+else
+	echo "[ !! ] $count testcases require attention"
+	exit 1
+fi

@@ -1,0 +1,6434 @@
+#: version 20190428
+# Domains
+# This file can be updated by $gwhois$/maintenance/pattern-generator/generate_domains (only additions of new entries)
+
+# Info: A good resource for research: https://wiki.rrpproxy.net/
+
+# ccTLD
+# --------------------------------------------------------------------
+
+#:notice||Please visit https://www.nic.ac/whois-search.htm and enter the CAPTCHA
+:whois|whois.nic.ac
+\.ac$
+
+#:notice||A list of registered domains is available on http://www.nic.ad/index_eng.htm [9/2006]
+:cgi|http://www.ompa.ad/bases_dades/dominis2.php?prod=~query~&Submit=Search&tipus=nom_domini&data1=0&data2=0&lang=en
+\.ad$
+
+:whois|whois.aeda.net.ae
+\.ae$
+
+#:notice||Please go to http://whois.nic.af/whois.jsp (last checked Aug 2013)
+:whois|whois.nic.af
+\.af$
+
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha (last checked Aug 2013)
+# :whois|whois2.afilias-grs.net
+:whois|whois.nic.ag
+\.ag$
+
+#:whois|whois.ai
+:whois|whois.nic.ai
+\.ai$
+
+#:notice||No whois. Homepage http://www.nic.al. Availability check on http://www.ert.gov.al/ert_eng/domain_res.html [5/2010]
+:notice||No whois. URL for registration services: http://www.akep.al/index.php/sq/regjistrim-domain and availability check on http://www.akep.al/index.php/sq/kerkoni-domain [11/2014]
+\.al$
+
+#:whois|whois.nic.am
+:whois|whois.amnic.net
+\.am$
+
+:notice||Disallocated by IANA
+\.an$
+
+:notice||No whois. Homepage http://www.dns.ao [5/2010]
+\.ao$
+
+:notice||No whois, no domain list, no nothing. [5/2010]
+\.aq$
+
+# TODO: braucht cookies und einen normalen useragent! und geht dann trotzdem nicht
+# $ curl -c cookies.txt -A "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0" https://nic.ar/buscarDominio.xhtml > 2.html
+# $ ./formfill < 2.html
+# $ curl -c cookies.txt -e "https://nic.ar/buscarDominio.xhtml" -A "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0" --data "busquedaDominioForm2:j_idt56=2&busquedaDominioForm2=busquedaDominioForm2&busquedaDominioForm2:dominio=test&busquedaDominioForm2:btnBuscar=Consultar&javax.faces.ViewState=2068546024268256105:-7972736133422905895" https://nic.ar/buscarDominio.xhtml > 3.html
+# $ lynx 3.html
+# -> still not working! Cookies sent, Form data sent, UserAgent sent!
+# -> Sometimes they additionally show a CAPTCHA!
+# :cgipostcurl|https://nic.ar/buscarDominio.xhtml|busquedaDominioForm2:j_idt56=2&busquedaDominioForm2=busquedaDominioForm2&busquedaDominioForm2:dominio=test&busquedaDominioForm2:btnBuscar=Consultar&j_idt15=j_idt15&javax.faces.ViewState=-3794484719380193327:5925215873023379072
+# test.ar$
+
+:cgipost|http://www.riu.edu.ar/cgi-bin/verdom.pl.nuevo|username=~1~
+(.*)\.edu\.ar$
+
+# TODO: how to query second -level domains "nic.ar" or "edu.ar"?
+#:cgipostcurl|http://www.nic.ar/consdom.html|nombre=~1~&dominio=~2~
+#(.*)(\.[^\.]*\.ar)$
+#:notice||Please go to https://nic.ar/buscarDominio.xhtml to query the domain information.
+:whois|whois.nic.ar
+\.ar$
+
+:multiple||whois::whois.nic.as:::notice::::For more information, please go to http://www.nic.as/whois.cfm
+\.as$
+
+:whois|whois.nic.at
+\.at$
+
+#:whois|whois.aunic.net
+#:whois|whois.ausregistry.net.au
+#:whois|whois.audns.net.au
+#:multiple||whois::whois.audns.net.au:::notice::::For more availability check only, you can query whois server whois-check.ausregistry.net.au
+:whois|whois.auda.org.au
+\.au$
+
+# :notice||No whois, no domain list. Homepage http://www.setar.aw/ [5/2010]
+:whois|whois.nic.aw
+\.aw$
+
+#:notice||Please visit https://whois.ax/en/
+:whois|whois.ax
+\.ax$
+
+:cgipostcurl|http://www.whois.az/cgi-bin/whois.cgi|lang=en&domain=~namewotld~&dom=.az
+\.az$
+
+# :notice||See http://www.nic.ba/stream/whois/, needs a image capable browser, therefore gwhois can't use this. [5/2010]
+# TODO: we need some kind of OCR to read this (no CAPTCHA)
+:notice||See http://nic.ba/lat/menu/view/13 , needs an image capable browser. [7/2013]
+\.ba$
+
+#:notice||Captcha protected whois on http://www.barbadosdomains.net/search_domain.php [5/2010]
+:notice||Captcha protected whois on http://www.whois.telecoms.gov.bb/search_domain.php [7/2013]
+\.bb$
+
+# This service does exist, but it is sometimes not available
+:cgipost|http://whois.btcl.net.bd:8080/dotbd/ViewDomain_2.jsp|dName=~namewotld~&Submit=SUBMIT
+\.bd$
+
+:whois|whois.dns.be
+\.be$
+
+#:notice||Go to http://www.nic.bf/ . (At the moment, the lookup service is not available. Last checked Jan 2012)
+:notice||URL for registration services: http://www.arce.bf/domaine.php
+\.bf$
+
+:whois|whois.register.bg
+\.bg$
+
+#:cgipost|http://oldinet.arabian.net/include/domaincheckmodule.asp|txtWebDomain=~query~
+:notice||Whois server gone [2015/05]
+\.bh$
+
+#:program|$gwhois$/subprograms/bi
+:whois|whois1.nic.bi
+\.bi$
+
+# Alternative
+# :cgi|http://whois.nic.bj/whois.php?~query~
+# TODO: "To single out one record, look it up with "!XXX", where XXX is the handle."
+#       -> Umschreiben der Records in "BJ-XXX"?
+:whois|whois.nic.bj
+\.bj$
+
+:notice||.bl is reserved
+\.bl$
+
+:program|$gwhois$/subprograms/bm
+\.bm$
+
+#:notice||No whois, no domain list. Homepage http://www.brunet.bn/ (last checked Sep 2005)
+#:whois|whois.bn
+#:notice||Whois server at whois.bn died in July 2014. You might want to check out http://www.telbru.com.bn
+:whois|whois.bnnic.bn
+\.bn$
+
+:cgi|http://www.nic.bo/buscar.php?dominio=~1~&subdominio=.~2~.bo
+(.*)\.(com|edu|gov|int|org|net|mil|tv)\.bo$
+
+#:cgi|http://www.nic.bo/buscar.php?dominio=~namewotld~&subdominio=.bo
+:whois|whois.nic.bo
+\.bo$
+
+#:whois|registro.br
+:whois|whois.registro.br
+\.br$
+
+:cgipost|http://www.nic.bs/cgi-bin/search.pl|name=~query~
+\.bs$
+
+:cgi|http://www.nic.bt/mwhois.php?domainbt=~namewotld~
+\.bt$
+
+:notice||Disallocated by IANA
+\.bu$
+
+#:notice||.bv is unused as per norwegian nic. See http://www.norid.no/domenenavnbaser/bv-sj.html (last checked Jan 2005)
+:notice||.bv is unused as per norwegian nic. See https://www.norid.no/omnorid/toppdomenet-bv.en.html (last checked May 2015)
+\.bv$
+
+#:notice||No whois, no domain list, no nothing. (last checked Sep 2005)
+:whois|whois.nic.net.bw
+\.bw$
+
+# Gone (Mar 2012)
+#:cgi|http://www.tld.by/cgi-bin/registry.cgi?domain=~namewotld~&lang=e&mode=slquest
+:whois|whois.cctld.by
+\.by$
+
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the CAPTCHA [Aug 2013]
+# :whois|whois2.afilias-grs.net
+# :program|$gwhois$/subprograms/bz
+#:cgi|http://www.test.bz/Whois/index.php?query=~1~&output=nice&dotname=~2~&whois=Search
+#(.+?)((\.[^\.]+){0,1}\.bz)$
+# Attention: whois.belizenic.bz cannot query .edu.bz ... why?
+:whois|whois.belizenic.bz
+\.bz$
+
+:whois|whois.cira.ca
+\.ca$
+
+#:inicwhois|whois.nic.cc
+:inicwhois|ccwhois.verisign-grs.com
+\.cc$
+
+#:whois|whois.nic.cd
+:notice||Whois server gone. You might find more information at http://nic.cd/
+\.cd$
+
+#:whois|whois.socatel.cf
+:whois|whois.dot.cf
+\.cf$
+
+#:cgipost|http://www.nic.cg/cgi-bin/whois.pl|DOMAINWHOIS=~query~
+:notice||A CAPTCHA is neccessary to access the information. Please visit: http://www.dnsafrica.net/cgi-bin/whois.pl (last checked Jan 2012)
+\.cg$
+
+:whois|whois.nic.ch
+\.ch$
+
+:whois|whois.nic.ci
+#:cgi|http://whois.nic.ci/whois.php?Domaine=~query~&search=ok&button=Rechercher
+\.ci$
+
+#:whois|whois.nic.ck
+:notice||Whois server gone [Nov 2013]
+\.ck$
+
+:whois|whois.nic.cl
+\.cl$
+
+#:whois|whois.ripe.net|prefix=-B |
+:cgipost|http://register.cm/whois.php|domain=~query~&submit=Go
+\.cm$
+
+# Third level registrations also available (Apr 2012 via DE Wikipedia):
+# .ac.cn
+# .com.cn
+# .edu.cn
+# .gov.cn
+# .mil.cn
+# .net.cn
+# .org.cn
+:whois|whois.cnnic.cn
+\.cn$
+
+#:cgihttps|https://www.nic.co/pls/dominio/Pwhois.DatosDominio?fdominio=~1~&fnivel=~2~
+#:cgi|http://www.whois.co/co/whois-co.cgi?TLD=co&dn=~query~&TYPE=DOMAIN
+#(.*)\.([^\.]*)\.co$
+#(.*)()\.co$
+#:program|$gwhois$/subprograms/co
+:whois|whois.nic.co
+\.co$
+
+#:notice||Please visit http://www.nic.cr/niccr_publico/showWhoisScreen.do and enter the captcha. (Nov 2012)
+:whois|whois.nic.cr
+\.cr$
+
+:notice||Disallocated by IANA
+\.cs$
+
+#:cgi|http://www.nic.cu/consultas/infdomain.asp?Dominio=~query~
+#:cgi|http://www.nic.cu/dom_det.php?domsrch=nic.cu
+:program|$gwhois$/subprograms/cu
+\.cu$
+
+:cgi|http://www.dns.cv/cgi-bin/verifica-tld-pub.cgi?dominio=~query~
+\.cv$
+
+:notice||No whois yet available (last checked Dec 2011)
+\.cw$
+
+#:notice||Please go to http://whois.nic.cx/whois.jsp and enter the captcha. [Aug 2013]
+:whois|whois.nic.cx
+\.cx$
+
+:cgi|http://www.nic.cy/nslookup/dns_get_record.php?search=~1~&what=~2~&submit=Search
+(.*)\.([^\.]*)\.cy$
+(.*)()\.cy$
+
+:whois|whois.nic.cz
+\.cz$
+
+:notice||Disallocated by IANA
+\.dd$
+
+:whois|whois.denic.de|prefix=-T ace,dn |
+\.de$
+
+:notice||No whois, no domain list. Homepage http://www.adjib.dj/ (last checked Sep 2005)
+\.dj$
+
+:whois|whois.dk-hostmaster.dk|prefix=--show-handles |
+\.dk$
+
+#:cgipost|https://secure.domains.dm/tools/whois.jsp|whois=~namewotld~
+#:notice||Please go to http://www.nic.dm/whois.php (uses AJAX)
+#:cgi|http://www.nic.dm/getwhois.php?domain=~query~
+:whois|whois.nic.dm
+\.dm$
+
+#:cgipost|http://ns.nic.do/whois.php3|T1=~1~&do=~2~
+#:cgipost|http://nic.do/whoisingles.php3|T1=~1~&do=~2~
+# 2nd Level TLDs checked 7,6,12 ( http://nic.do/whois-hin.php3 )
+#(.*)\.((?:com|art|net|gov|gob|org|edu|sld|mil|web)\.do)$
+#(.*)\.(do)$
+:whois|whois.nic.do
+\.do$
+
+#:cgi|http://www.eldjazair.dz/template/rechercherdomaine.php?domain_name=~1~&domaine=~2~
+#(.*)(\.(?:com|org|asso|art|edu|gov|pol)\.dz)$
+#(.*)(\.dz)$
+#:cgi|http://www.nic.dz/en/index.php?domain_name=~namewotld~&rechercher.x=0&rechercher.y=0&option=com_whois
+:whois|whois.nic.dz
+\.dz$
+
+#:cgi|http://www.nic.ec/reg/eng/whois.asp?dominio=~query~
+#:whois|whois.nic.ec
+:notice||Please visit https://nic.ec/domain-registration/domain-whois-lookup.php
+\.ec$
+
+#:whois|whois.eenet.ee
+:whois|whois.tld.ee
+\.ee$
+
+:notice||No whois, no domain list. Homepage http://www.egregistry.eg/ (2/2008)
+\.eg$
+
+:notice||.eh is reserved. No whois, no domain list, no nothing. (last checked Sep 2005)
+\.eh$
+
+:notice||No whois, no domain list. Homepage probably http://www.noc.net.er/ (last checked Sep 2005)
+\.er$
+
+#:cgihttps|https://www.nic.es/esnic/servlet/WhoisControllerHTML?dominio=~query~
+#:notice||For captcha-secured whois please see http://www.nic.es/ (last checked Jan 2012)
+#Captcha at: https://www.nic.es/sgnd/dominio/publicValidacionDetalleWhois.action?volverWhoIs=1&TDominio.nombreDominio=~query~
+#:whois|whois.nic.es
+#This whois service needs a registration of the IP address and has a strict query limit...
+:multiple||whois::whois.nic.es:::notice::::For captcha-secured whois please see http://www.nic.es/ (last checked Jan 2012)
+\.es$
+
+:notice||No whois, no domain list. Homepage http://www.telecom.net.et/ (last checked Sep 2005)
+\.et$
+
+:whois|whois.eu
+\.eu$
+
+#:whois|whois.ficora.fi
+:whois|whois.fi
+\.fi$
+
+# Whois server whois.domains.fj is online, but it is slowly and does not show the full address
+# so we use our subprogram that parses the website
+#:whois|whois.domains.fj
+#:cgi|http://domains.fj/public/whois.php?searchDomainName=~namewotld~&searchTopLevel=~tld~&submitSearch=Search
+:program|$gwhois$/subprograms/fj
+\.fj$
+
+:notice||No whois, no domain list. Homepage http://www.fidc.org.fk/ (last checked Sep 2005)
+\.fk$
+
+:cgi|http://www.dot.fm/query_whois.cfm?domain=~namewotld~&tld=fm
+\.fm$
+
+#:cgi|http://www.nic.fo/custom2/lookup/domain.asp?domainname=~query~
+:whois|whois.nic.fo
+\.fo$
+
+:whois|whois.nic.fr
+#:notice||Please visit https://www.afnic.fr/fr/produits-et-services/services/whois/
+#:whois|whois.afnic.fr
+\.fr$
+
+:notice||No whois, no domain list. Homepage http://www.nic.ga/ (last checked Sep 2005)
+\.ga$
+
+:notice||Reserved Domain as per IANA. (last checked Sep 2005)
+\.gb$
+
+#:cgi|http://adamsnames.com/whois-gd/?domain=~namewotld~
+#:whois|whois.adamsnames.com
+:whois|whois.nic.gd
+\.gd$
+
+#:cgipost|http://www.registration.ge/index.php?page=11&lang=geo|whois_search=~namewotld~&domainEnd=.ge
+#:whois|whois.registration.ge
+#:whois|nic.net.ge
+:program|$gwhois$/subprograms/ge
+\.ge$
+
+#:notice||Homepage http://www.nplus.gf/
+# :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
+:program|$gwhois$/subprograms/mq_gf_gp
+# Note: IANA states that whois.mediaserv.net is the official whois.
+#        This whois server accepts the domainds "tld", "mq", "gf" and "gp"
+#        (A syntax can be displayed if you display something invalid to the whois server, for example "example.com")
+#        However, this whois-server don't seem to reply with verbose information. The holder, admin_c etc, shows "No object found"
+#:whois|whois.mediaserv.net
+\.gf$
+
+#:whois|whois.isles.net
+:whois|whois.gg
+\.gg$
+
+:whois|whois.nic.gh
+\.gh$
+
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha [Aug 2013]
+:whois|whois2.afilias-grs.net
+\.gi$
+
+#:cgi|http://search.greennet.gl/cgi-bin/dnscheck/eng.dnscheck.pl?action=dnscheck&webaddress=~query~
+:whois|whois.nic.gl
+\.gl$
+
+:whois|whois.ripe.net|prefix=-B |
+\.gm$
+
+:notice||No whois, no domain list. Homepage http://psg.com/dns/gn (2/2008)
+\.gn$
+
+# :whois|whois.nic.gp
+# :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
+:program|$gwhois$/subprograms/mq_gf_gp
+\.gp$
+
+#:notice||No whois, no domain list. Homepage http://www.getesa.gq/ (last checked Sep 2005)
+:whois|whois.dominio.gq
+\.gq$
+
+# :cgipostcurl|https://grweb.ics.forth.gr/Whois|domainName=~query~&lang=en
+:notice||Please visit https://grweb.ics.forth.gr/whois.jsp?lang=en and enter the CAPTCHA (last checked Nov 2012)
+\.gr$
+
+#:notice||Please go to http://whois.nic.gs/whois.jsp and enter the captcha. [Aug 2013]
+:whois|whois.nic.gs
+\.gs$
+
+#:cgi|http://www.gt/cgi-bin/whois.cgi?domain=~query~
+:program|$gwhois$/subprograms/gt
+\.gt$
+
+#:notice||.gu nic has a rather complicated search engine which gwhois can't use. See: http://gadao.gov.gu/domainsearch.htm
+:program|$gwhois$/subprograms/gu
+\.gu$
+
+:notice||No whois, no domain list, no nothing. (last checked Sep 2005)
+\.gw$
+
+:whois|whois.registry.gy
+\.gy$
+
+#:whois|whois.hkdnr.net.hk
+:whois|whois.hkirc.hk
+\.hk$
+
+# :whois|whois.registry.hm
+# :cgi|http://www.registry.hm/HR_whois2.php?domain_name=~query~
+:program|$gwhois$/subprograms/hm
+\.hm$
+
+# :whois|whois2.afilias-grs.net
+:whois|whois.nic.hn
+\.hn$
+
+:cgipost|http://www.dns.hr/asp/traziFOdomenu.asp|Upit=~1~&Submit2=Tra%BEi
+(.*)\.iz\.hr$
+
+:cgipost|http://hr-t.dns.hr/php/search.php|domena=~1~&Submit=Tra%BEi
+(.*)\.com\.hr$
+
+#:cgipost|http://www.dns.hr/asp/trazidomenu.asp|Upit=~namewotld~&Submit2=Tra%BEi
+:whois|whois.dns.hr
+\.hr$
+
+#:cgi|http://www.nic.ht/info/whois.cfm?domain=~query~
+#:notice||Please go to http://whois.nic.ht/whois.jsp and enter the captcha. [Aug 2013]
+:whois|whois.nic.ht
+\.ht$
+
+:whois|whois.nic.hu
+\.hu$
+
+# :cgipost|http://www.idnic.net.id/cgi-bin/whois.cgi|domain=~1~&induk=~2~
+# What the hell is "war.net.id"?
+# (.*)\.((?:web|sch|or|co|ac|war\.net|net|mil|go)\.id)$
+#:notice||Please go to https://register.pandi.or.id/Index/whois/lang/en or https://www.pandi.or.id/whois/ and enter the CAPTCHA.
+#\.((?:ac|co|net|or|web|sch|mil|go|my|biz)\.id)$
+#:whois|whois.pandi.or.id
+#:multiple||whois::whois.pandi.or.id:::notice::::Please go to https://register.pandi.or.id/Index/whois/lang/en or https://www.pandi.or.id/whois/ and enter the CAPTCHA.
+:whois|whois.id
+\.id$
+
+#:whois|whois.domainregistry.ie
+:whois|whois.iedr.ie
+\.ie$
+
+:whois|whois.isoc.org.il
+\.il$
+
+:whois|whois.nic.im
+\.im$
+
+#:whois|whois.inregistry.net
+:whois|whois.registry.in
+\.in$
+
+:whois|whois.nic.io
+\.io$
+
+# :notice||No whois, no domain list, no nothing. (last checked Sep 2005)
+:whois|whois.cmc.iq
+\.iq$
+
+:whois|whois.nic.ir
+\.ir$
+
+#:whois|whois.isnet.is
+:whois|whois.isnic.is
+\.is$
+
+:whois|whois.nic.it
+\.it$
+
+#:whois|whois.isles.net
+:whois|whois.je
+\.je$
+
+:notice||No whois, no domain list, no nothing. (last checked Sep 2005)
+\.jm$
+
+:cgi|http://www.nis.gov.jo/pls/dns/jo_organization_info?dom=~1~&subd=~2~
+(.*)\.(com|edu|org|gov|net)\.jo$
+
+:cgi|http://www.nis.gov.jo/pls/dns/jo_organization_info?dom=~namewotld~&subd=-
+\.jo$
+
+#:whois|whois.jp|trailer=/e
+:whois|whois.jprs.jp|trailer=/e
+\.jp$
+
+:whois|whois.kenic.or.ke
+\.ke$
+
+#:cgipostcurl|http://www.domain.kg/cgi-bin/whois.cgi|whois=~ucquery~
+#:cgipostcurl|https://www.cctld.kg/cgi-bin/whois.cgi|whois=~ucquery~&next=
+#:whois|whois.domain.kg
+:whois|whois.kg
+\.kg$
+
+:notice||No whois, no domain list. Homepage http://www.mptc.gov.kh/Reculation/dns_reualation.htm (last checked Sep 2005)
+\.kh$
+
+#:whois|whois.nic.ki
+:notice||Whois gone [Apr 2019]
+\.ki$
+
+:notice||No whois, no domain list. Homepage http://www.domaine.km/ (last checked Sep 2005)
+\.km$
+
+#:notice||No whois, no domain list, no nothing. (last checked Sep 2005)
+:whois|whois.nic.kn
+\.kn$
+
+#:whois|whois.kcce.kp
+:notice||Whois gone [Sep 2013]
+\.kp$
+
+#:whois|whois.nic.or.kr
+:whois|whois.kr
+\.kr$
+
+:cgipost|http://www.kw/mainrs.asp|domname=~1~&domtype=~2~
+(.*)\.((?:com|edu|gov|net|org)\.kw)$
+(.*)\.(kw)$
+
+#:cgipost|http://kynseweb.messagesecure.com/whois.asp|domain_name_pref=~1~&domain_name_suff=~2~
+#(.*)(\.(?:com|net|org|gov|edu)\.ky)$
+#(.*)(\.ky)$
+:whois|whois.kyregistry.ky
+\.ky$
+
+:whois|whois.nic.kz
+\.kz$
+
+# This domain is managed by CentralNIC, see https://www.centralnic.com/portfolio/registration
+#:notice||Please visit https://manage.centralnic.com/support/view_whois/ and enter the CAPTCHA.
+#:whois|whois.centralnic.net
+#:cgi|https://www.la/cart/search/~namewotld~
+:whois|whois.nic.la
+\.la$
+
+:cgi|http://www.aub.edu.lb/cgi-bin/lbdr.pl?cn=~query~
+\.lb$
+
+:whois|whois2.afilias-grs.net
+\.lc$
+
+:whois|whois.nic.li
+\.li$
+
+:cgipost|http://www.nic.lk/cgi-bin/searchdomModified.cgi|domain=~1~&seclev=~2~
+(.*)(\.(?:assn|com|edu|grp|hotel|ltd|ngo|org|soc|web|gov|int|net|sch)\.lk)$
+(.*)(\.lk)$
+
+:notice||No whois, no domain list. Homepage http://psg.com/dns/lr (last checked Sep 2005)
+\.lr$
+
+#:cgipost|http://www.org.ls/co.asp|CT_DNS_NAME=~query~
+#:cgipost|http://www.co.ls/co.asp|CT_DNS_NAME=~query~
+#:notice||Please go to http://nic.ls/whois/ and enter the CAPTCHA.
+#:whois|196.11.175.58
+:whois|whois.nic.ls
+\.ls$
+
+:whois|whois.domreg.lt
+\.lt$
+
+#:whois|whois.restena.lu
+:whois|whois.dns.lu
+\.lu$
+
+:whois|whois.nic.lv
+\.lv$
+
+:whois|whois.nic.ly
+\.ly$
+
+#:whois|whois.iam.net.ma
+:whois|whois.registre.ma
+\.ma$
+
+:whois|whois.ripe.net|prefix=-B |
+\.mc$
+
+#:notice||Whois is secured by a captcha, please check yourself on http://www.nic.md/ (02/2008)
+:whois|whois.nic.md
+\.md$
+
+:whois|whois.nic.me
+\.me$
+
+:notice||.mf is reserved
+\.mf$
+
+:whois|whois.nic.mg
+\.mg$
+
+:notice||No whois, no domain list. Homepage http://www.nic.net.mh/ (last checked Sep 2005)
+\.mh$
+
+#:notice||No whois, no domain list. Homepage http://www.mpt.com.mk/ (broken as of Sep 2005)
+:whois|whois.marnet.mk
+\.mk$
+
+#:notice||No whois, no domain list. Homepage http://www.sotelma.ml/ (last checked Sep 2005)
+:whois|whois.dot.ml
+\.ml$
+
+:notice||Unknown if a whois service exist. See http://www.nic.mm/ for more information [Aug 2013]
+\.mm$
+
+# :notice||Please visit http://www.domain.mn/domain.php?action=whois and enter the captcha [Aug 2013]
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha [Aug 2013]
+# Jan 2012 - Okt 2014 : Official service whois.nic.mn does not work, but whois2.afilias-grs.net works.
+# Nov 2014: whois.nic.mn works again
+# Jun 2016: whois.nic.mn is down again
+#:whois|whois2.afilias-grs.net
+:whois|whois.nic.mn
+#:notice||Please visit http://domain.mn/domain-registration/domain-whois-lookup.php
+\.mn$
+
+:multiple||whois::whois.monic.mo:::notice::::For more information, please go to https://www.monic.mo/monic/faces/whois
+\.mo$
+
+#:notice||No whois, no domain list. Homepage http://www.nic.mp/ (last checked Sep 2005)
+#:whois|whois.nic.mp
+:notice||Whois gone [Sep 2013]
+\.mp$
+
+# :notice||Homepage http://www.nic.mq/
+# :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
+:program|$gwhois$/subprograms/mq_gf_gp
+# Note: IANA states that whois.mediaserv.net is the official whois.
+#        This whois server accepts the domainds "tld", "mq", "gf" and "gp"
+#        (A syntax can be displayed if you display something invalid to the whois server, for example "example.com")
+#        However, this whois-server don't seem to reply with verbose information. The holder, admin_c etc, shows "No object found"
+#:whois|whois.mediaserv.net
+\.mq$
+
+#:notice||No whois, no domain list. Homepage http://www.nic.mr/ (2/2008)
+:whois|whois.nic.mr
+\.mr$
+
+#:notice||Please go to http://whois.nic.ms/whois.jsp and enter the captcha. [Aug 2013]
+:whois|whois.nic.ms
+\.ms$
+
+#:whois|whois.nic.mt
+#:notice||Please go to https://www.nic.org.mt/dotmt/whois/ and enter the captcha. (Aug 2013)
+:whois|whois.nic.org.mt
+\.mt$
+
+#:notice||Please go to http://whois.nic.mu/whois.jsp and enter the captcha. [Aug 2013]
+:whois|whois.nic.mu
+\.mu$
+
+:notice||No whois, no domain list, no nothing. (last checked Sep 2005)
+\.mv$
+
+#:cgi|http://www.registrar.mw/index.php?domain=~query~
+:whois|whois.nic.mw
+\.mw$
+
+#:whois|whois.nic.mx
+:whois|whois.mx
+\.mx$
+
+# Port 43 of whois.mynic.my ist only open to authorized resellers ( see https://www.mynic.my/en/faq.php?id=40#115 )
+# :whois|whois.mynic.net.my
+# :whois|whois.domainregistry.my
+# :whois|whois.mynic.my
+:cgipost|http://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~
+\.my$
+
+# :notice||No whois, no domain list. Homepage http://www.ci.uem.mz/ (last checked Sep 2005)
+:whois|whois.nic.mz
+\.mz$
+
+:whois|whois.na-nic.com.na
+\.na$
+
+#:notice||Captcha protected whois on http://www.domaine.nc/. Good look trying to read the captcha. (2/2008)
+:whois|whois.nc
+\.nc$
+
+:notice||No whois, no domain list. Homepage http://www.intnet.ne/ (last checked Sep 2005)
+\.ne$
+
+#:notice||No whois, domain availability can be checked on https://secure.nf/ (2/2008)
+#:notice||Please go to http://whois.nic.nf/whois.jsp and enter the captcha. [Aug 2013]
+#:whois|whois.nic.net.nf
+:whois|whois.nic.nf
+\.nf$
+
+#:notice||No whois, no domain list. Homepage http://psg.com/dns/ng (last checked Sep 2005)
+:whois|whois.nic.net.ng
+\.ng$
+
+:notice||No (usable) whois. Partial domain list at homepage http://www.nic.ni/ (last checked Sep 2005)
+\.ni$
+
+:whois|whois.domain-registry.nl
+\.nl$
+
+#:notice||Whois service available at https://www.norid.no/domenenavnbaser/whois/index.en.php , CAPTCHA required
+:whois|whois.norid.no
+\.no$
+
+:cgi|http://www.mos.com.np/cgi-bin/search.cgi?domain_name=~query~
+\.np$
+
+# FIXME: is there any possibility of querying *.gov.edu (e.g. ronlaw.gov.nr) or *.edu.nr ?
+:cgi|http://www.cenpac.net.nr/dns/whois.html?subdomain=~1~&tld=~2~&whois=Submit
+(.*)\.((?:net|biz|info|org|com)\.nr)$
+(.*)\.(nr)$
+
+#:whois|whois.nic.nu
+:whois|whois.iis.nu
+\.nu$
+
+:whois|whois.srs.net.nz
+\.nz$
+
+# --- Dead code. omnic.om is not registered anymore.
+# :cgipost|http://www.omnic.om/onlineUser/whoisMain.jsp|domainName=~1~&domainCategory=~2~&sourcePage=WHOISLookup
+#:multiple||whois::whois.registry.om:::cgipost::http://www.omnic.om/onlineUser/whoisMain.jsp::domainName=~1~&domainCategory=~2~&sourcePage=WHOISLookup
+# ".ac.om" etc gibt es laut enWiki ... ( + http://www.omnic.om/omnic/rules.htm )
+#(.*)(\.(?:com|edu|gov|mil|net|org|med|co))\.om$
+# A few 1st level domains, e.g. registry.om
+# :whois|whois.registry.om
+#:multiple||whois::whois.registry.om:::cgipost::http://www.omnic.om/onlineUser/whoisMain.jsp::domainName=~namewotld~&domainCategory=.om&sourcePage=WHOISLookup
+#\.om$
+
+# This website contains additional info (URL of the registrar, and email addresses): http://portal.registry.om/whois/whois_local.jsp
+:whois|whois.registry.om
+\.om$
+
+#:cgi|http://www.nic.pa/whois.php?nombre_d=~query~
+:program|$gwhois$/subprograms/pa
+\.pa$
+
+#:program|$gwhois$/subprograms/pe
+#:notice||Please go to https://punto.pe/whois.php and enter the CAPTCHA.
+:whois|kero.yachay.pe
+\.pe$
+
+#:notice||No whois, no domain list. Homepage http://www.mana.pf/ (last checked Sep 2005)
+# This is the server according to IANA, but it does not currently work [Jul 2013]
+:whois|whois.registry.pf
+\.pf$
+
+#:notice||No whois, no domain list. Homepage http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm (last checked Jan 2005)
+:notice||No whois, no domain list. Homepage http://www.unitech.ac.pg/Frm_Information_about.aspx?ID=130 (last checked Jan 2013)
+\.pg$
+
+#:cgi|http://www.domains.ph/WhoIs.asp?Domain=~query~
+:notice||Please visit http://www.dot.ph/whois and enter the CAPTCHA (last checked Nov 2012)
+\.ph$
+
+# :cgipost|http://pk5.pknic.net.pk/pk5/lookup.PK|name=~query~
+# This output looks way better than the lynx dump:
+:program|$gwhois$/subprograms/pk
+\.pk$
+
+#:whois|dns.pl
+:whois|whois.dns.pl
+\.pl$
+
+#:whois|whois.nic.fr
+:whois|whois.nic.pm
+\.pm$
+
+# :cgipost|http://www.pitcairn.pn/cgi-bin/domainNameCheck.cgi|dname=~1~&subdomain=~2~
+:cgipost|http://www.government.pn/cgi-bin/whois.cgi|domainName=~1~&parentDomain=~2~
+(.*)\.((?:co|net|org)\.pn)$
+(.*)\.(pn)$
+
+:whois|whois.dotpostregistry.net
+\.post$
+
+#:whois|whois.uprr.pr
+#:whois|whois.nic.pr
+:whois|whois.afilias-srs.net
+\.pr$
+
+:cgipost|http://www.pnina.ps/whois/domain_whois.php|dname=~query~
+\.ps$
+
+:whois|whois.dns.pt
+\.pt$
+
+# :notice||No whois, no domain list. Homepage http://www.pwregistry.pw/ (2/2008)
+# This domain is managed by CentralNIC, see https://www.centralnic.com/portfolio/registration
+#:notice||Please visit https://manage.centralnic.com/support/view_whois/ and enter the CAPTCHA.
+#:whois|whois.centralnic.net
+#:cgi|http://registry.pw/whois/?query=~namewotld~&output=nice
+:whois|whois.nic.pw
+\.pw$
+
+:cgipostcurl|http://www.nic.py/cgi-nic/consultas/domdetzzz|dom=~1~&tip=~2~
+(.*)\.([^\.]*)\.py$
+(.*)()\.py
+
+#:notice||No whois, no domain list. Homepage http://www.qatar.net.qa/ (last checked Sep 2005)
+:whois|whois.registry.qa
+\.qa$
+
+:whois|whois.nic.re
+\.re$
+
+:whois|whois.rotld.ro
+\.ro$
+
+#:notice||No whois, no domain list. Homepage http://www.nic.rs (last checked Sep 2007)
+:whois|whois.rnids.rs
+\.rs$
+
+#:whois|whois.ripn.net
+:whois|whois.tcinet.ru
+\.ru$
+
+#:cgipost|http://www.nic.rw/cgi-bin/whois.pl|DOMAINWHOIS=~query~
+:notice||A captcha is neccessary to access the information. Please visit: http://www.dnsafrica.net/cgi-bin/whois.pl (last checked Jan 2012)
+\.rw$
+
+#:whois|whois.saudinic.net.sa
+:whois|whois.nic.net.sa
+\.sa$
+
+#:notice||Please go to http://whois.nic.sb/whois.jsp and enter the captcha. [Aug 2013]
+:whois|whois.nic.net.sb
+#:whois|whois.nic.sb
+\.sb$
+
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha [Aug 2013]
+:whois|whois2.afilias-grs.net
+\.sc$
+
+:notice||No whois, no domain list. Homepage http://www.sdnic.sd/ (2/2008)
+\.sd$
+
+#:whois|whois.nic-se.se
+:whois|whois.iis.se
+\.se$
+
+#:whois|whois.nic.net.sg
+:whois|whois.sgnic.sg
+\.sg$
+
+# Official Whois Server does not show verbose information (like the creation date) [7/2013]
+#:whois|whois.nic.sh
+#:cgi|http://www.nic.sh/cgi-bin/whois?query=~query~
+:program|$gwhois$/subprograms/sh
+\.sh$
+
+#:whois|whois.arnes.si
+:whois|whois.register.si
+\.si$
+
+#:notice||.sj is unused as per norwegian nic. See http://www.norid.no/domenenavnbaser/bv-sj.html (last checked Sep 2005)
+:notice||.sj is unused as per norwegian nic. See https://www.norid.no/omnorid/toppdomenet-sj.en.html (last checked May 2015)
+\.sj$
+
+:whois|whois.sk-nic.sk
+\.sk$
+
+:notice||No whois, no domain list. Homepage http://sierratel.sl/domain/ (last checked Sep 2005)
+\.sl$
+
+#:whois|whois.ripe.net|prefix=-B |
+:whois|whois.nic.sm
+\.sm$
+
+#:notice||Whois on http://www.nic.sn, not working. (2/2008)
+# Whois was broken for a long time (Checked Feb 2008, Nov 2012, Aug 2013)
+# In Aug 2014 we noticed that the whois server works again.
+:whois|whois.nic.sn
+# :cgipost|http://whois.nic.sn/|domaine=~query~
+# :program|$gwhois$/subprograms/sn
+\.sn$
+
+#:notice||No whois, no domain list. Homepage http://www.nic.so/ (last checked Sep 2005)
+:whois|whois.nic.so
+\.so$
+
+#:notice||Whois gone, homepage http://www.sr.net (2/2008)
+:notice||Domain check available at: https://www.register.sr/domainchecker.php (last checked Jan 2012)
+\.sr$
+
+:whois|whois.nic.ss
+\.ss$
+
+:whois|whois.nic.st
+\.st$
+
+#:whois|whois.ripn.net
+:whois|whois.tcinet.ru
+\.su$
+
+:notice||No whois, no domain list. Availability check on http://www.svnet.org.sv/ (2/2008)
+\.sv$
+
+#:notice||Homepage http://www.ste.gov.sy/
+:whois|whois.sx
+\.sx$
+
+#:notice||No whois, no domain list. Homepage http://www.ste.gov.sy/ (last checked Sep 2005)
+#:notice||Please go to https://whois.tld.sy/whois.jsp
+:whois|whois.tld.sy
+\.sy$
+
+:notice||No whois, no domain list. Homepage http://www.sispa.org.sz/ (last checked Sep 2005)
+\.sz$
+
+#:cgi|http://adamsnames.com/whois-tc/?domain=~namewotld~
+#:whois|whois.adamsnames.tc
+#:whois|whois.meridiantld.net
+:whois|whois.nic.tc
+\.tc$
+
+#:notice||No whois, no domain list. Homepage http://www.sotel.td/ (last checked Sep 2005)
+:whois|41.74.44.44
+\.td$
+
+:whois|whois.nic.tf
+\.tf$
+
+#:cgipost|http://www.nic.tg/nictg/indexplus.php?pg=verifdom&op=whois|tosearch=~namewotld~&typedom=.tg
+#:cgipost|http://www.netmaster.tg/manager/whois|domain=~query~
+:whois|whois.nic.tg
+\.tg$
+
+#:whois|whois.thnic.net
+:whois|whois.thnic.co.th
+\.th$
+
+# :cgi|http://www.nic.tj/cgi/lookup?DOMAIN=~namewotld~
+:cgi|http://www.nic.tj/cgi/whois2?domain=~namewotld~
+\.tj$
+
+#:notice||Please go to http://www.dot.tk/en/whois.html
+:whois|whois.dot.tk
+#:cgipost|http://my.dot.tk/cgi-bin/whois.taloha|domainname=~namewotld~
+\.tk$
+
+#:notice||Please go to http://whois.nic.tl/whois.jsp and enter the captcha. [Aug 2013]
+:whois|whois.nic.tl
+\.tl$
+
+:whois|whois.nic.tm
+\.tm$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=2&action=whois&submit=ok
+# (.*)\.com\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=5&action=whois&submit=ok
+# (.*)\.ens\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=6&action=whois&submit=ok
+# (.*)\.fin\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=7&action=whois&submit=ok
+# (.*)\.gov\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=9&action=whois&submit=ok
+# (.*)\.ind\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=10&action=whois&submit=ok
+# (.*)\.intl\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=11&action=whois&submit=ok
+# (.*)\.nat\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=12&action=whois&submit=ok
+# (.*)\.net\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=14&action=whois&submit=ok
+# (.*)\.org\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=15&action=whois&submit=ok
+# (.*)\.info\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=16&action=whois&submit=ok
+# (.*)\.person\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=17&action=whois&submit=ok
+# (.*)\.tourism\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=18&action=whois&submit=ok
+# (.*)\.edunet\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=19&action=whois&submit=ok
+# (.*)\.rnrt\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=20&action=whois&submit=ok
+# (.*)\.rns\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=21&action=whois&submit=ok
+# (.*)\.rnu\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=22&action=whois&submit=ok
+# (.*)\.mincom\.tn$
+
+# :cgipost|http://whois.ati.tn/index.php|domain=~1~&ext=23&action=whois&submit=ok
+# (.*)\.agrinet\.tn$
+
+#:cgipost|http://whois.ati.tn/index.php|domain=~namewotld~&ext=1&action=whois&submit=ok
+:whois|whois.ati.tn
+\.tn$
+
+:whois|whois.tonic.to
+\.to$
+
+:notice||Disallocated by IANA. It was replaced with .tl
+\.tp$
+
+:whois|whois.nic.tr
+\.tr$
+
+#:cgipost|http://www.nic.tt/cgi-bin/search.pl|name=~query~
+:program|$gwhois$/subprograms/tt
+\.tt$
+
+#:inicwhois|whois.nic.tv
+:inicwhois|tvwhois.verisign-grs.com
+\.tv$
+
+:whois|whois.twnic.net.tw
+\.tw$
+
+#:notice||No whois, no domain list. Homepage http://psg.com/dns/tz (last checked Sep 2005)
+:whois|whois.tznic.or.tz
+\.tz$
+
+#:whois|whois.net.ua
+:whois|whois.ua
+\.ua$
+
+:whois|whois.co.ug
+\.ug$
+
+:whois|whois.ja.net
+\.(ac|gov)\.uk$
+
+:whois|whois.nic.uk
+\.uk$
+
+#:notice||No whois, no domain list. Homepage http://www.nic.um/ (last checked Sep 2005)
+#\.um$
+:notice||Disallocated by IANA
+\.um$
+
+:whois|whois.nic.us
+\.us$
+
+#:whois|sepe.rau.edu.uy
+:whois|whois.nic.org.uy
+\.uy$
+
+#:whois|whois.uz
+:whois|whois.cctld.uz
+\.uz$
+
+# :whois|whois.ripe.net|prefix=-B |
+:notice||No whois, no domain list. Homepage http://www.vatican.va/ (last checked Jan 2012)
+\.va$
+
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha [Aug 2013]
+:whois|whois2.afilias-grs.net
+\.vc$
+
+#:cgihttps|https://registro.nic.ve/modules/whois?query=~query~&submit=Consultar
+:whois|whois.nic.ve
+\.ve$
+
+#:whois|whois.nic.vg
+#:cgi|http://adamsnames.com/whois-vg/?domain=~namewotld~
+#:whois|whois.adamsnames.tc
+#:whois|ccwhois.ksregistry.net
+:whois|whois.nic.vg
+\.vg$
+
+#:cgipost|http://www.nic.vi/whois.asp|text1=~query~
+#:cgipost|https://secure.nic.vi/whois-lookup/|domainName=~query~&submitted=true
+:program|$gwhois$/subprograms/vi
+\.vi$
+
+#:cgipostcurl|http://www.tenmien.vn/jsp/jsp/tracuudomainchitiet.jsp?type=~query~
+:notice||Please go to http://www.tenmien.vn/ and enter the captcha.
+\.vn$
+
+# ** Method 1 (official; missing email address, modified date and registrar)
+#:whois|vunic.vu
+#\.vu$
+# ** Method 2 (missing email address and registrar)
+#:cgi|http://www.vunic.vu/whois?~query~
+#\.vu$
+# ** Method 3 (web interace, most verbose but not well formated)
+#:cgipostcurl|http://www.vunic.vu/whoiss/process_whois.php?domain=~1~&ext=~2~
+#(.*)((|\.com|\.edu|\.net|\.org)\.vu)$
+# ** Method 4 (parsing web interface, most verbose, parse it manually)
+:program|$gwhois$/subprograms/vu
+\.vu$
+
+:whois|whois.nic.wf
+\.wf$
+
+#:whois|whois.nic.ws
+:whois|whois.website.ws
+\.ws$
+
+:notice||No whois, no domain list. Homepage http://www.nic.gov.ye/ (last checked Sep 2005)
+\.ye$
+
+:whois|whois.nic.yt
+\.yt$
+
+#:cgi|http://www.nic.yu/cgi-bin/checkavail.cgi?domain=~1~&suffix=~2~
+#(.*)(\.(?:bg\.ac|ac|co|org|edu)\.yu)$
+#(.*)(.yu)$
+:notice||Disallocated by IANA
+\.yu$
+
+# TODO: please see http://en.wikipedia.org/wiki/.za : there are much more 3rd level TLDs!
+# See also: http://www.zadna.org.za/annexure-d1.html
+# See also: http://www.esn.org.za/dnsreg.html
+
+:cgipost|http://protea.tenet.ac.za/cgi/cgi_domainquery.exe|domain=~1~
+(.*)\.ac\.za$
+
+:cgi|http://co.za/cgi-bin/whois.sh?Domain=~query~
+\.co\.za$
+
+:notice||Please visit http://www.nom.za/ and enter the captcha.
+\.nom\.za$
+
+:cgipost|http://www.org.za/cgi-bin/rwhois|domain=~1~
+(.*)\.org\.za$
+
+:cgipost|http://dnsadmin.gov.za/navail.php|ipnamex=~query~&submit=Start
+\.gov\.za$
+
+:notice||Please go to http://whois.edu.za/ and enter the CAPTCHA.
+\.edu\.za$
+
+:notice||Please go to http://whois.net.za/ and enter the CAPTCHA.
+\.net\.za$
+
+:notice||Please go to http://whois.alt.za/ and enter the CAPTCHA.
+\.alt\.za$
+
+:notice||Please go to http://whois.web.za/ and enter the CAPTCHA.
+\.web\.za$
+
+:notice||No whois service currently available [7/2013]
+\.school\.za$
+
+:notice||No whois service currently available [7/2013]
+\.mil\.za$
+
+#:notice||No whois (except .co.za domains). Homepage http://www.zadna.org.za/ (last checked Sep 2005)
+#How to query co.za directly as 1st TLD?   (<-- was meinte ich damit?)
+:notice||.za only allocates domains under third level. Either your input is wrong or gwhois don't know this second level domain you have entered. Please check http://www.zadna.org.za/ for more information.
+\.za$
+
+:notice||Disallocated by IANA
+\.zr$
+
+#:notice||No whois, no domain list. Homepage http://www.zamnet.zm/ser-isp/dns.htm (last checked Sep 2005)
+:whois|whois.nic.zm
+\.zm$
+
+:cgi|http://www.zispa.org.zw/cgi-bin/search?domain=~query~
+\.co\.zw$
+
+:notice||No whois (except .co.zw domains). No homepage (http://www.zispa.org.zw for .co.zw). (last checked Sep 2005)
+\.zw$
+
+
+# gTLD and other domains
+# --------------------------------------------------------------------
+
+:whois|whois.aero
+\.aero$
+
+:whois|whois.iana.org
+\.arpa$
+
+:whois|whois.nic.asia
+\.asia$
+
+#:whois|whois.nic.biz
+:whois|whois.biz
+\.biz$
+
+#:whois|whois.cat
+:whois|whois.nic.cat
+\.cat$
+
+:inicwhois|whois.verisign-grs.com
+\.com$
+
+:whois|whois.nic.coop
+\.coop$
+
+#:whois|whois.educause.net
+:whois|whois.educause.edu
+\.edu$
+
+# First, whois.nic.gov worked. Then, whois.dotgov.gov worked (and became the official IANA server).
+# Currently (Sep 2014), whois.nic.gov works again and whois.dotgov.gov is defunct (but still the official IANA whois server).
+# (Okt 2014) whois.dotgov.gov works again.
+#:whois|whois.nic.gov
+#:whois|whois.dotgov.gov
+#:program|$gwhois$/subprograms/gov
+# The official whois server shows stuff like name servers while the web interface shows additional information like Agency
+:multiple||whois::whois.dotgov.gov:::program::$gwhois$/subprograms/gov
+\.gov$
+
+:whois|whois.afilias.net
+\.info$
+
+:whois|whois.iana.org
+\.int$
+
+#:inicwhois|jobswhois.verisign-grs.com
+:whois|whois.nic.jobs
+\.jobs$
+
+#:whois|whois.nic.mil
+#:cgi|http://www.nic.mil/dodnic/
+:notice||Whois server gone. (last checked Jan 2012)
+\.mil$
+
+#:whois|whois.dotmobiregistry.net
+:whois|whois.afilias.net
+\.mobi$
+
+#:whois|whois.museum
+:whois|whois.nic.museum
+\.museum$
+
+:whois|whois.nic.name|prefix=domain=
+\.name$
+
+:inicwhois|whois.verisign-grs.com
+\.net$
+
+:whois|whois.pir.org
+\.org$
+
+#:whois|whois.registrypro.pro
+#:whois|whois.dotproregistry.net
+:whois|whois.afilias.net
+\.pro$
+
+:whois|whois.nic.tel
+\.tel$
+
+:whois|whois.nic.travel
+\.travel$
+
+:notice||Disallocated by IANA
+\.xn--0zwm56d$
+
+:notice||Disallocated by IANA
+\.xn--11b5bs3a9aj6g$
+
+:whois|whois.kr
+\.xn--3e0b707e$
+
+:whois|whois.registry.in
+\.xn--45brj9c$
+
+:notice||Disallocated by IANA
+\.xn--80akhbyknj4f$
+
+:whois|whois.rnids.rs
+\.xn--90a3ac$
+
+:notice||Disallocated by IANA
+\.xn--9t4b11yi5a$
+
+:whois|whois.sgnic.sg
+\.xn--clchc0ea0b2g2a9gcd$
+
+:notice||Disallocated by IANA
+\.xn--deba0ad$
+
+:whois|cwhois.cnnic.cn
+\.xn--fiqs8s$
+
+:whois|cwhois.cnnic.cn
+\.xn--fiqz9s$
+
+:whois|whois.registry.in
+\.xn--fpcrj9c3d$
+
+:notice||whois server unknown (last checked Dec 2011)
+\.xn--fzc2c9e2c$
+
+:notice||Disallocated by IANA
+\.xn--g6w251d$
+
+:whois|whois.registry.in
+\.xn--gecrj9c$
+
+:whois|whois.registry.in
+\.xn--h2brj9c$
+
+:notice||Disallocated by IANA
+\.xn--hgbk6aj7f53bba$
+
+:notice||Disallocated by IANA
+\.xn--hlcj6aya9esc7a$
+
+:whois|whois.dotukr.com
+\.xn--j1amh$
+
+:whois|whois.hkirc.hk
+\.xn--j6w193g$
+
+:notice||Disallocated by IANA
+\.xn--jxalpdlp$
+
+:notice||Disallocated by IANA
+\.xn--kgbechtv$
+
+:whois|whois.twnic.net.tw
+\.xn--kprw13d$
+
+:whois|whois.twnic.net.tw
+\.xn--kpry57d$
+
+:notice||No whois server is yet known ... (last checked Aug 2013)
+\.xn--l1acc$
+
+:whois|whois.nic.dz
+\.xn--lgbbat1ad8j$
+
+:whois|whois.nic.ir
+\.xn--mgba3a4f16a$
+
+:whois|whois.aeda.net.ae
+\.xn--mgbaam7a8h$
+
+:notice||whois server unknown (last checked Dec 2011)
+\.xn--mgbayh7gpa$
+
+:whois|whois.registry.om
+\.xn--mgb9awbf$
+
+:whois|whois.registry.in
+\.xn--mgbbh1a71e$
+
+:notice||whois server unknown (last checked Dec 2011)
+\.xn--mgbc0a9azcg$
+
+:whois|whois.nic.net.sa
+\.xn--mgberp4a5d4ar$
+
+# Port 43 of whois.mynic.my ist only open to authorized resellers ( see https://www.mynic.my/en/faq.php?id=40#115 )
+# :whois|whois.domainregistry.my
+# :whois|whois.mynic.my
+:cgipost|http://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~
+\.xn--mgbx4cd0ab$
+
+:whois|whois.thnic.co.th
+\.xn--o3cw4h$
+
+# :notice||whois server unknown (last checked Dec 2011)
+:whois|whois.tld.sy
+\.xn--ogbpf8fl$
+
+:whois|whois.tcinet.ru
+\.xn--p1ai$
+
+:notice||whois server unknown (last checked Dec 2011)
+\.xn--pgbs0dh$
+
+:whois|whois.registry.in
+\.xn--s9brj9c$
+
+:notice||whois server unknown (last checked Dec 2011)
+\.xn--wgbh1c$
+
+:whois|whois.registry.qa
+\.xn--wgbl6a$
+
+:notice||whois server unknown (last checked Dec 2011)
+\.xn--xkc2al3hye2a$
+
+:whois|whois.registry.in
+\.xn--xkc2dl3a5ee0h$
+
+:whois|whois.sgnic.sg
+\.xn--yfro4i67o$
+
+:whois|whois.nic.kz
+\.xn--80ao21a$
+
+:whois|whois.pnina.ps
+\.xn--ygbi2ammx$
+
+:notice||Disallocated by IANA
+\.xn--zckzah$
+
+:whois|whois.nic.xxx
+\.xxx$
+
+
+
+# Pseudo TLDs
+# --------------------------------------------------------------------
+
+:notice||No whois server known for .onion domains
+\.onion$
+
+#:whois|whois.namecoin.us
+:notice||namecoin.us domain gone [Dec 2013]
+\.bit$
+
+
+# new gTLDs and stuff which was automatically added by the pattern generator tool
+# --------------------------------------------------------------------
+
+# Delegated on 23 October 2013 to Spring Fields, LLC
+# Chinese for "game(s)"
+#:whois|whois.donuts.co
+:whois|whois.nic.xn--unup4y
+\.xn--unup4y$
+
+# Delegated on 23 October 2013 to CORE Association
+# Russian for "site"
+:whois|whois.site.rs.corenic.net
+\.xn--80aswg$
+
+# Delegated on 23 October 2013 to CORE Association
+# Russian for "online"
+:whois|whois.online.rs.corenic.net
+\.xn--80asehdb$
+
+# Delegated on 23 October 2013 to International Domain Registry Pty. Ltd.
+# Arabic for "web/network"
+:whois|whois.nic.xn--ngbc5azd
+\.xn--ngbc5azd$
+
+# Delegated on 06 November 2013 to Corn Station, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.equipment
+\.equipment$
+
+# Delegated on 06 November 2013 to John Madison, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.holdings
+\.holdings$
+
+# Delegated on 06 November 2013 to Pioneer Cypress, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.guru
+\.guru$
+
+# Delegated on 06 November 2013 to Ruby House, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.voyage
+\.voyage$
+
+# Delegated on 06 November 2013 to Fern Madison, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.singles
+\.singles$
+
+# Delegated on 06 November 2013 to John McCook, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.lighting
+\.lighting$
+
+# Delegated on 06 November 2013 to Steel Lake, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.clothing
+\.clothing$
+
+# Delegated on 06 November 2013 to Atomic Maple, LLC.
+#:whois|whois.donuts.co
+:whois|whois.nic.camera
+\.camera$
+
+# Delegated on 06 November 2013 to Binky Lake, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.ventures
+\.ventures$
+
+# Delegated on 14 November 2013 to Grand Hollow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.bike
+\.bike$
+
+# Delegated on 14 November 2013 to Pine Moon, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.land
+\.land$
+
+# Delegated on 14 November 2013 to Trixy Park, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.estate
+\.estate$
+
+# Delegated on 14 November 2013 to Auburn Falls
+#:whois|whois.donuts.co
+:whois|whois.nic.technology
+\.technology$
+
+# Delegated on 14 November 2013 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.tattoo$
+
+# Delegated on 14 November 2013 to Fox Dynamite, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.construction
+\.construction$
+
+# Delegated on 14 November 2013 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.sexy$
+
+# Delegated on 14 November 2013 to Sugar House, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.gallery
+\.gallery$
+
+# Delegated on 14 November 2013 to Magic Woods, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.contractors
+\.contractors$
+
+# Delegated on 14 November 2013 to Over Madison, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.graphics
+\.graphics$
+
+# Delegated on 14 November 2013 to Spring Tigers, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.plumbing
+\.plumbing$
+
+# Delegated on 19 November 2013 to Pearl Woods, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.today
+\.today$
+
+# Delegated on 19 November 2013 to Just Goodbye, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.kitchen
+\.kitchen$
+
+# Delegated on 19 November 2013 to Snow Oaks, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.enterprises
+\.enterprises$
+
+# Delegated on 19 November 2013 to Extra Madison, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.directory
+\.directory$
+
+# Delegated on 19 November 2013 to Sugar Glen, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.photography
+\.photography$
+
+# Delegated on 19 November 2013 to Corn Willow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.tips
+\.tips$
+
+# Delegated on 19 November 2013 to John Edge, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.diamonds
+\.diamonds$
+
+# Delegated on 23 November 2013 to Charleston  Road Registry, Inc.
+# Japanese for "everyone"
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.xn--q9jyb4c$
+
+# Delegated on 30 November 2013 to Dot Latin, LLC
+#:notice||More information at http://www.unodominio.com
+#:cgipost|http://whois.nic.uno/whoismtld/whois/?operation=basicSearch&TLD=UNO&searchText=~query~&TYPE=DOMAIN&Search=1
+:whois|whois.nic.uno
+\.uno$
+
+# Delegated on 30 November 2013 to Wedding TLD2, LLC
+:whois|whois.nic.menu
+\.menu$
+
+# Delegated on 10 December 2013 to Regiodot GmbH & Co. KG
+:whois|whois.nic.ruhr
+\.ruhr$
+
+# Delegated on 17 December 2013 to Tin Mill, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.center
+\.center$
+
+# Delegated on 17 December 2013 to Binky Galley, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.shoes
+\.shoes$
+
+# Delegated on 17 December 2013 to Sea Corner, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.photos
+\.photos$
+
+# Delegated on 17 December 2013 to John Goodbye, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.management
+\.management$
+
+# Delegated on 17 December 2013 to Hidden Frostbite, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.limo
+\.limo$
+
+# Delegated on 17 December 2013 to Delta Dynamite, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.camp
+\.camp$
+
+# Delegated on 17 December 2013 to Silver Avenue, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.company
+\.company$
+
+# Delegated on 17 December 2013 to Black Madison, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.viajes
+\.viajes$
+
+# Delegated on 17 December 2013 to Sugar Cross, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.domains
+\.domains$
+
+# Delegated on 17 December 2013 to Dash Cypress, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.systems
+\.systems$
+
+# Delegated on 17 December 2013 to China Organizational Name Administration Center
+# Chinese for "government"
+:whois|whois.conac.cn
+\.xn--zfr164b$
+
+# Delegated on 17 December 2013 to China Organizational Name Administration Center
+# Chinese for "charity"
+:whois|whois.conac.cn
+\.xn--55qw42g$
+
+# Delegated on 17 December 2013 to Half Sunset, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.cab
+\.cab$
+
+# Delegated on 17 December 2013 to Wild Corner, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.careers
+\.careers$
+
+# Delegated on 17 December 2013 to Half Oaks, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.academy
+\.academy$
+
+# Delegated on 17 December 2013 to Pine Mill, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.computer
+\.computer$
+
+# Delegated on 17 December 2013 to Grand Island, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.recipes
+\.recipes$
+
+# Delegated on 18 December 2013 to Grand Orchard, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.support
+\.support$
+
+# Delegated on 18 December 2013 to dotStrategy Co.
+:whois|whois.nic.buzz
+\.buzz$
+
+# Delegated on 28 December 2013 to Silver Cover, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.solutions
+\.solutions$
+
+# Delegated on 28 December 2013 to Goose Woods, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.holiday
+\.holiday$
+
+# Delegated on 28 December 2013 to Half Cypress, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.florist
+\.florist$
+
+# Delegated on 28 December 2013 to Trixy Cover, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.coffee
+\.coffee$
+
+# Delegated on 28 December 2013 to Atomic Madison, LLC
+#:whois|whois.build.aridnrs.net.au
+#:whois|whois.donuts.co
+:whois|whois.nic.builders
+\.builders$
+
+# Delegated on 28 December 2013 to Lone Sunset, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.repair
+\.repair$
+
+# Delegated on 28 December 2013 to United TLD Holdco Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.ninja
+\.ninja$
+
+# Delegated on 28 December 2013 to United TLD Holdco Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.kaufen
+\.kaufen$
+
+# Delegated on 28 December 2013 to Sugar Park, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.house
+\.house$
+
+# Delegated on 28 December 2013 to Wild Willow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.training
+\.training$
+
+# Delegated on 28 December 2013 to Puff Willow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.codes
+\.codes$
+
+# Delegated on 28 December 2013 to Wild Way, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.international
+\.international$
+
+# Delegated on 28 December 2013 to I-REGISTRY Ltd. Niederlassung Deutschland
+:whois|whois.afilias-srs.net
+\.onl$
+
+# Delegated on 28 December 2013 to Black Cover, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.glass
+\.glass$
+
+# Delegated on 28 December 2013 to Brice Way, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.education
+\.education$
+
+# Delegated on 28 December 2013 to Just Maple, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.farm
+\.farm$
+
+# Delegated on 28 December 2013 to Ruby Town, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.solar
+\.solar$
+
+# Delegated on 28 December 2013 to CEOTLD Pty Ltd
+:whois|whois.nic.ceo
+\.ceo$
+
+# Delegated on 28 December 2013 to Outer Maple, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.institute
+\.institute$
+
+# Delegated on 2 January 2014 to TLD Registry Limited
+# Chinese for "online"
+#:whois|whois.afilias-srs.net
+:whois|whois.teleinfo.cn
+\.xn--3ds443g$
+
+# Delegated on 2 January 2014 to United TLD Holdco Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.immobilien
+\.immobilien$
+
+# Delegated on 2 January 2014 to Spring Madison, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.email
+\.email$
+
+# Delegated on 3 January 2014 to punkt.wien GmbH
+#:whois|whois.wien.tld-box.at
+:whois|whois.nic.wien
+\.wien$
+
+# Delegated on 3 January 2014 to Dot Kiwi Limited
+#:whois|whois.dot-kiwi.com
+:whois|whois.nic.kiwi
+\.kiwi$
+
+# Delegated on 3 January 2014 to Zodiac Leo Limited
+:whois|whois.gtld.knet.cn
+\.wang$
+
+# Delegated on 3 January 2014 to TLD Registry Limited
+# Chinese for "Chinese network"
+#:whois|whois.afilias-srs.net
+:whois|whois.teleinfo.cn
+\.xn--fiq228c5hs$
+
+# Delegated on 3 January 2014 to Tycoon Treasure Limited
+# Chinese for "I love you"
+:whois|whois.gtld.knet.cn
+\.xn--6qq986b3xl$
+
+# Delegated on 3 January 2014 to Eagle Horizon Limited
+# Chinese for "group"
+:whois|whois.gtld.knet.cn
+\.xn--3bst00m$
+
+# Delegated on 8 January 2014 to dotBERLIN GmbH & Co. KG
+#:whois|whois.berlin.tld-box.at
+:whois|whois.nic.berlin
+\.berlin$
+
+# Delegated on 14 January 2014 to United TLD Holdco Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.dance
+\.dance$
+
+# Delegated on 14 January 2014 to United TLD Holdco Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.moda
+\.moda$
+
+# Delegated on 14 January 2014 to Steel Falls, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.agency
+\.agency$
+
+# Delegated on 14 January 2014 to United TLD Holdco Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.social
+\.social$
+
+# Delegated on 14 January 2014 to United TLD Holdco Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.democrat
+\.democrat$
+
+# Delegated on 14 January 2014 to Fern pass, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.marketing
+\.marketing$
+
+# Delegated on 14 January 2014 to Sand Cover, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.cheap
+\.cheap$
+
+# Delegated on 14 January 2014 to Outer Falls, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.zone
+\.zone$
+
+# Delegated on 18 January 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.guitars$
+
+# Delegated on 18 January 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.link$
+
+# Delegated on 18 January 2014 to CITIC Group Corporation
+# Chinese for "CITIC"
+:whois|whois.gtld.knet.cn
+\.xn--fiq64b$
+
+# Delegated on 18 January 2014 to Afilias Limited
+:whois|whois.afilias.net
+\.shiksha$
+
+# Delegated on 18 January 2014 to Afilias Limited
+:whois|whois.afilias.net
+\.red$
+
+# Delegated on 18 January 2014 to I-REGISTRY Ltd. Niederlassung Deutschland
+:whois|whois.afilias-srs.net
+\.rich$
+
+# Delegated on 18 January 2014 to Monash University
+#:whois.monash.aridnrs.net.au
+:whois|whois.nic.monash
+\.monash$
+
+# Delegated on 18 January 2014 to Computer Network Information Center of Chinese Academy of Sciences (China Internet Information Center)
+# Chinese for "company"
+:whois|whois.ngtld.cn
+\.xn--55qx5d$
+
+# Delegated on 18 January 2014 to Computer Network Information Center of Chinese Academy of Sciences (China Internet Information Center)
+# Chinese for "network"
+:whois|whois.ngtld.cn
+\.xn--io0a7i$
+
+# Delegated on 18 January 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.gift$
+
+# Delegated on 18 January 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.photo$
+
+# Delegated on 18 January 2014 to Luxury Partners, LLC
+#:whois|whois.luxury.aridnrs.net.au
+:whois|whois.nic.luxury
+\.luxury$
+
+# Delegated on 18 January 2014 to Afilias Limited
+:whois|whois.afilias.net
+\.pink$
+
+# Delegated on 18 January 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.pics$
+
+# Delegated on 18 January 2014 to Plan Bee, LLC
+#:whois|whois.build.aridnrs.net.au
+:whois|whois.nic.build
+\.build$
+
+# Delegated on 18 January 2014 to .Club Domains, LLC
+:whois|whois.nic.club
+\.club$
+
+# Delegated on 23 January 2014 to Pioneer North, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.tools
+\.tools$
+
+# Delegated on 23 January 2014 to Koko Lake, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.cool
+\.cool$
+
+# Delegated on 23 January 2014 to Afilias Limited
+:whois|whois.afilias.net
+\.kim$
+
+# Delegated on 23 January 2014 to Sand Shadow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.watch
+\.watch$
+
+# Delegated on 23 January 2014 to Magic Pass, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.expert
+\.expert$
+
+# Delegated on 23 January 2014 to Atgron, Inc.
+#:whois|whois.coccaregistry.org
+:whois|whois.nic.wed
+\.wed$
+
+# Delegated on 23 January 2014 to Little Dynamite, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.works
+\.works$
+
+# Delegated on 23 January 2014 to Victor Manor, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.tienda
+\.tienda$
+
+# Delegated on 23 January 2014 to Half Hallow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.bargains
+\.bargains$
+
+# Delegated on 23 January 2014 to Over Galley, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.boutique
+\.boutique$
+
+# Delegated on 27 January 2014 to Fox Orchard, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.community
+\.community$
+
+# Delegated on 27 January 2014 to Pine Fest, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.dating
+\.dating$
+
+# Delegated on 29 January 2014 to GMO Registry, Inc.
+:whois|whois.nic.nagoya
+\.nagoya$
+
+# Delegated on 29 January 2014 to GMO Registry, Inc.
+:whois|whois.nic.tokyo
+\.tokyo$
+
+# Delegated on 29 January 2014 to Valuetainment, Corp.
+:whois|whois.voting.tld-box.at
+\.voting$
+
+# Delegated on 4 February 2014 to Victor Beach, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.exposed
+\.exposed$
+
+# Delegated on 4 February 2014 to New Falls, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.catering
+\.catering$
+
+# Delegated on 4 February 2014 to Big Pass, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.properties
+\.properties$
+
+# Delegated on 4 February 2014 to Magic Glen, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.partners
+\.partners$
+
+# Delegated on 4 February 2014 to Big Hollow, LLC
+#:whois|whois.nic.rentals
+#:whois|whois.donuts.co
+:whois|whois.nic.rentals
+\.rentals$
+
+# Delegated on 4 February 2014 to Spring Way, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.cruises
+\.cruises$
+
+# Delegated on 4 February 2014 to Pioneer Maple, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.events
+\.events$
+
+# Delegated on 4 February 2014 to Binky Glen, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.report
+\.report$
+
+# Delegated on 4 February 2014 to Fox Shadow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.cleaning
+\.cleaning$
+
+# Delegated on 4 February 2014 to Fox Station, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.flights
+\.flights$
+
+# Delegated on 5 February 2014 to Afilias Limited
+:whois|whois.afilias.net
+\.blue$
+
+# Delegated on 5 February 2014 to Afilias Limited
+# Chinese for "mobile"
+:whois|whois.afilias.net
+\.xn--6frz82g$
+
+# Delegated on 11 February 2014 to Victor Frostbite, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.maison
+\.maison$
+
+# Delegated on 11 February 2014 to Magic Birch, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.productions
+\.productions$
+
+# Delegated on 11 February 2014 to Sea Goodbye, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.parts
+\.parts$
+
+# Delegated on 11 February 2014 to Koko Station, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.villas
+\.villas$
+
+# Delegated on 11 February 2014 to Pine House, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.condos
+\.condos$
+
+# Delegated on 11 February 2014 to Koko Station, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.vision
+\.vision$
+
+# Delegated on 11 February 2014 to United TLD Holdco, Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.futbol
+\.futbol$
+
+# Delegated on 11 February 2014 to United TLD Holdco, Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.reviews
+\.reviews$
+
+# Delegated on 11 February 2014 to John Dale, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.foundation
+\.foundation$
+
+# Delegated on 11 February 2014 to Foggy Hollow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.cards
+\.cards$
+
+# Delegated on 12 February 2014 to dotCOOL, Inc.
+:whois|whois.nic.qpon
+.qpon$
+
+# Delegated on 16 February 2014 to Punto FA S.L.
+#:whois|whois.mango.coreregistry.net
+#:notice||Whois server gone. You might find more information at http://mango.com
+:whois|whois.nic.mango
+\.mango$
+
+# Delegated on 18 February 2014 to CORE Association
+# Arabic for "bazaar/bazar"
+#:whois|whois.bazaar.coreregistry.net
+:whois|whois.nic.xn--mgbab2bd
+\.xn--mgbab2bd$
+
+# Delegated on 19 February 2014 to NeuStar, Inc,
+:whois|whois.nic.neustar
+.neustar$
+
+# Delegated on 19 February 2014 to Top Level Design, LLC
+#:whois|whois.centralnic.com
+:whois|whois.nic.wiki
+\.wiki$
+
+# Delegated on 19 February 2014 to XYZ.COM, LLC
+#:whois|whois.centralnic.com
+:whois|whois.nic.xyz
+\.xyz$
+
+# Delegated on 21 February 2014 to Half Falls, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.supply
+\.supply$
+
+# Delegated on 21 February 2014 to Outer House, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.industries
+\.industries$
+
+# Delegated on 21 February 2014 to Atomic Tigers, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.vacations
+\.vacations$
+
+# Delegated on 21 February 2014 to Samsung SDS Co., LTD
+# Korean for "Samsung/Samseong"
+:whois|whois.kr
+\.xn--cg4bki$
+
+# Delegated on 21 February 2014 to Fox Woods, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.fish
+\.fish$
+
+# Delegated on 25 February 2014 to Atomic Fields, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.supplies
+\.supplies$
+
+# Delegated on 26 February 2014 to United TLD Holdco, Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.actor
+\.actor$
+
+# Delegated on 26 February 2014 to The Foundation for Network Initiatives "The Smart Internet"
+# Russian for "kids/deti"
+#:whois|212.193.111.2
+:whois|whois.nic.xn--d1acj3b
+\.xn--d1acj3b$
+
+# Delegated on 26 February 2014 to United TLD Holdco, Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.pub
+\.pub$
+
+# Delegated on 26 February 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.christmas$
+
+# Delegated on 27 February 2014 to BestTLD Pty Ltd
+:whois|whois.nic.best
+\.best$
+
+# Delegated on 27 February 2014 to KredTLD Pty Ltd
+:whois|whois.nic.kred
+.kred$
+
+# Delegated on 27 February 2014 to Punto 2012 Sociedad Anonima Promotora de Inversion de Capital Variable
+#:whois|whois.centralnic.com
+:whois|whois.nic.bar
+\.bar$
+
+# Delegated on 2 March 2014 to Monolith Registry LLC
+:whois|whois.afilias.net
+\.voto$
+
+# Delegated on 2 March 2014 to Monolith Registry LLC
+:whois|whois.afilias.net
+\.vote$
+
+# Delegated on 2 March 2014 to BusinessRalliart Inc.
+:whois|whois.nic.okinawa
+.okinawa$
+
+# Delegated on 2 March 2014 to dot Bid Limited
+:whois|whois.nic.bid
+\.bid$
+
+# Delegated on 5 March 2014 to NetCologne Gesellschaft fuer Telekommunikation mbH
+#:whois|whois-fe1.pdt.koeln.tango.knipp.de
+:whois|whois.ryce-rsp.com
+\.koeln$
+
+# Delegated on 5 March 2014 to Public Interest Registry
+# Russian for "organization/org"
+:whois|whois.publicinterestregistry.net
+\.xn--c1avg$
+
+# Delegated on 9 March 2014 to Public Interest Registry
+# Chinese for "organization"
+#:whois|whois.publicinterestregistry.net
+:whois|whois.nic.xn--nqv7fs00ema
+\.xn--nqv7fs00ema$
+
+# Delegated on 9 March 2014 to Public Interest Registry
+# Hindi for "organization/sangathana"
+:whois|whois.publicinterestregistry.net
+\.xn--i1b6b1a6a2e$
+
+# Delegated on 9 March 2014 to Public Interest Registry
+# Chinese for "agencies/institutions"
+:whois|whois.publicinterestregistry.net
+\.xn--nqv7f$
+
+# Delegated on 12 March 2014 to Stable Tone Limited
+# Chinese for "world/shijie"
+:whois|whois.nic.xn--rhqv96g
+.xn--rhqv96g$
+
+# Delegated on 15 March 2014 to New TLD Company
+:whois|whois.nic.jetzt
+.jetzt$
+
+# Delegated on 11 March 2014 to Top Level Design, LLC
+#:whois|whois.centralnic.com
+:whois|whois.nic.ink
+\.ink$
+
+# Delegated on 11 March 2014 to Dai Nippon Printing Co., Ltd.
+:whois|whois.nic.dnp
+.dnp$
+
+# Delegated on 19 March 2014 to Elite Registry Limited
+:whois|whois.nic.trade
+\.trade$
+
+# Delegated on 19 March 2014 to dot Webcam Limited
+:whois|whois.nic.webcam
+\.webcam$
+
+# Delegated on 19 March 2014 to AXA SA
+:whois|whois.nic.axa
+.axa$
+
+# Delegated on 19 March 2014 to NetCologne Gesellschaft fuer Telekommunikation mbH
+#:whois|whois-fe1.pdt.cologne.tango.knipp.de
+:whois|whois.ryce-rsp.com
+\.cologne$
+
+# Delegated on 20 March 2014 to The City of New York by and through the New York City Department of Information Technology & Telecommunications
+:whois|whois.nic.nyc
+.nyc$
+
+# Delegated on 22 March 2014 to Dot London Domains Limited
+#:whois|whois-lon.mm-registry.com
+:whois|whois.nic.london
+\.london$
+
+# Delegated on 25 March 2014 to Sohu.com Limited
+:whois|whois.nic.sohu
+.sohu$
+
+# Delegated on 27 March 2014 to Afilias Limited
+#:whois|whois.afilias.net
+:whois|whois.nic.google
+\.meet$
+
+# Delegated on 27 March 2014 to Beijing Qianxiang Wangjing Technology Development Co., Ltd.
+:whois|whois.nic.ren
+.ren$
+
+# Delegated on 27 March 2014 to Afilias Limited
+:whois|whois.afilias.net
+\.black$
+
+# Delegated on 31 March 2014 to Starting Dot Limited
+#:whois|whois.ksregistry.net
+:whois|whois.afilias.net
+\.archi$
+
+# Delegated on 31 March 2014 to Top Level Domain Holdings Limited
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.miami
+\.miami$
+
+# Delegated on 31 March 2014 to Dot Vegas, Inc.
+:whois|whois.afilias-srs.net
+\.vegas$
+
+# Delegated on 31 March 2014 to Top Level Domain Holdings Limited
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.fishing
+\.fishing$
+
+# Delegated on 31 March 2014 to Top Level Domain Holdings Limited
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.horse
+\.horse$
+
+# Delegated on 31 March 2014 to Zodiac Capricorn Limited
+# Chinese for "mall"
+:whois|whois.gtld.knet.cn
+\.xn--czru2d$
+
+# Delegated on 31 March 2014 to Uniregistry, Corp.
+#:whois|whois-dub.mm-registry.com
+#:whois|whois.nic.country
+:whois|whois.uniregistry.net
+\.country$
+
+# Delegated on 31 March 2014 to Top Level Domain Holdings Limited
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.rodeo
+\.rodeo$
+
+# Delegated on 31 March 2014 to Interlink Co., Ltd.
+:whois|whois.nic.moe
+\.moe$
+
+# Delegated on 31 March 2014 to Top Level Domain Holdings Limited
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.cooking
+\.cooking$
+
+# Delegated on 31 March 2014 to Pixie Edge, LLC
+#:whois|whois.unitedtld.com
+:whois|whois.nic.haus
+\.haus$
+
+# Delegated on 31 March 2014 to Top Level Domain Holdings Limited
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.vodka
+\.vodka$
+
+# Delegated on 31 March 2014 to Pixie Station, LLC
+#:whois|whois.unitedtld.com
+:whois|whois.nic.consulting
+\.consulting$
+
+# Delegated on 2 April 2014 to dotSaarland GmbH
+#:whois|whois.ksregistry.net
+:whois|whois.nic.saarland
+\.saarland$
+
+# Delegated on 2 April 2014 to Punto 2012 Sociedad Anonima Promotora de Inversion de Capital Variable
+#:whois|whois.centralnic.com
+:whois|whois.nic.rest
+\.rest$
+
+# Delegated on 3 April 2014 to GMO Registry, Inc.
+:whois|whois.nic.yokohama
+\.yokohama$
+
+# Delegated on 3 April 2014 to BusinessRalliart Inc.
+:whois|whois.nic.ryukyu
+\.ryukyu$
+
+# Delegated on 4 April 2014 to Republican State Leadership Committee, Inc.
+#:whois|whois-cl01.mm-registry.com
+:whois|whois.nic.gop
+\.gop$
+
+# Delegated on 10 April 2014 to Hu Yi Global Information Resources (Holding) Company Hong Kong Limited
+# Chinese for "network address"
+#:whois|whois.nic.xn--ses554g
+:whois|whois.registry.knet.cn
+\.xn--ses554g$
+
+# Delegated on 10 April 2014 to Ruby Moon, LLC
+#:whois|whois.unitedtld.com
+:whois|whois.nic.rocks
+\.rocks$
+
+# Delegated on 10 April 2014 to XYZ.COM, LLC
+#:whois|whois.centralnic.com
+:whois|whois.nic.college
+\.college$
+
+# Delegated on 10 April 2014 to Top Level Spectrum, Inc.
+#:whois|whois.centralnic.com
+:whois|whois.nic.feedback
+\.feedback$
+
+# Delegated on 10 April 2014 to Desi Networks, LLC
+#:whois|whois.ksregistry.net
+:whois|whois.nic.desi
+\.desi$
+
+# Delegated on 11 April 2014 to Delta Mill, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.capital
+\.capital$
+
+# Delegated on 11 April 2014 to Puntueus Fundazioa
+#:whois|whois.eus.coreregistry.net
+#:notice||Please visit https://whois.eus/
+:whois|whois.nic.eus
+\.eus$
+
+# Delegated on 11 April 2014 to Com Sunset, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.gripe
+\.gripe$
+
+# Delegated on 11 April 2014 to Romeo Canyon
+#:whois|whois.donuts.co
+:whois|whois.nic.engineering
+\.engineering$
+
+# Delegated on 11 April 2014 to Fox Castle, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.services
+\.services$
+
+# Delegated on 11 April 2014 to Victor Trail, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.lease
+\.lease$
+
+# Delegated on 11 April 2014 to Pioneer Orchard, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.toys
+\.toys$
+
+# Delegated on 11 April 2014 to Koko Moon, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.town
+\.town$
+
+# Delegated on 11 April 2014 to dotCareer LLC
+:whois|whois.nic.career
+\.career$
+
+# Delegated on 11 April 2014 to Grand Glen, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.media
+\.media$
+
+# Delegated on 11 April 2014 to New Cypress, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.reisen
+\.reisen$
+
+# Delegated on 11 April 2014 to Baxter Hill, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.associates
+\.associates$
+
+# Delegated on 11 April 2014 to Asociación puntoGAL
+#:whois|whois.gal.coreregistry.net
+#:notice||Whois server is done. You might find more information at http://http://dominio.gal/
+:whois|whois.nic.gal
+\.gal$
+
+# Delegated on 11 April 2014 to Little Station, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.university
+\.university$
+
+# Delegated on 11 April 2014 to Foggy Sky, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.pictures
+\.pictures$
+
+# Delegated on 16 April 2014 to PointQuébec Inc
+#:whois|whois.quebec.rs.corenic.net
+:whois|whois.nic.quebec
+\.quebec$
+
+# Delegated on 19 April 2014 to OP3FT
+#:whois|whois-frogans.nic.fr
+:whois|whois.nic.frogans
+\.frogans$
+
+# Delegated on 19 April 2014 to City of Paris
+:whois|whois-paris.nic.fr
+\.paris$
+
+# Delegated on 19 April 2014 to Charleston Road Registry
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.soy$
+
+# Delegated on 19 April 2014 to Lifestyle Domain Holdings, Inc.
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.foo$
+
+# Delegated on 19 April 2014 to Outer Moon, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.schule
+\.schule$
+
+# Delegated on 23 April 2014 to Brice Orchard, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.fitness
+\.fitness$
+
+# Delegated on 23 April 2014 to Goose Park, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.clinic
+\.clinic$
+
+# Delegated on 23 April 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.blackfriday$
+
+# Delegated on 23 April 2014 to Holly Hill, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.discount
+\.discount$
+
+# Delegated on 23 April 2014 to Delta Lake, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.cash
+\.cash$
+
+# Delegated on 23 April 2014 to Goose Cross, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.care
+\.care$
+
+# Delegated on 23 April 2014 to Tin Birch, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.dental
+\.dental$
+
+# Delegated on 23 April 2014 to Lone Fields, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.furniture
+\.furniture$
+
+# Delegated on 23 April 2014 to Pioneer Tigers, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.gratis
+\.gratis$
+
+# Delegated on 23 April 2014 to Just Cover, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.financial
+\.financial$
+
+# Delegated on 23 April 2014 to Holly Glen, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.investments
+\.investments$
+
+# Delegated on 23 April 2014 to Tin Avenue, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.surgery
+\.surgery$
+
+# Delegated on 23 April 2014 to John Castle, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.fund
+\.fund$
+
+# Delegated on 23 April 2014 to Hidden Way, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.wtf
+\.wtf$
+
+# Delegated on 23 April 2014 to Storm Orchard, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.tax
+\.tax$
+
+# Delegated on 23 April 2014 to Spring Falls, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.exchange
+\.exchange$
+
+# Delegated on 23 April 2014 to Atomic Pipe, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.fail
+\.fail$
+
+# Delegated on 23 April 2014 to Big Fest, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.limited
+\.limited$
+
+# Delegated on 24 April 2014 to Foundation for Assistance for Internet Technologies and Infrastructure Development (FAITID)
+:whois|whois.nic.moscow
+\.moscow$
+
+# Delegated on 24 April 2014 to Foundation for Assistance for Internet Technologies and Infrastructure Development (FAITID)
+# Russian for "Moscow/ moskva"
+:whois|whois.nic.xn--80adxhks
+\.xn--80adxhks$
+
+# Delegated on 29 April 2014 to CITIC Group Corporation
+:whois|whois.nic.citic
+.citic$
+
+# Delegated on 29 April 2014 to World Trade Centers Association, Inc.
+:whois|whois.nic.wtc
+\.wtc$
+
+# Delegated on 29 April 2014 to Cotton Cypress, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.finance
+\.finance$
+
+# Delegated on 29 April 2014 to Pioneer Willow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.insure
+\.insure$
+
+# Delegated on 29 April 2014 to Binky Frostbite, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.creditcard
+\.creditcard$
+
+# Delegated on 30 April 2014 to United TLD Holdco Ltd.
+#:whois|whois.unitedtld.com
+:whois|whois.nic.airforce
+\.airforce$
+
+# Delegated on 3 May 2014 to Bayern Connect GmbH
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.bayern
+\.bayern$
+
+# Delegated on 3 May 2014 to Globo Comunicação e Participações S.A
+:whois|whois.gtlds.nic.br
+\.globo$
+
+# Delegated on 3 May 2014 to GMO Internet, Inc.
+:whois|whois.nic.gmo
+\.gmo$
+
+# Delegated on 15 May 2014 to Top Level Domain Holdings Limited
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.luxe
+\.luxe$
+
+# Delegated on 15 May 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.juegos$
+
+# Delegated on 15 May 2014 to Top Level Domain Holdings Limited
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.beer
+\.beer$
+
+# Delegated on 15 May 2014 to Trixy Oaks, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.life
+\.life$
+
+# Delegated on 15 May 2014 to Holly Fileds, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.church
+\.church$
+
+# Delegated on 15 May 2014 to June Woods, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.loans
+\.loans$
+
+# Delegated on 15 May 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.hiphop$
+
+# Delegated on 15 May 2014 to Uniregistry, Corp.
+:whois|whois.uniregistry.net
+\.audio$
+
+# Delegated on 15 May 2014 to Snow Moon, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.guide
+\.guide$
+
+# Delegated on 7 May 2014 to Black Corner, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.claims
+\.claims$
+
+# Delegated on 7 May 2014 to Dash Park, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.digital
+\.digital$
+
+# Delegated on 7 May 2014 to Knob Town, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.accountants
+\.accountants$
+
+# Delegated on 7 May 2014 to Snow Shadow, LLC
+#:whois|whois.donuts.co
+:whois|whois.nic.credit
+\.credit$
+
+# Delegated on 22 May 2014 to Hu Yi Global Information Resources (Holding) Company .HONGKONG Limited
+# Chinese for "trademark"
+:whois|whois.nic.xn--czr694b
+\.xn--czr694b$
+
+# Delegated on 22 May 2014 to DERMotorcycles, LLC
+:whois|whois.afilias-srs.net
+\.motorcycles$
+
+# Delegated on 22 May 2014 to dotreise GmbH
+# :whois|whois.reise.tld-box.at
+:whois|whois.nic.reise
+\.reise$
+
+# Delegated on 22 May 2014 to dotversicherung-registry GmbH
+# :whois|whois.versicherung.tld-box.at
+:whois|whois.nic.versicherung
+\.versicherung$
+
+# Delegated on 22 May 2014 to DERAutos, LLC
+:whois|whois.afilias-srs.net
+\.autos$
+
+# Delegated on 22 May 2014 to DERHomes, LLC
+:whois|whois.afilias-srs.net
+\.homes$
+
+# Delegated on 22 May 2014 to Empresa Municipal de Informática SA - IPLANRIO
+:whois|whois.gtlds.nic.br
+\.rio$
+
+# Delegated on 22 May 2014 to DERYachts, LLC
+:whois|whois.afilias-srs.net
+\.yachts$
+
+# Delegated on 28 May 2014 to Suhub Electronic Establishment
+# Arabic for "site"
+:whois|whois.afilias-srs.net
+\.xn--4gbrim$
+
+# Delegated on 30 May 2014 to DotWebsite Inc.
+# :whois|whois.centralnic.com
+:whois|whois.nic.website
+\.website$
+
+# Delegated on 30 May 2014 to DotSpace Inc.
+# :whois|whois.centralnic.com
+:whois|whois.nic.space
+\.space$
+
+# Delegated on 30 May 2014 to Puff House, LLC
+#:whois|whois.rightside.co
+:whois|whois.nic.degree
+\.degree$
+
+# Delegated on 31 May 2014 to DotPress Inc.
+#:whois|whois.centralnic.com
+:whois|whois.nic.press
+\.press$
+
+# Delegated on 31 May 2014 to United TLD Holdco, Ltd.
+#:whois|whois.rightside.co
+:whois|whois.nic.attorney
+\.attorney$
+
+# Delegated on 31 May 2014 to dotHIV gemeinnuetziger e.V.
+#:whois|whois.afilias-srs.net
+:whois|whois.uniregistry.net
+\.hiv$
+
+# Delegated on 31 May 2014 to United TLD Holdco, Ltd.
+#:whois|whois.rightside.co
+:whois|whois.nic.dentist
+\.dentist$
+
+# Delegated on 31 May 2014 to Victor Way, LLC
+#:whois|whois.rightside.co
+:whois|whois.nic.market
+\.market$
+
+# Delegated on 31 May 2014 to DotHost Inc.
+:whois|whois.nic.host
+\.host$
+
+# Delegated on 31 May 2014 to United TLD Holdco, Ltd.
+#:whois|whois.rightside.co
+:whois|whois.nic.software
+\.software$
+
+# Delegated on 31 May 2014 to United TLD Holdco, Ltd.
+#:whois|whois.rightside.co
+:whois|whois.nic.mortgage
+\.mortgage$
+
+# Delegated on 31 May 2014 to United TLD Holdco, Ltd.
+#:whois|whois.rightside.co
+:whois|whois.nic.vet
+\.vet$
+
+# Delegated on 31 May 2014 to United TLD Holdco, Ltd.
+#:whois|whois.rightside.co
+:whois|whois.nic.lawyer
+\.lawyer$
+
+# Delegated on 2 June 2014 to STARTING DOT LIMITED
+#:whois|whois.ksregistry.net
+:whois|whois.afilias.net
+\.bio$
+
+# Delegated on 4 June 2014
+#:whois|whois.rightside.co
+:whois|whois.nic.army
+\.army$
+
+# Delegated on 4 June 2014
+#:whois|whois.rightside.co
+:whois|whois.nic.navy
+\.navy$
+
+# Delegated on 4 June 2014
+#:whois|whois.rightside.co
+:whois|whois.nic.gives
+\.gives$
+
+# Delegated on 4 June 2014
+#:whois|whois.rightside.co
+:whois|whois.nic.republican
+\.republican$
+
+# Delegated on 4 June 2014
+:whois|whois.nic.tirol
+\.tirol$
+
+# Delegated on 4 June 2014
+#:whois|whois.rightside.co
+:whois|whois.nic.rehab
+\.rehab$
+
+# Delegated on 4 June 2014
+:whois|whois.nic.hamburg
+\.hamburg$
+
+# Delegated on 4 June 2014
+:whois|whois.nic.nhk
+\.nhk$
+
+# Delegated on 4 June 2014
+#:whois|whois.rightside.co
+:whois|whois.nic.engineer
+\.engineer$
+
+# Delegated on 6 June 2014
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.global
+\.global$
+
+# Delegated on 13 June 2014
+:whois|whois.afilias.net
+\.organic$
+
+# Delegated on 13 June 2014
+#:whois|whois.scot.coreregistry.net
+#:notice||Please visit http://whois.nic.scot/
+:whois|whois.nic.scot
+\.scot$
+
+# Delegated on 17  June 2014
+#:whois|whois-bzh.nic.fr
+:whois|whois.nic.bzh
+\.bzh$
+
+# Delegated on 17  June 2014
+# Chinese for "cell phone"
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--kput3i
+\.xn--kput3i$
+
+# Delegated on 18 June 2014
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.surf
+\.surf$
+
+# Delegated on 18 June 2014
+:whois|whois.nic.brussels
+\.brussels$
+
+# Delegated on 18 June 2014
+:whois|whois.nic.vlaanderen
+\.vlaanderen$
+
+# Delegated on 19 June 2014
+:whois|joburg-whois.registry.net.za
+\.joburg$
+
+# Delegated on 19 June 2014
+:whois|whois.afilias.net
+\.green$
+
+# Delegated on 19 June 2014
+:whois|durban-whois.registry.net.za
+\.durban$
+
+# Delegated on 19 June 2014
+:whois|whois.afilias.net
+\.lotto$
+
+# Delegated on 19 June 2014
+:whois|whois.nic.physio
+\.physio$
+
+# Delegated on 19 June 2014
+:whois|capetown-whois.registry.net.za
+\.capetown$
+
+# Delegated on 19 June 2014
+:whois|whois-ovh.nic.fr
+\.ovh$
+
+# Delegated on 21 June 2014
+#:whois|whois.ksregistry.net
+:whois|whois.nic.bmw
+\.bmw$
+
+# Delegated on 24 June 2014
+#:whois|whois.ksregistry.net
+:whois|whois.nic.mini
+\.mini$
+
+:notice||Disallocated by IANA
+\.active$
+
+# Delegated on 2 July 2014
+:whois|whois.nic.suzuki
+\.suzuki$
+
+# Delegated on 2 July 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.place
+\.place$
+
+# Delegated on 2 July 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.direct
+\.direct$
+
+# Delegated on 3 July 2014
+:whois|whois.nic.cancerresearch
+\.cancerresearch$
+
+# Delegated on 3 July 2014
+:whois|whois.nic.cuisinella
+\.cuisinella$
+
+# Delegated on 3 July 2014
+:whois|whois.nic.schmidt
+\.schmidt$
+
+# Delegated on 10 July 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.city
+\.city$
+
+# Delegated on 10 July 2014
+# Alternative URL: https://nic.melbourne/whois/ (requires CAPTCHA)
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.melbourne
+\.melbourne$
+
+# Delegated on 10 July 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.deals
+\.deals$
+
+# Delegated on 11 July 2014
+:whois|whois.nic.scb
+\.scb$
+
+# Delegated on 11 July 2014
+:whois|whois.nic.nrw
+\.nrw$
+
+# Delegated on 13 July 2014
+:whois|whois.nic.gent
+\.gent$
+
+# Delegated on 18 July 2014
+:whois|whois.afilias.net
+\.lgbt$
+
+# Delegated on 18 July 2014
+:whois|whois.nic.lacaixa
+\.lacaixa$
+
+# Delegated on 18 July 2014
+:notice||Disallocated by IANA
+\.spiegel$
+
+# Delegated on 18 July 2014
+:whois|whois.afilias-srs.net
+\.nra$
+
+# Delegated on 18 July 2014
+:whois|whois.publicinterestregistry.net
+\.ngo$
+
+# Delegated on 18 July 2014
+# Alternative URL: http://nic.krd/
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.krd
+\.krd$
+
+# Delegated on 18 July 2014
+:whois|whois.nic.whoswho
+\.whoswho$
+
+# Delegated on 18 July 2014
+#:whois|whois.donuts.co
+#:whois|whois.unitedtld.com
+:whois|whois.nic.auction
+\.auction$
+
+# Delegated on 18 July 2014
+:whois|whois.nic.yandex
+\.yandex$
+
+# Delegated on 18 July 2014
+:whois|whois.nic.praxi
+\.praxi$
+
+# Delegated on 28 July 2014
+:whois|whois.publicinterestregistry.net
+\.ong$
+
+# Delegated on 28 July 2014
+:whois|whois.nic.williamhill
+\.williamhill$
+
+# Delegated on 30 July 2014
+:whois|whois.nic.realtor
+\.realtor$
+
+# Delegated on 30 July 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.healthcare
+\.healthcare$
+
+# Delegated on 3 August 2014
+:whois|whois.nic.top
+\.top$
+
+# Delegated on 7 August 2014
+:whois|whois.nic.tatar
+\.tatar$
+
+# Delegated on 7 August 2014
+:whois|whois.nic.wales
+\.wales$
+
+# Delegated on 8 August 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.gifts
+\.gifts$
+
+# Delegated on 8 August 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.sarl
+\.sarl$
+
+# Delegated on 8 August 2014
+:whois|whois.nic.cymru
+\.cymru$
+
+# Delegated on 8 August 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.restaurant
+\.restaurant$
+
+# Delegated on 14 August 2014
+:whois|whois.afilias-srs.net
+\.bnpparibas$
+
+# Delegated on 14 August 2014
+# Chinese city of "Foshan"
+:whois|whois.ngtld.cn
+\.xn--1qqw23a$
+
+# Delegated on 14 August 2014
+# Chinese province of "Guangdong"
+:whois|whois.ngtld.cn
+\.xn--xhq521b$
+
+# Delegated on 14 August 2014
+:whois|whois.nic.sca
+\.sca$
+
+# Delegated on 14 August 2014
+:whois|whois.nic.caravan
+\.caravan$
+
+# Delegated on 16 August 2014
+:whois|whois.afilias-srs.net
+\.cern$
+
+# Delegated on 16 August 2014
+:whois|whois.afilias-srs.net
+\.ltda$
+
+# Delegated on 16 August 2014
+:whois|whois.uniregistry.net
+\.property$
+
+# Delegated on 16 August 2014
+:whois|whois.uniregistry.net
+\.hosting$
+
+# Delegated on 16 August 2014
+:whois|whois.uniregistry.net
+\.help$
+
+# Delegated on 16 August 2014
+:whois|whois.gtlds.nic.br
+\.uol$
+
+# Delegated on 16 August 2014
+:whois|whois.nic.ooo
+\.ooo$
+
+# Delegated on 16 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.how$
+
+# Delegated on 16 August 2014
+:whois|whois.uniregistry.net
+\.diet$
+
+# Delegated on 16 August 2014
+:whois|whois.uniregistry.net
+\.click$
+
+# Delegated on 22 August 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.network
+\.network$
+
+# Delegated on 22 August 2014
+# chinese for ?enterprise?
+#:whois|whois.donuts.co
+:whois|whois.nic.xn--vhquv
+\.xn--vhquv$
+
+# Delegated on 22 August 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.business
+\.business$
+
+# Delegated on 27 August 2014
+:whois|whois.nic.otsuka
+\.otsuka$
+
+# Delegated on 27 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.gbiz$
+
+# Delegated on 27 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.gmail$
+
+# Delegated on 27 August 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.pizza
+\.pizza$
+
+# Delegated on 27 August 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.immo
+\.immo$
+
+# Delegated on 29 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.esq$
+
+# Delegated on 29 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.prod$
+
+# Delegated on 29 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.here$
+
+# Delegated on 29 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.youtube$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.meme$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.eat$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.rsvp$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.mov$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.new$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.ing$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.frl
+\.frl$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.day$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.dad$
+
+# Delegated on 30 August 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.boo$
+
+# Delegated on 5 September 2014
+:whois|whois-fe1.gmx.tango.knipp.de
+\.gmx$
+
+# Delegated on 5 September 2014
+:whois|whois.nic.pharmacy
+\.pharmacy$
+
+# Delegated on 10 September 2014
+#:whois|whois.centralnic.com
+:whois|whois.nic.wme
+\.wme$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.chrome$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.cal$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.zip$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.gle$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.prof$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.channel$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.nexus$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.fly$
+
+# Delegated on 19 September 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.world
+\.world$
+
+# Delegated on 23 September 2014
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.budapest
+\.budapest$
+
+# Delegated on 23 September 2014
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.casa
+\.casa$
+
+# Delegated on 23 September 2014
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.work
+\.work$
+
+# Delegated on 27 September 2014
+#:whois|whois.ksregistry.net
+:whois|whois.nic.pohl
+\.pohl$
+
+# Delegated on 27 September 2014
+#:whois|whois.ksregistry.net
+:whois|whois.nic.dvag
+\.dvag$
+
+# Delegated on 27 September 2014
+#:whois|whois.ksregistry.net
+:whois|whois.nic.tui
+\.tui$
+
+# Delegated on 27 September 2014
+# Russian for "Russian"
+:whois|whois.nic.xn--p1acf
+\.xn--p1acf$
+
+# Delegated on 27 September 2014
+# German for "financial advisor"
+#:whois|whois.ksregistry.net
+:whois|whois.nic.xn--vermgensberater-ctb
+\.xn--vermgensberater-ctb$
+
+# Delegated on 27 September 2014
+# German for "financial advice"
+#:whois|whois.ksregistry.net
+:whois|whois.nic.xn--vermgensberatung-pwb
+\.xn--vermgensberatung-pwb$
+
+# Delegated on 1 October 2014
+#:whois|whois.unitedtld.com
+:whois|whois.nic.forsale
+\.forsale$
+
+# Delegated on 1 October 2014
+:whois|whois.nic.ibm
+\.ibm$
+
+# Delegated on 1 October 2014
+#:whois|whois.ksregistry.net
+:whois|whois.nic.allfinanz
+\.allfinanz$
+
+# Delegated on 4 October 2014
+:whois|whois-alsace.nic.fr
+\.alsace$
+
+# Delegated on 15 September 2014
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.google$
+
+# Delegated on 15 October 2014
+:whois|whois.afilias.net
+\.poker$
+
+# Delegated on 15 October 2014
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.wedding
+\.wedding$
+
+# Delegated on 15 October 2014
+#:whois|whois.rightside.co
+:whois|whois.nic.rip
+\.rip$
+
+# Delegated on 15 October 2014
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.abogado
+\.abogado$
+
+# Delegated on 15 October 2014
+:whois|whois.nic.crs
+\.crs$
+
+# Delegated on 15 October 2014
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.yoga
+\.yoga$
+
+# Delegated on 15 October 2014
+#:whois|whois.rightside.co
+:whois|whois.nic.band
+\.band$
+
+# Delegated on 22 October 2014
+:whois|whois.afilias-srs.net
+\.emerck$
+
+:notice||Disallocated by IANA
+\.flsmidth$
+
+# Delegated on 23 October 2014
+:whois|whois.nic.taipei
+\.taipei$
+
+# Not listed in public newGTLD listing
+# TODO: check if it returns (incl. the description what it means)
+:whois|whois.itdc.ge
+\.xn--node$
+
+# Not listed in public newGTLD listing
+# TODO: check if it returns (incl. the description what it means)
+:whois|whois.marnet.mk
+\.xn--d1alf$
+
+# Delegated on 1 November 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.delivery
+\.delivery$
+
+# Delegated on 1 November 2014
+#:whois|whois.donuts.co
+:whois|whois.nic.energy
+\.energy$
+
+# Delegated on 5 November 2014
+:whois|whois.nic.bloomberg
+\.bloomberg$
+
+# Delegated on 5 November 2014
+:whois|whois.nic.sydney
+\.sydney$
+
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.android$
+
+:whois|whois.nic.reit
+#:whois|whois.centralnic.com
+\.reit$
+
+:whois|whois.nic.science
+\.science$
+
+:whois|whois.nic.cricket
+\.cricket$
+
+:whois|whois.nic.party
+\.party$
+
+:whois|whois.nic.xn--45q11c
+\.xn--45q11c$
+
+:whois|whois.nic.firmdale
+\.firmdale$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.lds
+\.lds$
+
+:whois|whois.madrid.rs.corenic.net
+\.madrid$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.mormon
+\.mormon$
+
+:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.xn--flw351e$
+
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.xn--qcka1pmc$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.coach
+\.coach$
+
+:whois|whois.nic.everbank
+\.everbank$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.legal
+\.legal$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.memorial
+\.memorial$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.money
+\.money$
+
+:whois|whois-aquarelle.nic.fr
+\.aquarelle$
+
+#:whois|whois.afilias-srs.net
+#:whois|whois.donuts.co
+:whois|whois.nic.irish
+\.irish$
+
+:whois|whois.nic.latrobe
+\.latrobe$
+
+:whois|whois.nic.xn--hxt814e
+\.xn--hxt814e$
+
+#:whois|whois.nic.adult
+:whois|whois.afilias-srs.net
+\.adult$
+
+:whois|whois.nic.eurovision
+\.eurovision$
+
+#:whois|whois.fashion
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.fashion
+\.fashion$
+
+#:whois|whois.nic.porn
+:whois|whois.afilias-srs.net
+\.porn$
+
+:whois|whois.nic.trust
+\.trust$
+
+#:whois|whois.nic.xn--czrs0t
+#:whois|whois.donuts.co
+:whois|whois.nic.xn--czrs0t
+\.xn--czrs0t$
+
+#:whois|whois.nic.xn--cg4bki
+:whois|whois.nic.samsung
+\.samsung$
+
+:whois|whois.nic.cartier
+\.cartier$
+
+:whois|whois.nic.sky
+\.sky$
+
+#:whois|whois.nic.doosan
+:notice||Disallocated by IANA
+\.doosan$
+
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.garden
+\.garden$
+
+#:whois|whois.nic.iwc
+:notice||Disallocated by IANA
+\.iwc$
+
+:whois|whois.nic.lidl
+\.lidl$
+
+:whois|whois.nic.osaka
+\.osaka$
+
+:whois|whois.nic.schwarz
+\.schwarz$
+
+#:whois|whois.nic.sew
+:whois|whois.afilias-srs.net
+\.sew$
+
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.dev$
+
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.docs$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.tires
+\.tires$
+
+:whois|whois.nic.amsterdam
+\.amsterdam$
+
+:whois|whois.uniregistry.net
+\.flowers$
+
+#:whois|whois.nic.gmo
+:whois|whois.nic.ggee
+\.ggee$
+
+#:whois|whois.rightside.co
+:whois|whois.nic.sale
+\.sale$
+
+#:whois|whois.rightside.co
+:whois|whois.nic.video
+\.video$
+
+#:whois|whois.ksregistry.net
+:whois|whois.nic.zuerich
+\.zuerich$
+
+#:whois|whois.nic.shriram
+:whois|whois.afilias-srs.net
+\.shriram$
+
+:whois|whois.nic.bank
+\.bank$
+
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.fit
+\.fit$
+
+#:whois|whois.nic.gmo
+:whois|whois.nic.kddi
+\.kddi$
+
+:whois|whois.nic.lat
+\.lat$
+
+#:whois|whois.nic.gmo
+:whois|whois.nic.lotte
+\.lotte$
+
+:whois|whois.afilias-srs.net
+\.marriott$
+
+:whois|whois.nic.one
+\.one$
+
+:whois|whois.nic.barclaycard
+\.barclaycard$
+
+:whois|whois.nic.barclays
+\.barclays$
+
+#:whois|whois.nic.dabur
+:whois|whois.afilias-srs.net
+\.dabur$
+
+:whois|whois.nic.google
+#:whois|whois.nic.dclk
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.dclk$
+
+:whois|whois.nic.design
+#:whois|whois.centralnic.com
+\.design$
+
+#:whois|whois.nic.goog
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.goog$
+
+#:whois|whois.nic.hangout
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.hangout$
+
+#:whois|whois.nic.hermes
+:whois|whois.afilias-srs.net
+\.hermes$
+
+:whois|whois.nic.ifm
+\.ifm$
+
+:whois|whois.nic.gmo
+\.jcb$
+
+#:whois|whois.nic.temasek
+:whois|whois.afilias-srs.net
+\.temasek$
+
+#:whois|whois.nic.xn--b4w605ferd
+:whois|whois.afilias-srs.net
+\.xn--b4w605ferd$
+
+#:whois|whois.nic.tokyo
+:whois|whois.nic.kyoto
+\.kyoto$
+
+:whois|whois.nic.ntt
+\.ntt$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.bingo
+\.bingo$
+
+#:whois|whois.nic.gmo
+:whois|whois.nic.canon
+\.canon$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.chat
+\.chat$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.style
+\.style$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.tennis
+\.tennis$
+
+#:whois|whois.nic.gmo
+:whois|whois.nic.toshiba
+\.toshiba$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.apartments
+\.apartments$
+
+:whois|whois.nic.nico
+#:whois|whois.nic.gmo
+\.nico$
+
+# Alternative URL: http://nic.saxo/
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.saxo
+\.saxo$
+
+:whois|whois.nic.cbn
+\.cbn$
+
+#:whois|whois.gdnregistry.com
+:whois|whois.nic.gdn
+\.gdn$
+
+:whois|whois.cctld.by
+\.xn--90ais$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.casino
+\.casino$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.fans
+\.fans$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.football
+\.football$
+
+#:whois|whois.nic.gmo
+:whois|whois.nic.goldpoint
+\.goldpoint$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.school
+\.school$
+
+:whois|whois.nic.gmo
+\.yodobashi$
+
+:whois|whois.afilias-srs.net
+\.boats$
+
+# Alternative URL: http://nic.courses/
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.courses
+\.courses$
+
+:whois|whois.nic.study
+\.study$
+
+:whois|whois.nic.sucks
+\.sucks$
+
+# Alternative URL: http://whois.nic.epson/ (requires CAPTCHA)
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.epson
+\.epson$
+
+:whois|whois.nic.gmo
+\.goo$
+
+:whois|whois.nic.java
+\.java$
+
+:whois|whois-leclerc.nic.fr
+\.leclerc$
+
+:whois|whois.nic.maif
+\.maif$
+
+:whois|whois.nic.oracle
+\.oracle$
+
+:whois|whois.nic.xn--mxtq1m
+\.xn--mxtq1m$
+
+:whois|whois.nic.gmo
+\.datsun$
+
+:whois|whois.nic.gmo
+\.infiniti$
+
+#:whois|whois.nic.gmo
+#:whois|whois.nic.mtpc
+:notice||Disallocated by IANA
+\.mtpc$
+
+:whois|whois.nic.gmo
+\.nissan$
+
+:whois|whois.afilias-srs.net
+\.abbott$
+
+:whois|whois.nic.pictet
+\.pictet$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xin
+\.xin$
+
+#:whois|whois.nic.chloe
+:notice||Disallocated by IANA
+\.chloe$
+
+:whois|whois.nic.erni
+\.erni$
+
+:whois|whois.nic.forex
+\.forex$
+
+:whois|whois.nic.markets
+\.markets$
+
+:whois|whois.nic.cfd
+\.cfd$
+
+:whois|whois.nic.spreadbetting
+\.spreadbetting$
+
+:whois|whois.nic.trading
+\.trading$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.fan
+\.fan$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.online
+\.online$
+
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.page$
+
+:whois|whois.nic.piaget
+\.piaget$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.site
+\.site$
+
+#:whois|whois.ngtld.cn
+:whois|whois.teleinfo.cn
+\.xn--vuq861b$
+
+:whois|whois.nic.bbc
+\.bbc$
+
+#:whois|whois.rightside.co
+:whois|whois.nic.news
+\.news$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.tech
+\.tech$
+
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.ads$
+
+:whois|whois.nic.film
+\.film$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.gold
+\.gold$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.golf
+\.golf$
+
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
+#:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
+#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:notice||Please visit http://whois.charlestonroadregistry.com
+#:whois|whois.charlestonroadregistry.com
+\.guge$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.plus
+\.plus$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.tours
+\.tours$
+
+:whois|whois.nic.accountant
+\.accountant$
+
+:whois|whois.nic.date
+\.date$
+
+#:whois|whois.nic.doha
+:notice||Disallocated by IANA
+\.doha$
+
+:whois|whois.nic.download
+\.download$
+
+:whois|whois.nic.faith
+\.faith$
+
+:whois|whois.nic.loan
+\.loan$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.movie
+\.movie$
+
+:whois|whois.nic.mtn
+\.mtn$
+
+:notice||Disallocated by IANA
+\.panerai$
+
+:whois|whois.nic.review
+\.review$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.tickets
+\.tickets$
+
+:whois|whois.nic.win
+\.win$
+
+:whois|whois.nic.komatsu
+\.komatsu$
+
+:whois|whois.nic.sap
+\.sap$
+
+:whois|whois.nic.bond
+\.bond$
+
+#:whois|whois.nic.wang
+:whois|whois.gtld.knet.cn
+\.xn--9et52u$
+
+:whois|whois.nic.afl
+\.afl$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.redstone
+\.redstone$
+
+:whois|whois-mma.nic.fr
+\.mma$
+
+#:whois|whois.nic.wang
+:whois|whois.gtld.knet.cn
+\.xn--30rr7y$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.love
+\.love$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.scholarships
+\.scholarships$
+
+:whois|whois.nic.xn--nyqy26a
+\.xn--nyqy26a$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.cyou
+\.cyou$
+
+:whois|whois.nic.racing
+\.racing$
+
+:whois|whois.nic.bauhaus
+\.bauhaus$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.cafe
+\.cafe$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.express
+\.express$
+
+:whois|whois.nic.xn--kcrx77d1x4a
+\.xn--kcrx77d1x4a$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.jewelry
+\.jewelry$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.show
+\.show$
+
+:whois|whois.nic.sony
+\.sony$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.team
+\.team$
+
+:whois|whois.nic.xerox
+\.xerox$
+
+:whois|whois.nic.seat
+\.seat$
+
+:whois|whois.afilias-srs.net
+\.sex$
+
+:whois|whois.nic.weir
+\.weir$
+
+:whois|whois.nic.abb
+\.abb$
+
+:whois|whois.nic.broker
+\.broker$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.dog
+\.dog$
+
+:whois|whois.nic.honda
+\.honda$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.rent
+\.rent$
+
+:whois|whois.nic.swiss
+\.swiss$
+
+:whois|whois.nic.bridgestone
+\.bridgestone$
+
+:whois|whois.nic.gmo
+\.hitachi$
+
+:whois|whois.nic.sener
+\.sener$
+
+:whois|whois.nic.toray
+\.toray$
+
+:whois|whois.nic.aig
+\.aig$
+
+#:whois|whois.nic.auto
+:whois|whois.uniregistry.net
+\.auto$
+
+#:whois|whois.nic.cars
+:whois|whois.uniregistry.net
+\.cars$
+
+:whois|whois.nic.cfa
+\.cfa$
+
+:whois|whois.nic.icu
+\.icu$
+
+:whois|whois.nic.liaison
+\.liaison$
+
+#:whois|whois.nic.lol
+:whois|whois.uniregistry.net
+\.lol$
+
+:whois|whois.nic.nadex
+\.nadex$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.theater
+\.theater$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.hockey
+\.hockey$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.run
+\.run$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.taxi
+\.taxi$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--estv75g
+\.xn--estv75g$
+
+# TODO: Entry generated automatically. Needs manual check.
+:notice||Whois server unknown (2019-04-28)
+\.xn--mgbpl2fh$
+
+:whois|whois.amnic.net
+\.xn--y9a3aq$
+
+:whois|whois.nic.accenture
+\.accenture$
+
+:whois|whois.nic.nec
+\.nec$
+
+:whois|whois.nic.philips
+\.philips$
+
+#:whois|whois.nic.xn--fjq720a
+#:whois|whois.donuts.co
+:whois|whois.nic.xn--fjq720a
+\.xn--fjq720a$
+
+:whois|whois.nic.brother
+\.brother$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.coupons
+\.coupons$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.icbc
+\.icbc$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.soccer
+\.soccer$
+
+:whois|whois.nic.earth
+\.earth$
+
+:whois|whois.nic.cisco
+\.cisco$
+
+:whois|whois-corsica.nic.fr
+\.corsica$
+
+:whois|whois.nic.lupin
+\.lupin$
+
+:whois|whois.nic.men
+\.men$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.fyi
+\.fyi$
+
+:whois|whois.afilias-srs.net
+\.jll$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.mba
+\.mba$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.thd
+\.thd$
+
+:whois|whois.nic.bbva
+\.bbva$
+
+:whois|whois.nic.sandvik
+\.sandvik$
+
+:whois|whois.nic.sandvikcoromant
+\.sandvikcoromant$
+
+:whois|whois.nic.walter
+\.walter$
+
+#:whois|whois.nic.ski
+#:whois|whois.ksregistry.net
+:whois|whois.afilias.net
+\.ski$
+
+:whois|whois.nic.xn--imr513n
+\.xn--imr513n$
+
+:whois|whois.nic.bible
+\.bible$
+
+:whois|whois-sncf.nic.fr
+\.sncf$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.homedepot
+\.homedepot$
+
+:whois|whois.nic.xbox
+\.xbox$
+
+#:whois|whois.nic.montblanc
+:notice||Disallocated by IANA
+\.montblanc$
+
+:whois|whois.nic.azure
+\.azure$
+
+:whois|whois.nic.bing
+\.bing$
+
+:whois|whois.nic.hotmail
+\.hotmail$
+
+:notice||Disallocated by IANA
+\.jlc$
+
+:whois|whois.nic.microsoft
+\.microsoft$
+
+:whois|whois.nic.windows
+\.windows$
+
+:whois|whois.afilias-srs.net
+\.lasalle$
+
+:whois|whois.nic.bharti
+\.bharti$
+
+:whois|whois.nic.crown
+\.crown$
+
+:notice||Disallocated by IANA
+\.statoil$
+
+:whois|whois.nic.aeg
+\.aeg$
+
+#:whois|whois.nic.drive
+:whois|whois.nic.google
+\.drive$
+
+:whois|whois.nic.genting
+\.genting$
+
+:whois|whois.nic.google
+\.play$
+
+:whois|whois.nic.cba
+\.cba$
+
+:whois|whois.nic.commbank
+\.commbank$
+
+:whois|whois.nic.netbank
+\.netbank$
+
+:whois|whois.nic.ricoh
+\.ricoh$
+
+:whois|whois.nic.starhub
+\.starhub$
+
+:notice||Disallocated by IANA
+\.vista$
+
+:whois|whois.nic.vistaprint
+\.vistaprint$
+
+:whois|whois.nic.office
+\.office$
+
+:whois|whois.nic.scor
+\.scor$
+
+:whois|whois.nic.skype
+\.skype$
+
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.law
+\.law$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.bnl
+\.bnl$
+
+#:whois|whois-cl01.mm-registry.com
+:whois|whois.nic.bradesco
+\.bradesco$
+
+:whois|whois.nic.cloud
+\.cloud$
+
+:whois|whois.nic.hoteles
+\.hoteles$
+
+:whois|whois-fe.movistar.tango.knipp.de
+\.movistar$
+
+:whois|whois.nic.omega
+\.omega$
+
+:whois|whois.nic.swatch
+\.swatch$
+
+:whois|whois-fe.telefonica.tango.knipp.de
+\.telefonica$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.forum
+\.forum$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.realty
+\.realty$
+
+:whois|whois.nic.google
+\.app$
+
+:whois|whois.nic.sakura
+\.sakura$
+
+:whois|whois.nic.airtel
+\.airtel$
+
+:whois|whois.nic.barcelona
+\.barcelona$
+
+:whois|whois.nic.bcn
+\.bcn$
+
+:whois|whois.uniregistry.net
+\.game$
+
+:whois|whois.nic.jprs
+\.jprs$
+
+#:whois|whois.rightside.co
+:whois|whois.nic.live
+\.live$
+
+#:whois|whois.rightside.co
+:whois|whois.nic.studio
+\.studio$
+
+:whois|whois.nic.bentley
+\.bentley$
+
+:whois|whois.nic.hsbc
+\.hsbc$
+
+:notice||Disallocated by IANA
+\.iinet$
+
+:whois|whois.nic.orange
+\.orange$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.delta
+\.delta$
+
+:whois|whois.afilias-srs.net
+\.ist$
+
+:whois|whois.afilias-srs.net
+\.istanbul$
+
+:whois|whois.nic.ubs
+\.ubs$
+
+:whois|whois.nic.axa
+\.axa$
+
+:whois|whois.nic.citic
+\.citic$
+
+:whois|whois.nic.dnp
+\.dnp$
+
+:whois|whois.nic.jetzt
+\.jetzt$
+
+:whois|whois.nic.kred
+\.kred$
+
+:whois|whois.nic.neustar
+\.neustar$
+
+:whois|whois.nic.nyc
+\.nyc$
+
+:whois|whois.nic.okinawa
+\.okinawa$
+
+:whois|whois.nic.qpon
+\.qpon$
+
+:whois|whois.nic.ren
+\.ren$
+
+:whois|whois.nic.sohu
+\.sohu$
+
+:whois|whois.nic.xn--rhqv96g
+\.xn--rhqv96g$
+
+:whois|whois-lancaster.nic.fr
+\.lancaster$
+
+:whois|whois.afilias-srs.net
+\.nokia$
+
+:whois|whois.nic.ice
+\.ice$
+
+:whois|whois.nic.itau
+\.itau$
+
+:whois|whois.afilias.net
+\.bet$
+
+:whois|whois.nic.sanofi
+\.sanofi$
+
+:whois|whois.afilias-srs.net
+\.srl$
+
+:whois|whois.nic.tatamotors
+\.tatamotors$
+
+:whois|whois.nic.ipiranga
+\.ipiranga$
+
+:whois|whois.nic.lexus
+\.lexus$
+
+:whois|whois.nic.man
+\.man$
+
+:whois|whois.afilias.net
+\.pet$
+
+:whois|whois.nic.toyota
+\.toyota$
+
+:whois|whois.nic.xn--11b4c3d
+\.xn--11b4c3d$
+
+:whois|whois.nic.xn--3pxu8k
+\.xn--3pxu8k$
+
+:whois|whois.nic.xn--42c2d9a
+\.xn--42c2d9a$
+
+:whois|whois.nic.xn--9dbq2a
+\.xn--9dbq2a$
+
+:whois|whois.nic.xn--c2br7g
+\.xn--c2br7g$
+
+:whois|whois.nic.xn--fhbei
+\.xn--fhbei$
+
+:whois|whois.nic.xn--j1aef
+\.xn--j1aef$
+
+:whois|whois.nic.xn--mk1bu44c
+\.xn--mk1bu44c$
+
+:whois|whois.nic.xn--pssy2u
+\.xn--pssy2u$
+
+:whois|whois.nic.xn--t60b56a
+\.xn--t60b56a$
+
+:whois|whois.nic.xn--tckwe
+\.xn--tckwe$
+
+:whois|whois.nic.lixil
+\.lixil$
+
+#:whois|whois.nic.boots
+:notice||Disallocated by IANA
+\.boots$
+
+:whois|whois.nic.chanel
+\.chanel$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.vin
+\.vin$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.wine
+\.wine$
+
+#:whois|whois.nic.xperia
+:notice||Disallocated by IANA
+\.xperia$
+
+:whois|whois.nic.giving
+\.giving$
+
+#:whois|whois.nic.ceb
+:whois|whois.afilias-srs.net
+\.ceb$
+
+#:whois|whois.nic.fage
+:whois|whois.afilias-srs.net
+\.fage$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.group
+\.group$
+
+#:whois|whois.rightside.co
+:whois|whois.nic.family
+\.family$
+
+:whois|whois.nic.seek
+\.seek$
+
+:whois|whois.uniregistry.net
+\.mom$
+
+:whois|whois.nic.xn--efvy88h
+\.xn--efvy88h$
+
+:whois|whois.afilias-srs.net
+\.aco$
+
+:whois|whois.nic.aaa
+\.aaa$
+
+:whois|whois.afilias-srs.net
+\.gea$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.stcgroup
+\.stcgroup$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.viva
+\.viva$
+
+:whois|whois.nic.amica
+\.amica$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.stc
+\.stc$
+
+:whois|whois.nic.csc
+\.csc$
+
+:whois|whois.uniregistry.net
+\.car$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.protection
+\.protection$
+
+:whois|whois.afilias-srs.net
+\.stada$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.theatre
+\.theatre$
+
+:whois|whois.nic.linde
+\.linde$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.security
+\.security$
+
+:whois|whois.nic.bms
+\.bms$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.ltd
+\.ltd$
+
+:whois|whois.nic.obi
+\.obi$
+
+:whois|whois.gtlds.nic.br
+\.bom$
+
+:whois|whois.gtlds.nic.br
+\.final$
+
+:whois|whois.nic.hyundai
+\.hyundai$
+
+:whois|whois.nic.kia
+\.kia$
+
+:whois|whois.nic.seven
+\.seven$
+
+:whois|whois.afilias-srs.net
+\.stockholm$
+
+:whois|whois.nic.clubmed
+\.clubmed$
+
+:whois|whois.nic.moi
+\.moi$
+
+:whois|whois.nic.mtr
+\.mtr$
+
+:whois|whois.nic.virgin
+\.virgin$
+
+:whois|whois.nic.yamaxun
+\.yamaxun$
+
+:whois|whois.afilias-srs.net
+\.cipriani$
+
+:whois|whois.nic.kinder
+\.kinder$
+
+:whois|whois.nic.dell
+\.dell$
+
+:whois|whois.nic.aramco
+\.aramco$
+
+:whois|whois.nic.xn--mgba3a3ejt
+\.xn--mgba3a3ejt$
+
+:whois|whois.nic.arte
+\.arte$
+
+:notice||Disallocated by IANA
+\.mutuelle$
+
+:whois|whois.nic.gucci
+\.gucci$
+
+:whois|whois.nic.jaguar
+\.jaguar$
+
+:whois|whois.nic.landrover
+\.landrover$
+
+:whois|whois.nic.rwe
+\.rwe$
+
+:whois|whois.afilias-srs.net
+\.zara$
+
+#:whois|whois.nic.meo
+:notice||Disallocated by IANA
+\.meo$
+
+:whois|whois.nic.ping
+\.ping$
+
+#:whois|whois.nic.sapo
+:notice||Disallocated by IANA
+\.sapo$
+
+:whois|whois.nic.sbs
+\.sbs$
+
+:whois|whois.nic.aarp
+\.aarp$
+
+:whois|whois.afilias-srs.net
+\.apple$
+
+:whois|whois.afilias-srs.net
+\.beats$
+
+:whois|whois.cmc.iq
+\.xn--mgbtx2b$
+
+# TODO: Entry generated automatically. Needs manual check.
+:notice||Whois server unknown (2019-04-28)
+\.xn--qxam$
+
+:whois|whois.nic.ferrero
+\.ferrero$
+
+:whois|whois.nic.playstation
+\.playstation$
+
+:whois|whois.nic.rocher
+\.rocher$
+
+:whois|whois.nic.cityeats
+\.cityeats$
+
+:whois|whois.afilias-srs.net
+\.creditunion$
+
+:whois|whois.nic.lifestyle
+\.lifestyle$
+
+:whois|whois.nic.vana
+\.vana$
+
+:whois|whois.nic.fairwinds
+\.fairwinds$
+
+:whois|whois.nic.grainger
+\.grainger$
+
+:whois|whois.nic.tab
+\.tab$
+
+:whois|whois.nic.comsec
+\.comsec$
+
+#:whois|whois-cl01.mm-registry.com
+:whois|whois.nic.broadway
+\.broadway$
+
+:whois|whois.afilias-srs.net
+\.audi$
+
+:whois|whois.afilias-srs.net
+\.boehringer$
+
+:whois|whois-bostik.nic.fr
+\.bostik$
+
+:whois|whois.afilias-srs.net
+\.bugatti$
+
+:whois|whois.afilias-srs.net
+\.lamborghini$
+
+:whois|whois.nic.verisign
+\.verisign$
+
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.vip
+\.vip$
+
+:whois|whois.nic.sfr
+\.sfr$
+
+:whois|whois.nic.insurance
+\.insurance$
+
+:whois|whois.nic.med
+\.med$
+
+:whois|whois.nic.norton
+\.norton$
+
+:whois|whois.nic.symantec
+\.symantec$
+
+:whois|whois.nic.author
+\.author$
+
+:whois|whois.nic.book
+\.book$
+
+:whois|whois.nic.bot
+\.bot$
+
+:whois|whois.afilias-srs.net
+\.buy$
+
+:whois|whois.nic.call
+\.call$
+
+:whois|whois.nic.circle
+\.circle$
+
+:whois|whois.nic.fast
+\.fast$
+
+:whois|whois.nic.firestone
+\.firestone$
+
+:whois|whois.nic.got
+\.got$
+
+:whois|whois.nic.jot
+\.jot$
+
+:whois|whois.nic.joy
+\.joy$
+
+:whois|whois.nic.like
+\.like$
+
+:whois|whois.agitsys.net
+\.nowruz$
+
+:whois|whois.nic.pin
+\.pin$
+
+:whois|whois.nic.read
+\.read$
+
+:whois|whois.nic.room
+\.room$
+
+:whois|whois.nic.safe
+\.safe$
+
+#:whois|whois.nic.salon
+#:whois|whois.donuts.co
+:whois|whois.nic.salon
+\.salon$
+
+:whois|whois.nic.gmo
+\.sharp$
+
+:whois|whois.agitsys.net
+\.shia$
+
+:whois|whois.nic.smile
+\.smile$
+
+:whois|whois.agitsys.net
+\.tci$
+
+:whois|whois.afilias-srs.net
+\.travelers$
+
+:whois|whois.nic.zero
+\.zero$
+
+:whois|whois.agitsys.net
+\.pars$
+
+:whois|whois.agitsys.net
+\.xn--mgbt3dhd$
+
+:whois|whois.afilias-srs.net
+\.redumbrella$
+
+:whois|whois.afilias-srs.net
+\.trv$
+
+:whois|whois.nic.tushu
+\.tushu$
+
+:whois|whois.nic.watches
+\.watches$
+
+:whois|whois.nic.xn--eckvdtc9d
+\.xn--eckvdtc9d$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.kfh
+\.kfh$
+
+:whois|whois.nic.kpn
+\.kpn$
+
+:whois|whois.nic.shell
+\.shell$
+
+:whois|whois.afilias-srs.net
+\.travelersinsurance$
+
+:whois|whois.nic.wanggou
+\.wanggou$
+
+:whois|whois.nic.xn--kpu716f
+\.xn--kpu716f$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.xn--ngbe9e0a
+\.xn--ngbe9e0a$
+
+:whois|whois.nic.xn--pbt977c
+\.xn--pbt977c$
+
+:whois|whois.nic.ford
+\.ford$
+
+:whois|whois.nic.jmp
+\.jmp$
+
+:whois|whois.nic.lincoln
+\.lincoln$
+
+:whois|whois.nic.sas
+\.sas$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.storage
+\.storage$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--jlq61u9w7b
+\.xn--jlq61u9w7b$
+
+:whois|whois.nic.analytics
+\.analytics$
+
+:whois|whois.nic.contact
+\.contact$
+
+:whois|whois.nic.pid
+\.pid$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.star
+\.star$
+
+:whois|whois.nic.weber
+\.weber$
+
+:whois|whois.nic.mobily
+\.mobily$
+
+:whois|whois.nic.xn--mgbb9fbpob
+\.xn--mgbb9fbpob$
+
+:whois|whois.nic.bosch
+\.bosch$
+
+:whois|whois.nic.dealer
+\.dealer$
+
+:whois|whois.nic.fox
+\.fox$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.lamer
+\.lamer$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.origins
+\.origins$
+
+:whois|whois.nic.rexroth
+\.rexroth$
+
+:whois|whois.nic.safety
+\.safety$
+
+:whois|whois.afilias-srs.net
+\.schaeffler$
+
+:whois|whois.nic.statefarm
+\.statefarm$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.clinique
+\.clinique$
+
+:whois|whois.nic.living
+\.living$
+
+:whois|whois.afilias.net
+\.promo$
+
+#:whois|whois.ngtld.cn
+:whois|whois.gtld.knet.cn
+\.baidu$
+
+:whois|whois.nic.dubai
+\.dubai$
+
+#:whois|whois.ksregistry.net
+:whois|whois.nic.fresenius
+\.fresenius$
+
+#:whois|whois.nic.volkswagen
+:whois|whois.afilias-srs.net
+\.volkswagen$
+
+:whois|whois.nic.tube
+\.tube$
+
+:whois|whois.nic.weather
+\.weather$
+
+:whois|whois.nic.compare
+\.compare$
+
+:whois|whois.nic.iselect
+\.iselect$
+
+:whois|whois.nic.makeup
+\.makeup$
+
+:whois|whois.nic.select
+\.select$
+
+:whois|whois.nic.skin
+\.skin$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.alibaba
+\.alibaba$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.alipay
+\.alipay$
+
+:whois|whois.nic.softbank
+\.softbank$
+
+:whois|whois.nic.xn--g2xx48c
+\.xn--g2xx48c$
+
+:whois|whois.nic.lifeinsurance
+\.lifeinsurance$
+
+:whois|whois.afilias-srs.net
+\.edeka$
+
+#:whois|whois.nic.pamperedchef
+:notice||Disallocated by IANA
+\.pamperedchef$
+
+:whois|whois.nic.taobao
+\.taobao$
+
+:whois|whois.nic.tiffany
+\.tiffany$
+
+:whois|whois.nic.tmall
+\.tmall$
+
+:whois|whois.nic.adac
+\.adac$
+
+:whois|whois.nic.health
+\.health$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.helsinki
+\.helsinki$
+
+:whois|whois.nic.lanxess
+\.lanxess$
+
+:whois|whois.nic.nikon
+\.nikon$
+
+:whois|whois.nic.weatherchannel
+\.weatherchannel$
+
+:whois|whois.nic.deloitte
+\.deloitte$
+
+:whois|whois.nic.unicom
+\.unicom$
+
+:whois|whois.nic.frontier
+\.frontier$
+
+:whois|whois.nic.quest
+\.quest$
+
+:whois|whois.nic.xn--8y0a063a
+\.xn--8y0a063a$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.gallup
+\.gallup$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.hdfcbank
+\.hdfcbank$
+
+:whois|whois.afilias-srs.net
+\.natura$
+
+:whois|whois.afilias-srs.net
+\.pwc$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.wolterskluwer
+\.wolterskluwer$
+
+:whois|whois.eu
+.xn--e1a4c$
+
+:whois|whois.monic.mo
+\.xn--mix891f$
+
+:whois|whois.nic.flickr
+\.flickr$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.tvs
+\.tvs$
+
+:whois|whois.nic.yahoo
+\.yahoo$
+
+:whois|whois.nic.coupon
+\.coupon$
+
+:whois|whois.nic.spot
+\.spot$
+
+:whois|whois.nic.xn--1ck2e1b
+\.xn--1ck2e1b$
+
+:whois|whois.nic.xn--cck2b3b
+\.xn--cck2b3b$
+
+:whois|whois.nic.xn--gckr3f0f
+\.xn--gckr3f0f$
+
+:whois|whois.nic.xn--rovu88b
+\.xn--rovu88b$
+
+:whois|whois.nic.xn--bck1b9a5dre4c
+\.xn--bck1b9a5dre4c$
+
+:whois|whois.nic.store
+\.store$
+
+:whois|whois.afilias-srs.net
+\.viking$
+
+:whois|whois.nic.xn--jvr189m
+\.xn--jvr189m$
+
+:whois|whois.nic.song
+\.song$
+
+#:whois|whois.nic.telecity
+:notice||Disallocated by IANA
+\.telecity$
+
+:whois|whois.nic.tunes
+\.tunes$
+
+:whois|whois.nic.chase
+\.chase$
+
+:whois|whois.nic.jpmorgan
+\.jpmorgan$
+
+:whois|whois.nic.passagens
+\.passagens$
+
+:whois|whois.nic.vuelos
+\.vuelos$
+
+:whois|whois.nic.kerryhotels
+\.kerryhotels$
+
+:whois|whois.nic.kerrylogistics
+\.kerrylogistics$
+
+:whois|whois.nic.kerryproperties
+\.kerryproperties$
+
+:whois|whois.nic.kuokgroup
+\.kuokgroup$
+
+:whois|whois.nic.xn--w4r85el8fhu5dnra
+\.xn--w4r85el8fhu5dnra$
+
+:whois|whois.afilias-srs.net
+\.avianca$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.bcg
+\.bcg$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.gmbh
+\.gmbh$
+
+:whois|whois.nic.locus
+\.locus$
+
+:whois|whois-total.nic.fr
+\.total$
+
+:whois|whois.nic.stream
+\.stream$
+
+:whois|whois.nic.gallo
+\.gallo$
+
+:whois|whois.afilias-srs.net
+\.shaw$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ally
+\.ally$
+
+:whois|whois.nic.barefoot
+\.barefoot$
+
+:whois|whois.nic.aws
+\.aws$
+
+:whois|whois.afilias-srs.net
+\.extraspace$
+
+:whois|whois.nic.talk
+\.talk$
+
+:whois|whois.nic.xn--fct429k
+\.xn--fct429k$
+
+:whois|whois.nic.you
+\.you$
+
+:whois|whois.teleinfo.cn
+\.anquan$
+
+:whois|whois.afilias-srs.net
+\.jcp$
+
+:whois|whois.nic.nissay
+\.nissay$
+
+:whois|whois.teleinfo.cn
+\.shouji$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.sina
+\.sina$
+
+:whois|whois.teleinfo.cn
+\.xihuan$
+
+:whois|whois.teleinfo.cn
+\.yun$
+
+#:whois|whois.nic.htc
+:notice||Disallocated by IANA
+\.htc$
+
+:whois|whois.nic.kpmg
+\.kpmg$
+
+:whois|whois.nic.mutual
+\.mutual$
+
+:whois|whois.afilias-srs.net
+\.abbvie$
+
+:whois|whois.nic.abudhabi
+\.abudhabi$
+
+:whois|whois.nic.northwesternmutual
+\.northwesternmutual$
+
+:whois|whois.afilias-srs.net
+\.vig$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.weibo
+\.weibo$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--9krt00a
+\.xn--9krt00a$
+
+:whois|whois.nic.xn--mgbca7dzdo
+\.xn--mgbca7dzdo$
+
+:whois|whois.nic.baby
+\.baby$
+
+:whois|whois.nic.jnj
+\.jnj$
+
+:whois|whois.nic.teva
+\.teva$
+
+:whois|whois.afilias-srs.net
+\.agakhan$
+
+:whois|whois.afilias-srs.net
+\.akdn$
+
+:whois|whois.afilias-srs.net
+\.imamat$
+
+:whois|whois.afilias-srs.net
+\.ismaili$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.sbi
+\.sbi$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.statebank
+\.statebank$
+
+:whois|whois.nic.ftr
+\.ftr$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--5tzm5g
+\.xn--5tzm5g$
+
+:whois|whois.nic.mls
+\.mls$
+
+:whois|whois.afilias-srs.net
+\.progressive$
+
+:whois|whois.nic.lipsy
+\.lipsy$
+
+:whois|whois.nic.next
+\.next$
+
+:whois|whois.nic.nextdirect
+\.nextdirect$
+
+:whois|whois.nic.olayan
+\.olayan$
+
+:whois|whois.nic.warman
+\.warman$
+
+:whois|whois.nic.xn--mgba7c0bbn0a
+\.xn--mgba7c0bbn0a$
+
+:whois|whois.nic.olayangroup
+\.olayangroup$
+
+:whois|whois.nic.flir
+\.flir$
+
+#:whois|whois-dub.mm-registry.com
+:whois|whois.nic.dds
+\.dds$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.metlife
+\.metlife$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.nowtv
+\.nowtv$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.pccw
+\.pccw$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.richardli
+\.richardli$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--fzys8d69uvgm
+\.xn--fzys8d69uvgm$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.hkt
+\.hkt$
+
+:whois|whois.nic.guardian
+\.guardian$
+
+:whois|whois.nic.xn--w4rs40l
+\.xn--w4rs40l$
+
+:whois|whois.nic.blog
+\.blog$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.dot
+\.dot$
+
+:whois|whois.nic.aetna
+\.aetna$
+
+:whois|whois.nic.realestate
+\.realestate$
+
+:whois|whois.nic.shop
+\.shop$
+
+:whois|whois.nic.mlb
+\.mlb$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.dtv
+\.dtv$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.locker
+\.locker$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ollo
+\.ollo$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ott
+\.ott$
+
+:whois|whois.nic.mattel
+\.mattel$
+
+:whois|whois.nic.netflix
+\.netflix$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ups
+\.ups$
+
+:whois|whois.nic.dhl
+\.dhl$
+
+#:whois|whois.rightside.co
+:whois|whois.nic.games
+\.games$
+
+:whois|whois.nic.gmo
+\.hisamitsu$
+
+:whois|whois.nic.gmo
+\.pioneer$
+
+:whois|whois.nic.zappos
+\.zappos$
+
+:whois|whois.nic.audible
+\.audible$
+
+:whois|whois.nic.chintai
+\.chintai$
+
+:whois|whois.nic.deal
+\.deal$
+
+:notice||Disallocated by IANA
+\.epost$
+
+:whois|whois.nic.fire
+\.fire$
+
+:whois|whois.nic.imdb
+\.imdb$
+
+:whois|whois.nic.kindle
+\.kindle$
+
+:whois|whois.nic.now
+\.now$
+
+:whois|whois.nic.prime
+\.prime$
+
+:whois|whois.nic.save
+\.save$
+
+:whois|whois.nic.silk
+\.silk$
+
+:whois|whois.nic.tdk
+\.tdk$
+
+:whois|whois.eu
+\.xn--e1a4c$
+
+:whois|whois.nic.airbus
+\.airbus$
+
+:whois|whois.nic.alstom
+\.alstom$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.dunlop
+\.dunlop$
+
+:whois|whois.nic.dupont
+\.dupont$
+
+:whois|whois.nic.ericsson
+\.ericsson$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.goodyear
+\.goodyear$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.kosher
+\.kosher$
+
+#:whois|whois.ksregistry.net
+:whois|whois.nic.cam
+\.cam$
+
+:whois|whois.nic.lego
+\.lego$
+
+:whois|whois.nic.able
+\.able$
+
+:whois|whois.nic.anz
+\.anz$
+
+:notice||Disallocated by IANA
+\.blanco$
+
+:whois|whois.afilias-srs.net
+\.itv$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.shopping
+\.shopping$
+
+:notice||Disallocated by IANA
+\.orientexpress$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.art
+\.art$
+
+:whois|whois.nic.cookingchannel
+\.cookingchannel$
+
+:whois|whois.nic.foodnetwork
+\.foodnetwork$
+
+:whois|whois.nic.frontdoor
+\.frontdoor$
+
+:whois|whois.nic.hgtv
+\.hgtv$
+
+:whois|whois.nic.nfl
+\.nfl$
+
+:whois|whois.nic.politie
+\.politie$
+
+:whois|whois.nic.travelchannel
+\.travelchannel$
+
+:whois|whois.nic.woodside
+\.woodside$
+
+:whois|whois.nic.farmers
+\.farmers$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.fedex
+\.fedex$
+
+:whois|whois.ikano.tld-box.at
+\.ikano$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.pnc
+\.pnc$
+
+:whois|whois.nic.cbre
+\.cbre$
+
+:whois|whois.nic.shangrila
+\.shangrila$
+
+:whois|whois.nic.xn--5su34j936bgsg
+\.xn--5su34j936bgsg$
+
+:whois|whois.imena.bg
+\.xn--90ae$
+
+:notice||Disallocated by IANA
+\.zippo$
+
+:whois|whois.afilias-srs.net
+\.mit$
+
+:whois|whois.nic.comcast
+\.comcast$
+
+:whois|whois.nic.gmo
+\.fujitsu$
+
+:whois|whois.afilias-srs.net
+\.godaddy$
+
+:whois|whois.nic.gmo
+\.mitsubishi$
+
+:whois|whois.nic.xfinity
+\.xfinity$
+
+:whois|whois.nic.nike
+\.nike$
+
+:whois|whois.nic.ses
+\.ses$
+
+:whois|whois.nic.intuit
+\.intuit$
+
+:whois|whois.nic.macys
+\.macys$
+
+:whois|whois.nic.mint
+\.mint$
+
+:whois|whois.afilias-srs.net
+\.allstate$
+
+:notice||Disallocated by IANA
+\.goodhands$
+
+:whois|whois.nic.lefrak
+\.lefrak$
+
+:whois|whois.nic.bbt
+\.bbt$
+
+:whois|whois.nic.beauty
+\.beauty$
+
+:whois|whois.nic.fujixerox
+\.fujixerox$
+
+:whois|whois.nic.homegoods
+\.homegoods$
+
+:whois|whois.nic.homesense
+\.homesense$
+
+:whois|whois.nic.lancome
+\.lancome$
+
+:whois|whois.nic.lundbeck
+\.lundbeck$
+
+:whois|whois.nic.marshalls
+\.marshalls$
+
+:whois|whois.nic.nationwide
+\.nationwide$
+
+:whois|whois.nic.onyourside
+\.onyourside$
+
+:whois|whois.nic.gmo
+\.panasonic$
+
+:whois|whois.nic.pfizer
+\.pfizer$
+
+#:whois|whois-gtld.smart.com.ph
+:whois|whois.nic.smart
+\.smart$
+
+:whois|whois.nic.staples
+\.staples$
+
+:whois|whois.nic.tjmaxx
+\.tjmaxx$
+
+:whois|whois.nic.tjx
+\.tjx$
+
+:whois|whois.nic.tkmaxx
+\.tkmaxx$
+
+:whois|whois.nic.vivo
+\.vivo$
+
+:whois|whois.nic.winners
+\.winners$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.bestbuy
+\.bestbuy$
+
+:whois|whois.nic.lpl
+\.lpl$
+
+:whois|whois.nic.lplfinancial
+\.lplfinancial$
+
+:whois|whois.nic.tiaa
+\.tiaa$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.doctor
+\.doctor$
+
+:whois|whois.nic.duck
+\.duck$
+
+:whois|whois.nic.ieee
+\.ieee$
+
+:whois|whois.nic.off
+\.off$
+
+:whois|whois.nic.raid
+\.raid$
+
+:whois|whois.nic.rightathome
+\.rightathome$
+
+:whois|whois.nic.scjohnson
+\.scjohnson$
+
+:whois|whois.nic.swiftcover
+\.swiftcover$
+
+:whois|whois.nic.amfam
+\.amfam$
+
+:whois|whois.nic.booking
+\.booking$
+
+:whois|whois.nic.citadel
+\.citadel$
+
+:whois|whois.nic.duns
+\.duns$
+
+:whois|whois.afilias-srs.net
+\.esurance$
+
+:whois|whois.nic.msd
+\.msd$
+
+:whois|whois.nic.americanfamily
+\.americanfamily$
+
+:whois|whois.nic.honeywell
+\.honeywell$
+
+:whois|whois.nic.abc
+\.abc$
+
+:whois|whois.nic.banamex
+\.banamex$
+
+:whois|whois.afilias-srs.net
+\.chrysler$
+
+:whois|whois.nic.citi
+\.citi$
+
+:whois|whois.nic.discover
+\.discover$
+
+:whois|whois.nic.glade
+\.glade$
+
+:whois|whois.nic.hyatt
+\.hyatt$
+
+:whois|whois.nic.intel
+\.intel$
+
+:whois|whois.afilias-srs.net
+\.jeep$
+
+:whois|whois.nic.pramerica
+\.pramerica$
+
+:whois|whois.nic.pru
+\.pru$
+
+:whois|whois.nic.prudential
+\.prudential$
+
+:whois|whois.afilias-srs.net
+\.srt$
+
+:whois|whois.afilias-srs.net
+\.uconnect$
+
+:whois|whois.nic.visa
+\.visa$
+
+:whois|whois.nic.ladbrokes
+\.ladbrokes$
+
+:whois|whois.nic.afamilycompany
+\.afamilycompany$
+
+:whois|whois.nic.lilly
+\.lilly$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.mckinsey
+\.mckinsey$
+
+:whois|whois.afilias-srs.net
+\.alfaromeo$
+
+:whois|whois.nic.bofa
+\.bofa$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ferrari
+\.ferrari$
+
+:whois|whois.afilias-srs.net
+\.fiat$
+
+:whois|whois.nic.juniper
+\.juniper$
+
+:whois|whois.afilias-srs.net
+\.mopar$
+
+:whois|whois.nic.nba
+\.nba$
+
+:whois|whois.afilias-srs.net
+\.abarth$
+
+:whois|whois.nic.athleta
+\.athleta$
+
+:whois|whois.nic.bananarepublic
+\.bananarepublic$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.blockbuster
+\.blockbuster$
+
+:whois|whois.nic.calvinklein
+\.calvinklein$
+
+:whois|whois.afilias-srs.net
+\.cbs$
+
+:whois|whois.afilias-srs.net
+\.dodge$
+
+:whois|whois.nic.fidelity
+\.fidelity$
+
+:whois|whois.nic.gap
+\.gap$
+
+:whois|whois.afilias-srs.net
+\.lancia$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.latino
+\.latino$
+
+:whois|whois.nic.loft
+\.loft$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.maserati
+\.maserati$
+
+:whois|whois.nic.oldnavy
+\.oldnavy$
+
+:whois|whois.nic.qvc
+\.qvc$
+
+:whois|whois.afilias-srs.net
+\.showtime$
+
+:whois|whois.nic.target
+\.target$
+
+:whois|whois.nic.americanexpress
+\.americanexpress$
+
+:whois|whois.nic.amex
+\.amex$
+
+#:whois|whois.nic.mcd
+:notice||Disallocated by IANA
+\.mcd$
+
+#:whois|whois.nic.mcdonalds
+:notice||Disallocated by IANA
+\.mcdonalds$
+
+:whois|whois.nic.open
+\.open$
+
+:whois|whois.nic.capitalone
+\.capitalone$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.dish
+\.dish$
+
+:whois|whois.nic.hot
+\.hot$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.hughes
+\.hughes$
+
+:whois|whois.nic.pay
+\.pay$
+
+:whois|whois.nic.secure
+\.secure$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.sling
+\.sling$
+
+:whois|whois.nic.asda
+\.asda$
+
+:whois|whois.nic.hbo
+\.hbo$
+
+:whois|whois.afilias-srs.net
+\.aigo$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.hdfc
+\.hdfc$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--3oq18vl8pn36a
+\.xn--3oq18vl8pn36a$
+
+:whois|whois.nic.auspost
+\.auspost$
+
+:whois|whois.nic.george
+\.george$
+
+:whois|whois.nic.nab
+\.nab$
+
+:whois|whois.nic.samsclub
+\.samsclub$
+
+:whois|whois.nic.ubank
+\.ubank$
+
+:whois|whois.nic.walmart
+\.walmart$
+
+:whois|whois.nic.diy
+\.diy$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.eco
+\.eco$
+
+:whois|whois.nic.vanguard
+\.vanguard$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.monster
+\.monster$
+
+:whois|whois.afilias-srs.net
+\.fido$
+
+:whois|whois.afilias-srs.net
+\.rogers$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.observer
+\.observer$
+
+:whois|whois.nic.wow
+\.wow$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.dvr
+\.dvr$
+
+:whois|whois.nic.xn--gk3at1e
+\.xn--gk3at1e$
+
+# TODO: Entry generated automatically. Needs manual check.
+:notice||Whois server unknown (2019-04-28)
+\.xn--54b7fta0cc$
+
+:whois|whois.nic.radio
+\.radio$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.basketball
+\.basketball$
+
+:whois|whois.nic.volvo
+\.volvo$
+
+:whois|whois.nic.baseball
+\.baseball$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.case
+\.case$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.caseih
+\.caseih$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.iveco
+\.iveco$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.newholland
+\.newholland$
+
+:whois|whois.nic.aol
+\.aol$
+
+:whois|whois.nic.free
+\.free$
+
+:whois|whois.nic.food
+\.food$
+
+# Alternative URL: http://nic.box/
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.box
+\.box$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.cruise
+\.cruise$
+
+:whois|whois.nic.moto
+\.moto$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.jio
+\.jio$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.reliance
+\.reliance$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ril
+\.ril$
+
+# Alternative URL: http://nic.rmit/
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.rmit
+\.rmit$
+
+:whois|whois.nic.boston
+\.boston$
+
+# Alternative URL: http://nic.catholic/
+#:whois|whois.aridnrs.net.au
+:whois|nic.catholic
+\.catholic$
+
+# Alternative URL: https://whois.nic.xn--80aqecdr1a/
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.xn--80aqecdr1a
+\.xn--80aqecdr1a$
+
+# Alternative URL: https://whois.nic.xn--mgbi4ecexp/
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.xn--mgbi4ecexp
+\.xn--mgbi4ecexp$
+
+# Alternative URL: https://whois.nic.xn--tiq49xqyj/
+#:whois|whois.aridnrs.net.au
+:whois|whois.nic.xn--tiq49xqyj
+\.xn--tiq49xqyj$
+
+:whois|whois.nic.hair
+\.hair$
+
+#:whois|whois.donuts.co
+:whois|whois.nic.hospital
+\.hospital$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.data
+\.data$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.mobile
+\.mobile$
+
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.phone
+\.phone$
+
+#:whois|whois.centralnic.com
+:whois|whois.nic.fun
+\.fun$
+
+:whois|africa-whois.registry.net.za
+\.africa$
+
+# TODO: Entry generated automatically. Needs manual check.
+:notice||Whois server unknown (2019-04-28)
+\.xn--mgbai9azgqp6j$
+
+:whois|whois.nic.hotels
+\.hotels$
+
+:whois|whois.centralnic.com
+\.rugby$
+
+:whois|whois.nic.arab
+\.arab$
+
+:whois|whois.nic.xn--ngbrx
+\.xn--ngbrx$
+
+:whois|whois.centralnic.com
+\.etisalat$
+
+:whois|whois.centralnic.com
+\.xn--mgbaakc7dvf$
+
+:whois|whois.nic.grocery
+\.grocery$
+
+:whois|whois.nic.google
+\.map$
+
+:whois|whois.nic.google
+\.phd$
+
+:whois|whois.nic.google
+\.search$
+
+:whois|whois.registry.in
+\.xn--2scrj9c$
+
+:whois|whois.registry.in
+\.xn--3hcrj9c$
+
+:whois|whois.registry.in
+\.xn--45br5cyl$
+
+:whois|whois.registry.in
+\.xn--h2breg3eve$
+
+:whois|whois.registry.in
+\.xn--h2brj9c8c$
+
+:whois|whois.registry.in
+\.xn--mgbbh1a$
+
+:whois|whois.registry.in
+\.xn--mgbgu82a$
+
+:whois|whois.registry.in
+\.xn--rvc1e0am3e$
+
+:whois|whois.nic.merckmsd
+\.merckmsd$
+
+:whois|whois.nic.sport
+\.sport$
+
+:whois|whois.nic.xn--otu796d
+\.xn--otu796d$
+
+:whois|whois.afilias.net
+\.llc$
+
+:whois|whois.nic.charity
+\.charity$
+
+:whois|whois.nic.inc
+\.inc$
+
+:whois|whois.nic.mr
+\.xn--mgbah1a3hjkrd$

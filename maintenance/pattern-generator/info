@@ -1,0 +1,8 @@
+This tool updates the GWhoIs pattern files which include the following patterns:
+- IPv4 blocks
+- IPv6 blocks
+- ASNs
+- TLDs
+- new gTLDs
+
+You can run it as cronjob

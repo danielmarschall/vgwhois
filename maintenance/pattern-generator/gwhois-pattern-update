@@ -1,0 +1,104 @@
+#!/bin/bash
+
+#
+#  generic Whois - Automatic Pattern Generator Master-Script
+#
+#  (c) 2012-2015 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2015-04-15
+#
+
+# TODO: "force" option will enforce generate even when web download was not http 200
+
+DIR=$( dirname "$0" );
+
+. "$DIR"/../config/gwhois-pattern-update.conf
+. "$DIR"/../config/urls.conf
+
+IANA_CACHE_DIR="$DIR"/../.cache/pattern-generator/iana
+
+function download() {
+	# in:  <url> <outputfile>
+	# out: 0 = success
+	#      1 = error
+	#      2 = success, but nothing updated
+	# output file will not be touched when nothing needs to be updated
+
+	# Thanks to http://blog.yjl.im/2012/03/downloading-only-when-modified-using.html for this wonderful tutorial
+
+	if [ -f "$2" ]; then
+		HTTPCODE=$( curl -o "$2" -z "$2" -fsSL --write-out %{http_code} -- "$1" )
+	else
+		HTTPCODE=$( curl -o "$2" -fsSL --write-out %{http_code} -- "$1" )
+	fi
+
+	RES=$?
+
+	if [ $RES -eq 0 ]; then
+		touch "$2.success"
+		if [[ "$HTTPCODE" == "200" ]]; then
+			return 0
+		else
+			return 2
+		fi
+	else
+		touch "$2.fail"
+		return 1
+	fi
+}
+
+if [ $? -ne 0 ]
+then
+	echo "Error when reading configuration value IANA_CACHE_DIR" > /dev/stderr
+	exit 1
+fi
+
+echo "=================== GWHOIS PATTERN UPDATE ==================="
+echo "This script downloads the latest RIR statistics"
+echo "and renews the pattern files of GWhoIs to provide"
+echo "up-to-date informations of IPv4, IPv6 and ASN resources."
+echo "ATTENTION: The parsing of the downloaded files will take"
+echo "approximately 15-20 minutes!!!"
+echo "============================================================="
+
+# RIR stats are necessary for generate_ipv4 and generate_ipv6
+echo "RIR stats Synchronization ...";
+"$DIR"/sync_rir_stats
+
+mkdir -p "$IANA_CACHE_DIR"/
+
+echo "IPv4 Synchronization ...";
+download "$IANA_IPV4_ASSIGNMENTS" "$IANA_CACHE_DIR"/ipv4-address-space.txt
+if [ $? -eq 0 ]; then
+	echo "IPv4 Generating ..."
+	"$DIR"/generate_ipv4
+fi
+
+echo "IPv6 Synchronization ...";
+download "$IANA_IPV6_ASSIGNMENTS" "$IANA_CACHE_DIR"/ipv6-unicast-address-assignments.txt
+if [ $? -eq 0 ]; then
+	echo "IPv6 Generating ..."
+	"$DIR"/generate_ipv6
+fi
+
+echo "ASN Synchronization ...";
+download "$IANA_AS_NUMBERS" "$IANA_CACHE_DIR"/as-numbers.txt
+if [ $? -eq 0 ]; then
+	echo "ASN Generating ..."
+	"$DIR"/generate_asn
+fi
+
+echo "TLD Synchronization ...";
+download "$IANA_TLD_REGISTRY" "$IANA_CACHE_DIR"/tlds-alpha-by-domain.txt
+if [ $? -eq 0 ]; then
+	echo "TLD Generating ..."
+	"$DIR"/generate_tld
+
+	echo "Domains Generating ..."
+	"$DIR"/generate_domains
+fi
+
+echo "Everything finished!"

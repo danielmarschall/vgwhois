@@ -1,0 +1,161 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Automatic Pattern Generator: TLDs
+#
+#  (c) 2012-2015 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2015-07-13
+#
+
+require_once __DIR__ . '/iana_functions.inc.php';
+require_once __DIR__ . '/config.inc.php';
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+define('PATTERN_DIR', __DIR__ . '/../../main/pattern');
+define('DOMAINS_PATTERN_FILE', PATTERN_DIR.'/domains');
+
+error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
+
+$iana_tld_data = null;
+
+// Step 1:
+// Check if in the meantime TLDs without an official whois server were updated to have one
+// Attention/TODO: A change of the whois name still needs manual intervention!
+
+$domains_cont_original = file_get_contents(DOMAINS_PATTERN_FILE);
+
+$domains_cont_new = preg_replace_callback(
+	'@# TODO: Entry generated automatically\. Needs manual check\.\n:notice\|\|Whois server unknown \((.*)\)\n\\\.(.*)\$\n@imU',
+	function ($treffer) {
+		$in_all = $treffer[0];
+		$in_ts  = $treffer[1];
+		$in_tld = $treffer[2];
+
+		$days_passed = (time()-strtotime($treffer[1]))/(60*60*24);
+		if ($days_passed < DOMAINS_RECHECK_MISSING_WHOIS_SERVERS) {
+			return $in_all; // leave everything unchanged
+		}
+
+		$whois_serv = find_rootzone_whois_server($in_tld);
+
+		if (!$whois_serv) {
+			// Nothing found. Just update last check date.
+			return str_replace($in_ts, date('Y-m-d'), $in_all);
+		} else {
+			// Update the entry
+			return ":whois|$whois_serv\n.${in_tld}\$\n";
+		}
+	},
+	$domains_cont_original
+);
+
+if ($domains_cont_original != $domains_cont_new) {
+	file_put_contents(DOMAINS_PATTERN_FILE, $domains_cont_new);
+	gwi_update_domains_patternfile();
+}
+
+// Step 2:
+// Search for new TLDs which are not in our pattern file
+
+if (!isset($iana_tld_data)) $iana_tld_data = get_iana_tld_data();
+
+foreach ($iana_tld_data as $tld) {
+	if ($tld[0] == '#') continue;
+
+	$tld = strtolower($tld);
+
+	if (!does_exist($tld)) {
+		$whois_serv = find_rootzone_whois_server($tld);
+
+		$to_append = "\n";
+		if ($whois_serv) {
+			$to_append .= ":whois|$whois_serv\n";
+		} else {
+			$to_append .= "# TODO: Entry generated automatically. Needs manual check.\n";
+			$to_append .= ":notice||Whois server unknown (".date('Y-m-d').")\n";
+		}
+		$to_append .= "\\.$tld$\n";
+
+		file_put_contents(DOMAINS_PATTERN_FILE, $to_append, FILE_APPEND);
+
+		gwi_update_domains_patternfile();
+
+		echo "Added: $tld\n";
+	}
+
+}
+
+# ------------------------------------------------------
+
+function does_exist($tld) {
+	$cont = get_united_pattern();
+	$cont = preg_replace('@#[^\n]*\n@ismU', '', $cont);
+	$tld  = strtolower($tld);
+	$cont = strtolower($cont);
+	$cont = str_replace(array('(', ')'), '', $cont);
+	return (strpos($cont, "\\.$tld\$\n") !== false);
+}
+
+function gwi_update_domains_patternfile() {
+	$now = date('Ymd');
+
+	$pcont_original = file_get_contents(DOMAINS_PATTERN_FILE);
+	$pcont = $pcont_original;
+
+	$count = 0;
+	$pcont = preg_replace("@#: version (\\S+)@i", "#: version $now", $pcont, 1, $count);
+
+	if ($count == 0) {
+		// Add header
+		$pcont = "#: version $now\n".
+		         "# Domains\n".
+		         "# This file can be updated by ".__DIR__."/generate_domains (only additions of new entries)\n".
+		         "# --------------------------------------------------------------------\n".
+		         "\n".$pcont;
+	}
+
+	if ($pcont != $pcont_original) {
+		file_put_contents(DOMAINS_PATTERN_FILE, $pcont);
+	}
+}
+
+function find_rootzone_whois_server($tld) {
+	$whois_serv = iana_get_rootzone_whois_server($tld);
+
+	// Try to find undocumented whois servers
+	if (TRY_FINDING_HIDDEN_WHOIS_SERVERS) {
+		// TODO: also try out to use the URL of the homepage (in IANAs root DB)
+		if (!$whois_serv) {
+			$check_server = "whois.nic.$tld";
+			if (gwitc_is_port_open($check_server, 43)) {
+				$whois_serv = $check_server;
+			}
+		}
+		if (!$whois_serv) {
+			$check_server = "whois.$tld";
+			if (gwitc_is_port_open($check_server, 43)) {
+				$whois_serv = $check_server;
+			}
+		}
+		if (!$whois_serv) {
+			$check_server = "$tld";
+			if (gwitc_is_port_open($check_server, 43)) {
+				$whois_serv = $check_server;
+			}
+		}
+	}
+
+	return $whois_serv;
+}
+
+function iana_get_rootzone_whois_server($tld) {
+	$tld  = strtolower($tld);
+	$cont = QueryWhoisServer('whois.iana.org', $tld);
+	if (!preg_match('@whois:\\s*(\\S+)@i', $cont, $m)) return false;
+	return $m[1];
+}

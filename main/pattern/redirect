@@ -1,0 +1,11 @@
+#: version 20120626.1.2+viathinksoft2017XXXX
+
+
+# Redirect-Targets (for specifying query modifiers)
+# --------------------------------------------------------------------
+# Verbose output for RIPE
+:whois|whois.ripe.net|prefix=-B |
+redirect:whois.ripe.net
+
+:none||
+^redirect:

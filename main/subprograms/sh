@@ -1,0 +1,41 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "sh"
+#
+#  (c) 2013 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2013-07-25  mar   Initial release
+#
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+$url = "http://www.nic.sh/cgi-bin/whois?query=$domain";
+
+$cont = file_get_contents2($url);
+
+if (preg_match('@<!--- ### --->(.+)<!--- ### --->@ismU', $cont, $m)) {
+	$cont = $m[1];
+} else {
+	// Error or domain is available
+	if (preg_match('@<!--- ERROR: .+ --->\n\n<h2>Domain Information</h2>\n<hr>\n<h3>.+</h3>(.+)<br /><br />@ismU', $cont, $m)) {
+		$cont = $m[1];
+	}
+}
+
+$cont = html_entity_decode(strip_tags($cont));
+
+// Remove whitespaces at the beginning of each line
+$cont = preg_replace('@([\r\n])[ \t]+(\S)@isU', '\\1\\2', $cont);
+$cont = trim($cont);
+
+echo "Information about $domain extracted from $url:\n\n";
+echo $cont."\n";

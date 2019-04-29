@@ -1,0 +1,92 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "pa"
+#
+#  (c) 2011 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2011-06-07  mar   Initial release
+# 2012-01-16  mar   Fixed uppercase().
+#
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+$url = "http://www.nic.pa/whois.php?nombre_d=$domain";
+
+$res  = "% Parsing via regex from '$url'\n\n";
+
+$x = file_get_contents2($url);
+
+$x = preg_replace('|sans-serif">\s*</font>|ismU', 'sans-serif">-</font>', $x);
+
+$x = strip_tags($x);
+
+$ary = explode('Información del Dominio', $x, 2);
+
+if (!isset($ary[1])) {
+	echo "Domain '$domain' does not exist.";
+	exit(2);
+}
+
+$x = 'Información del Dominio'.$ary[1];
+
+// é -> É @ strtoupper()
+/*
+$locals = array('es_ES@euro', 'es_ES', 'es');
+reset($locals);
+while (list(, $locale) = each ($locals)) {
+	if ( setlocale(LC_CTYPE, $locale) == $locale ) {                
+		break; // Exit when we were successfull
+	}
+}
+*/
+
+$x = str_replace('&nbsp;', ' ', $x);
+
+$x = html_entity_decode($x);
+
+$x = str_replace("\t", ' ', $x);
+
+$x = preg_replace("| +|", ' ', $x);
+$x = preg_replace("|\n *|", "\n", $x);
+$x = preg_replace("| *\n|", "\n", $x);
+$x = preg_replace("|\n+|", "\n", $x);
+
+$x = str_replace(":\n", ": ", $x);
+
+$x = str_replace("Nombre\n", 'Nombre ', $x);
+$x = str_replace("Contacto\n", 'Contacto ', $x);
+$x = str_replace("Fecha\n", 'Fecha ', $x);
+
+if (strpos($x, 'Fecha de Creación: 0000-00-00') !== false) {
+	echo "Domain '$domain' does not exist!";
+	exit(2);
+}
+
+$special_words = array(
+        "Información del Dominio $domain",
+);
+
+foreach ($special_words as $s) {
+        $x = str_replace($s, "\n".uc_latin1($s)."\n", $x);
+}
+
+$x = str_replace("Datos Obtenidos de nuestra base de datos ...\n$domain\n", "\n>>>>", $x);
+
+# Emulate tabulators.
+$cry = explode(">>>>", $x, 2);
+$x = make_tabs($cry[0]);
+
+if (isset($cry[1])) $x .= '>>>> '.$cry[1];
+
+$x = trim($x);
+
+echo $res.trim_each_line($x)."\n";

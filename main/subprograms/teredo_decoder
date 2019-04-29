@@ -1,0 +1,154 @@
+#!/usr/bin/perl
+
+#
+#  generic Whois - Teredo address decoder
+#
+#  (c) 2012 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2012-02-23  mar   Initial release
+# 2012-11-19  mar   Tabs -> Spaces
+#
+
+# todo: möglichkeit geben, den prefix-check per CLI zu deaktivieren
+
+use warnings;
+use strict;
+
+my $prefix_check = 1;
+
+# install with "cpan Net::IP"
+use Net::IP qw(ip_expand_address);
+
+use Net::DNS;
+
+sub parse_teredo_ipv6 {
+	# See: http://en.wikipedia.org/wiki/Teredo_tunneling#IPv6_addressing
+
+	my ($ipv6_addr) = @_;
+
+	$ipv6_addr = ip_expand_address($ipv6_addr, 6);
+
+	my ($prefix, $teredo_server, $flags, $udp_port, $client_ipv4)
+		= $ipv6_addr =~ /([0-9a-f]{4}:[0-9a-f]{4}):([0-9a-f]{4}:[0-9a-f]{4}):([0-9a-f]{4}):([0-9a-f]{4}):([0-9a-f]{4}:[0-9a-f]{4})/i;
+
+	return ($ipv6_addr, "") if !defined $prefix;
+	return ($ipv6_addr, $prefix) if $prefix_check && ($prefix ne "2001:0000") && ($prefix ne "3ffe:831f");
+
+	# $teredo_server=~ s/://;
+	$teredo_server = hex2ip4($teredo_server);
+
+	# MSB first, is "CRAAAAUG AAAAAAAA",
+	# where "C" remains the "Cone NAT" flag
+	# The "R" bit is reserved for future use
+	# The "U" bit is for the Universal/Local flag (set to 0).
+	# The "G" bit is Individual/Group flag (set to 0).
+	# The A bits are set to a 12-bit randomly generated number
+	# chosen by the Teredo client to introduce additional protection
+	# for the Teredo node against IPv6-based scanning attacks.
+	$flags = hex($flags);
+	my $flag_cone_nat = ($flags & 0x8000) == 0x8000 ? 1 : 0;
+	my $flag_reserved = ($flags & 0x4000) == 0x4000 ? 1 : 0;
+	my $flag_universal_local = ($flags & 0x0200) == 0x0200 ? 1 : 0;
+	my $flag_individual_group = ($flags & 0x0100) == 0x0100 ? 1 : 0;
+	my $flag_random_12bit = (($flags & 0x3C00) >> 2) | ($flags & 0x00FF);
+
+	$udp_port = hex($udp_port) ^ 0xFFFF; # decode
+
+	$client_ipv4 =~ s/://;
+	$client_ipv4 = sprintf('%x', hex($client_ipv4) ^ 0xFFFFFFFF); # decode
+	$client_ipv4 = hex2ip4($client_ipv4);
+
+	return ($ipv6_addr, $prefix, $teredo_server, $flags, $flag_cone_nat, $flag_reserved,
+		$flag_universal_local, $flag_individual_group,
+		$flag_random_12bit, $udp_port, $client_ipv4);
+}
+
+sub print_teredo_info {
+	my ($ipv6_addr, $prefix, $teredo_server, $flags, $flag_cone_nat, $flag_reserved,
+		$flag_universal_local, $flag_individual_group,
+		$flag_random_12bit, $udp_port, $client_ipv4) = @_;
+
+	if ($prefix_check && ($prefix ne "2001:0000") && ($prefix ne "3ffe:831f")) {
+		print "Invalid Teredo address $ipv6_addr\n";
+		return;
+	}
+
+	my @revdns;
+	print "Teredo IPv6 address:            ", $ipv6_addr, "\n";
+	# Is "2001:0000" or "3ffe:831f" (deprecated)
+	print "Teredo prefix:                  ", $prefix, "\n";
+	print "Teredo server:                  ", $teredo_server, "\n";
+	@revdns = revdns_ipv4($teredo_server);
+	foreach my $addr (@revdns) {
+	print "    $addr\n";
+	}
+	print "Flags:                          ", $flags, "\n";
+	print "    Cone NAT flag:              ", $flag_cone_nat, "\n";
+	print "    Reserved flag:              ", $flag_reserved, "\n";
+	print "    Universal/Local flag:       ", $flag_universal_local, "\n";
+	print "    Individual/Group flag:      ", $flag_individual_group, "\n";
+	print "    Random 12 bits:             ", $flag_random_12bit, "\n"; # 0..4095
+	print "Client UDP port:                ", $udp_port, "\n";
+	print "Client public IPv4:             ", $client_ipv4, "\n";
+	@revdns = revdns_ipv4($client_ipv4);
+	foreach my $addr (@revdns) {
+	print "    $addr\n";
+	}
+}
+
+sub hex2ip4 {
+	my ($hex) = @_;
+	$hex =~ s/[^0-9a-f]//i;
+	my ($ip4a, $ip4b, $ip4c, $ip4d) = $hex =~ /([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})/i;
+	$ip4a = hex($ip4a);
+	return if !defined $ip4a;
+	$ip4b = hex($ip4b);
+	return if !defined $ip4b;
+	$ip4c = hex($ip4c);
+	return if !defined $ip4c;
+	$ip4d = hex($ip4d);
+	return if !defined $ip4d;
+	return "$ip4a.$ip4b.$ip4c.$ip4d";
+}
+
+sub revdns_ipv4 {
+	# Source: http://stackoverflow.com/questions/85487/reverse-dns-lookup-in-perl
+
+	my ($ipv4) = @_;
+
+	my $res = Net::DNS::Resolver->new;
+
+	# create the reverse lookup DNS name (note that the octets in the IP address need to be reversed).
+	my $target_IP = join('.', reverse split(/\./, $ipv4)).".in-addr.arpa";
+
+	my @out = qw();
+
+	my $query = $res->query("$target_IP", "PTR");
+
+	if ($query) {
+		foreach my $rr ($query->answer) {
+			next unless $rr->type eq "PTR";
+			push (@out, $rr->rdatastr);
+		}
+	} else {
+		# warn "Reverse DNS query failed: ", $res->errorstring, "\n";
+		push (@out, "Reverse DNS query failed: ".$res->errorstring."\n");
+	}
+
+	return @out;
+}
+
+if ($ARGV[0]) {
+	$_ = join(' ',@ARGV);
+} else {
+	$_ = <>;
+	chomp;
+}
+
+my @info = parse_teredo_ipv6($_);
+print_teredo_info(@info);

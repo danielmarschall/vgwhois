@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#
+#  generic Whois - Maintenance Framework: Testcases
+#
+#  (c) 2012-2014 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2014-08-25
+#
+
+# TODO: $@ or $* ?
+
+DIR=$( dirname "$0" )
+
+. "$DIR/../../config/testcases.conf"
+
+if [ $trytor -eq 1 ]; then
+	if [ -e "/usr/bin/vtor" ]; then
+		# We use vtor first, because it needs to cleanup temp files, which is only possible if it is not killed... Does this work?
+		vtor -a -r 1 -- "$DIR"/timeout.sh -t 10 -- gwhois $@
+	elif [ -e "/usr/bin/usewithtor" ]; then
+		"$DIR"/timeout.sh -t 10 -- usewithtor -- gwhois $@
+	elif [ -e "/usr/bin/torify" ]; then
+		"$DIR"/timeout.sh -t 10 -- torify -- gwhois $@
+	else
+		echo "Warning: Cannot find any TOR proxy software. Will do the query without TOR." >&2
+		"$DIR"/timeout.sh -t 10 -- gwhois $@
+	fi
+else
+	"$DIR"/timeout.sh -t 10 -- gwhois $@
+fi

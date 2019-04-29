@@ -1,0 +1,161 @@
+#: version 20120626.1.2+viathinksoft2017XXXX
+
+# Handles
+# --------------------------------------------------------------------
+
+# RIR
+
+:whois|whois.lacnic.net
+-lacnic$
+
+:whois|whois.afrinic.net
+-afrinic$
+^afrinic-
+^aap
+
+:whois|whois.apnic.net
+-ap$
+^apnic-
+
+:whois|whois.apnic.net
+-kr$
+-krnic-
+
+:whois|whois.ripe.net|prefix=-B |
+^lim-
+^poem-
+^mnt-
+-mnt$
+-ripe$
+-be$
+-domreg$
+-nic$
+^irt-
+^pgpkey-
+
+:whois|whois.arin.net|prefix=z + |
+^net(blk)?-[a-z0-9-]+$
+-arin$
+-hst$
+
+# NIC
+
+:whois|whois.nic.at
+-nicat$
+^at\d+$
+#^at-
+
+:whois|whois.ua
+-uanic$
+
+#:whois|whois.nic.ck
+:notice||Whois server gone [Nov 2013]
+-cknic$
+
+# Other
+
+#    "The 6bone was an IPv6 testbed to assist in the evolution and deployment of IPv6. It was phased out on the 6th of June 2006 per agreements with the IETF IPv6 community.
+#     No 3FFE prefixes are to be in use after 6 June 2006 as these 6bone testbed prefixes have all been returned to the IANA."
+# -- Source: http://www.gogo6.com/page/6bone
+# :whois|whois.6bone.net
+# -6bone$
+
+:whois|whois.ra.net
+# ??? (mar) ist "AS" ein handle von ra.net?? es steht im konflikt mit den AS-numbers
+#^as\d+$
+^as\d+\.\d+$
+^fltr-
+
+:whois|whois.aunic.net
+-au$
+
+# ???
+:whois|whois.denic.de|prefix=-T ace,dn |
+-denic$
+
+# ToDo: Write parser for http://www.denic.de/de/denic/mitglieder/alldetail.html?member=DENIC-...
+:notice||Denic members can only be viewed in the memberlist at http://www.denic.de/de/denic/mitglieder/mitgliederliste.html or via http://www.denic.de/en/denic/mitglieder/alldetail.html?member=DENIC-<member_id>
+^denic-\d+$
+
+:notice||Unknown if denic handles can be resolved. [Jan 2012]
+^denic-\d+-\S+
+
+:whois|whois.dk-hostmaster.dk
+-dk$
+
+#:cgi|http://www.nic.es/cgi-bin/consulta.whois?tipo=procesar&list=Personas&key=~query~
+:notice||WhoIs service for ESNIC handles gone. Unknown if it is still available somewhere. (last checked Jan 2012)
+#:whois|whois.nic.es
+#This whois service needs a registration of the IP address and has a strict query limit...
+-esnic$
+
+:whois|whois.nic.fr
+^fr-[^.]+$
+
+:whois|whois.isnet.is
+-is$
+
+:whois|whois.nic.ad.jp|trailer=/e
+# ^[^.]*jp$
+^[a-z]{2}\d+jp$
+^jp\d+$
+
+:whois|whois.norid.no
+-norid$
+
+:whois|whois.ripn.net
+-ripn$
+
+:whois|whois.gandi.net
+-gandi$
+
+# Team Cymru IP->AS mapper whois
+:whois|whois.cymru.com|strip=ipas |
+ipas\s\S+
+
+:whois|whois.nic.name|prefix=contact=
+#-name$
+\d+contact-name$
+
+:whois|whois.nic.name|prefix=registrar=
+\d+registrar-name$
+
+:whois|whois.corenic.net|prefix=contact |
+^co..-\d+$
+
+:whois|whois.corenic.net
+-cone$
+
+# SIXXS handles
+#:whois|whois.sixxs.net
+:notice||The SixXS project has been retired in June 2017
+-sixxs$
+
+# MUSEUM
+:whois|whois.museum|prefix=contact |
+^C\d+-MUSEUM$
+:whois|whois.museum
+^D\d+-MUSEUM$
+
+# AERO
+:whois|whois.aero|prefix=contact |
+#^C\d+-AERO$
+-AERO$
+
+# INFO
+:whois|whois.afilias.info|prefix=contact |
+C\d+-LRMS$
+
+# ASIA
+:whois|whois.nic.asia|prefix=contact |
+C\d+-ASIA$
+
+# RU-CENTER
+:whois|whois.tcinet.ru
+^RUCENTER-
+^RU-CENTER-
+
+# FRNIC
+:whois|whois.nic.fr
+-frnic$
+

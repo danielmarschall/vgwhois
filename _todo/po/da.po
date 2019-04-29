@@ -1,0 +1,77 @@
+# Danish translation for gwhois.
+# Copyright (C) 2010 gwhois & nedenstående oversættere.
+# This file is distributed under the same license as the gwhois package.
+# Morten Brix Pedersen <morten@wtf.dk>, 2005.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gwhois 20040308-2\n"
+"Report-Msgid-Bugs-To: gwhois@packages.debian.org\n"
+"POT-Creation-Date: 2010-05-15 23:41+0200\n"
+"PO-Revision-Date: 2010-07-21 14:44+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org> \n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Install gwhois as a whois proxy server?"
+msgstr "Installer gwhois som en whois-proxyserver?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If gwhois is installed as a whois proxy server (using inetd) it will listen "
+"on the standard whois port (43) allowing normal whois clients to query it."
+msgstr ""
+"Hvis gwhois er installeret som en whois-proxyserver (ved hjælp af inetd) vil "
+"den lytte på standardporten for whois (43), som tillader normale whois-"
+"klienter at forespørge den."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This can be interesting for example if you want to setup a generic whois "
+"server for your company or coworkers which can then use their standard whois-"
+"client (e.g. a windows client) and still make use of the intelligent "
+"features of gwhois."
+msgstr ""
+"Dette kan være interessant f.eks. hvis du vil sætte en generel whois-server "
+"op til dit firma eller medarbejdere, som kan bruge standard whois-klienter "
+"(f.eks. en Windows klient) og stadig bruge de intelligente funktioner i "
+"gwhois."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "Inetd or compatible replacement not installed."
+msgstr "Inetd eller kompatibel erstatning ikke installeret."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"You configured gwhois to act as a whois proxy server. This requires inetd or "
+"a compatible replacement (in particular the 'update-inetd' binary) which was "
+"not found."
+msgstr ""
+"Du konfigurerede gwhois til at fungere som en whois-proxyserver. Dette "
+"kræver inetd eller en kompatibel erstatning (specielt den binære 'update-"
+"inetd') som ikke blev fundet."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"Please install a package providing inet-superserver and reconfigure gwhois "
+"or disable proxy operation."
+msgstr ""
+"Installer venligst en pakke som tilbyder inet-superserver og rekonfigurer "
+"gwhois eller deaktiver proxyhåndtering."

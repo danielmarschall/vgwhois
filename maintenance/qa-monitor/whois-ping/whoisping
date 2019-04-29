@@ -1,0 +1,83 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Whois Server Ping Testing Suite
+#
+#  (c) 2013-2014 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2014-11-23
+#
+
+error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
+
+require_once __DIR__ . '/../../../shared/php_includes/common_functions.inc.php';
+require_once __DIR__ . '/whoisping_functions.inc.php';
+require_once __DIR__ . '/config.inc.php';
+
+$db = new SQLite3(__DIR__ . '/../../.cache/whois-server-ping/whoisping.db'); # TODO: in config auslagern
+if (!$db) die ($error);
+
+gwitc_initdb($db);
+
+$pattern_servers = array();
+$pattern_files = getpatternfiles();
+foreach ($pattern_files as &$pattern_file) {
+	$pattern_servers_c = gwitc_list_whois_servers($pattern_file);
+	$pattern_servers = array_merge($pattern_servers, $pattern_servers_c);
+}
+
+$dead_servers = array();
+$dead_servers_raw = file(__DIR__ . '/../../config/dead-servers.list');
+foreach ($dead_servers_raw as &$server) {
+	$server = trim($server);
+	if ($server == '') continue;
+	if ($server[0] == '#') continue;
+
+	$dead_servers[] = $server;
+}
+
+# --- Check the servers in the pattern files
+
+foreach ($pattern_servers as &$server) {
+
+	// We will handle them below, not here. (Otherwise the recheck timer would be reset)
+	if (in_array($server, $dead_servers)) {
+		$status=1;
+		echo "[ !! ] Attention! $server is in dead-servers.list and pattern. Please remove one instance!\n";
+		continue;
+	}
+
+	$age = gwitc_checkage_succ($db, $server);
+	if ($age < RECHECK_AFTER) continue;
+	$open = gwitc_is_port_open($server, 43);
+	if ($open) {
+		gwitc_reset_failcounter($db, $server);
+		echo "OK: $server\n";
+	} else {
+		$fails = gwitc_incr_failcounter($db, $server);
+		$duration = gwitc_fail_duration($db, $server);
+		echo "FAIL #$fails: $server (Duration: $duration)\n";
+	}
+}
+
+# --- Check the dead servers (which have been removed from the pattern list) have resurrected
+
+foreach ($dead_servers as &$server) {
+	$age = gwitc_checkage_check($db, $server);
+	if ($age < RECHECK_AFTER) continue;
+	$open = gwitc_is_port_open($server, 43);
+	if ($open) {
+		gwitc_set_reborn($db, $server, 1);
+		echo "Attention: $server is ALIVE again! Please remove from maintenance/config/dead-servers.list and add to pattern.\n";
+	} else {
+		# wird bereits von gwitc_incr_failcounter() gemacht: gwitc_set_reborn($db, $server, 0);
+		$fails = gwitc_incr_failcounter($db, $server); // hier wird auch lastcheck aktualisiert
+		echo "Still dead: $server\n";
+	}
+}
+
+$db->close();

@@ -1,0 +1,55 @@
+#!/bin/bash
+
+#
+#  generic Whois - Maintenance Framework: Testcases
+#
+#  (c) 2012-2014 Daniel Marschall, ViaThinkSoft [www.viathinksoft.de]
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#  Version 2014-08-19
+#
+
+DIR=$( dirname "$0" )
+
+ARGS=()
+
+shuffle() {
+	# http://stackoverflow.com/a/5533586
+	local i tmp size max rand
+
+	# $RANDOM % (i+1) is biased because of the limited range of $RANDOM
+	# Compensate by using a range which is a multiple of the array size.
+	size = ${#ARGS[*]}
+	max = $(( 32768 / size * size ))
+
+	for ((i=size-1; i>0; i--)); do
+		while (( (rand=$RANDOM) >= max )); do :; done
+		rand=$(( rand % (i+1) ))
+		tmp=${ARGS[i]} ARGS[i]=${ARGS[rand]} ARGS[rand]=$tmp
+	done
+}
+
+while read f; do
+	if [ -z "$f" ]; then
+		continue;
+	fi
+
+	echo "$f" | grep -E "\s*^#" > /dev/null
+	if [ $? -eq 0 ]; then
+		continue;
+	fi
+
+	# Warum? "tld jp" wird dann zu "tld"
+	# query="$( basename $f )"
+	query="$f";
+
+	ARGS+=("$query")
+done < "$DIR/../../config/testcases.list"
+
+# TODO: does not work
+#shuffle
+
+"$DIR"/single $@ ${ARGS[@]}
+exit $?

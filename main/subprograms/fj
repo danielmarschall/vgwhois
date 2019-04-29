@@ -1,0 +1,53 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "fj"
+#
+#  (c) 2018 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2018-04-05  mar   Initial release
+#
+
+# Alternatively, you can query whois.nic.fj , but it does not show the full address
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+list($namewotld, $tld) = explode('.', $domain, 2);
+
+if ($tld == 'fj') {
+	echo "Whois for .fj is not possible. Please use a 2nd level TLD like .com.fj\n";
+	exit;
+}
+
+$cont = file_get_contents2('http://domains.fj/public/whois.php?searchDomainName='.urlencode($namewotld).'&searchTopLevel='.urlencode($tld).'&submitSearch=Search');
+
+if (strpos($cont, 'does not exist,<br><br>') !== false) {
+	echo "Domain $domain does not exist\n";
+	exit;
+}
+
+if (preg_match('@<div class="errorBox">(.+)</div>@ismU', $cont, $m)) {
+	$cont = $m[1];
+	$cont = str_replace(', please choose one from the drop down list', '', $cont);
+} else if (preg_match('@<table border=\'0\'>(.+)</table>@ismU', $cont, $m)) {
+	$cont = $m[1];
+}
+
+$cont = str_replace('<br>', "\n", $cont);
+$cont = html_entity_decode($cont);
+$cont = strip_tags($cont);
+$cont = explode("\n", $cont);
+foreach ($cont as &$line) $line = trim($line);
+$cont = implode("\n", $cont);
+$cont = str_replace("\n\n", "\n", $cont);
+$cont = trim($cont);
+
+echo "$cont\n";

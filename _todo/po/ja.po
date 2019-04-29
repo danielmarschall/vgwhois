@@ -1,0 +1,84 @@
+# 
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+# 
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+# 
+#    Developers do not need to manually edit POT or PO files.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: gwhois 20100515-1\n"
+"Report-Msgid-Bugs-To: gwhois@packages.debian.org\n"
+"POT-Creation-Date: 2010-05-15 23:41+0200\n"
+"PO-Revision-Date: 2010-05-19 09:14+0900\n"
+"Last-Translator: Hideki Yamane <henrich@debian.org>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Install gwhois as a whois proxy server?"
+msgstr "gwhois を whois プロキシサーバとしてインストールしますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If gwhois is installed as a whois proxy server (using inetd) it will listen "
+"on the standard whois port (43) allowing normal whois clients to query it."
+msgstr ""
+"gwhois が (inetd を使った) whois プロキシサーバとしてインストールされた場合、"
+"普通の whois クライアントがクエリー可能な標準の whois のポート番号 (43) を "
+"listen します。"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This can be interesting for example if you want to setup a generic whois "
+"server for your company or coworkers which can then use their standard whois-"
+"client (e.g. a windows client) and still make use of the intelligent "
+"features of gwhois."
+msgstr ""
+"面白い例として、通常の whois server を会社か同僚のために設定したい場合、標準"
+"の whois クライアント (つまり Windows クライアント) が利用でき、gwhois の優秀"
+"な機能を活用するのも可能になります。"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "Inetd or compatible replacement not installed."
+msgstr "inetd または同等の代替品はインストールされていません。"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"You configured gwhois to act as a whois proxy server. This requires inetd or "
+"a compatible replacement (in particular the 'update-inetd' binary) which was "
+"not found."
+msgstr ""
+"gwhois をプロキシサーバとして動作するように設定しました。これに必要となる "
+"inetd あるいはその同等のもの (とりわけ 'update-inetd' バイナリ) が見つかりま"
+"せんでした。"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"Please install a package providing inet-superserver and reconfigure gwhois "
+"or disable proxy operation."
+msgstr ""
+"inet スーパーサーバを提供しているパッケージをインストールして gwhois を再設定"
+"するか、プロキシとしての動作を無効にしてください。"

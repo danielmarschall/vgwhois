@@ -1,0 +1,366 @@
+#!/usr/bin/perl
+#
+#  generic Whois
+#
+#  (c) 1998-2010 by Juliane Holzt <debian@kju.de>
+#  Some early parts by Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.de>
+#
+#  Modifications (c) 2010-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+
+# todo
+# * print whois parameters at "querying..."
+# * lynx injection sicherheitslücke? => quotemeta()
+# * regularly check https://bugs.debian.org/cgi-bin/pkgreport.cgi?src=gwhois
+
+# TODO: "%" am Anfang jeder Meldung ausgeben
+
+# TODO: lynx wird manchmal auch ausgeführt ohne -L ...
+# TODO: Alle "!!" entfernen
+# TODO: print -> $result .= ?
+
+use warnings;
+use strict;
+
+use FindBin;
+use lib "$FindBin::Bin/lib/";
+
+use GWhoIs::Core;
+use GWhoIs::Utils;
+use GWhoIs::IPv4;
+use GWhoIs::IPv6;
+use GWhoIs::OID;
+
+# install with "cpan Net::IP" or "aptitude install libnet-ip-perl"
+use Net::IP;
+
+use Net::LibIDN;
+use Encode;
+# use Encode::Detect::Detector; # requires Debian package libencode-detect-perl
+
+#use encoding ':locale';
+
+#use utf8;
+
+
+# Examples for output of the different hosts:
+# -------------------------------------------------------------
+# Host                            Example    Output         BOM
+# -------------------------------------------------------------
+# whois.viathinksoft.de           oid:2.999  UTF-8          if required (existing BOMs will be removed)
+# cnnic.cn                        cnnic.cn   UTF-8          no
+# whois.ati.tn                    ati.tn     UTF-8          no
+# whois.kr                        whois.kr   UTF-8          no
+# whois.denic.de                  denic.de   ISO-8859-1     no
+# oldwhois.kisa.or.kr (obsolete)  whois.kr   EUC-KR         no
+# whois.nic.ch                    domian.ch  UTF-8          no
+# (GWHOIS from ViaThinkSoft)                 UTF-8          yes (existing BOMs will be removed?)
+# (old GWHOIS)                               (like server)  (like server)
+# -------------------------------------------------------------
+
+
+# TODO: for this diagram: check if existing BOMs will be removed, e.g. by LWP.
+# TODO: how to stop LWP's auto-detect magic?
+# TODO: only output bom if required? doesn't work, otherwise we would need to buffer stderr and stdout, and then their order is wrong again.
+
+
+$ENV{'HOME'}='/var/home/whois' unless defined $ENV{'HOME'};
+
+# Nicht nach GWhoIs::Core auslagern
+# TODO: die $version auch von den .pm Modulen anzeigen?
+my $version = '20100728+viathinksoft20190429';
+my $fixwhoishost;
+my $rawoutput = 0;
+
+$| = 1; # buffer flushing = autoflush
+
+#if ( -f "/etc/default/gwhois" ) {
+#	require "/etc/default/gwhois";
+#}
+
+while ($ARGV[0]) {
+	if ($ARGV[0] eq '--help' || $ARGV[0] eq '-?') {
+		print "gwhois - generic whois\n",
+		"Version $version\n\n",
+		"Usage: gwhois {options} [query]\n",
+		" Try find information about the query (might be multiple words).\n",
+		" If no query is given, use the first line from stdin\n\n",
+		" Options:\n",
+		"   -C dir                  Setting an alternate configuration directory\n",
+		"                           default: $GWhoIs::Core::confdir\n",
+		"   -h host                 Selecting a fixed whois server for this query\n",
+		"   -m method:host mirror   Defining a mirror for a given method and host.\n",
+		"   -L                      Use lynx -source instead of LWP::Simple\n",
+		"   -e                      Do not protect eMail addresses\n",
+		"   -c                      Do not try to convert to UTF-8. Output server's stream.\n",
+		"   -v                      Output version of pattern table(s)\n",
+		"   -?, --help              Printing this text\n\n";
+		exit;
+	} elsif ($ARGV[0] eq '-C') {
+		shift;
+		$GWhoIs::Core::confdir = shift;
+	} elsif ($ARGV[0] eq '-c') {
+		shift;
+		$rawoutput = 1;
+		$GWhoIs::Core::useLWP = 0; # TODO: geht irgendwie nicht anders
+	} elsif ($ARGV[0] eq '-h') {
+		shift;
+		$fixwhoishost = shift;
+	} elsif ($ARGV[0] eq '-L') {
+		shift;
+		$GWhoIs::Core::useLWP = 0;
+	} elsif ($ARGV[0] eq '-m') {
+		shift;
+		$_ = shift;
+		s/://;
+		$GWhoIs::Core::mirror{$_} = shift;
+	} elsif ($ARGV[0] eq '-e') {
+		shift;
+		$GWhoIs::Core::antispam = 0;
+	} elsif ($ARGV[0] eq '-v') {
+		print "gwhois - generic whois\n\n",
+		"program version:  $version\n",
+		"pattern tables:   ";
+		foreach my $patternfile (GWhoIs::Core::getpatternfiles()) {
+			if (!open(PATTERN,"<$patternfile")) {
+				warn "Cannot open $patternfile. STOP.\n";
+				exit 1;
+			}
+
+			my $line = <PATTERN>;
+			close(PATTERN);
+
+			my $patternversion;
+			if (defined($line)) {
+				($patternversion) = $line =~ /#:\s+version\s+(\S+)/;
+				$patternversion = 'unknown' if !defined($patternversion);
+			} else {
+				$patternversion = 'unknown';
+			}
+			print "$patternversion\t($patternfile)\n                  ";
+		}
+		print "\n";
+		exit 0;
+	} elsif ($ARGV[0] eq '--') {
+		shift;
+		last;
+	} else {
+		last;
+	}
+}
+
+if ($rawoutput) {
+	binmode(STDOUT, ":bytes");
+	binmode(STDERR, ":bytes");
+} else {
+	binmode(STDOUT, ":utf8");
+	binmode(STDERR, ":utf8");
+}
+
+if (defined $ARGV[0]) {
+	$_ = join(' ', @ARGV);
+} else {
+	# If no parameter is given, await an input from STDIN
+	$_ = <>;
+	chomp;
+}
+
+print "\x{FEFF}" if !$rawoutput; # BOM
+exit main($_);
+
+# -----------------------------------------------------------------------------------------
+
+sub main {
+	my $query = shift;
+
+	$query = '' if !defined $query;
+
+	if (GWhoIs::Utils::is_utf8($query)) {
+		$query = Encode::decode('utf8', $query);
+	}
+	$query = GWhoIs::Utils::trim($query);
+
+	if ($query eq '') {
+		warn "Query is empty.\n";
+		exit 2;
+	}
+
+	my ($method,$host,$additional);
+
+	my $query_utf8 = GWhoIs::Utils::enforce_utf8($query);
+	print "Process query: '$query_utf8'\n\n";
+
+	if ( $fixwhoishost ) {
+		# QUE: soll das immer gelten, oder nur, wenn ermittelt wurde, dass whois benötigt wird (nicht aber cgi, etc?)
+		($method,$host,$additional) = ('whois',$fixwhoishost,'');
+	} else {
+		# if ($query !~ /[^0-9\.]/) { # ipv4
+		if ($query =~ /^[0-9\.]*$/) {
+			my ($a, $b, $c, $d, $e) = $query =~ /(\d+)\.(\d+)\.(\d+)\.(\d+)(.*)/;
+			$a = 256 if !defined $a;
+			$b = 256 if !defined $b;
+			$c = 256 if !defined $c;
+			$d = 256 if !defined $d;
+			$e = ''  if !defined $e;
+			if ($a > 255 || $b > 255 || $c > 255 || $d > 255 || $e ne '') {
+				warn "'$query' is no valid IP address, ASN, OID or domain name.\n";
+				exit 2;
+			}
+			print "Query recognized as IPv4.\n";
+
+			($method,$host,$additional) = GWhoIs::IPv4::getmethodv4($a,$b,$c,$d);
+		# } elsif ( lc($query) !~ /[^0-9a-f:]/i ) { # ipv6
+		# } elsif ( $query !~ /[0-9a-f:]*/ ) {
+		} elsif (($query =~ /:/ ) && ( Net::IP::ip_expand_address($query, 6) =~ /^[0-9a-f:]*:[0-9a-f:]*$/ )) { # at least one ":" so that e.g. "ac" is recognized as TLD and not as IPv6
+			# check and correct v6 address
+			if ( $query =~ /[0-9a-f]{5}/ || $query =~ /:::/ ) {
+				warn "'$query' is an invalid IPv6 address.\n";
+				exit 2;
+			}
+
+			my $orig_query = $query;
+			#$query =~ s/:?$/::/ if ( $query !~ /(.*:){7}/ && $query !~ /::/ );
+			$query = Net::IP::ip_expand_address($query, 6);
+
+			print "Query recognized as IPv6.\n";
+			print "Address expanded to '$query'.\n" if $orig_query ne $query;
+
+			($method,$host,$additional) = GWhoIs::IPv6::getmethodv6($query);
+		} elsif ($query =~ /^(urn:){0,1}oid:/i ) { # OID
+			print "Query recognized as OID.\n";
+
+			# preliminarily remove urn: and oid: from query
+			# we need a dot so that we can use "oid:." in our patternfile too
+			$query = GWhoIs::OID::normalize_oid($query);
+
+			my @arcs = split(/\./, $query); # TODO: warum geht split('.',$oid) nicht?
+
+			($method,$host,$additional) = GWhoIs::OID::getmethodoid(@arcs);
+
+			# Whois OID query syntax definition by ViaThinkSoft (TODO: Apply for RFC):
+			# - urn:oid:2.999 or oid:2.999
+			# - Case insensitive
+			# - Leading dot should be tolerated (urn:oid:.2.999)
+			# - Leading zeros should be tolerated (urn:oid:.002.00999)
+			# Idea: Should "oid:" be optional? Since 2.999 cannot be an IP ... But 1.2.3.4 could be one ...
+
+			# There are many possibilities. We choose "oid:.2.999"
+			$query = 'oid:' . GWhoIs::OID::normalize_oid($query);
+		} else {
+			# Last resort: Query is probably a TLD, domain or handle, but we are not sure!
+			# print "Query recognized as domain.\n";
+
+			# Dot exists?	Type?	Punycode?	Filtering?
+			# ------------------------------------------------
+			# Yes		Domain	Yes		Yes
+			# No		TLD	Yes		Yes
+			# No		Handle	No*		Maybe
+			# ------------------------------------------------
+			# * = but it is unlikely that a handle contains non-latin characters
+
+			# Filtering
+			$query =~ y/[\x{00A0}-\x{FFFF}]a-zA-Z0-9:.,+_ -//cd;
+			$query =~ s/\.$//;
+			my $query_utf8_filtered = GWhoIs::Utils::enforce_utf8($query);
+			if ( $query_utf8 ne $query_utf8_filtered ) {
+				# QUE: warn or print?
+				warn "Attention: Query was filtered to '$query_utf8_filtered'.\n\n";
+			}
+
+			# Punycode decoding
+			# my $ascii_query = Net::LibIDN::idn_to_ascii($query, 'utf-8')
+			# We separate between spaces, so that "tld <unicode>" can be processed
+			my @query_split = split(' ', $query);
+			@query_split = map { Net::LibIDN::idn_to_ascii($_, 'utf-8') || '' } @query_split;
+			my $ascii_query = join(' ', @query_split);
+
+			# Query valid?
+			if (!$ascii_query) { # e.g. $query = ".x"
+				warn "'$query_utf8' is an invalid domain name.\n";
+				return 2;
+			}
+
+			# Just information for the user
+			if (index($query, ".") != -1) {
+				print "Query recognized as domain.\n\n"; # TODO: aber wenn kein IDN?
+			} else {
+				print "Query is probably a handle or TLD.\n\n";
+			}
+
+			($method,$host,$additional) = GWhoIs::Core::getmethodother($ascii_query);
+		}
+	}
+
+	if ($method eq '') {
+		warn "I don't know where to query that.\n";
+		warn "If this is a valid domainname or handle, please file a bug report.\n";
+		return 1;
+	}
+
+	# Wird in getmethod*() bereits ausgeführt.
+	# Grund: Dann kann auch bei redirectwhois() dementsprechend in jedem Zwischenschritt gehandelt werden.
+	# $host = $GWhoIs::Core::mirror{$method.$host} if defined $GWhoIs::Core::mirror{$method.$host};
+
+	my ($result, $exitcode) = GWhoIs::Core::doquery($query,$method,$host,$additional);
+	$result = '' if !defined $result; # should not happen!
+
+	my $antispam_replacements = 0;
+	if ($GWhoIs::Core::antispam) {
+		# Protect email addresses (to allow e.g. "RIPE -B" for public services)
+		# Note: eMail addresses have a much more complex structure, see http://code.google.com/p/isemail/
+		# But this Regex should still prevent spammers from filtering eMail addresses,
+		# even if e.g. the "wrong" (e.g. escaped) "@" is protected.
+		$antispam_replacements = $result =~ s/(\S+)@(\S+)\.([^.\s]+)/$1 (at) $2 (dot) $3/g;
+		# Alternative solution:
+		# $antispam_replacements = $result =~ s/(\S+)@(\S+)\.([^.\s]+)/$1&$2.$3/g;
+	}
+
+	# We try to get $result to wide-string. Functions like LWP::Simple automatically convert UTF-8 into Unicode
+	# (even without BOM sent through the whois gopher channel!), while subprograms and other methods are providing
+	# raw UTF-8 data.
+	$result = Encode::decode('utf8', GWhoIs::Utils::trim($result), Encode::FB_CROAK) if !$rawoutput && GWhoIs::Utils::is_utf8($result);
+
+	# Don't allow DOS format
+	$result =~ s/(\012|\015\012?)/\n/g;
+
+	# Output everything
+	print GWhoIs::Utils::trim($result), "\n\n";
+
+	if ($antispam_replacements > 0) {
+		print "Note: The output has been modified by GWhoIs.\n";
+		print "$antispam_replacements eMail addresses have been anti-spam protected.\n";
+		print "(Disable protection with \"gwhois -e\")\n";
+		print "\n";
+	}
+
+	# Footer
+	print "--\n  To resolve one of the above handles:";
+
+	if ($method =~ /whois/) {
+		print "\n     whois -h $host";
+		print ":$1" if ( $additional =~ /port=(\d+)/ );
+		print " -- HANDLE\n";
+	}
+	elsif ($method eq "cgipost") {
+		print "\n     POST $host\n";
+		print "     $additional\n";
+	}
+	elsif ($method eq "cgi") {
+		print "\n     $host\n";
+	}
+	elsif ($method eq "program") {
+		print "\n     $host HANDLE\n";
+	}
+	# elsif ($method eq "wwwgrep") {
+	else {
+		# todo: add cgipostcurl etc
+		print "\n     hmm. not sure (method = $method).\n";
+	}
+
+	print "  OTOH globally unique handles should be recognised directly by GWhoIs.\n";
+	print "  Please report errors or misfits via the Debian bug tracking system.\n";
+
+	return $exitcode;
+}

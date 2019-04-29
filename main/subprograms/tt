@@ -1,0 +1,78 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "tt"
+#
+#  (c) 2011 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2011-06-07  mar   Initial release
+#
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+$url = "https://www.nic.tt/cgi-bin/search.pl";
+$post = "name=$domain";
+
+$res = "% Parsing via regex from '$url' with post parameters '$post'\n\n";
+
+$x = file_get_contents2($url, $post);
+
+preg_match_all('|<div id="main">(.*)<div id="foot">|ismU', $x, $m);
+
+$x = $m[1][0];
+
+# The Domain Name <font color=red>nia.tt</font> is available.
+$x = str_replace('<font color=red>', '', $x);
+$x = str_replace('</font>', '', $x);
+
+# Entferne, wenn möglich:
+# Domain Search Form
+# Enter Domain Name:
+$bry = explode('</form>', $x, 2);
+$x = $bry[count($bry)-1];
+
+$x = str_replace('>', ">\n", $x);
+
+$x = strip_tags($x);
+
+# &nbsp -> &nbsp;   -- did they really do this? yeah...
+$x = preg_replace('|&nbsp(?!;)|ismU', '&nbsp;', $x);
+
+// You might wonder why trim(html_entity_decode('&nbsp;')); doesn't reduce the string to an
+// empty string, that's because the '&nbsp;' entity is not ASCII code 32
+// (which is stripped by trim()) but ASCII code 160 (0xa0) in the default ISO 8859-1 characterset.
+$x = str_replace("&nbsp;", " ", $x);
+
+$x = html_entity_decode($x);
+
+$x = preg_replace("| +|", ' ', $x);
+$x = preg_replace("|\n *|", "\n", $x);
+$x = preg_replace("|\n+|", "\n", $x);
+
+$special_words = array(
+	'Domain Name',
+	'Registrant Name',
+	'Registrant Address',
+	'DNS Hostnames',
+	'DNS IP Addresses',
+	'Expiration Date',
+	'Administrative Contact',
+	'Technical Contact',
+	'Billing Contact'
+);
+
+foreach ($special_words as $s) {
+	$x = str_replace("\n$s\n", "\n\n".strtoupper($s)."\n\n", $x);
+}
+
+$x = trim($x);
+
+echo $res.trim_each_line($x)."\n";

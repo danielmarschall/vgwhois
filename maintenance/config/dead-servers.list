@@ -1,0 +1,27 @@
+# These whois servers are dead and we have no replacement. We list them here so we get notified when they come back.
+# whois.6bone.net
+whois.kcce.kp
+whois.nic.mp
+whois.nic.ck
+whois.nic.mil
+whois.namecoin.us
+whois.bn
+whois.quebec.rs.corenic.net
+whois.bazaar.coreregistry.net
+nic.net.ge
+whois.nic.ec
+whois.scot.coreregistry.net
+whois.eus.coreregistry.net
+whois.gal.coreregistry.net
+whois.mango.coreregistry.net
+whois.nic.cd
+whois.nic.ki
+
+# does not listen to public IPs anymore. The whois server only accepts calls from the web interface
+whois.registry.hm
+
+# Only opened for authorized resellers. Maybe they will open for the public again
+whois.mynic.my
+
+# This was the registry of 210.8/14 (AAPT Limited)
+whois.connect.com.au

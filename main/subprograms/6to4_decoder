@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+
+#
+#  generic Whois - 6to4 address decoder
+#
+#  (c) 2012 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2012-02-24  mar   Initial release
+#
+
+# todo: möglichkeit geben, den prefix-check per CLI zu deaktivieren
+
+use warnings;
+use strict;
+
+my $prefix_check = 1;
+
+# install with "cpan Net::IP"
+use Net::IP qw(ip_expand_address);
+
+sub parse_6to4_ipv6 {
+	my ($ipv6_addr) = @_;
+
+	$ipv6_addr = ip_expand_address($ipv6_addr, 6);
+
+	my ($prefix, $client_ipv4, $rest)
+		= $ipv6_addr =~ /([0-9a-f]{4}):([0-9a-f]{4}:[0-9a-f]{4}):([0-9a-f]{4}:[0-9a-f]{4}:[0-9a-f]{4}:[0-9a-f]{4}:[0-9a-f]{4})/i;
+
+	return ($ipv6_addr, "") if !defined $prefix;
+	return ($ipv6_addr, $prefix) if $prefix_check && ($prefix ne "2002");
+
+	# $client_ipv4 =~ s/://;
+	$client_ipv4 = hex2ip4($client_ipv4);
+
+	return ($ipv6_addr, $prefix, $client_ipv4, $rest);
+}
+
+sub print_6to4_info {
+	my ($ipv6_addr, $prefix, $client_ipv4, $rest) = @_;
+
+	if ($prefix_check && ($prefix ne "2002")) {
+		print STDERR "Invalid 6to4 address $ipv6_addr\n";
+		return 1;
+	}
+
+	print "6to4 IPv6 address:      ", $ipv6_addr, "\n";
+	print "Client public IPv4:     ", $client_ipv4, "\n";
+	print "Rest address:           ", $rest, "\n";
+
+	return 0;
+}
+
+sub hex2ip4 {
+	my ($hex) = @_;
+	$hex =~ s/[^0-9a-f]//i;
+	my ($ip4a, $ip4b, $ip4c, $ip4d) = $hex =~ /([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})/i;
+	$ip4a = hex($ip4a);
+	return if !defined $ip4a;
+	$ip4b = hex($ip4b);
+	return if !defined $ip4b;
+	$ip4c = hex($ip4c);
+	return if !defined $ip4c;
+	$ip4d = hex($ip4d);
+	return if !defined $ip4d;
+	return "$ip4a.$ip4b.$ip4c.$ip4d";
+}
+
+if ($ARGV[0]) {
+	$_ = join(' ',@ARGV);
+} else {
+	$_ = <>;
+	chomp;
+}
+
+my @info = parse_6to4_ipv6($_);
+exit print_6to4_info(@info);

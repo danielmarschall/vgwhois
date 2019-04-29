@@ -1,0 +1,63 @@
+#!/usr/bin/php
+<?php
+
+#
+#  generic Whois - Subprogram "ac"
+#
+#  (c) 2011-2014 by Daniel Marschall, ViaThinkSoft <www.viathinksoft.de>
+#
+#  Distribution, usage etc. pp. regulated by the current version of GPL.
+#
+#
+#
+# History:
+# 2011-06-07  mar   Initial release
+# 2014-11-30  mar   Fixed
+#
+
+require_once __DIR__ . '/../../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+$url = "http://www.nic.ac/cgi-bin/whois?query=$domain";
+
+$res = "% Parsing via regex from '$url'\n\n";
+
+$x = file_get_contents2($url);
+
+preg_match_all('|<div class="mainboxBody">(.*)<div class="mainboxFoot">|ismU', $x, $m);
+
+if (!isset($m[1][0])) {
+	fwrite(STDERR, "Cannot parse page (mainboxBody missing). Please report this bug.\n");
+	exit(1);
+}
+
+$x = $m[1][0];
+
+$x = strip_tags($x);
+
+$x = preg_replace('|:\s*([^\s])|ismU', ': $1', $x);
+$x = preg_replace('|^\s*([^\s])|ismU', '$1', $x);
+
+$x = html_entity_decode($x);
+
+$special_words = array(
+	'Domain Information',
+	'Admin Contact',
+	'Technical Contact',
+	'Billing Contact',
+	'Primary Nameserver',
+	'Secondary Nameserver'
+);
+
+foreach ($special_words as $s) {
+	$x = str_replace($s, "\n".strtoupper($s)."\n", $x);
+}
+
+$x = make_tabs($x);
+
+$x = trim($x);
+
+$x = str_replace(' - CLICK TO BUY', '', $x);
+
+echo $res.trim_each_line($x)."\n";

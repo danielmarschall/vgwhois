@@ -1,0 +1,677 @@
+gwhois (20120626.1.2+viathinksoft2017XXXX) unstable; urgency=medium
+
+  * Non-maintainer upload. / Fork
+  * Changed previous version numbers: Replaced minus (-) with dot (.),
+    because minus is used to separate Upstream and Debian versions
+  * (TODO: list all changes of ViaThinkSoft here)
+
+ -- Daniel Marschall <info@daniel-marschall.de>  Wed, 26 Jul 2017 06:00:00 +0200
+
+gwhois (20120626-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix "please switch Depends from lynx-cur to lynx":
+    do as the bug report requests.
+    (Closes: #881058)
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 15 Nov 2017 16:44:51 +0100
+
+gwhois (20120626-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix "fails with perl 5.26: The encoding pragma is no longer
+    supported at /usr/bin/gwhois line 80.":
+    drop 'use encoding' statement.
+    (Closes: #867046)
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 15 Jul 2017 01:12:47 +0200
+
+gwhois (20120626-1) unstable; urgency=medium
+
+  * Documentation fixes.
+
+ -- Juliane Holzt <debian@julijane.de>  Fri, 17 Apr 2015 23:32:01 +0200
+
+gwhois (20120626) unstable; urgency=low
+
+  * Fixed .je and .gg lookups (closes Ubuntu Bug 339912)
+  * Fixed .gl lookups (closes Bug#626339)
+  * Fixed .co lookups (closes Bug#642228)
+  * Updated IPv4 'final' RIR allocations (closes Bug#628554, closes: Bug#603518)
+  * Acknowledgment: Changed package as before was actually prepared by Peter Schwindt. Tnx.
+  * Updated to Standard-Version 3.9.3
+  * Added build-arch and build-indep targets in rules
+
+ -- Juliane Holzt <debian@julijane.de>  Tue, 26 Jun 2012 17:33:58 +0200
+
+gwhois (20100728+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix pending l10n issues. Debconf translations:
+    - Brazilian Portuguese (Flamarion Jorge).  Closes: #594644
+    - Vietnamese (Clytie Siddall).  Closes: #598563
+    - Dutch; (Jeroen Schot).  Closes: #629386
+    - Slovak (Slavko).  Closes: #636799
+    - Italian (Francesca Ciceri).  Closes: #658193
+    - Polish (Michał Kułach).  Closes: #663688
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 25 Jun 2012 19:07:39 +0200
+
+gwhois (20100728) unstable; urgency=low
+
+  * add "last update of whois database" line to output from verisign-grs
+  * updated/fixed ipv4 netblock lists
+
+ -- Juliane Holzt <debian@julijane.de>  Wed, 28 Jul 2010 16:35:23 +0200
+
+gwhois (20100727) unstable; urgency=low
+
+  * Updated debconf template translations: ru (closes: Bug#581866),
+    pt (closes: Bug#581958), cs (closes: Bug#581993),
+    ja (closes: Bug#582303), es (closes: Bug#583342),
+    fr (closes: Bug#583786), sv (closes: Bug#586820),
+    sv (closes: Bug#589857)
+  * 2a00:: is ripe, also fixed ipv6 pattern in whole (closes: Bug#585072)
+  * fixed ARIN lookups
+
+ -- Juliane Holzt <debian@julijane.de>  Tue, 27 Jul 2010 16:47:01 +0200
+
+gwhois (20100515) unstable; urgency=low
+
+  * Various debian related fixes (policy etc.)
+  * Moved "openbsd-inetd | inet-superserver" from Recommends to
+    Suggests, report missing in postinst if necessary (closes: Bug#513304)
+  * Removed charset parameter from DENIC queries, convert parameter
+    charset, use libidn for punycode encoding of queried multilingual
+    domains (closes: Bug#567834)
+  * Applied manpage fixes (closes: Bug#551758)
+  * Added russian debconf template (closes: Bug#546344)
+
+ -- Juliane Holzt <debian@julijane.de>  Sat, 15 May 2010 23:23:41 +0200
+
+gwhois (20090717.1) unstable; urgency=low
+
+  * Added .tel whois (closes: Bug#524675)
+
+ -- Juliane Holzt <debian@julijane.de>  Fri, 17 Jul 2009 15:30:58 +0200
+
+gwhois (20081227) unstable; urgency=low
+
+  * Corrected lynx dependency to lynx-cur (closes: Bug#509928)
+
+ -- Juliane Holzt <debian@julijane.de>  Sat, 27 Dec 2008 21:18:22 +0100
+
+gwhois (20081019) unstable; urgency=low
+
+  * Throw error on empty query string.
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 19 Oct 2008 20:49:48 +0200
+
+gwhois (20080925) unstable; urgency=low
+
+  * Changed .by URL, same unhelpful output as before (closes: Bug#500042)
+
+ -- Juliane Holzt <debian@julijane.de>  Thu, 25 Sep 2008 13:26:13 +0200
+
+gwhois (20080716) unstable; urgency=low
+
+  * Verbose output for .name, tnx John McGowan
+
+ -- Juliane Holzt <debian@julijane.de>  Wed, 16 Jul 2008 21:54:48 +0200
+
+gwhois (20080626) unstable; urgency=low
+
+  * Fixed .ms, tnx Uwe Sinha (closes: Bug#488093)
+
+ -- Juliane Holzt <debian@julijane.de>  Thu, 26 Jun 2008 20:52:18 +0200
+
+gwhois (20080219.1) unstable; urgency=low
+
+  * Ignore .orig and .dpkg-new pattern files
+
+ -- Juliane Holzt <debian@julijane.de>  Tue, 19 Feb 2008 14:06:36 +0100
+
+gwhois (20080219) unstable; urgency=low
+
+  * Added SIXXS-handles, tnx Christian Seitz (closes: Bug#458470)
+  * Modified/Fixed .af, .ai, .an, .az, .bi, .cf, .ci, .cl, .dk, .ec, .eg, .fj, 
+    .gd, .ge, .gi, .gm, .gn, .gp, .gs, .gy, .hn, .hr, .ir, .ki, .kz, .la, .lc, 
+    .lk, .ly, .ma, .mc, .mg, .mm, .mn, .mr, .ms, .mt, .mu, .nc, .nf, .pl, .pm, 
+    .pw, .py, .sc, .sd, .sm, .sn, .sr, .sv, .tc, .tg, .tl, .tm, .uy, .uz, .vc, 
+    .ve, .vn, .ws, .jobs, .mil, .travel
+  * Added .arpa, .asia (yet defunct), .tel (no whois) and Subdomain-Whois
+    of Centralnic for certain subdomains under .com., .net and .org (e.g.
+    gb.net).
+  * Removed .cs
+
+ -- Juliane Holzt <debian@julijane.de>  Tue, 19 Feb 2008 11:42:29 +0100
+
+gwhois (20071030) unstable; urgency=low
+
+  * Fixed .im (closes: Bug#448661)
+  * Added brasilian portuguese translation (closes: Bug#447874)
+
+ -- Juliane Holzt <debian@julijane.de>  Tue, 30 Oct 2007 23:19:37 +0100
+
+gwhois (20070926) unstable; urgency=low
+
+  * Added .me (closes: Bug#444198), added .kp, changed .rs 
+
+ -- Juliane Holzt <debian@julijane.de>  Wed, 26 Sep 2007 21:28:39 +0200
+
+gwhois (20070906) unstable; urgency=low
+
+  * Changed dependency on netbase/update-inetd to inet-superserver/
+    openbsd-inetd
+
+ -- Juliane Holzt <debian@julijane.de>  Wed,  5 Sep 2007 23:59:41 +0200
+
+gwhois (20070905) unstable; urgency=low
+
+  * TLD .va is now included in the ripe database, tnx Mark Thomas
+  * included portuguese translation, tnx Americo Monteiro (closes: Bug#435729)
+  * included spanish translation, tnx Rudy Godoy Guillen (closes: Bug#426174)
+
+ -- Juliane Holzt <debian@julijane.de>  Wed,  5 Sep 2007 18:09:50 +0200
+
+gwhois (20070903) unstable; urgency=low
+
+  * made output from verisign-grs more verbose
+
+ -- Juliane Holzt <debian@julijane.de>  Mon,  3 Sep 2007 21:15:28 +0200
+
+gwhois (20070822) unstable; urgency=low
+
+  * Fixed .de (AGAIN due to a subtile change of the whois service)
+
+ -- Juliane Holzt <debian@julijane.de>  Wed, 22 Aug 2007 23:28:32 +0200
+
+gwhois (20070403) unstable; urgency=low
+
+  * Fixed .de 
+
+ -- Juliane Holzt <debian@julijane.de>  Tue,  3 Apr 2007 18:30:56 +0200
+
+gwhois (20070222) unstable; urgency=low
+
+  * Fixed/Updated .as
+
+ -- Juliane Holzt <debian@julijane.de>  Thu, 22 Feb 2007 11:30:04 +0100
+
+gwhois (20070218) unstable; urgency=low
+
+  * Fixed .co and .pk
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 18 Feb 2007 13:22:56 +0100
+
+gwhois (20070217.1) unstable; urgency=low
+
+  * Handles ending on '-ap' are APNIC (closes: Bug#411248)
+
+ -- Juliane Holzt <debian@julijane.de>  Sat, 17 Feb 2007 14:29:35 +0100
+
+gwhois (20070217) unstable; urgency=low
+
+  * 116/6, 120/8 new to APNIC
+  * added redirect modifier feature (see readme.ripe) (closed: Bug#404622)
+
+ -- Juliane Holzt <debian@julijane.de>  Sat, 17 Feb 2007 00:09:08 +0100
+
+gwhois (20070112) unstable; urgency=low
+
+  * Added lookup for four byte AS numbers (e.g. AS3.1) (closes: Bug#406070)
+
+ -- Juliane Holzt <debian@julijane.de>  Fri, 12 Jan 2007 14:25:07 +0100
+
+gwhois (20061206) unstable; urgency=low
+
+  * Broadened regex for lim- (RIPE), added poem- (RIPE) (closes: Bug#401542)      
+
+ -- Juliane Holzt <debian@julijane.de>  Wed,  6 Dec 2006 22:47:42 +0100
+
+gwhois (20061202) unstable; urgency=low
+
+  * Added a new query method 'multiple' for doing multiple lookups for
+    one query. This is used for .vg which provides complementing data
+    via CGI _and_ via WHOIS.
+  * Also fixed CGI-URL for .vg, tnx VT100 (closes: Bug#401339)
+
+ -- Juliane Holzt <debian@julijane.de>  Sat,  2 Dec 2006 19:48:48 +0100
+
+gwhois (20061113) unstable; urgency=low
+
+  * Fixed .info, tnx Stefan Schmidt (closes: Bug#397899)
+
+ -- Juliane Holzt <debian@julijane.de>  Fri, 10 Nov 2006 12:18:51 +0100
+
+gwhois (20061002) unstable; urgency=low
+
+  * .mobi now has a whois server
+
+ -- Juliane Holzt <debian@julijane.de>  Mon,  2 Oct 2006 22:54:53 +0200
+
+gwhois (20060928) unstable; urgency=low
+
+  * Removed debconf notice (considered debconf abuse) about ERX-list 
+    removal, was described in README.upgrade anyway (closes: Bug#388901)
+  * Changed README.upgrade into NEWS.Debian
+  * 196/8 now complete Afrinoc (tnx MarcL)
+  * 77/8, 78/8, 79/8 RIPE (new)
+  * 201/8, 189/8, 190/8 LACNIC (not new, shame on me)
+  * Fixed 122/6 -> 122/7, 124/7
+  * Moved call to update-inetd from postrm to prerm, modified script
+    to only call update-inetd when inetd-installation was selected
+    through debconf (closes: Bug#388654)
+  * Changed dependency on "netbase" to "update-inetd | netbase"
+  * Changed build-depends-indep to build-depends, thanks to Arjan Oosting
+    for pointing this out
+  * Fixed debconf translation handling
+
+ -- Juliane Holzt <debian@julijane.de>  Thu, 28 Sep 2006 17:46:41 +0200
+
+gwhois (20060419) unstable; urgency=low
+
+  * The "i-should-have-done-this-much-earlier" Release. Sorry folks.
+  * Added .eu (closes: Bug#351793)
+  * Fixed .il (closes: Bug#355039)
+  * Added extensive list of ip networks transfered to AFRINIC, many tnx to Axel Rau
+  * Added .cat, .mobi
+  * Added 89/8, 90/8, 91/8 to RIPE 
+  * Added 58/7, 121/8, 122/6, 126/8, 169.208/12, 196.192/13 to APNIC
+  * Added swedish translation. Thanks Daniel Nylander. (closes: Bug#339762)
+
+ -- Juliane Holzt <debian@julijane.de>  Wed, 19 Apr 2006 19:12:23 +0200
+
+gwhois (20050925.1) unstable; urgency=low
+
+  * fixup, also added README.RIPE
+  * pattern file does no longer use 'ipprefix' and 'noipprefix' but only 'prefix'
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 25 Sep 2005 21:22:00 +0200
+
+gwhois (20050925) unstable; urgency=low
+
+  * fixed/updated .com, .net, .org, .ae, .az, .ly, .pr, .jp (closes: Bug#323569)
+  * added .jobs, .travel, .eu, 2a01::/23 (closes: Bug#318382)
+  * added lookup 'tld xx' (shows information from iana about a tld)
+  * added debconf translations
+    - Vietnamese. Thanks Clytie Siddall. (closes: Bug#309335)
+    - Czech. Thanks Miroslav Kure. (closes: Bug#310260)
+    - French. Thanks Jean-Christophe Champarnaud. (closes: Bug#238087)
+    - Danish. Thanks Morten Brix Pedersen. (closes: Bug#288294)
+    - German. Finally done it myself. (closes: Bug#253193, Bug#288206)
+  * query string is no longer forced lower case (closed: Bug#324669)
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 25 Sep 2005 20:26:49 +0200
+
+gwhois (20050115) unstable; urgency=low
+
+  * Added -q parameter to curl invocation, following a suggestion by
+    John McGowan (problem is, that --insecure is a toggle, and might
+    have been toggled already to on by ~/.curlrc)
+  * Added output of version
+
+ -- Juliane Holzt <debian@julijane.de>  Sat, 15 Jan 2005 10:48:49 +0100
+
+gwhois (20050114) unstable; urgency=low
+
+  * Explicit rule for .com and .net
+  * added gandi handles, fixed .cr (closes: Bug#239259)
+  * added irt handles (closes: Bug#239768)
+  * added pgpkey objects (closes: Bug#239780)
+  * 80/6,84/8 -> 80/5,88/8 ripe (close: Bug#243149)
+  * fltr objects (closes: Bug#249312)
+  * edu added (closes: Bug#255576)
+  * fixed .pe (closes: Bug#264794)
+  * fixed .tv (again, suckers!) (closes: Bug#267745)
+  * get rid of erx tables (closes: Bug#243148)
+  * Added debconf translations (tnx to bubulle for help)
+    - Japanese. Thanks Hideki Yamane. (closes: Bug#271112)
+    - Dutch. Thanks Luk Claes. (closes: Bug#263595)
+  * Replaced POTFILES.in by the correct file pointing to the templates
+    master file
+  * Removed 200.10.4/22, 210.17/16, 210.18/15 and 210.20/16
+    from registro.br, now at apnic and twnic
+  * Changed .tj
+  * Added IPv6 assignments 
+  * A lot of changes and additions (took me 15 hours):
+    - fixed/updated
+    .ac, .ar, .cd, .co, .cu, .ee, .fi, .ge,
+    .gs, .gt, .ht, .in, .im, .io, .ir, .lk,
+    .lv, .mn, .ms, .mw, .my, .nu, .nz, .pa,
+    .pk, .rw, .se, .sh, .tf, .tm, .tr, .tt,
+    .tw, .ua, .ug, .uk, .uz
+    - added
+    .ai, .ao, .bb, .bd, .bg, .bh, .bi, .bj,
+    .bm, .bo, .bs, .bt, .by, .bz, .cg, .cv,
+    .cy, .dm, .do, .dz, .fj, .fm, .fo, .gg,
+    .gi, .gl, .gm, .gr, .id, .il, .it, .je,
+    .jo, .ke, .kg, .ki, .kw, .ky, .kz, .la,
+    .lt, .md, .mt, .mu, .na, .nf, .nr, .om,
+    .ph, .pn, .py, .re, .ro, .sa, .sb, .si,
+    .sk, .sr, .tg, .th, .tn, .ve, .wf, .yt,
+    .yu, .zw, .int, .pro
+    - added notice
+    .ad, .ae, .an, .aq, .aw, .ax, .az, .ba,
+    .bf, .bv, .bw, .cf, .ci, .cm, .cs, .dj,
+    .eg, .eh, .er, .et, .fk, .ga, .gf, .gh,
+    .gn, .gp, .gq, .gu, .gw, .gy, .hn, .hr,
+    .iq, .jm, .kh, .km, .kn, .lr, .ls, .ly,
+    .ma, .mc, .mg, .mh, .mk, .ml, .mo, .mp,
+    .mq, .mr, .mv, .mz, .nc, .ne, .ni, .pf,
+    .pg, .pm, .pr, .qa, .sc, .sd, .sj, .sl,
+    .sm, .sn, .so, .sv, .sy, .sz, .td, .tm,
+    .tp, .va, .vc, .ye, .za, .zm
+    - removed
+    ml.org
+
+ -- Juliane Holzt <debian@julijane.de>  Fri, 14 Jan 2005 22:38:20 +0100
+
+gwhois (20040308.2) unstable; urgency=low
+
+  * -mnt and lim- are queried at ripe
+
+ -- Juliane Holzt <debian@julijane.de>  Mon,  8 Mar 2004 00:42:38 +0100
+
+gwhois (20040308.1) unstable; urgency=low
+
+  * stupid mistake (193/7 => 193/8,194/8)
+
+ -- Juliane Holzt <debian@julijane.de>  Mon,  8 Mar 2004 00:31:46 +0100
+
+gwhois (20040307.2) unstable; urgency=low
+
+  * Unclear problem
+
+ -- Juliane Holzt <debian@julijane.de>  Sun,  7 Mar 2004 02:32:05 +0100
+
+gwhois (20040307.1) unstable; urgency=low
+
+  * changed IP address handling code totally, will now use CIDR blocks
+  * autoconverted ERX listings by ARIN (20040305)
+  * fixed bad sentence by rephrasing (closes: Bug#236121)
+  * added suggested fix for helping backporters (closes: Bug#236120)
+  * query 'ipas a.b.c.d' will ask team cymru whois (closed: Bug#212806)
+
+ -- Juliane Holzt <debian@julijane.de>  Sun,  7 Mar 2004 01:34:46 +0100
+
+gwhois (20040303.4) unstable; urgency=low
+
+  * Fixed output of handle query arguments (closes: Bug#236003)
+
+ -- Juliane Holzt <debian@julijane.de>  Wed,  3 Mar 2004 20:40:30 +0100
+
+gwhois (20040303.3) unstable; urgency=low
+
+  * Fixed 80 - 84/8 (closes: Bug#235979)
+
+ -- Juliane Holzt <debian@julijane.de>  Wed,  3 Mar 2004 17:53:40 +0100
+
+gwhois (20040303.2) unstable; urgency=low
+
+  * Now can handle server referral by ARIN for ERX-IPs (closes: Bug#176504)
+
+ -- Juliane Holzt <debian@julijane.de>  Wed,  3 Mar 2004 15:23:45 +0100
+
+gwhois (20040303.1) unstable; urgency=low
+
+  * Integrated smaller fixes and changes done by lutz.
+  * Removed special code for publicinterestregistry, as
+  *   transition is over, and referrers are nolonger used.
+  * Changed handling code for generic whois, can now take
+  *  some parameters, removing need for special cases.
+  * publicinterestregistry (.org) now back to normal whois
+  * pattern changes for new generic whois handling code
+  * added idn-parameters for denic (closes: Bug#235086)
+  * added whois-servers.net as last resort (tnx lutz)
+  * changed corenic handle (closes: Bug#208866)
+  * .va fixed (closes: Bug#225032)
+  * added some blocks to RIPE (closes: Bug#225037)
+  * added some more blocks to RIPE (closes: Bug#226178) 
+  * added dependency on netbase (closes: Bug#223334)
+  * changed copyright file as suggestes by aba
+
+ -- Juliane Holzt <debian@julijane.de>  Wed,  3 Mar 2004 13:40:51 +0100
+
+gwhois (20030729.1) unstable; urgency=low
+
+  * Changes to .org-Registry
+
+ -- Juliane Holzt <debian@julijane.de>  Tue, 29 Jul 2003 16:24:39 +0200
+
+gwhois (20030625.2) unstable; urgency=low
+
+  * .cc now REAL fixed :-)
+  * whois.nic-se.se has incomplete data, changed for cgi
+
+ -- Juliane Holzt <debian@julijane.de>  Wed, 25 Jun 2003 13:20:29 +0200
+
+gwhois (20030625.1) unstable; urgency=low
+
+  * 192.109/16 now queried at ripe (arin has totally outdated data!)
+  * added 60/8 and removed 223/8 (apnic) [provided by lutz]
+  * fixed .as (closes: Bug#195065) and .cc (closes: Bug#196991)
+  * fixed handling of dpkg-old pattern files (closes: Bug#179040)
+  * Moved /etc/gwhois/debconf.inc to /etc/default/gwhois
+
+ -- Juliane Holzt <debian@julijane.de>  Wed, 25 Jun 2003 02:14:46 +0200
+
+gwhois (20030127.2) unstable; urgency=low
+
+  * Minor fixes.
+
+ -- Juliane Holzt <debian@julijane.de>  Mon, 27 Jan 2003 18:27:28 +0100
+
+gwhois (20030127.1) unstable; urgency=low
+
+  * Special treatment for severe broken .org registry (closes: Bug#178603)
+  * Once again: Depends on Lynx. (closes: Bug#154161)
+
+ -- Juliane Holzt <debian@julijane.de>  Mon, 27 Jan 2003 18:17:15 +0100
+
+gwhois (20030126.1) unstable; urgency=low
+
+  * Many thanks for contributions by f2u and cord.
+  *
+  * Add "+" for IP address queries to ARIN whois. Support multiple 
+  *   pattern files.
+  * Small workaround for whois-servers that return ^M.
+  * added .coop-whois
+  * added 192.114.0.0 - 192.118.255.255 (RIPE)
+  * added 147.233.0.0 - 147.237.255.255 (RIPE)
+  * added 156.35.0.0 - 156.35.255.255 (RIPE)
+  * Mark ARIN WHOIS.
+  * added 82.0.0.0 - 82.255.255.255 to RIPE
+  * fixed .lu (closes: Bug#170816)
+  * (closes: Bug#164375) (cord)
+  * 203.0.0.0 - 203.63.255.255 moved from aunic to apnic.
+  * (closes: Bug#166748)
+  * 210.8.0.0 - 210.11.255.255 is at whois.connect.com.au.
+  * JAPANESE IPs:
+  * added 61.192.0.0 - 61.215.255.255 (closes: Bug#148534,
+  * closes: Bug#165104)
+  * added 202.208.0.0 - 202.255.255.255 (closes: Bug#165406)
+  * added 203.136.0.0 - 203.141.255.255
+  * added 210.136.0.0 - 210.159.255.255
+  * added 210.188.0.0 - 210.191.255.255
+  * added 210.196.0.0 - 210.199.255.255
+  * added 210.224.0.0 - 210.239.255.255 (closes: Bug#138881)
+  * added 211.8.0.0 - 211.19.255.255 (closes: Bug#165587)
+  * added 211.120.0.0 - 211.135.255.255
+  * added 218.40.0.0 - 218.47.255.255
+  * added 218.216.0.0 - 218.231.255.255
+  * KOREAN IPs:
+  * added 61.248.0.0 - 61.255.255.255 (closes: Bug#164376)
+  * added 203.245.0.0 - 203.255.255.255 (closes: Bug#138718)
+  * added 210.90.0.0 - 210.91.255.255
+  * added 210.97.192.0 - 210.135.255.255
+  * added 210.220.0.0 - 210.223.255.255 (closes: Bug#141594)
+  * added 211.32.0.0 - 211.63.255.255 (closes: Bug#138717, 
+  * closes: Bug#150750, closes: Bug#165587)
+  * added 211.168.0.0 - 211.171.255.255
+  * added 211.226.0.0 - 211.231.255.255 (closes: Bug#138953)
+  * added 218.36.0.0 - 218.39.255.255
+  * added 218.48.0.0 - 218.55.255.255
+  * added 218.144.0.0 - 218.159.255.255
+  * added 218.232.0.0 - 218.239.255.255
+  * added 220.72.0.0 - 220.87.255.255
+  * TAIWAN IPs:
+  * added 61.216.0.0 - 61.231.255.255 (closes: Bug#165105)
+  * added 210.17.0.0 - 210.17.127.255
+  * added 210.59.0.0 - 210.63.255.255
+  * added 210.65.0.0 - 210.67.255.255
+  * added 210.70.0.0 - 210.71.255.255
+  * added 211.20.0.0 - 211.23.255.255 (closes: Bug#165587)
+  * added 211.72.0.0 - 211.72.255.255
+  * added 211.75.0.0 - 211.75.255.255 (closes: Bug#165587)
+  * added 218.32.0.0 - 218.32.255.255
+  * added 218.160.0.0 - 218.165.255.255
+  * APNIC
+  * added 219.0.0.0 - 221.255.255.255
+  * NIC for Latin American and Caribbean 
+  * added 200.0.0.0 - 200.255.255.255 (closes: Bug#158859)
+  * RIPE (closes: Bug#152090)
+  * added 129.11.0.0 - 129.13.255.255
+  * added 129.16.0.0 - 129.16.255.255
+  * added 129.20.0.0 - 129.20.255.255
+  * added 129.26.0.0 - 129.27.255.255
+  * added 129.31.0.0 - 129.31.255.255
+  * added 129.35.0.0 - 129.35.255.255
+  * added 129.67.0.0 - 129.67.255.255
+  * added 129.69.0.0- 129.70.255.255
+  * added 129.73.0.0 - 129.73.255.255
+  * added 129.88.0.0 - 129.88.255.255
+  * added 129.102.0.0 - 129.104.255.255
+  * added 129.125.0.0 - 129.125.255.255
+  * added 129.129.0.0 - 129.129.255.255
+  * added 129.132.0.0 - 129.132.255.255
+  * added 129.142.0.0 - 129.143.255.255
+  * added 129.159.0.0 - 129.159.3.255
+  * added 129.169.0.0 - 129.169.255.255
+  * added 129.175.0.0 - 129.175.255.255
+  * added 129.177.0.0 - 129.178.255.255
+  * added 129.181.0.0 - 129.185.255.255
+  * added 129.187.0.0 - 129.187.255.255
+  * added 129.194.0.0 - 129.195.255.255
+  * added 129.199.0.0 - 129.199.255.255
+  * added 129.206.0.0 - 129.206.255.255
+  * added 129.214.0.0 - 129.215.255.255
+  * added 129.217.0.0 - 129.217.255.255
+  * added 129.226.0.0 - 129.227.255.255
+  * added 129.233.0.0 - 129.234.255.255
+  * added 129.240.0.0 - 129.242.255.255
+  * added 129.247.0.0 - 129.247.255.255
+  * whois-server for .ac.uk and .gov.uk added. (closes: Bug#166785)
+  * whois-server for .pl added. (closes: Bug#164737)
+  * RIPE is also responsible for Gambia .gm
+  * .ar switched urls for requests. (closes: Bug#163210)
+  * .cl now has a real whois-server.
+  * .dk has a real whois-server again. (closes: Bug#163181)
+  * .ec is available through a web interface.
+  * .es switched urls for requests.
+  * .kr new address for whois-server.
+  * .name has also an whois-server.
+  * .pk switched urls for requests.
+  * .su has a whois-server. (closes: Bug#165610)
+  * .tw has a whois-server. (closes: Bug#163296)
+  * .co.za has a whois-server. (closes: Bug#149182)
+  * .tk has a whois-server. (closes: Bug#165614)
+  * .ag is now handled by a real whois server
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 26 Jan 2003 00:33:07 +0100
+
+gwhois (20020314.4) unstable; urgency=low
+
+  * fixed trailing spaces after some $-signs
+  * KOREAN IPs:
+  *  added 210.100.0.0 - 210.103.255.255 (closes: Bug#135341)
+  *  added 210.204.0.0 - 210.207.255.255 (closes: Bug#135399)
+  *  added 210.116.0.0 - 210.213.255.255 (closes: Bug#135470)
+  *  added 61.78.0.0 - 61.85.255.255 (closes: Bug#136303)
+  *  added 211.32.0.0 - 211.39.255.255 (closes: Bug#136333)
+  *  added 210.96.0.0 - 210.97.191.255 (closes: Bug#136631)
+  *  added 210.178.0.0 - 210.183.255.255 (closes: Bug#137599)
+  *  added 211.212.0.0 - 211.215.255.255 (closes: Bug#137724)
+  * APNIC:
+  *  added 218.0.0.0 - 218.255.255.255 (closes: Bug#137386)
+
+ -- Juliane Holzt <debian@julijane.de>  Thu, 14 Mar 2002 22:44:02 +0100
+
+gwhois (20020217.3) unstable; urgency=low
+
+  * added 203.224 - 203.244 to KRNIC (close: Bug#130307)
+  * added 211.104 - 211.119 to KRNIC
+  * added 210.92 - 210.95 to KRNIC
+  * added 211.232 - 211.255 to KRNIC
+  * added 61.96 - 61.112 to KRNIC
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 17 Feb 2002 23:26:03 +0100
+
+gwhois (20020217.2) unstable; urgency=low
+
+  * added .hk (closes: Bug#131390)
+  * added 211.0/13 to JPNIC (closes: Bug#134148)
+  * added 211.21/16 to TWNIC (closes: Bug#132727)
+  * added .to (closes: Bug#132634)
+  * added 211.172 - 211.199 to KRNIC (closes: Bug#130307)
+
+ -- Juliane Holzt <debian@julijane.de>  Sat, 17 Feb 2002 15:34:39 +0100
+
+gwhois (20020120.1) unstable; urgency=low
+
+  * Added .biz and .info
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 20 Jan 2002 00:16:39 +0100
+
+gwhois (20020117.2) unstable; urgency=low
+
+  * Added debconf question regarding addition to inetd.conf
+  * Added debconf question regarding sending mail (closes: Bug#129870)
+
+ -- Juliane Holzt <debian@julijane.de>  Fri, 18 Jan 2002 23:20:46 +0100
+
+gwhois (20020117.1) unstable; urgency=low
+ 
+  * Added 210.248/13 = jpnic (closes: Bug#129489)
+  * Added 211.216/13 = krnic (closes: Bug#126637)
+  * Added 61.72 - 77 = krnic (closes: Bug#119200)
+  * Updated query to dknic   (closes: Bug#129026)
+  * added ripe blocks 80/81
+  * Reports when query failed (closes: Bug#122535)
+
+ -- Juliane Holzt <debian@julijane.de>  Thu, 17 Jan 2002 13:49:17 +0100
+
+gwhois (20010312.2) unstable; urgency=low
+
+  * Depends on lynx changed to suggests. (closes: Bug#85595, Bug#99424)
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 10 Jun 2001 21:27:46 +0200
+
+gwhois (20010312.1) unstable; urgency=low
+
+  * Updated pattern
+  * Added depends for lynx (closed #85595)
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 27 May 2001 15:39:10 +0200
+
+gwhois (20001208.3) unstable; urgency=low
+
+  * Fixed a typo (closes #81340)
+
+ -- Juliane Holzt <debian@julijane.de>  Fri,  5 Jan 2001 21:42:10 +0100
+
+gwhois (20001208.2) unstable; urgency=low
+
+  * Fixed a bug in the rules script (closes #80962)
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 31 Dec 2000 17:15:50 +0100
+
+gwhois (20001208.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Juliane Holzt <debian@julijane.de>  Sun, 10 Dec 2000 21:04:44 +0100
+
+Local variables:
+mode: debian-changelog
+End:
