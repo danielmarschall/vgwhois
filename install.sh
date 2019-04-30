@@ -39,10 +39,10 @@ fi
 #  - php7.0-sqlite3 (used by the whois-ping maintainance program)
 #
 # TODO: how can be avoid the "php7.0" name? are there generic package names?
-# TODO: check if aptitude is installed. otherwise apt-get. How to make it fit to most distros?
+# TODO: How to make the installation of the packages fit to most distros?
 
-aptitude update
-aptitude install perl libwww-perl libnet-libidn-perl curl lynx-cur libnet-ip-perl libnet-dns-perl libmath-bigint-gmp-perl php7.0-cli php7.0-gmp netcat php7.0-sqlite3
+apt-get update
+apt-get install perl libwww-perl libnet-libidn-perl curl lynx-cur libnet-ip-perl libnet-dns-perl libmath-bigint-gmp-perl php7.0-cli php7.0-gmp netcat php7.0-sqlite3
 
 # --- STEP 2: "Install" symlinks
 

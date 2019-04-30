@@ -17,10 +17,6 @@ TODO LIST BY VIATHINKSOFT
 	... alle patterns systematisch testen und bewerten.
 	... es gibt teilweise probleme beim highlighting
 
-	herausfinden, welche GPL-Version verwendet werden soll
-
-	lintian anwenden. im taeglichen QA.
-
 	_debian_check_rules: pruefen ob es dateien doppelt gibt
 
 	vts oids publiziern
@@ -38,8 +34,6 @@ TODO LIST BY VIATHINKSOFT
 
 	maschinenlesbares copyright: Welchen Pfad soll ich bei "files:" verwenden? debian/ oder usr/ ?
 
-	fut: ganz von php wegkommen?
-
 	alle dateien: gpl-2-only im header eintragen... das ist wahrscheinlich, was Michael Holzt wollte
 
 	(nn) Core: automatsich "\n\n" nach jeder ausgabe von www oder einem subprogramm einfügen?
@@ -54,9 +48,13 @@ TODO LIST BY VIATHINKSOFT
 
 	gwhois umbenennen in vwhois
 
-	ausgiebige OOBE tests
+	gibt es weitere PHP pakete, die wir brauchen?
 
-	alle copyright header auf GPL2 ändern
+	man page übearbeiten; die zusatzprogramme (pattern generator etc) beschreiben
+
+	reintroduce PO translations ?
+
+	reintroduce INETD service entry ?
 
 
 
