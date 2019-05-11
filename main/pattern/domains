@@ -1,6 +1,6 @@
-#: version 20190429
+#: version 20190505
 # Domains
-# This file can be updated by $gwhois$/maintenance/pattern-generator/generate_domains (only additions of new entries)
+# This file can be updated by running "gwhois-pattern-update", but it does only ADD new "New gTLDs".
 
 # Info: A good resource for research: https://wiki.rrpproxy.net/
 
@@ -4356,7 +4356,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-04-28)
+:notice||Whois server unknown (2019-05-05)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4935,7 +4935,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-04-28)
+:notice||Whois server unknown (2019-05-05)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6235,7 +6235,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-04-28)
+:notice||Whois server unknown (2019-05-05)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6355,7 +6355,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-04-28)
+:notice||Whois server unknown (2019-05-05)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels

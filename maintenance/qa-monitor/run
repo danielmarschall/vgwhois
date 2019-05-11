@@ -164,15 +164,23 @@ if ($loc_good) {
 
 # ---
 
-define('CUR_VER', gwi_getInstalledBaseVersion());
+$own_debian = '20120626.1.2';
+$own_github = 4; // Latest commit f712050  on 30 Nov 2018
 
-echo "* Check if there is a newer official version of gwhois which needs to be merged with the ViaThinkSoft fork ( ".DEBIAN_GWHOIS_PACKAGE_URL." , current base version ".CUR_VER.")\n";
+echo "* Check if there is a newer official version of gwhois which needs to be merged with the ViaThinkSoft fork\n";
 
-$latest_official = getLatestGWIversion();
-$latest_official = str_replace('-', '.', $latest_official); // they use the reserved '-' character in their versions (used for delimiting upstream versions)
+$their_debian = str_replace('-', '.', getLatestGWIversion()); // they use the reserved '-' character in their versions (used for delimiting upstream versions)
+$their_github = github_commit_count('julijane', 'gwhois');
+
 $loc_good = true;
-if (CUR_VER != $latest_official) {
-	echo '[ !! ] Latest version: '.$latest_official." (This version: ".CUR_VER.")\n";
+
+if ($own_debian != $their_debian) {
+	echo '[ !! ] Their DEBIAN version: '.$their_debian." (Our version is based on: ".own_debian.")\n";
+	$loc_good = false;
+}
+
+if ($own_github != $their_github) {
+	echo '[ !! ] Their GITHUB version: '.$their_github." (Our version is based on: ".$own_github.")\n";
 	$loc_good = false;
 }
 
@@ -288,7 +296,7 @@ exit($global_status);
 # ---
 
 function getLatestGWIversion() {
-	$x = cached_file(DEBIAN_GWHOIS_PACKAGE_URL, CACHE_FILE_DIR);
+	$x = cached_file('http://packages.debian.org/search?searchon=names&keywords=gwhois', CACHE_FILE_DIR);
 	preg_match_all('@<br>(.*): all@isU', $x, $m);
 	$m = $m[1];
 	rsort($m);
@@ -326,15 +334,6 @@ function iana_get_whois($tld) {
 
 	if (strpos($out, 'domain:') === false) return false;
 	if (!preg_match("@\nwhois:\\s*([^\\s]+)\n@ismU", $out, $m)) return false;
-	return $m[1];
-}
-
-function gwi_getInstalledBaseVersion() {
-	# TODO: auch andere dateien anschauen
-
-	$pattern = file(DIR . '/../../main/pattern/001_subdomains');
-	if (!preg_match('@#: version (.+)\+@iU', $pattern[0], $m)) return false;
-
 	return $m[1];
 }
 

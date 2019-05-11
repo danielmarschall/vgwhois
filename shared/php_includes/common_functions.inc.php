@@ -261,3 +261,12 @@ function generateRandomToken($haystack, $length = 20) {
 	} while (strpos($haystack, $t) !== false);
 	return $t;
 }
+
+function github_commit_count($user, $repo) {
+	$cont = file_get_contents("https://github.com/$user/$repo");
+	if (preg_match('@>\s*(\d+)\s*</span>\s*commits@smU', $cont, $m)) {
+	    return $m[1];
+	} else {
+		return "?";
+	}
+}

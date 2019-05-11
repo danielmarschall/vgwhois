@@ -158,7 +158,7 @@ function gwi_update_newgtld_patternfile() {
 		$pcont = "#: version $now\n".
 		         "# New gTLD\n".
 		         "# see: http://newgtlds.icann.org/en/program-status/delegated-strings\n".
-		         "# This file can be updated by ".__DIR__."/generate_newgtld (only additions of new \"New gTLDs\")\n".
+		         "# This file can be updated by running "gwhois-pattern-update", but it does only ADD new \"New gTLDs\"\n".
 		         "# --------------------------------------------------------------------\n".
 		         "\n".$pcont;
 	}

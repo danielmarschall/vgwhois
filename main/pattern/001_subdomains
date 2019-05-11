@@ -1,4 +1,4 @@
-#: version 20120626.1.2+viathinksoft2017XXXX
+#: version 20190511
 
 # Attention: Please note that gwhois will take the first regex match only!
 # This means if you have subdomain-registries, then you must define them first before you define the main registry.

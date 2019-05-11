@@ -1,4 +1,10 @@
 
+VWhois is a fork of gwhois.
+It was last forked / sync'ed with following gwhois version:
+- Debian package gwhois 20120626-1.2
+- GitHub julijane/gwhois commit #4 (f712050 / 30 Nov 2018)
+
+
 === HISTORY OF VWHOIS ===
 
 2019-04-29	program		marschall	Removed Debian package code. Distribution now via SVN!
