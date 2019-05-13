@@ -112,7 +112,7 @@ function gwi_update_domains_patternfile() {
 		// Add header
 		$pcont = "#: version $now\n".
 		         "# Domains\n".
-		         "# This file can be updated by running "gwhois-pattern-update", but it does only ADD new \"New gTLDs\"\n".
+		         "# This file can be updated by running \"gwhois-pattern-update\", but it does only ADD new \"New gTLDs\"\n".
 		         "# --------------------------------------------------------------------\n".
 		         "\n".$pcont;
 	}
