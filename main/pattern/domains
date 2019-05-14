@@ -1,4 +1,4 @@
-#: version 20190505
+#: version 20190514
 # Domains
 # This file can be updated by running "gwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3682,7 +3682,8 @@
 :whois|whois.nic.mormon
 \.mormon$
 
-:whois|domain-registry-whois.l.google.com
+:whois|whois.nic.google
+#:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgihttps|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
@@ -4356,7 +4357,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-05)
+:notice||Whois server unknown (2019-05-13)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4935,7 +4936,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-05)
+:notice||Whois server unknown (2019-05-13)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6235,7 +6236,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-05)
+:notice||Whois server unknown (2019-05-13)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6308,9 +6309,10 @@
 :whois|whois.nic.boston
 \.boston$
 
-# Alternative URL: http://nic.catholic/
+# Alternative URL: http://whois.nic.catholic/
 #:whois|whois.aridnrs.net.au
-:whois|nic.catholic
+#:whois|nic.catholic
+:whois|whois.nic.catholic
 \.catholic$
 
 # Alternative URL: https://whois.nic.xn--80aqecdr1a/
@@ -6355,7 +6357,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-05)
+:notice||Whois server unknown (2019-05-13)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
