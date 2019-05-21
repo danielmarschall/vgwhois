@@ -1,4 +1,4 @@
-#: version 20190514
+#: version 20190521
 # Domains
 # This file can be updated by running "gwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -2457,8 +2457,8 @@
 
 # Delegated on 10 April 2014 to Hu Yi Global Information Resources (Holding) Company Hong Kong Limited
 # Chinese for "network address"
-#:whois|whois.nic.xn--ses554g
-:whois|whois.registry.knet.cn
+#:whois|whois.registry.knet.cn
+:whois|whois.nic.xn--ses554g
 \.xn--ses554g$
 
 # Delegated on 10 April 2014 to Ruby Moon, LLC
