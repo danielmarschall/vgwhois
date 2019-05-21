@@ -2,7 +2,7 @@
 <?php
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: pa TLD whois
 #
 #  (c) 2011-2012 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
@@ -38,7 +38,7 @@ $x = 'Información del Dominio'.$ary[1];
 $locals = array('es_ES@euro', 'es_ES', 'es');
 reset($locals);
 while (list(, $locale) = each ($locals)) {
-	if ( setlocale(LC_CTYPE, $locale) == $locale ) {                
+	if ( setlocale(LC_CTYPE, $locale) == $locale ) {
 		break; // Exit when we were successfull
 	}
 }

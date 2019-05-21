@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: https://whois.viathinksoft.de/gwhois_fork/
-Comment: VWhois (ViaThinkSoft WHOIS) is a fork of the package gwhois by Juliane Holzt; https://julijane.de/gwhois/
+Comment: VGWhoIs (ViaThinkSoft Global WhoIs) is a fork of the package gwhois by Juliane Holzt; https://julijane.de/gwhois/
 
 Files: *
 Copyright: 1998-2012, Juliane Holzt <debian@julijane.de> and contributors

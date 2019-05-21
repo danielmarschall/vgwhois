@@ -1,7 +1,7 @@
 <?php
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
 #  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
@@ -10,7 +10,7 @@
 #
 
 require_once __DIR__ . '/../../shared/php_includes/config_functions.inc.php';
-parse_config(__DIR__ . '/../config/gwhois-pattern-update.conf');
+parse_config(__DIR__ . '/../config/vgwhois-pattern-update.conf');
 parse_config(__DIR__ . '/../config/urls.conf');
 
 define('PATTERN_DIR',          __DIR__ . '/../../main/pattern');

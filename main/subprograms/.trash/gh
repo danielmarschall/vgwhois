@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: gh TLD whois
 #
 #  (c) 2015 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
@@ -15,7 +15,7 @@ use utf8;
 
 use FindBin;
 use lib "$FindBin::RealBin/../../lib/";
-use GWhoIs::Core;
+use VGWhoIs::Core;
 
 if (defined $ARGV[0]) {
 	$_ = join(' ', @ARGV);
@@ -37,12 +37,12 @@ if (!defined $sld) {
 
 my $host = 'http://www.nic.gh'; # TODO: https?
 
-my ($protocol, $hostname) = GWhoIs::Utils::splitProtocolHost($host);
+my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
 
 #print "Querying $hostname with $protocol.\n";
 
 # TODO: !defined $dom
-my ($text, $exitcode) = GWhoIs::Core::doquery('','cgipost',"$host/customer/result_c.php","r_cdm=$dom&r_dom_slvl=$sld&Submit=Search");
+my ($text, $exitcode) = VGWhoIs::Core::doquery('','cgipost',"$host/customer/result_c.php","r_cdm=$dom&r_dom_slvl=$sld&Submit=Search");
 if ($exitcode) {
 	# print STDERR "Query to web server failed.\n";
 	print $text;
@@ -51,7 +51,7 @@ if ($exitcode) {
 
 if ( $text =~ m|(customer/displayresult_c.php\?id=\d+)|s ) {
 	print "Match found. Now querying for the domain data.\n\n";
-	($text, $exitcode) = GWhoIs::Core::doquery($query,'cgi',"$host/$1");
+	($text, $exitcode) = VGWhoIs::Core::doquery($query,'cgi',"$host/$1");
 	print $text;
 } else {
 	print "No match found. This probably means that this domain does not exist.\n";

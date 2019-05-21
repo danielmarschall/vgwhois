@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
 #  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
@@ -11,16 +11,16 @@
 
 DIR=$( dirname $(realpath "$0" ) )
 
-. "$DIR"/../config/gwhois-pattern-update.conf
+. "$DIR"/../config/vgwhois-pattern-update.conf
 . "$DIR"/../config/urls.conf
 
-echo "=================== GWHOIS PATTERN UPDATE ==================="
+echo "=================== VGWHOIS PATTERN UPDATE ==================="
 echo "This script downloads the latest RIR statistics"
-echo "and renews the pattern files of GWhoIs to provide"
+echo "and renews the pattern files of VGWhoIs to provide"
 echo "up-to-date informations of IPv4, IPv6 and ASN resources."
 echo "ATTENTION: The parsing of the downloaded files will take"
 echo "approximately 15-20 minutes!!!"
-echo "============================================================="
+echo "=============================================================="
 
 # RIR stats are necessary for generate_ipv4 and generate_ipv6
 echo "RIR stats Synchronization ..."

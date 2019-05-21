@@ -1,4 +1,4 @@
-This tool updates the GWhoIs pattern files which include the following patterns:
+This tool updates the VGWhoIs pattern files which include the following patterns:
 - IPv4 blocks
 - IPv6 blocks
 - ASNs

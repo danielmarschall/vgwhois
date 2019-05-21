@@ -1,6 +1,6 @@
 #: version 20190511
 
-# Attention: Please note that gwhois will take the first regex match only!
+# Attention: Please note that vgwhois will take the first regex match only!
 # This means if you have subdomain-registries, then you must define them first before you define the main registry.
 # Correct order: .uk.com, .com
 # So you have to name this file in a way, so that it will be in front of pattern.d/domains after sorting.

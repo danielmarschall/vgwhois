@@ -2,7 +2,7 @@
 <?php
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: gu TLD whois
 #
 #  (c) 2013 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>

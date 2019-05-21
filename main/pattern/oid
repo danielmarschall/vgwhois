@@ -11,5 +11,5 @@
 oid:.1.3.6.1.4.1.37476
 
 # Last resort for OIDs. If no more specific OID can be found, query a repository.
-:program|$gwhois$/subprograms/oid
+:program|$vgwhois$/subprograms/oid
 oid:.

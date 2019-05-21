@@ -1,10 +1,10 @@
 <?php
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Common functions in PHP
 #
-#  (c) 2013-2015 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2013-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -14,11 +14,6 @@ function getpatternfiles() {
 
 	$files = glob(__DIR__ . '/../../main/pattern/'.'*');
 	foreach ($files as &$file) {
-		# see /usr/bin/gwhois
-		if (preg_match('@\.dpkg-@', $file)) continue;
-		if (preg_match('@\.orig$@', $file)) continue;
-		if (preg_match('@\.bak$@',  $file)) continue;
-		if (preg_match('@\.save$@', $file)) continue;
 		if (preg_match('@^\.@',     $file)) continue;
 
 		$out[] = $file;

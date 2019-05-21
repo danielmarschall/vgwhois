@@ -2,16 +2,7 @@ TODO LIST BY VIATHINKSOFT
 
 	*.po files noch aktuell?
 
-	alle TODOS in /usr/bin/gwhois abarbeiten
-
-	packages aufsplitten
-	-- eigenes fork: "globalwhois"
-		paket: client
-		paket: maintainance tools (automatisches updaten der DB)
-		paket: developer tools (+QA)
-		achtung: maintainance ist abhängig von viathinksoft IANA watcher...
-	-- debian kontaktieren bzgl. möglichkeiten eines forks oder maintainer übernehmen
-	   wenn als eigenständiges package: dann gwhois als konflikt-paket kennzeichnen
+	alle TODOS in den quelltexten
 
 	testcases system aufbauen
 	... alle patterns systematisch testen und bewerten.
@@ -27,8 +18,6 @@ TODO LIST BY VIATHINKSOFT
 	> https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=677865
 	> libfile-fcntllock-perl
 	--> nur beim builder oder auch beim client benötigt?
-
-	beim update von einem alten gwhois würde der benutzer möglicherweisdie pattern file beibehalten. das wäre kontraproduktiv
 
 	was mache ich mit dem "INSTALL" file? ich will doch auch dass leute die .tar.gz für andere betriebssysteme nutzen können
 
@@ -46,8 +35,6 @@ TODO LIST BY VIATHINKSOFT
 	pattern-generator
 		bei existierenden domains: wenn whois server sich �ndert, die alten eintr�ge auskommentieren und den neuen eintrag einf�gen
 
-	gwhois umbenennen in vwhois
-
 	gibt es weitere PHP pakete, die wir brauchen?
 
 	man page �bearbeiten; die zusatzprogramme (pattern generator etc) beschreiben
@@ -55,6 +42,8 @@ TODO LIST BY VIATHINKSOFT
 	reintroduce PO translations ?
 
 	reintroduce INETD service entry ?
+
+	pattern version 20190521 shouuld be 2019-05-21
 
 
 

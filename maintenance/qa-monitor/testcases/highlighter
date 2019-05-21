@@ -2,7 +2,7 @@
 <?php
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
 #  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
@@ -47,8 +47,8 @@ array_shift($argv);
 # $i = 0;
 foreach ($argv as $x) {
 	# TODO: problem: $x darf nicht quoted werden, darf aber auch nicht @ enthalten -> dynamisch rausfinden welcher delimiter nicht vorkommt
-	# TODO: there are several problems using this mechanism. It is very hard to highlight everything which is queryable through gwhois.
-	#       for example: (1) it is not possible to use \S+ in the pattern files, because it would match everything in the gwhois output, even though it was only meant to match everything in the query
+	# TODO: there are several problems using this mechanism. It is very hard to highlight everything which is queryable through vgwhois.
+	#       for example: (1) it is not possible to use \S+ in the pattern files, because it would match everything in the vgwhois output, even though it was only meant to match everything in the query
 	#                    (2) if the rule .com.xx is applied after .xx , the .com.xx will not match, since .xx is already wrapped with $pre and $post
 
 #	$i++;

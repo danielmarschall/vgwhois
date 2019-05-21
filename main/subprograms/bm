@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: bm TLD whois
 #
 #  (c) 2015 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
@@ -15,7 +15,7 @@ use utf8;
 
 use FindBin;
 use lib "$FindBin::RealBin/../lib/";
-use GWhoIs::Core;
+use VGWhoIs::Core;
 
 if (defined $ARGV[0]) {
 	$_ = join(' ', @ARGV);
@@ -30,12 +30,12 @@ my $query = $_;
 # my $host = "http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO";
 my $host = "http://www.bermudanic.bm/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO"; # TODO: https?
 
-my ($protocol, $hostname) = GWhoIs::Utils::splitProtocolHost($host);
+my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
 
 #print "Querying $hostname with $protocol.\n";
 
 # Get session URL
-my ($text, $exitcode) = GWhoIs::Core::wwwsgrep($host,'ACTION="(.*?)"');
+my ($text, $exitcode) = VGWhoIs::Core::wwwsgrep($host,'ACTION="(.*?)"');
 if ($exitcode) {
 	# print STDERR "Query to web server failed.\n";
 	print $text;
@@ -43,7 +43,7 @@ if ($exitcode) {
 }
 
 # Get lookup
-($text, $exitcode) = GWhoIs::Core::doquery($query,'cgipost',"$protocol://$hostname$text",
+($text, $exitcode) = VGWhoIs::Core::doquery($query,'cgipost',"$protocol://$hostname$text",
 	"ADOM++++++=$query&_PROCESS=BMWHO+&_FUNCTION=BMWHO2+");
 
 if ($exitcode) {

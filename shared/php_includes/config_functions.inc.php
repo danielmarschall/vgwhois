@@ -1,7 +1,7 @@
 <?php
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Common functions in PHP
 #
 #  (c) 2012-2018 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>

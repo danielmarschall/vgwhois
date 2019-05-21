@@ -1,6 +1,6 @@
 #: version 20190521
 # Domains
-# This file can be updated by running "gwhois-pattern-update", but it does only ADD new "New gTLDs".
+# This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
 # Info: A good resource for research: https://wiki.rrpproxy.net/
 
@@ -92,7 +92,7 @@
 :cgipostcurl|http://www.whois.az/cgi-bin/whois.cgi|lang=en&domain=~namewotld~&dom=.az
 \.az$
 
-# :notice||See http://www.nic.ba/stream/whois/, needs a image capable browser, therefore gwhois can't use this. [5/2010]
+# :notice||See http://www.nic.ba/stream/whois/, needs a image capable browser, therefore vgwhois can't use this. [5/2010]
 # TODO: we need some kind of OCR to read this (no CAPTCHA)
 :notice||See http://nic.ba/lat/menu/view/13 , needs an image capable browser. [7/2013]
 \.ba$
@@ -119,7 +119,7 @@
 :notice||Whois server gone [2015/05]
 \.bh$
 
-#:program|$gwhois$/subprograms/bi
+#:program|$vgwhois$/subprograms/bi
 :whois|whois1.nic.bi
 \.bi$
 
@@ -133,7 +133,7 @@
 :notice||.bl is reserved
 \.bl$
 
-:program|$gwhois$/subprograms/bm
+:program|$vgwhois$/subprograms/bm
 \.bm$
 
 #:notice||No whois, no domain list. Homepage http://www.brunet.bn/ (last checked Sep 2005)
@@ -177,7 +177,7 @@
 
 # :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the CAPTCHA [Aug 2013]
 # :whois|whois2.afilias-grs.net
-# :program|$gwhois$/subprograms/bz
+# :program|$vgwhois$/subprograms/bz
 #:cgi|http://www.test.bz/Whois/index.php?query=~1~&output=nice&dotname=~2~&whois=Search
 #(.+?)((\.[^\.]+){0,1}\.bz)$
 # Attention: whois.belizenic.bz cannot query .edu.bz ... why?
@@ -236,7 +236,7 @@
 #:cgi|http://www.whois.co/co/whois-co.cgi?TLD=co&dn=~query~&TYPE=DOMAIN
 #(.*)\.([^\.]*)\.co$
 #(.*)()\.co$
-#:program|$gwhois$/subprograms/co
+#:program|$vgwhois$/subprograms/co
 :whois|whois.nic.co
 \.co$
 
@@ -249,7 +249,7 @@
 
 #:cgi|http://www.nic.cu/consultas/infdomain.asp?Dominio=~query~
 #:cgi|http://www.nic.cu/dom_det.php?domsrch=nic.cu
-:program|$gwhois$/subprograms/cu
+:program|$vgwhois$/subprograms/cu
 \.cu$
 
 :cgi|http://www.dns.cv/cgi-bin/verifica-tld-pub.cgi?dominio=~query~
@@ -342,7 +342,7 @@
 # so we use our subprogram that parses the website
 #:whois|whois.domains.fj
 #:cgi|http://domains.fj/public/whois.php?searchDomainName=~namewotld~&searchTopLevel=~tld~&submitSearch=Search
-:program|$gwhois$/subprograms/fj
+:program|$vgwhois$/subprograms/fj
 \.fj$
 
 :notice||No whois, no domain list. Homepage http://www.fidc.org.fk/ (last checked Sep 2005)
@@ -374,12 +374,12 @@
 #:cgipost|http://www.registration.ge/index.php?page=11&lang=geo|whois_search=~namewotld~&domainEnd=.ge
 #:whois|whois.registration.ge
 #:whois|nic.net.ge
-:program|$gwhois$/subprograms/ge
+:program|$vgwhois$/subprograms/ge
 \.ge$
 
 #:notice||Homepage http://www.nplus.gf/
 # :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-:program|$gwhois$/subprograms/mq_gf_gp
+:program|$vgwhois$/subprograms/mq_gf_gp
 # Note: IANA states that whois.mediaserv.net is the official whois.
 #        This whois server accepts the domainds "tld", "mq", "gf" and "gp"
 #        (A syntax can be displayed if you display something invalid to the whois server, for example "example.com")
@@ -410,7 +410,7 @@
 
 # :whois|whois.nic.gp
 # :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-:program|$gwhois$/subprograms/mq_gf_gp
+:program|$vgwhois$/subprograms/mq_gf_gp
 \.gp$
 
 #:notice||No whois, no domain list. Homepage http://www.getesa.gq/ (last checked Sep 2005)
@@ -426,11 +426,11 @@
 \.gs$
 
 #:cgi|http://www.gt/cgi-bin/whois.cgi?domain=~query~
-:program|$gwhois$/subprograms/gt
+:program|$vgwhois$/subprograms/gt
 \.gt$
 
-#:notice||.gu nic has a rather complicated search engine which gwhois can't use. See: http://gadao.gov.gu/domainsearch.htm
-:program|$gwhois$/subprograms/gu
+#:notice||.gu nic has a rather complicated search engine which vgwhois can't use. See: http://gadao.gov.gu/domainsearch.htm
+:program|$vgwhois$/subprograms/gu
 \.gu$
 
 :notice||No whois, no domain list, no nothing. (last checked Sep 2005)
@@ -445,7 +445,7 @@
 
 # :whois|whois.registry.hm
 # :cgi|http://www.registry.hm/HR_whois2.php?domain_name=~query~
-:program|$gwhois$/subprograms/hm
+:program|$vgwhois$/subprograms/hm
 \.hm$
 
 # :whois|whois2.afilias-grs.net
@@ -669,7 +669,7 @@
 
 # :notice||Homepage http://www.nic.mq/
 # :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-:program|$gwhois$/subprograms/mq_gf_gp
+:program|$vgwhois$/subprograms/mq_gf_gp
 # Note: IANA states that whois.mediaserv.net is the official whois.
 #        This whois server accepts the domainds "tld", "mq", "gf" and "gp"
 #        (A syntax can be displayed if you display something invalid to the whois server, for example "example.com")
@@ -776,10 +776,10 @@
 \.om$
 
 #:cgi|http://www.nic.pa/whois.php?nombre_d=~query~
-:program|$gwhois$/subprograms/pa
+:program|$vgwhois$/subprograms/pa
 \.pa$
 
-#:program|$gwhois$/subprograms/pe
+#:program|$vgwhois$/subprograms/pe
 #:notice||Please go to https://punto.pe/whois.php and enter the CAPTCHA.
 :whois|kero.yachay.pe
 \.pe$
@@ -799,7 +799,7 @@
 
 # :cgipost|http://pk5.pknic.net.pk/pk5/lookup.PK|name=~query~
 # This output looks way better than the lynx dump:
-:program|$gwhois$/subprograms/pk
+:program|$vgwhois$/subprograms/pk
 \.pk$
 
 #:whois|dns.pl
@@ -890,7 +890,7 @@
 # Official Whois Server does not show verbose information (like the creation date) [7/2013]
 #:whois|whois.nic.sh
 #:cgi|http://www.nic.sh/cgi-bin/whois?query=~query~
-:program|$gwhois$/subprograms/sh
+:program|$vgwhois$/subprograms/sh
 \.sh$
 
 #:whois|whois.arnes.si
@@ -916,7 +916,7 @@
 # In Aug 2014 we noticed that the whois server works again.
 :whois|whois.nic.sn
 # :cgipost|http://whois.nic.sn/|domaine=~query~
-# :program|$gwhois$/subprograms/sn
+# :program|$vgwhois$/subprograms/sn
 \.sn$
 
 #:notice||No whois, no domain list. Homepage http://www.nic.so/ (last checked Sep 2005)
@@ -1058,7 +1058,7 @@
 \.tr$
 
 #:cgipost|http://www.nic.tt/cgi-bin/search.pl|name=~query~
-:program|$gwhois$/subprograms/tt
+:program|$vgwhois$/subprograms/tt
 \.tt$
 
 #:inicwhois|whois.nic.tv
@@ -1122,7 +1122,7 @@
 
 #:cgipost|http://www.nic.vi/whois.asp|text1=~query~
 #:cgipost|https://secure.nic.vi/whois-lookup/|domainName=~query~&submitted=true
-:program|$gwhois$/subprograms/vi
+:program|$vgwhois$/subprograms/vi
 \.vi$
 
 #:cgipostcurl|http://www.tenmien.vn/jsp/jsp/tracuudomainchitiet.jsp?type=~query~
@@ -1139,7 +1139,7 @@
 #:cgipostcurl|http://www.vunic.vu/whoiss/process_whois.php?domain=~1~&ext=~2~
 #(.*)((|\.com|\.edu|\.net|\.org)\.vu)$
 # ** Method 4 (parsing web interface, most verbose, parse it manually)
-:program|$gwhois$/subprograms/vu
+:program|$vgwhois$/subprograms/vu
 \.vu$
 
 :whois|whois.nic.wf
@@ -1200,7 +1200,7 @@
 
 #:notice||No whois (except .co.za domains). Homepage http://www.zadna.org.za/ (last checked Sep 2005)
 #How to query co.za directly as 1st TLD?   (<-- was meinte ich damit?)
-:notice||.za only allocates domains under third level. Either your input is wrong or gwhois don't know this second level domain you have entered. Please check http://www.zadna.org.za/ for more information.
+:notice||.za only allocates domains under third level. Either your input is wrong or vgwhois don't know this second level domain you have entered. Please check http://www.zadna.org.za/ for more information.
 \.za$
 
 :notice||Disallocated by IANA
@@ -1252,9 +1252,9 @@
 # (Okt 2014) whois.dotgov.gov works again.
 #:whois|whois.nic.gov
 #:whois|whois.dotgov.gov
-#:program|$gwhois$/subprograms/gov
+#:program|$vgwhois$/subprograms/gov
 # The official whois server shows stuff like name servers while the web interface shows additional information like Agency
-:multiple||whois::whois.dotgov.gov:::program::$gwhois$/subprograms/gov
+:multiple||whois::whois.dotgov.gov:::program::$vgwhois$/subprograms/gov
 \.gov$
 
 :whois|whois.afilias.net

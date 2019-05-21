@@ -2,7 +2,7 @@
 <?php
 
 #
-#  VWhois (ViaThinkSoft WHOIS, a fork of generic Whois / gwhois)
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
 #  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
@@ -112,7 +112,7 @@ function gwi_update_domains_patternfile() {
 		// Add header
 		$pcont = "#: version $now\n".
 		         "# Domains\n".
-		         "# This file can be updated by running \"gwhois-pattern-update\", but it does only ADD new \"New gTLDs\"\n".
+		         "# This file can be updated by running \"vgwhois-pattern-update\", but it does only ADD new \"New gTLDs\"\n".
 		         "# --------------------------------------------------------------------\n".
 		         "\n".$pcont;
 	}

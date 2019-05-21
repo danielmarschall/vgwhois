@@ -37,14 +37,14 @@
 # TEREDO
 # (IANA won't give any useful information in their whois)
 # We are providing a very nice and useful decoding of the TEREDO address
-:program|$gwhois$/subprograms/teredo_decoder
+:program|$vgwhois$/subprograms/teredo_decoder
 # defined prefix in RFC 4380
 =2001::/32
 # deprecated (used in WinXP/2003 without Microsoft Security Bulletin MS06-064)
 =3ffe:831f::/32
 
 # 6to4
-:program|$gwhois$/subprograms/6to4_decoder
+:program|$vgwhois$/subprograms/6to4_decoder
 =2002::/16
 
 :whois|whois.iana.org
