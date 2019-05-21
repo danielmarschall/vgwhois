@@ -1,0 +1,20 @@
+If you want to operate a whois proxy,
+you can use the super server (X)InetD.
+
+
+To add vgwhois to xinetd,
+create /etc/xinetd.d/vgwhois with following contents:
+	service whois
+	{
+	        socket_type     = stream
+	        wait            = no
+	        user            = root
+	        server          = /usr/bin/vgwhois
+	        disable         = no
+	}
+
+
+To add vgwhois to inetd (inetd is outdated though)
+	update-inetd --add 'whois         stream  tcp     nowait  nobody  /daten/vwhois/trunk/main/vgwhois vgwhois'
+and to remove:
+	update-inetd --pattern vgwhois --remove whois
