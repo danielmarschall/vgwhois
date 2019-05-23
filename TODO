@@ -1,49 +1,32 @@
 TODO LIST BY VIATHINKSOFT
 
-	*.po files noch aktuell?
+	Problem: If you run the pattern update, you will most likely create a conflict when running the SVN update
 
-	alle TODOS in den quelltexten
+	Installer: The package names are optimized for Debian. How to make it work for other distros?
+	For the command "nc" you probably need different packages: netcat-traditional, netcat oder netcat-openbsd, netcat6 ?
 
-	testcases system aufbauen
-	... alle patterns systematisch testen und bewerten.
-	... es gibt teilweise probleme beim highlighting
+	Look at all TODO entries in the source codes
 
-	_debian_check_rules: pruefen ob es dateien doppelt gibt
-
-	vts oids publiziern
+	Build up test case system
+	... test and rate all patterns automatically
+	... there are partially problems with highlighting
 
 	RIR bugreports
 
-	dpkg-gencontrol: warning: File::FcntlLock not available; using flock which is not NFS-safe
-	> https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=677865
-	> libfile-fcntllock-perl
-	--> nur beim builder oder auch beim client benÃ¶tigt?
+	Core: Insert "\n\n" after each output of www or other subprogram?
 
-	was mache ich mit dem "INSTALL" file? ich will doch auch dass leute die .tar.gz fÃ¼r andere betriebssysteme nutzen kÃ¶nnen
+	Output errors in STDERR
 
-	maschinenlesbares copyright: Welchen Pfad soll ich bei "files:" verwenden? debian/ oder usr/ ?
+	pattern-generator: if whois servers are changing, the pattern generator
+	should automatically change the server in the pattern file, too (comment out the previous one)
 
-	alle dateien: gpl-2-only im header eintragen... das ist wahrscheinlich, was Michael Holzt wollte
+	Are there more PHP packages which we need?
 
-	(nn) Core: automatsich "\n\n" nach jeder ausgabe von www oder einem subprogramm einfügen?
-
-	fehler alle in stderr printen
-
-	benötigtes paket: netcat-traditional, netcat oder netcat-openbsd, netcat6
-		ich brauche den befehl "nc"
-
-	pattern-generator
-		bei existierenden domains: wenn whois server sich ändert, die alten einträge auskommentieren und den neuen eintrag einfügen
-
-	gibt es weitere PHP pakete, die wir brauchen?
-
-	man page übearbeiten; die zusatzprogramme (pattern generator etc) beschreiben
-
-	reintroduce PO translations ?
+	reintroduce PO translations ? are the *.po files still up-to-date ? How to use PO ?
 
 	reintroduce INETD service entry ?
 
-	pattern version 20190521 shouuld be 2019-05-21
+	pattern version 20190521 should be 2019-05-21
 
 
 

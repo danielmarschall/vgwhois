@@ -1,68 +1,80 @@
-.TH vgwhois 1 "26 Apr 2012" Linux "User Manuals"
+.TH vgwhois 1 "23 May 2019" Linux "User Manuals"
 .SH NAME
-vgwhois \- ViaThinkSoft Global WhoIs
+VGWhoIs \- ViaThinkSoft Global WhoIs
 .SH SYNOPSIS
-.B vgwhois [-h host] [-m method:host mirror] [-L] [-e] [-v] [-?] [query]
+.B vgwhois [-C dir] [-h host] [-m method:host mirror] [-L] [-e] [-c] [-v] [-?] [query]
 .SH DESCRIPTION
-vgwhois is a generic whois client. It strives to know for all existing
+VGWhoIs is a generic whois client. It strives to know for all existing
 tlds and all ip address ranges the appropriate whois server to ask. You
-can simply call vgwhois with a query for some domain or some IP and it
+can simply call VGWhoIs with a query for some domain or some IP and it
 will ask the right server for you! It can even query webforms which
 are unfortunately the only query type supported by many bad registries.
 
-vgwhois can also be used as a whois server. You can call it from the
+VGWhoIs can also be used as a whois server. You can call it from the
 inetd and make it accessible via a normal standard whois client. This
 allows for example using a windows client and still make use of the
-enhanced features of vgwhois.
+enhanced features of VGWhoIs.
+
 .SH OPTIONS
 Try find information about the query (might be multiple words).
 If no query is given, use the first line from stdin
 
  Options:
+   \-C dir                  Setting an alternate configuration directory
    \-h host                 Selecting a fixed whois server for this query
-   \-m method:host mirror   Defining a mirror for a given method and host.
+   \-m method:host mirror   Defining a mirror for a given method and host
    \-L                      Use lynx \-source instead of LWP::Simple
    \-e                      Do not protect e\-mail\-addresses
+   \-c                      Do not try to convert to UTF-8. Output server's stream
    \-v                      Output version of pattern table(s)
    \-?, \-\-help              Printing this text
 
-.SH FILES
+.SH TOOLS
 .TP
-.IB /etc/vgwhois/pattern.d/*
-The pattern file(s) of vgwhois. Contains the list of domain and IP to
-server mappings. It is in a machine readable regexp format but should
-be easy to understand by humans, too. If you have additions and
-corrections please report them always to the authors!
-Attention: IPv4, IPv6, TLD and ASN pattern files will be replaced
-when the script
-.B vgwhois\-pattern\-update
-is executed.
-The domain pattern file will only be extended without overwriting or deleted anything.
-.TP
-.IB /etc/vgwhois/debconf.inc
-File created depending on debconf question sending mail. Please do
-not change manually but instead use dpkg\-reconfigure!
-.TP
-.IB /usr/share/vgwhois/maintenance/pattern\-generator/vgwhois\-pattern\-update
-You can run this script to get the latest information according to IPv4, IPv6, ASN and TLD
+.IB vgwhois\-pattern\-update
+This shortcut leads to the script is located in
+.B maintenance/pattern\-generator/vgwhois\-pattern\-update
+and can be used to get the latest information according to IPv4, IPv6, ASN and TLD
 resources from the RIRs. The
-.B pattern.d/(ipv4_*|ipv6_*|tld|asn)
-files will be overwritten.
+.B main/pattern/(ipv4_*|ipv6_*|tld|asn)
+files will be overwritten. You can run this script as cronjob to have up-to-date
+pattern files. New TLDs are automatically added to the pattern files.
+However, changed whois server names need manual changing of the pattern files.
+
+.TP
+.IB vgwhois\-qa\-check
+This shortcut leads to the script is located in
+.B maintenance/qa\-monitor/run
+and performs some basic checks to determine if pattern files need an update.
+For example, it will be checked if whois servers in the list are dead.
+
+.TP
+.IB vgwhois\-update
+If you have installed VGWhoIs via SVN, an SVN update will be performed
+to download the latest version of VGWhoIs and its pattern files.
+
 .SH DIRECTORIES
+
 .TP
-.IB /usr/share/vgwhois/maintenance/
-In this directory you will find programs which you can use to maintain the pattern files.
+.IB main/
+Contains the main executable and other libraries.
+
 .TP
-.IB /usr/share/vgwhois/subprogram/
+.IB main/pattern/
+This directory contains the pattern files of vgwhois which
+contain a list of domain and IP to
+server mappings. It is in a machine readable regexp format but should
+be easy to understand by humans, too.
+
+.TP
+.IB main/subprograms/
 In this directory you'll find "sub programs". They are called by vgwhois by definition in the
 pattern file and can do complex parsing. You can also call the sub programs independently.
+
 .TP
-.IB /var/cache/vgwhois/maintenance/pattern\-generator/
-In this directory,
-.B /usr/share/vgwhois/maintenance/pattern\-generator/vgwhois\-pattern\-update
-will save its downloaded RIR statistics files. If you run the script multiple times (e.g. via cronjob)
-and the RIR statistics file has not changed yet, this will save traffic because the file will not be
-downloaded twice.
+.IB maintenance/
+In this directory you will find programs which you can use to maintain the pattern files.
+
 .SH AUTHORS
 2010\-2019 Daniel Marschall <daniel\-marschall@viathinksoft.de>
 
@@ -70,4 +82,5 @@ downloaded twice.
 
 Some early parts by Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.de>
 .SH VERSION
-2019xxxx WIP
+20190523
+

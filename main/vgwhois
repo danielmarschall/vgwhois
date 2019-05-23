@@ -84,6 +84,8 @@ while ($ARGV[0]) {
 		" Try find information about the query (might be multiple words).\n",
 		" If no query is given, use the first line from stdin\n\n",
 		" Options:\n",
+		"   -C dir                  Setting an alternate configuration directory\n",
+		"                           default: $VGWhoIs::Core::confdir\n",
 		"   -h host                 Selecting a fixed whois server for this query\n",
 		"   -m method:host mirror   Defining a mirror for a given method and host.\n",
 		"   -L                      Use lynx -source instead of LWP::Simple\n",
@@ -92,6 +94,9 @@ while ($ARGV[0]) {
 		"   -v                      Output version of pattern table(s)\n",
 		"   -?, --help              Printing this text\n\n";
 		exit;
+	} elsif ($ARGV[0] eq '-C') {
+		shift;
+		$VGWhoIs::Core::confdir = shift;
 	} elsif ($ARGV[0] eq '-c') {
 		shift;
 		$rawoutput = 1;
