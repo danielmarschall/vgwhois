@@ -1,4 +1,4 @@
-#: version 20190521
+#: version 20190524
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1207,7 +1207,8 @@
 \.zr$
 
 #:notice||No whois, no domain list. Homepage http://www.zamnet.zm/ser-isp/dns.htm (last checked Sep 2005)
-:whois|whois.nic.zm
+#:whois|whois.nic.zm
+:whois|whois.zicta.zm
 \.zm$
 
 :cgi|http://www.zispa.org.zw/cgi-bin/search?domain=~query~
@@ -4357,7 +4358,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-13)
+:notice||Whois server unknown (2019-05-20)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4936,7 +4937,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-13)
+:notice||Whois server unknown (2019-05-20)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -5022,7 +5023,8 @@
 :whois|whois.nic.bot
 \.bot$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.buy
 \.buy$
 
 :whois|whois.nic.call
@@ -6236,7 +6238,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-13)
+:notice||Whois server unknown (2019-05-20)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6357,7 +6359,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-13)
+:notice||Whois server unknown (2019-05-20)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
