@@ -1,4 +1,4 @@
-#: version 20190524
+#: version 20190525
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -153,7 +153,8 @@
 :whois|whois.registro.br
 \.br$
 
-:cgipost|http://www.nic.bs/cgi-bin/search.pl|name=~query~
+#:cgipost|http://www.nic.bs/cgi-bin/search.pl|name=~query~
+:notice||No whois available, domains can be registered at www.register.bs [25 May 2019]
 \.bs$
 
 :cgi|http://www.nic.bt/mwhois.php?domainbt=~namewotld~
@@ -518,10 +519,10 @@
 :notice||No whois, no domain list, no nothing. (last checked Sep 2005)
 \.jm$
 
-:cgi|http://www.nis.gov.jo/pls/dns/jo_organization_info?dom=~1~&subd=~2~
-(.*)\.(com|edu|org|gov|net)\.jo$
-
-:cgi|http://www.nis.gov.jo/pls/dns/jo_organization_info?dom=~namewotld~&subd=-
+#:cgi|http://www.nis.gov.jo/pls/dns/jo_organization_info?dom=~1~&subd=~2~
+#(.*)\.(com|edu|org|gov|net)\.jo$
+#:cgi|http://www.nis.gov.jo/pls/dns/jo_organization_info?dom=~namewotld~&subd=-
+:notice||For a whois query, please visit https://www.dns.jo/en.aspx [25 May 2019]
 \.jo$
 
 #:whois|whois.jp|trailer=/e
@@ -615,6 +616,7 @@
 :whois|whois.nic.ly
 \.ly$
 
+# Alternative: https://www.registre.ma/ressources/whois (requires CAPTCHA)
 #:whois|whois.iam.net.ma
 :whois|whois.registre.ma
 \.ma$
