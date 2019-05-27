@@ -14,16 +14,15 @@ package VGWhoIs::OID;
 use warnings;
 use strict;
 
-# urn:OID:2.0999 -> .2.999
+# urn:OID:.2.0999 -> 2.999
 sub VGWhoIs::OID::normalize_oid($) {
 	my $string = shift;
 
 	# remove urn:oid: and oid:
 	$string =~ s/^(urn:oid:|oid:|)//i;
 
-	# add leading dot if it does not already exist
+	# remove leading dot
 	$string =~ s/^\.//;
-	$string = '.' . $string;
 
 	# remove leading zeros (requires leading dot)
 	$string =~ s/\.0*([1-9])/.$1/g;
@@ -73,8 +72,12 @@ sub VGWhoIs::OID::getmethodoid {
 	my %pattern = VGWhoIs::OID::getpatternoid();
 
 	my $complete_oid = '';
+	if (@arcs == 0) {
+		# The root (oid:) is queried
+		@arcs = ('');
+	}
 	foreach my $arc (@arcs) {
-		$complete_oid .= '.' if ($complete_oid ne '.');
+		$complete_oid .= '.' if ($complete_oid ne '');
 		$complete_oid .= $arc;
 
 		$complete_oid = VGWhoIs::OID::normalize_oid($complete_oid);

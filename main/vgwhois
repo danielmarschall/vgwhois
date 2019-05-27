@@ -231,7 +231,7 @@ sub main {
 			# we need a dot so that we can use "oid:." in our patternfile too
 			$query = VGWhoIs::OID::normalize_oid($query);
 
-			my @arcs = split(/\./, $query); # TODO: warum geht split('.',$oid) nicht?
+			my @arcs = split(/\./, ".$query"); # TODO: warum geht split('.',".$query") nicht?
 
 			($method,$host,$additional) = VGWhoIs::OID::getmethodoid(@arcs);
 

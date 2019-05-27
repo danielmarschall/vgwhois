@@ -1,4 +1,4 @@
-#: version 20190311
+#: version 20190527
 
 # Special: OIDs
 # There will be soon a RFC by Daniel Marschall, which will define how information about an OID can be queried over a whois service
@@ -6,10 +6,18 @@
 # The whois servers should do referal whois redirects
 # --------------------------------------------------------------------
 
-#:cgi|https://oidplus.viathinksoft.com/oidplus/whois/webwhois.php?query=oid:~oid~
+#:cgi|https://oidplus.viathinksoft.com/oidplus/plugins/publicPages/100_whois/whois/webwhois.php?query=oid:~oid~
 :whois|whois.viathinksoft.de
-oid:.1.3.6.1.4.1.37476
+oid:1.3.6.1.4.1.37476
 
-# Last resort for OIDs. If no more specific OID can be found, query a repository.
+# --------------------------------------------------------------------
+
+# Last resort for OIDs. If no more specific OID can be found, query a web repository.
+#:cgi|http://oid-info.com/get/~oid~
 :program|$vgwhois$/subprograms/oid
-oid:.
+oid:0
+oid:1
+oid:2
+
+:notice||The root of the OID tree consists of itu-t(0), iso(1) and joint-iso-itu-t(2)
+oid:

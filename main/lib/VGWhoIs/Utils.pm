@@ -44,6 +44,7 @@ sub VGWhoIs::Utils::render_html {
 	$html =~ s|<pre>(.*?)</pre>|VGWhoIs::Utils::htmlpre($1)|gsei;
 	$html =~ s|<textarea>(.*?)</textarea>|VGWhoIs::Utils::htmlpre($1)|gsei;
 
+	#TODO: big problem here: if the output is "content-type: text/plain", then we must not call render_html!!!
 	$html =~ s|\n| |g;
 
 	$html =~ s|<p\s*/{0,1}\s*>|\n|gsi;
