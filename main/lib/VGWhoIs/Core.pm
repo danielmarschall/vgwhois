@@ -363,7 +363,7 @@ sub VGWhoIs::Core::doquery {
 
 		# DM 2019-05-27: Added "-e" (referrer) because www.whois.az needs it
 		# Things we could additionally add:  --max-time 10 --insecure --stderr /dev/null 
-		$result = `echo "$additional" | curl --silent -e "$host" -X POST --data-binary \@- "$host" | lynx -dump -stdin 2>&1`; # TODO escape
+		$result = `printf "$additional" | curl --silent -e "$host" -X POST --data-binary \@- "$host" | lynx -dump -stdin 2>&1`; # TODO escape
 		my $loc_exitcode = $?;
 		$exitcode = max($exitcode, $loc_exitcode);
 		$result .= "FAILED with exit code $loc_exitcode\n\n" if $loc_exitcode;

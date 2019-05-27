@@ -254,7 +254,7 @@
 :cgi|http://www.dns.cv/cgi-bin/verifica-tld-pub.cgi?dominio=~query~
 \.cv$
 
-:notice||No whois yet available (last checked Dec 2011)
+:notice||No whois available (last checked May 2019). Domains can be registered here: https://www.uoc.cw/cw-registry
 \.cw$
 
 #:notice||Please go to http://whois.nic.cx/whois.jsp and enter the captcha. [Aug 2013]
@@ -700,11 +700,11 @@
 :whois|whois.mx
 \.mx$
 
-# Port 43 of whois.mynic.my ist only open to authorized resellers ( see https://www.mynic.my/en/faq.php?id=40#115 )
+# Port 43 of whois.mynic.my is only open to authorized resellers ( see https://www.mynic.my/en/faq.php?id=40#115 )
 # :whois|whois.mynic.net.my
 # :whois|whois.domainregistry.my
 # :whois|whois.mynic.my
-:cgipost|http://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~
+:cgipost|https://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~&Submit=Submit&upperlimit=&lowerlimit=
 \.my$
 
 # :notice||No whois, no domain list. Homepage http://www.ci.uem.mz/ (last checked Sep 2005)
@@ -1205,10 +1205,10 @@
 :whois|whois.zicta.zm
 \.zm$
 
-:cgi|http://www.zispa.org.zw/cgi-bin/search?domain=~query~
-\.co\.zw$
+:multiple||cgipost::http://www.zispa.org.zw/cgi-bin/domain_lookup.pl::s=~namewotld~:::notice::::ZISPA does not provide an online whois service at present. However requests for this information on individual domains can be sent to admin@zispa.org.zw [Last checked May 2019]
+(.*)\.co\.zw$
 
-:notice||No whois (except .co.zw domains). No homepage (http://www.zispa.org.zw for .co.zw). (last checked Sep 2005)
+:notice||No whois (except .co.zw domains). No homepage (http://www.zispa.org.zw for .co.zw). (last checked May 2019)
 \.zw$
 
 
