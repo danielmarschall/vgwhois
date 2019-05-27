@@ -1,4 +1,4 @@
-#: version 20190526
+#: version 20190527
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -142,12 +142,10 @@
 :whois|whois.bnnic.bn
 \.bn$
 
-:cgi|http://www.nic.bo/buscar.php?dominio=~1~&subdominio=.~2~.bo
-(.*)\.(com|edu|gov|int|org|net|mil|tv)\.bo$
-
-#:cgi|http://www.nic.bo/buscar.php?dominio=~namewotld~&subdominio=.bo
+#:cgipost|https://nic.bo/whois.php|dominio=~1~&subdominio=~2~&enviar=
 :whois|whois.nic.bo
-\.bo$
+(.*)(\.([^\.]*)\.bo)$
+(.*)(\.bo)$
 
 #:whois|registro.br
 :whois|whois.registro.br

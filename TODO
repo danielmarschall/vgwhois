@@ -1,5 +1,7 @@
 TODO LIST BY VIATHINKSOFT
 
+	Make better automated test cases that check if CGI/CGIPOST requests were sucessful
+
 	Problem: If you run the pattern update, you will most likely create a conflict when running the SVN update
 
 	Installer: The package names are optimized for Debian. How to make it work for other distros?
