@@ -100,21 +100,6 @@ sub VGWhoIs::Core::inicwhoisaccess { # todo: mehr als 1 redirect möglich, z.b. b
 	return ($result, $exitcode);
 }
 
-# ($result, $exitcode) = VGWhoIs::Core::wwwsgrep($url,$match)
-sub VGWhoIs::Core::wwwsgrep {
-	my ($url,$match) = @_;
-	my ($result, $line, $exitcode) = ('', '', 0);
-
-	($line, $exitcode) = VGWhoIs::Core::getsource($url);
-	if (!$exitcode) {
-		$line =~ s/\n/ /g;
-		if ($line =~ $match) {
-			($result) = $line =~ /$match/s;
-		}
-	}
-	return ($result, $exitcode);
-}
-
 # ($host, $additional) = VGWhoIs::Core::methodpatternregex($query,$host,$additional,$queryline);
 sub VGWhoIs::Core::methodpatternregex {
 	my ($query,$host,$additional,$line) = @_;
@@ -281,31 +266,7 @@ sub VGWhoIs::Core::doquery {
 		$method = '';
 	}
 
-# TODO: usage of methods. delete unused ones!
-# wwwgreplv -> removed
-# whoisjp: not in pattern
-# whoisarin: not in pattern
-# inicwhois: in use
-
-	elsif ($method eq 'wwwsgrep') {
-		my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
-
-		print "Querying $hostname with $protocol.\n\n";
-
-		my ($loc_text, $loc_exitcode) = VGWhoIs::Core::wwwsgrep($host,$additional);
-		$exitcode = max($exitcode, $loc_exitcode);
-		if ($loc_exitcode) {
-			$result .= "Query to web server failed.\n";
-		} else {
-			if ($loc_text ne '') {
-				$result = "Match found:\n$loc_text\n";
-			} else {
-				$result = "No match found. This probably means that this domain does not exist.\n";
-			}
-		}
-	}
-
-	elsif ($method =~ /^whois(|jp|arin)$/) {
+	elsif ($method eq 'whois') {
 		my ($parameter,$outquery,$prefix) = ('', '', '');
 
 		my $port       = 43;
@@ -382,6 +343,8 @@ sub VGWhoIs::Core::doquery {
 #		$result = `lynx -connect_timeout=10 -dump "$host" 2>&1`;
 #		$result .= "FAILED with exit code $?\n\n" if $?;
 
+#		$result = `curl --max-time 10 --stderr /dev/null "$host" 2>&1`; # TODO escape
+
 		# TODO: VGWhoIs::Core::getsource ok? war vorher IMMER lynx
 		my ($loc_text, $loc_exitcode) = VGWhoIs::Core::getsource($host);
 
@@ -397,46 +360,13 @@ sub VGWhoIs::Core::doquery {
 		my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
 
 		print "Querying $hostname ($protocol) with cgi.\n\n";
-#!!
-#		print "echo -e '$additional\n---' | lynx -connect_timeout=10 -dump -post_data '$host'\n";
 
-# TODO: VGWhoIs::Utils::render_html() better? TODO: lynx source?
-# [Ma 22.07.2013] "echo -e" does not work... "-e" will shown to the output... However "\n" will still work if I remove -e ... weird.
-#		$result = `echo -e "$additional\n---" | lynx -dump -post_data "$host" 2>&1`; # TODO escape
-#		$result = `echo "$additional\n---" | lynx -dump -post_data "$host" 2>&1`; # TODO escape
-		$result = `echo "$additional" | curl --silent -X POST --data-binary \@- "$host" | lynx -dump -stdin 2>&1`; # TODO escape
+		# DM 2019-05-27: Added "-e" (referrer) because www.whois.az needs it
+		# Things we could additionally add:  --max-time 10 --insecure --stderr /dev/null 
+		$result = `echo "$additional" | curl --silent -e "$host" -X POST --data-binary \@- "$host" | lynx -dump -stdin 2>&1`; # TODO escape
 		my $loc_exitcode = $?;
 		$exitcode = max($exitcode, $loc_exitcode);
 		$result .= "FAILED with exit code $loc_exitcode\n\n" if $loc_exitcode;
-	}
-
-	elsif ($method eq 'cgipostcurl') {
-		my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
-
-		print "Querying $hostname ($protocol) with cgi.\n\n";
-#		print "$additional\n"; #!!
-#		print "curl --max-time 10 --stderr /dev/null -e $host --data '$additional' $host | lynx -dump -stdin\n";
-
-		# TODO: "set pipefail" doesn't work (insecure certificate will not cause the function to fail)
-		$result = `curl --max-time 10 --insecure --stderr /dev/null -e "$host" --data "$additional" "$host" | lynx -dump -stdin 2>&1`; # TODO escape
-
-		my $loc_exitcode = $?;
-		$exitcode = max($exitcode, $loc_exitcode);
-		$result .= "FAILED with exit code $loc_exitcode\n\n" if $loc_exitcode;
-	}
-
-	elsif ($method eq 'cgihttps') {
-		my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
-
-		print "Querying $hostname ($protocol) with cgi.\n\n";
-#		print "$additional\n"; #!!
-#		print "curl --max-time 10 --stderr /dev/null $host | lynx -dump -stdin\n";
-#		$result = `curl --max-time 10 --insecure --stderr /dev/null "$host" | lynx -dump -stdin 2>&1`;
-		my $html = `curl --max-time 10 --insecure --stderr /dev/null "$host" 2>&1`; # TODO escape. why --insecure?
-		my $loc_exitcode = $?;
-		$exitcode = max($exitcode, $loc_exitcode);
-		$html .= "FAILED with exit code $loc_exitcode\n\n" if $loc_exitcode;
-		$result = VGWhoIs::Utils::render_html($html);
 	}
 
 	elsif ($method eq 'notice') {

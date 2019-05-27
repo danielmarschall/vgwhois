@@ -55,14 +55,14 @@
 # $ lynx 3.html
 # -> still not working! Cookies sent, Form data sent, UserAgent sent!
 # -> Sometimes they additionally show a CAPTCHA!
-# :cgipostcurl|https://nic.ar/buscarDominio.xhtml|busquedaDominioForm2:j_idt56=2&busquedaDominioForm2=busquedaDominioForm2&busquedaDominioForm2:dominio=test&busquedaDominioForm2:btnBuscar=Consultar&j_idt15=j_idt15&javax.faces.ViewState=-3794484719380193327:5925215873023379072
+# :cgipost|https://nic.ar/buscarDominio.xhtml|busquedaDominioForm2:j_idt56=2&busquedaDominioForm2=busquedaDominioForm2&busquedaDominioForm2:dominio=test&busquedaDominioForm2:btnBuscar=Consultar&j_idt15=j_idt15&javax.faces.ViewState=-3794484719380193327:5925215873023379072
 # test.ar$
 
 :cgipost|http://www.riu.edu.ar/cgi-bin/verdom.pl.nuevo|username=~1~
 (.*)\.edu\.ar$
 
 # TODO: how to query second -level domains "nic.ar" or "edu.ar"?
-#:cgipostcurl|http://www.nic.ar/consdom.html|nombre=~1~&dominio=~2~
+#:cgipost|http://www.nic.ar/consdom.html|nombre=~1~&dominio=~2~
 #(.*)(\.[^\.]*\.ar)$
 #:notice||Please go to https://nic.ar/buscarDominio.xhtml to query the domain information.
 :whois|whois.nic.ar
@@ -89,7 +89,7 @@
 :whois|whois.ax
 \.ax$
 
-:cgipostcurl|http://www.whois.az/cgi-bin/whois.cgi|lang=en&domain=~namewotld~&dom=.az
+:cgipost|http://www.whois.az/cgi-bin/whois.cgi|lang=en&domain=~namewotld~&dom=.az
 \.az$
 
 # :notice||See http://www.nic.ba/stream/whois/, needs a image capable browser, therefore vgwhois can't use this. [5/2010]
@@ -233,7 +233,7 @@
 :whois|whois.cnnic.cn
 \.cn$
 
-#:cgihttps|https://www.nic.co/pls/dominio/Pwhois.DatosDominio?fdominio=~1~&fnivel=~2~
+#:cgi|https://www.nic.co/pls/dominio/Pwhois.DatosDominio?fdominio=~1~&fnivel=~2~
 #:cgi|http://www.whois.co/co/whois-co.cgi?TLD=co&dn=~query~&TYPE=DOMAIN
 #(.*)\.([^\.]*)\.co$
 #(.*)()\.co$
@@ -321,7 +321,7 @@
 :notice||No whois, no domain list. Homepage probably http://www.noc.net.er/ (last checked Sep 2005)
 \.er$
 
-#:cgihttps|https://www.nic.es/esnic/servlet/WhoisControllerHTML?dominio=~query~
+#:cgi|https://www.nic.es/esnic/servlet/WhoisControllerHTML?dominio=~query~
 #:notice||For captcha-secured whois please see http://www.nic.es/ (last checked Jan 2012)
 #Captcha at: https://www.nic.es/sgnd/dominio/publicValidacionDetalleWhois.action?volverWhoIs=1&TDominio.nombreDominio=~query~
 #:whois|whois.nic.es
@@ -418,7 +418,7 @@
 :whois|whois.dominio.gq
 \.gq$
 
-# :cgipostcurl|https://grweb.ics.forth.gr/Whois|domainName=~query~&lang=en
+# :cgipost|https://grweb.ics.forth.gr/Whois|domainName=~query~&lang=en
 :notice||Please visit https://grweb.ics.forth.gr/whois.jsp?lang=en and enter the CAPTCHA (last checked Nov 2012)
 \.gr$
 
@@ -453,13 +453,8 @@
 :whois|whois.nic.hn
 \.hn$
 
-:cgipost|http://www.dns.hr/asp/traziFOdomenu.asp|Upit=~1~&Submit2=Tra%BEi
-(.*)\.iz\.hr$
-
-:cgipost|http://hr-t.dns.hr/php/search.php|domena=~1~&Submit=Tra%BEi
-(.*)\.com\.hr$
-
-#:cgipost|http://www.dns.hr/asp/trazidomenu.asp|Upit=~namewotld~&Submit2=Tra%BEi
+# TODO: The webpage shows additional details; but it cannot be access directly with a browser (information is in the source code, invisible)
+#:cgipost|https://www.domene.hr/portal/webwhois?domain=~query~
 :whois|whois.dns.hr
 \.hr$
 
@@ -532,8 +527,8 @@
 :whois|whois.kenic.or.ke
 \.ke$
 
-#:cgipostcurl|http://www.domain.kg/cgi-bin/whois.cgi|whois=~ucquery~
-#:cgipostcurl|https://www.cctld.kg/cgi-bin/whois.cgi|whois=~ucquery~&next=
+#:cgipost|http://www.domain.kg/cgi-bin/whois.cgi|whois=~ucquery~
+#:cgipost|https://www.cctld.kg/cgi-bin/whois.cgi|whois=~ucquery~&next=
 #:whois|whois.domain.kg
 :whois|whois.kg
 \.kg$
@@ -839,9 +834,8 @@
 :whois|whois.nic.pw
 \.pw$
 
-:cgipostcurl|http://www.nic.py/cgi-nic/consultas/domdetzzz|dom=~1~&tip=~2~
-(.*)\.([^\.]*)\.py$
-(.*)()\.py
+:notice||Please visit https://www.nic.py/consulta-datos.php for querying information about this domain. [May 2019]
+\.py$
 
 #:notice||No whois, no domain list. Homepage http://www.qatar.net.qa/ (last checked Sep 2005)
 :whois|whois.registry.qa
@@ -1111,7 +1105,7 @@
 :whois|whois2.afilias-grs.net
 \.vc$
 
-#:cgihttps|https://registro.nic.ve/modules/whois?query=~query~&submit=Consultar
+#:cgi|https://registro.nic.ve/modules/whois?query=~query~&submit=Consultar
 :whois|whois.nic.ve
 \.ve$
 
@@ -1127,7 +1121,7 @@
 :program|$vgwhois$/subprograms/vi
 \.vi$
 
-#:cgipostcurl|http://www.tenmien.vn/jsp/jsp/tracuudomainchitiet.jsp?type=~query~
+#:cgipost|http://www.tenmien.vn/jsp/jsp/tracuudomainchitiet.jsp?type=~query~
 :notice||Please go to http://www.tenmien.vn/ and enter the captcha.
 \.vn$
 
@@ -1138,7 +1132,7 @@
 #:cgi|http://www.vunic.vu/whois?~query~
 #\.vu$
 # ** Method 3 (web interace, most verbose but not well formated)
-#:cgipostcurl|http://www.vunic.vu/whoiss/process_whois.php?domain=~1~&ext=~2~
+#:cgipost|http://www.vunic.vu/whoiss/process_whois.php?domain=~1~&ext=~2~
 #(.*)((|\.com|\.edu|\.net|\.org)\.vu)$
 # ** Method 4 (parsing web interface, most verbose, parse it manually)
 :program|$vgwhois$/subprograms/vu
@@ -1626,7 +1620,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.xn--q9jyb4c$
@@ -2579,7 +2573,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.soy$
@@ -2588,7 +2582,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.foo$
@@ -3230,7 +3224,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.how$
@@ -3267,7 +3261,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.gbiz$
@@ -3276,7 +3270,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.gmail$
@@ -3295,7 +3289,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.esq$
@@ -3304,7 +3298,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.prod$
@@ -3313,7 +3307,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.here$
@@ -3322,7 +3316,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.youtube$
@@ -3331,7 +3325,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.meme$
@@ -3340,7 +3334,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.eat$
@@ -3349,7 +3343,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.rsvp$
@@ -3358,7 +3352,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.mov$
@@ -3367,7 +3361,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.new$
@@ -3376,7 +3370,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.ing$
@@ -3389,7 +3383,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.day$
@@ -3398,7 +3392,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.dad$
@@ -3407,7 +3401,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.boo$
@@ -3429,7 +3423,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.chrome$
@@ -3438,7 +3432,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.cal$
@@ -3447,7 +3441,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.zip$
@@ -3456,7 +3450,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.gle$
@@ -3465,7 +3459,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.prof$
@@ -3474,7 +3468,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.channel$
@@ -3483,7 +3477,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.nexus$
@@ -3492,7 +3486,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.fly$
@@ -3571,7 +3565,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.google$
@@ -3651,7 +3645,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.android$
@@ -3689,7 +3683,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.xn--flw351e$
@@ -3697,7 +3691,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.xn--qcka1pmc$
@@ -3797,7 +3791,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.dev$
@@ -3805,7 +3799,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.docs$
@@ -3878,7 +3872,7 @@
 #:whois|whois.nic.dclk
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.dclk$
@@ -3891,7 +3885,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.goog$
@@ -3900,7 +3894,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.hangout$
@@ -4094,7 +4088,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.page$
@@ -4124,7 +4118,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.ads$
@@ -4143,7 +4137,7 @@
 :whois|whois.nic.google
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
-#:cgihttps|https://domain-registry.appspot.com/whois/~query~
+#:cgi|https://domain-registry.appspot.com/whois/~query~
 #:notice||Please visit http://whois.charlestonroadregistry.com
 #:whois|whois.charlestonroadregistry.com
 \.guge$
