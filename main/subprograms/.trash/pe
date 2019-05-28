@@ -2,7 +2,7 @@
 
 #
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
-#  Subprogram: bm TLD whois
+#  Subprogram: pe TLD whois
 #
 #  (c) 2015 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
@@ -27,34 +27,37 @@ if (defined $ARGV[0]) {
 
 my $query = $_;
 
-# my $host = "http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO";
-my $host = "http://www.bermudanic.bm/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO"; # TODO: https?
+my $host       = "http://www.nic.pe/rpublicac-i.php?txtbuscar=$query&radopcion=D"; # TODO: https?
+my $additional = "(detpublic-i.php.*?)'";
 
 my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
 
 #print "Querying $hostname with $protocol.\n";
 
-# Get session URL
-my ($text, $exitcode) = VGWhoIs::Core::wwwsgrep($host,'ACTION="(.*?)"');
-if ($exitcode) {
+my $match = $additional;
+my $text = '';
+my ($line, $exitcode) = VGWhoIs::Core::getsource($host);
+if (!$exitcode) {
+	$line =~ s/\n/ /g;
+	if ($line =~ $match) {
+		($text) = $line =~ /$match/s;
+	}
+} else {
 	# print STDERR "Query to web server failed.\n";
 	print $text;
 	exit $exitcode;
 }
 
-# Get lookup
-($text, $exitcode) = VGWhoIs::Core::doquery($query,'cgipost',"$protocol://$hostname$text",
-	"ADOM++++++=$query&_PROCESS=BMWHO+&_FUNCTION=BMWHO2+");
+if ($text ne '') {
+	print "Match found. Now querying for the domain data.\n\n";
+	($text, $exitcode) = VGWhoIs::Core::doquery($query,'cgi',"$protocol://$hostname/$text", '');
+	print $text;
+} else {
+	print "No match found. This probably means that this domain does not exist.\n";
+}
 
 if ($exitcode) {
 	# print STDERR "Query to web server failed.\n";
 }
 
-# Remove unnecessary stuff
-$text =~ s/\[.+\]\s+//g; # image reference
-$text =~ s/Sponsored by\s+//g;
-
-print $text;
-
 exit $exitcode;
-

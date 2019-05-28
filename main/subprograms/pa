@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: pa TLD whois
 #
-#  (c) 2011-2012 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2011-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -14,24 +14,17 @@ require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
 $domain = isset($argv[1]) ? $argv[1] : '';
 
-$url = "http://www.nic.pa/whois.php?nombre_d=$domain";
-
+$url = "http://nic.pa/es/whois/dominio/$domain";
 $res  = "% Parsing via regex from '$url'\n\n";
+$cont = file_get_contents($url);
 
-$x = file_get_contents2($url);
+file_put_contents('tmpx', $cont);
 
-$x = preg_replace('|sans-serif">\s*</font>|ismU', 'sans-serif">-</font>', $x);
-
-$x = strip_tags($x);
-
-$ary = explode('Información del Dominio', $x, 2);
-
-if (!isset($ary[1])) {
-	echo "Domain '$domain' does not exist.";
-	exit(2);
+if (preg_match('@<h2>Nombre del Dominio:\s*(.+)\s*</h2>(.+)</div>@ismU', $cont, $m)) {
+	$cont = "Domain ".$m[1].":\n".$m[2];
 }
 
-$x = 'Información del Dominio'.$ary[1];
+$x = strip_tags($cont);
 
 // é -> É @ strtoupper()
 /*

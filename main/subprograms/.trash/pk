@@ -14,7 +14,7 @@ require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
 $domain = isset($argv[1]) ? $argv[1] : '';
 
-$url = "http://pk5.pknic.net.pk/pk5/lookup.PK";
+$url = "https://pk6.pknic.net.pk/pk5/lookup.PK";
 
 $res  = "% Parsing via regex from '$url'\n\n";
 

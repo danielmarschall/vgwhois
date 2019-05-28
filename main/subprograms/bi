@@ -4,7 +4,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: bi TLD whois
 #
-#  (c) 2015 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2015-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -34,8 +34,16 @@ my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
 #print "Querying $hostname with $protocol.\n";
 
 # Get session URL
-my ($text, $exitcode) = VGWhoIs::Core::wwwsgrep($host,'name="card" value="(.*?)');
-if ($exitcode) {
+
+my $match = 'name="card" value="(.*?)';
+my $text = '';
+my ($line, $exitcode) = VGWhoIs::Core::getsource($host);
+if (!$exitcode) {
+	$line =~ s/\n/ /g;
+	if ($line =~ $match) {
+		($text) = $line =~ /$match/s;
+	}
+} else {
 	# print STDERR "Query to web server failed.\n";
 	print $text;
 	exit $exitcode;

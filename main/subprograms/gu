@@ -14,6 +14,9 @@
 # TODO: check if the query did output exactly 1 record.
 # TODO: Is there any better way to retrieve the information of a domain without full text search engine?
 
+# DM 28.05.2019 : "This page is undergoing construction. This page is temporary. Thank you for your patience."
+#                 TODO: Wait if it comes back
+
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
 $domain = isset($argv[1]) ? $argv[1] : '';

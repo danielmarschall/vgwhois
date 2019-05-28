@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: gov TLD whois
 #
-#  (c) 2014 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2014-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -14,15 +14,9 @@ require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
 $domain = isset($argv[1]) ? $argv[1] : '';
 
-// This service does output more verbose information (e.g. Agency) in comparison to the whois service.
-$friendly_url = 'https://www.dotgov.gov/portal/web/dotgov/whois';
+// This subprogram does output more verbose information (e.g. Agency) in comparison to the whois service.
 
-/*
-$viewstate  = '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';
-$session_id = 'k2NNSnyK9Kvh3BZHpTphvrL12yFTn6TcMJpZrj865x7qLQCvvjs2SK3XB0GxG5qSlX2JhcxymvNqTWqlmdQ311gwVywf8fxNJKVG9p4mccGvXQLbl1LLMxdDBzWt2jFD';
-$unknown1   = '1882029245';
-$unknown2   = '1390916170265';
-*/
+$friendly_url = 'https://domains.dotgov.gov/dotgov-web/registration/whois.xhtml';
 
 $x = file_get_contents2($friendly_url);
 
@@ -34,32 +28,24 @@ $viewstate = $m[1];
 $viewstate = str_replace('+', '%2B', $viewstate);
 $viewstate = str_replace('/', '%2F', $viewstate);
 
-if (!preg_match('@getSessionId:function\\(\\){return"([^!]+)!([^!]+)!([^!]+)"}@ismU', $x, $m)) {
-	echo "Error (B) while querying whois service. Please manually check at $friendly_url\n";
-	exit(1);
-}
-$session_id = $m[1];
-$unknown1   = $m[2];
-$unknown2   = $m[3];
-
 # ---
 
 $bef  = '';
 #$bef .= 'vtor -- ';
-$bef .= 'curl "https://www.dotgov.gov/portal/web/dotgov/whois?p_p_id=domainAvailabilityCheck_portlet_WAR_dotgov_portlets&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-3&p_p_col_count=1&_domainAvailabilityCheck_portlet_WAR_dotgov_portlets_com.sun.faces.portlet.VIEW_ID="%"2FWEB-INF"%"2Fxhtml"%"2Fregistration"%"2FdomainAvailabilityCheck.xhtml&_domainAvailabilityCheck_portlet_WAR_dotgov_portlets_com.sun.faces.portlet.NAME_SPACE=_domainAvailabilityCheck_portlet_WAR_dotgov_portlets_"';
-
-$bef .= ' -H "Cookie: JSESSIONID='.$session_id.'!'.$unknown1.'; GUEST_LANGUAGE_ID=en_US; COOKIE_SUPPORT=true"';
-$bef .= ' -H "Host: www.dotgov.gov"';
-$bef .= ' -H "Origin: https://www.dotgov.gov"';
+$bef .= 'curl "https://domains.dotgov.gov/dotgov-web/registration/whois.xhtml" ';
+#$bef .= ' -H "Cookie: JSESSIONID='.$session_id.'; seen-cookie-message=yes';
+$bef .= ' --cookie ~/.cookiejar --cookie-jar ~/.cookiejar  ';   # <-- cookiejar is maintained by file_get_contents2()
+$bef .= ' -H "Host: domains.dotgov.gov"';
+$bef .= ' -H "Origin: https://domains.dotgov.gov"';
 $bef .= ' -H "Accept-Encoding: gzip,deflate"';
 $bef .= ' -H "Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4"';
 $bef .= ' -H "User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:32.0) Gecko/20100101 Firefox/32.0"';
 #$bef .= ' -H "Content-Type: application/x-www-form-urlencoded"';
 $bef .= ' -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"';
 $bef .= ' -H "Cache-Control: max-age=0"';
-$bef .= ' -H "Referer: https://www.dotgov.gov/portal/web/dotgov/whois;jsessionid='.$session_id.'!'.$unknown1.'!'.$unknown2.'?p_p_id=domainAvailabilityCheck_portlet_WAR_dotgov_portlets&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-3&p_p_col_count=1&_domainAvailabilityCheck_portlet_WAR_dotgov_portlets_com.sun.faces.portlet.VIEW_ID="%"2FWEB-INF"%"2Fxhtml"%"2Fregistration"%"2FdomainAvailabilityCheck.xhtml&_domainAvailabilityCheck_portlet_WAR_dotgov_portlets_com.sun.faces.portlet.NAME_SPACE=_domainAvailabilityCheck_portlet_WAR_dotgov_portlets_"';
+$bef .= ' -H "Referer: '.$friendly_url.'" ';
 $bef .= ' -H "Connection: keep-alive"';
-$bef .= ' --data '.escapeshellarg('domainAvailabilityCheckForm=domainAvailabilityCheckForm&domainAvailabilityCheckForm%3ArequestedDomainName='.$domain.'&domainAvailabilityCheckForm%3Asubmit=Check+Availability&javax.faces.ViewState='.$viewstate);
+$bef .= ' --data '.escapeshellarg('domainAvailabilityCheckForm=domainAvailabilityCheckForm&domainAvailabilityCheckForm%3ArequestedDomainName='.urlencode($domain).'&domainAvailabilityCheckForm%3Asubmit=Check+Availability&javax.faces.ViewState='.urlencode($viewstate));
 $bef .= ' --compressed';
 $bef .= ' --silent';
 
@@ -73,7 +59,7 @@ if ($code != 0) {
 
 $x = implode('', $out);
 
-if (!preg_match('@<strong>(.*)</tr>@ismU', $x, $m)) {
+if (!preg_match('@<strong>\s*(Currently.+)</td>@ismU', $x, $m)) {
 	echo "Error (D) while querying whois service. Please manually check at $friendly_url\n";
 	exit(1);
 }

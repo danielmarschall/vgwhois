@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: vi TLD whois
 #
-#  (c) 2013 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2013-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -16,17 +16,14 @@ $domain = isset($argv[1]) ? $argv[1] : '';
 
 $url = 'https://secure.nic.vi/whois-lookup/';
 
-$post = 'submitted=true&domainName='.rawurlencode($domain);
+#$post = 'submitted=true&domainName='.rawurlencode($domain);
+$post = 'domain='.rawurlencode($domain);
 
 $cont = file_get_contents2($url, $post);
 
-if (preg_match('@<div class="results">(.+)</div>@ismU', $cont, $m)) {
+if (preg_match('@<pre class=\'result-pre\' style=\'background:\'>(.+)</div>@ismU', $cont, $m)) {
 	$cont = $m[1];
 }
-
-// There is a "secret" field named "Name". Why hide it?
-$cont = str_replace('<!--', '', $cont);
-$cont = str_replace('-->', '', $cont);
 
 $cont = html_entity_decode(strip_tags($cont));
 

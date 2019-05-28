@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: vu TLD whois
 #
-#  (c) 2014 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2014-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -34,7 +34,7 @@ if (preg_match('@(.*)((|\.com|\.edu|\.net|\.org)(\.vu))@isU', $domain, $m)) {
 	exit(2);
 }
 
-$url = 'http://www.vunic.vu/whoiss/process_whois.php';
+$url = 'https://www.vunic.vu/whoiss/process_whois.php';
 
 $post = 'domain='.rawurlencode($domain_wotld).'&ext='.rawurlencode($tld);
 

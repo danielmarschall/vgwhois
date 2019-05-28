@@ -133,7 +133,7 @@
 :notice||.bl is reserved
 \.bl$
 
-:program|$vgwhois$/subprograms/bm
+:notice||Please visit https://www.bermudanic.bm/whois.htm and enter the CAPTCHA [5/2019]
 \.bm$
 
 #:notice||No whois, no domain list. Homepage http://www.brunet.bn/ (last checked Sep 2005)
@@ -143,9 +143,10 @@
 \.bn$
 
 #:cgipost|https://nic.bo/whois.php|dominio=~1~&subdominio=~2~&enviar=
+#(.*)(\.([^\.]*)\.bo)$
+#(.*)(\.bo)$
 :whois|whois.nic.bo
-(.*)(\.([^\.]*)\.bo)$
-(.*)(\.bo)$
+\.bo$
 
 #:whois|registro.br
 :whois|whois.registro.br
@@ -374,10 +375,10 @@
 :whois|whois.nic.gd
 \.gd$
 
-#:cgipost|http://www.registration.ge/index.php?page=11&lang=geo|whois_search=~namewotld~&domainEnd=.ge
+# TODO: whois outputs weird content, a lot of things are missing. why?
 #:whois|whois.registration.ge
 #:whois|nic.net.ge
-:program|$vgwhois$/subprograms/ge
+:cgi|https://nic.ge/en/search?domain=~query~
 \.ge$
 
 #:notice||Homepage http://www.nplus.gf/
@@ -429,7 +430,9 @@
 \.gs$
 
 #:cgi|http://www.gt/cgi-bin/whois.cgi?domain=~query~
-:program|$vgwhois$/subprograms/gt
+#:program|$vgwhois$/subprograms/gt
+# TODO: We need to format the output, very urgent!
+:cgi|https://www.gt/sitio/whois.php?dn=~query~.
 \.gt$
 
 #:notice||.gu nic has a rather complicated search engine which vgwhois can't use. See: http://gadao.gov.gu/domainsearch.htm
@@ -780,7 +783,6 @@
 :program|$vgwhois$/subprograms/pa
 \.pa$
 
-#:program|$vgwhois$/subprograms/pe
 #:notice||Please go to https://punto.pe/whois.php and enter the CAPTCHA.
 :whois|kero.yachay.pe
 \.pe$
@@ -798,9 +800,7 @@
 :notice||Please visit http://www.dot.ph/whois and enter the CAPTCHA (last checked Nov 2012)
 \.ph$
 
-# :cgipost|http://pk5.pknic.net.pk/pk5/lookup.PK|name=~query~
-# This output looks way better than the lynx dump:
-:program|$vgwhois$/subprograms/pk
+:cgipost|https://pk6.pknic.net.pk/pk5/lookup.PK|name=~query~
 \.pk$
 
 #:whois|dns.pl
@@ -886,10 +886,7 @@
 :whois|whois.sgnic.sg
 \.sg$
 
-# Official Whois Server does not show verbose information (like the creation date) [7/2013]
-#:whois|whois.nic.sh
-#:cgi|http://www.nic.sh/cgi-bin/whois?query=~query~
-:program|$vgwhois$/subprograms/sh
+:multiple||whois::whois.nic.sh:::notice::::For more information, please visit https://www.nic.sh/whois-search.htm and enter the CAPTCHA
 \.sh$
 
 #:whois|whois.arnes.si
