@@ -1,4 +1,4 @@
-#: version 20190527
+#: version 20190528
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -12,7 +12,7 @@
 \.ac$
 
 #:notice||A list of registered domains is available on http://www.nic.ad/index_eng.htm [9/2006]
-:cgi|http://www.ompa.ad/bases_dades/dominis2.php?prod=~query~&Submit=Search&tipus=nom_domini&data1=0&data2=0&lang=en
+:cgi|https://www.ompa.ad/bases_dades/dominis2.php?prod=~query~&Submit=Search&tipus=nom_domini&data1=0&data2=0&lang=en
 \.ad$
 
 :whois|whois.aeda.net.ae
@@ -58,7 +58,7 @@
 # :cgipost|https://nic.ar/buscarDominio.xhtml|busquedaDominioForm2:j_idt56=2&busquedaDominioForm2=busquedaDominioForm2&busquedaDominioForm2:dominio=test&busquedaDominioForm2:btnBuscar=Consultar&j_idt15=j_idt15&javax.faces.ViewState=-3794484719380193327:5925215873023379072
 # test.ar$
 
-:cgipost|http://www.riu.edu.ar/cgi-bin/verdom.pl.nuevo|username=~1~
+:cgipost|https://www.riu.edu.ar/cgi-bin/verdom.pl.nuevo|username=~1~
 (.*)\.edu\.ar$
 
 # TODO: how to query second -level domains "nic.ar" or "edu.ar"?
@@ -101,9 +101,9 @@
 :notice||Captcha protected whois on http://www.whois.telecoms.gov.bb/search_domain.php [7/2013]
 \.bb$
 
-# This service does exist, but it is sometimes not available
-:cgipost|http://whois.btcl.net.bd:8080/dotbd/ViewDomain_2.jsp|dName=~namewotld~&Submit=SUBMIT
-\.bd$
+#:cgi|https://www.registry.com.bd/whois.php?dName=~1~&Submit=Lookup+
+:program|$vgwhois$/subprograms/bd
+(.*)\.bd$
 
 :whois|whois.dns.be
 \.be$
@@ -155,8 +155,9 @@
 :notice||No whois available, domains can be registered at www.register.bs [25 May 2019]
 \.bs$
 
-:cgi|http://www.nic.bt/mwhois.php?domainbt=~namewotld~
-\.bt$
+:cgipost|https://www.nic.bt/twhois/whoiss.php|dname=~1~&dsext=~2~
+(.*)\.(([^\.]*)\.bt)$
+(.*)\.(bt)$
 
 :notice||Disallocated by IANA
 \.bu$
@@ -217,7 +218,8 @@
 \.cl$
 
 #:whois|whois.ripe.net|prefix=-B |
-:cgipost|http://register.cm/whois.php|domain=~query~&submit=Go
+#:cgipost|http://register.cm/whois.php|domain=~query~&submit=Go
+:notice||A whois query form is available at http://whois.cm:8080/
 \.cm$
 
 # Third level registrations also available (Apr 2012 via DE Wikipedia):
@@ -251,16 +253,17 @@
 :program|$vgwhois$/subprograms/cu
 \.cu$
 
-:cgi|http://www.dns.cv/cgi-bin/verifica-tld-pub.cgi?dominio=~query~
+:notice||A whois form is available at http://www.dns.cv/tldcv_si/publico
 \.cv$
 
 :notice||No whois available (last checked May 2019). Domains can be registered here: https://www.uoc.cw/cw-registry
 \.cw$
 
-#:notice||Please go to http://whois.nic.cx/whois.jsp and enter the captcha. [Aug 2013]
+#:notice||Please go to http://whois.nic.cx/whois.jsp and enter the captcha. [May 2019]
 :whois|whois.nic.cx
 \.cx$
 
+# TODO: Output is a bit messy. We probably need a subprogram to clean up
 :cgi|http://www.nic.cy/nslookup/dns_get_record.php?search=~1~&what=~2~&submit=Search
 (.*)\.([^\.]*)\.cy$
 (.*)()\.cy$
@@ -347,8 +350,9 @@
 :notice||No whois, no domain list. Homepage http://www.fidc.org.fk/ (last checked Sep 2005)
 \.fk$
 
-:cgi|http://www.dot.fm/query_whois.cfm?domain=~namewotld~&tld=fm
-\.fm$
+:cgipost|https://dot.fm/whois/whoisI.cfm|domain=~1~&tld=~2~
+(.*)\.([^\.]*\.fm)$
+(.*)\.(fm)$
 
 #:cgi|http://www.nic.fo/custom2/lookup/domain.asp?domainname=~query~
 :whois|whois.nic.fo
@@ -553,9 +557,11 @@
 :whois|whois.kr
 \.kr$
 
-:cgipost|http://www.kw/mainrs.asp|domname=~1~&domtype=~2~
-(.*)\.((?:com|edu|gov|net|org)\.kw)$
-(.*)\.(kw)$
+:notice||According to Google, the pages http://whois.kw and http://www.kw/en/whois exist, but they are refusing the connection. GeoBlock? [May 2019]
+\.kw$
+#:cgipost|http://www.kw/mainrs.asp|domname=~1~&domtype=~2~
+#(.*)\.((?:com|edu|gov|net|org)\.kw)$
+#(.*)\.(kw)$
 
 #:cgipost|http://kynseweb.messagesecure.com/whois.asp|domain_name_pref=~1~&domain_name_suff=~2~
 #(.*)(\.(?:com|net|org|gov|edu)\.ky)$
@@ -573,7 +579,7 @@
 :whois|whois.nic.la
 \.la$
 
-:cgi|http://www.aub.edu.lb/cgi-bin/lbdr.pl?cn=~query~
+:cgipost|https://web.aub.edu.lb/cgi-bin/lbdr.pl|cn=~query~
 \.lb$
 
 :whois|whois2.afilias-grs.net
@@ -582,9 +588,9 @@
 :whois|whois.nic.li
 \.li$
 
-:cgipost|http://www.nic.lk/cgi-bin/searchdomModified.cgi|domain=~1~&seclev=~2~
-(.*)(\.(?:assn|com|edu|grp|hotel|ltd|ngo|org|soc|web|gov|int|net|sch)\.lk)$
-(.*)(\.lk)$
+# TODO: Create a subprogram that reads the JSON message of https://www.domains.lk/domainsearch/doDomainSearch?domainname=~query~
+:notice||Domain search available at https://www.domains.lk/domainsearch/
+\.lk$
 
 :notice||No whois, no domain list. Homepage http://psg.com/dns/lr (last checked Sep 2005)
 \.lr$
@@ -741,7 +747,7 @@
 :whois|whois.norid.no
 \.no$
 
-:cgi|http://www.mos.com.np/cgi-bin/search.cgi?domain_name=~query~
+:notice||Whois lookup available at https://register.com.np/whois-lookup
 \.np$
 
 # FIXME: is there any possibility of querying *.gov.edu (e.g. ronlaw.gov.nr) or *.edu.nr ?
@@ -805,8 +811,7 @@
 :whois|whois.nic.pm
 \.pm$
 
-# :cgipost|http://www.pitcairn.pn/cgi-bin/domainNameCheck.cgi|dname=~1~&subdomain=~2~
-:cgipost|http://www.government.pn/cgi-bin/whois.cgi|domainName=~1~&parentDomain=~2~
+:cgipost|http://www.government.pn/PnRegistry/cgi-bin/whois.cgi|domainName=~1~&parentDomain=~2~
 (.*)\.((?:co|net|org)\.pn)$
 (.*)\.(pn)$
 
@@ -818,7 +823,7 @@
 :whois|whois.afilias-srs.net
 \.pr$
 
-:cgipost|http://www.pnina.ps/whois/domain_whois.php|dname=~query~
+:cgi|https://www.pnina.ps/whois/?domain=~query~
 \.ps$
 
 :whois|whois.dns.pt
@@ -968,7 +973,6 @@
 :whois|whois.thnic.co.th
 \.th$
 
-# :cgi|http://www.nic.tj/cgi/lookup?DOMAIN=~namewotld~
 :cgi|http://www.nic.tj/cgi/whois2?domain=~namewotld~
 \.tj$
 
@@ -1159,38 +1163,108 @@
 # See also: http://www.zadna.org.za/annexure-d1.html
 # See also: http://www.esn.org.za/dnsreg.html
 
-:cgipost|http://protea.tenet.ac.za/cgi/cgi_domainquery.exe|domain=~1~
+# TODO: I get "curl: (35) Unknown SSL protocol error in connection to protea.tenet.ac.za:443"
+:cgipost|https://protea.tenet.ac.za/cgi_domainquery.exe|domain=~1~&submitbutton=Look+it+up&entry_point=&sessionid=
 (.*)\.ac\.za$
 
-:cgi|http://co.za/cgi-bin/whois.sh?Domain=~query~
+#:cgi|http://co.za/cgi-bin/whois.sh?Domain=~query~
+#:cgi|https://co-whois.registry.net.za/whois/whois.sh?Domain=~query~
+:whois|co-whois.registry.net.za
 \.co\.za$
 
-:notice||Please visit http://www.nom.za/ and enter the captcha.
-\.nom\.za$
-
-:cgipost|http://www.org.za/cgi-bin/rwhois|domain=~1~
-(.*)\.org\.za$
-
-:cgipost|http://dnsadmin.gov.za/navail.php|ipnamex=~query~&submit=Start
-\.gov\.za$
-
-:notice||Please go to http://whois.edu.za/ and enter the CAPTCHA.
+:notice||Please go to https://whois.edu.za/ and enter the CAPTCHA.
 \.edu\.za$
 
-:notice||Please go to http://whois.net.za/ and enter the CAPTCHA.
+:cgipost|http://dnsadmin.gov.za/navail.php|domnam=~query~&submit=Start
+\.gov\.za$
+
+:notice||No whois service currently available [5/2019]
+\.law\.za$
+
+:notice||No whois service currently available [5/2019]
+\.mil\.za$
+
+#:cgi|https://net-whois.registry.net.za/whois/whois.sh?Domain=~query~
+:whois|net-whois.registry.net.za
 \.net\.za$
 
-:notice||Please go to http://whois.alt.za/ and enter the CAPTCHA.
-\.alt\.za$
+:notice||Please visit http://www.nom.za/ for more information about WHOIS
+\.nom\.za$
 
-:notice||Please go to http://whois.web.za/ and enter the CAPTCHA.
-\.web\.za$
+#:cgipost|https://www.org.za/cgi-bin/rwhois|domain=~1~
+#:cgi|https://org-whois.registry.net.za/whois/whois.sh?Domain=~query~
+:whois|org-whois.registry.net.za
+(.*)\.org\.za$
 
-:notice||No whois service currently available [7/2013]
+:notice||No whois service currently available [5/2019]
 \.school\.za$
 
-:notice||No whois service currently available [7/2013]
-\.mil\.za$
+#:cgi|https://web-whois.registry.net.za/whois/whois.sh?Domain=~query~
+:whois|web-whois.registry.net.za
+\.web\.za$
+
+:notice||Please go to https://whois.alt.za/ and enter the CAPTCHA.
+\.alt\.za$
+
+:notice||No whois service currently available [5/2019]
+\.ngo\.za$
+
+:notice||No whois service currently available [5/2019]
+\.tm\.za$
+
+# ARC & Company
+:notice||No whois service currently available [5/2019]
+\.agric.za$
+
+# Mark R V Murray
+:notice||No whois service currently available [5/2019]
+\.grondar.za$
+
+# Network Information Systems
+:notice||No whois service currently available [5/2019]
+\.nis.za$
+
+# For all companies which are listed on the JSE Securities Exchange
+:notice||Second level domain does not exist anymore.
+\.bourse.za$
+
+# For municipal governments
+:notice||Second level domain does not exist anymore.
+\.city\.za$
+
+# Infront Investments Five cc
+:notice||Second level domain does not exist anymore.
+\.cybernet\.za$
+
+# De Beers
+:notice||Second level domain does not exist anymore.
+\.db\.za$
+
+# Compustat
+:notice||Second level domain does not exist anymore.
+\.iaccess\.za$
+
+# Institute for Maritime Technology
+:notice||Second level domain does not exist anymore.
+\.imt\.za$
+
+# Internetworking Cape
+:notice||Second level domain does not exist anymore.
+\.inca\.za$
+
+# Lan Design (no longer exists)
+:notice||Second level domain does not exist anymore.
+\.landesign\.za$
+
+# Olivetti/Mark Elkins
+:notice||Second level domain does not exist anymore.
+\.olivetti\.za$
+
+# Proxima Information Exchange
+:notice||Second level domain does not exist anymore.
+\.pix\.za$
+
+# END OF ZA
 
 #:notice||No whois (except .co.za domains). Homepage http://www.zadna.org.za/ (last checked Sep 2005)
 #How to query co.za directly as 1st TLD?   (<-- was meinte ich damit?)
@@ -1397,7 +1471,7 @@
 # Port 43 of whois.mynic.my ist only open to authorized resellers ( see https://www.mynic.my/en/faq.php?id=40#115 )
 # :whois|whois.domainregistry.my
 # :whois|whois.mynic.my
-:cgipost|http://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~
+:cgipost|https://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~&Submit=Submit&upperlimit=&lowerlimit=
 \.xn--mgbx4cd0ab$
 
 :whois|whois.thnic.co.th
@@ -2982,6 +3056,8 @@
 \.vlaanderen$
 
 # Delegated on 19 June 2014
+# Note: Both (cgi and whois) work well
+#:cgi|https://joburg-whois.registry.net.za/whois/whois.sh?Domain=~query~
 :whois|joburg-whois.registry.net.za
 \.joburg$
 
@@ -2990,6 +3066,8 @@
 \.green$
 
 # Delegated on 19 June 2014
+# Note: Both (cgi and whois) work well
+#:cgi|https://durban-whois.registry.net.za/whois/whois.sh?Domain=~query~
 :whois|durban-whois.registry.net.za
 \.durban$
 
@@ -3002,6 +3080,8 @@
 \.physio$
 
 # Delegated on 19 June 2014
+# Note: Both (cgi and whois) work well
+#:cgi|https://capetown-whois.registry.net.za/whois/whois.sh?Domain=~query~
 :whois|capetown-whois.registry.net.za
 \.capetown$
 
@@ -6350,6 +6430,8 @@
 :whois|whois.nic.fun
 \.fun$
 
+# Note: Both (cgi and whois) work well
+#:cgi|https://africa-whois.registry.net.za/whois/whois.sh?Domain=~query~
 :whois|africa-whois.registry.net.za
 \.africa$
 

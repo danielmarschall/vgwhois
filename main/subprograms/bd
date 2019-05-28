@@ -1,0 +1,37 @@
+#!/usr/bin/php
+<?php
+
+#
+#  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
+#  Subprogram: bd TLD whois
+#
+#  (c) 2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#
+#  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
+#
+
+require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+$domain = isset($argv[1]) ? $argv[1] : '';
+
+if (preg_match('@(.*)(\.bd)@isU', $domain, $m)) {
+	$domain_without_tld = $m[1];
+} else {
+	echo "'$domain' is not a valid .bd domain.\n";
+	exit(2);
+}
+
+$url = 'https://www.registry.com.bd/whois.php?dName='.urlencode($domain_without_tld).'&Submit=Lookup+';
+
+$cont = file_get_contents($url);
+
+if (preg_match('@<h3 class="block-head">Result</h3>(.+)</div>@ismU', $cont, $m)) {
+	$cont = $m[1];
+}
+
+$cont = strip_tags($cont);
+$cont = preg_replace("@\n\n+@", "\n", $cont);
+$cont = trim($cont);
+
+echo "Information about $domain extracted from $url:\n\n";
+echo $cont."\n";

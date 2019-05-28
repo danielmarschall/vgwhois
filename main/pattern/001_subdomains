@@ -1,4 +1,4 @@
-#: version 20190511
+#: version 20190528
 
 # Attention: Please note that vgwhois will take the first regex match only!
 # This means if you have subdomain-registries, then you must define them first before you define the main registry.
@@ -30,7 +30,7 @@
 :notice||Please go to http://www.de.ki/whois and enter the CAPTCHA.
 \.de\.ki$
 
-:cgipost|http://www.freedomain.co.nr/whois.php|account=~1~&domain=co.nr&action=whois&submit=1
+:cgipost|https://www.freedomain.co.nr/whois.php|account=~1~&domain=co.nr&action=whois&submit=1
 (.*)\.co\.nr$
 
 # --- <Begin third party services which all have the same design and operator>

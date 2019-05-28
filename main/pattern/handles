@@ -1,4 +1,4 @@
-#: version 20190511
+#: version 20190528
 
 # Handles
 # --------------------------------------------------------------------
@@ -159,3 +159,6 @@ C\d+-ASIA$
 :whois|whois.nic.fr
 -frnic$
 
+# CV
+:notice||A whois form is available at http://www.dns.cv/tldcv_si/publico
+-cv$
