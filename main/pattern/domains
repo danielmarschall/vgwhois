@@ -1,4 +1,4 @@
-#: version 20190528
+#: version 20190610
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -5123,7 +5123,8 @@
 :whois|whois.nic.like
 \.like$
 
-:whois|whois.agitsys.net
+#:whois|whois.agitsys.net
+:whois|whois.nic.nowruz
 \.nowruz$
 
 :whois|whois.nic.pin
@@ -5146,13 +5147,15 @@
 :whois|whois.nic.gmo
 \.sharp$
 
-:whois|whois.agitsys.net
+#:whois|whois.agitsys.net
+:whois|whois.nic.shia
 \.shia$
 
 :whois|whois.nic.smile
 \.smile$
 
-:whois|whois.agitsys.net
+#:whois|whois.agitsys.net
+:whois|whois.nic.tci
 \.tci$
 
 :whois|whois.afilias-srs.net
@@ -5161,10 +5164,12 @@
 :whois|whois.nic.zero
 \.zero$
 
-:whois|whois.agitsys.net
+#:whois|whois.agitsys.net
+:whois|whois.nic.pars
 \.pars$
 
-:whois|whois.agitsys.net
+#:whois|whois.agitsys.net
+:whois|whois.nic.xn--mgbt3dhd
 \.xn--mgbt3dhd$
 
 :whois|whois.afilias-srs.net
