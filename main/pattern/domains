@@ -1,4 +1,4 @@
-#: version 20190610
+#: version 20190616
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6067,7 +6067,8 @@
 :whois|whois.nic.americanfamily
 \.americanfamily$
 
-:whois|whois.nic.honeywell
+#:whois|whois.nic.honeywell
+:notice||Disallocated by IANA
 \.honeywell$
 
 :whois|whois.nic.abc
