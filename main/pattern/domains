@@ -5405,7 +5405,8 @@
 :whois|whois.nic.hdfcbank
 \.hdfcbank$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.gtlds.nic.br
 \.natura$
 
 :whois|whois.afilias-srs.net
