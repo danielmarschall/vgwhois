@@ -1,4 +1,4 @@
-#: version 20190616
+#: version 20190728
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -375,10 +375,9 @@
 :whois|whois.nic.gd
 \.gd$
 
-# TODO: whois outputs weird content, a lot of things are missing. why?
 #:whois|whois.registration.ge
-#:whois|nic.net.ge
-:cgi|https://nic.ge/en/search?domain=~query~
+#:cgi|https://nic.ge/en/search?domain=~query~
+:whois|nic.net.ge
 \.ge$
 
 #:notice||Homepage http://www.nplus.gf/
