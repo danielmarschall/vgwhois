@@ -1,4 +1,4 @@
-#: version 20190728
+#: version 20190805
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4586,7 +4586,8 @@
 :whois|whois.nic.ricoh
 \.ricoh$
 
-:whois|whois.nic.starhub
+#:whois|whois.nic.starhub
+:notice||Disallocated by IANA
 \.starhub$
 
 :notice||Disallocated by IANA
@@ -4609,7 +4610,8 @@
 \.law$
 
 #:whois|whois.afilias-srs.net
-:whois|whois.nic.bnl
+#:whois|whois.nic.bnl
+:notice||Disallocated by IANA
 \.bnl$
 
 #:whois|whois-cl01.mm-registry.com
