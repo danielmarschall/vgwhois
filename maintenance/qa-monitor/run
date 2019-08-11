@@ -84,7 +84,7 @@ foreach ($tld_cont as $tld) {
 	# if (strpos(str_replace(')', '', $pattern_cont), '\.'.trim($tld).'$') === false) { # ')' wegen RegEx'es
 	if (!preg_match($regex, $pc)) {
 		$iana_url = sprintf(IANA_TLD_ENTRY, $tld);
-		$iana_cont = file_get_contents($iana_url);
+		$iana_cont = cached_file($iana_url, CACHE_FILE_DIR);
 		if (strpos($iana_cont, 'This domain is not present in the root zone at this time.') === false) {
 			$loc_good = false;
 

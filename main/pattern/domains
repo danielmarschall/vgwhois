@@ -1,4 +1,4 @@
-#: version 20190805
+#: version 20190811
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -377,7 +377,8 @@
 
 #:whois|whois.registration.ge
 #:cgi|https://nic.ge/en/search?domain=~query~
-:whois|nic.net.ge
+#:whois|nic.net.ge
+:whois|whois.nic.ge
 \.ge$
 
 #:notice||Homepage http://www.nplus.gf/
@@ -1294,8 +1295,8 @@
 :whois|whois.nic.asia
 \.asia$
 
-#:whois|whois.nic.biz
-:whois|whois.biz
+#:whois|whois.biz
+:whois|whois.nic.biz
 \.biz$
 
 #:whois|whois.cat
@@ -1537,12 +1538,14 @@
 
 # Delegated on 23 October 2013 to CORE Association
 # Russian for "site"
-:whois|whois.site.rs.corenic.net
+#:whois|whois.site.rs.corenic.net
+:whois|whois.nic.xn--80aswg
 \.xn--80aswg$
 
 # Delegated on 23 October 2013 to CORE Association
 # Russian for "online"
-:whois|whois.online.rs.corenic.net
+#:whois|whois.online.rs.corenic.net
+:whois|whois.nic.xn--80asehdb
 \.xn--80asehdb$
 
 # Delegated on 23 October 2013 to International Domain Registry Pty. Ltd.
@@ -3747,7 +3750,8 @@
 :whois|whois.nic.lds
 \.lds$
 
-:whois|whois.madrid.rs.corenic.net
+#:whois|whois.madrid.rs.corenic.net
+:whois|whois.nic.madrid
 \.madrid$
 
 #:whois|whois.afilias-srs.net
@@ -5319,7 +5323,8 @@
 :whois|whois.nic.compare
 \.compare$
 
-:whois|whois.nic.iselect
+#:whois|whois.nic.iselect
+:notice||Disallocated by IANA
 \.iselect$
 
 :whois|whois.nic.makeup
@@ -6518,3 +6523,6 @@
 
 :whois|whois.nic.mr
 \.xn--mgbah1a3hjkrd$
+
+:whois|whois.nic.gay
+\.gay$
