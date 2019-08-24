@@ -1,4 +1,4 @@
-#: version 20190811
+#: version 20190824
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1105,7 +1105,8 @@
 \.vc$
 
 #:cgi|https://registro.nic.ve/modules/whois?query=~query~&submit=Consultar
-:whois|whois.nic.ve
+#:whois|whois.nic.ve
+:cgi|http://whois.nic.ve/whois/domain/~query~/
 \.ve$
 
 #:whois|whois.nic.vg
@@ -2127,7 +2128,8 @@
 \.tokyo$
 
 # Delegated on 29 January 2014 to Valuetainment, Corp.
-:whois|whois.voting.tld-box.at
+#:whois|whois.voting.tld-box.at
+:whois|whois.nic.voting
 \.voting$
 
 # Delegated on 4 February 2014 to Victor Beach, LLC
@@ -2525,9 +2527,9 @@
 
 # Delegated on 10 April 2014 to Hu Yi Global Information Resources (Holding) Company Hong Kong Limited
 # Chinese for "network address"
-#:whois|whois.registry.knet.cn
+:whois|whois.registry.knet.cn
 # whois.registry.knet.cn is the official whois, but it only gives an empty output
-:whois|whois.nic.xn--ses554g
+#:whois|whois.nic.xn--ses554g
 \.xn--ses554g$
 
 # Delegated on 10 April 2014 to Ruby Moon, LLC
@@ -5893,7 +5895,8 @@
 :whois|whois.nic.fedex
 \.fedex$
 
-:whois|whois.ikano.tld-box.at
+#:whois|whois.ikano.tld-box.at
+:whois|whois.nic.ikano
 \.ikano$
 
 #:whois|whois.afilias-srs.net
@@ -6452,7 +6455,8 @@
 :whois|whois.nic.hotels
 \.hotels$
 
-:whois|whois.centralnic.com
+#:whois|whois.centralnic.com
+:whois|whois.nic.rugby
 \.rugby$
 
 :whois|whois.nic.arab
