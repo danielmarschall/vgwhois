@@ -1,4 +1,4 @@
-#: version 20190825
+#: version 20190901
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4629,7 +4629,8 @@
 :whois|whois.nic.hoteles
 \.hoteles$
 
-:whois|whois-fe.movistar.tango.knipp.de
+#:whois|whois-fe.movistar.tango.knipp.de
+:whois|whois.nic.movistar
 \.movistar$
 
 :whois|whois.nic.omega
@@ -4638,7 +4639,8 @@
 :whois|whois.nic.swatch
 \.swatch$
 
-:whois|whois-fe.telefonica.tango.knipp.de
+#:whois|whois-fe.telefonica.tango.knipp.de
+:whois|whois.nic.telefonica
 \.telefonica$
 
 #:whois|whois.centralnic.com
