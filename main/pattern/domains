@@ -1,4 +1,4 @@
-#: version 20190901
+#: version 20190905
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6066,7 +6066,7 @@
 :whois|whois.nic.citadel
 \.citadel$
 
-:whois|whois.nic.duns
+:notice||Disallocated by IANA
 \.duns$
 
 :whois|whois.afilias-srs.net
