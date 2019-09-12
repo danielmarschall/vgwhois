@@ -1,4 +1,4 @@
-#: version 20190905
+#: version 20190912
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3485,7 +3485,8 @@
 \.boo$
 
 # Delegated on 5 September 2014
-:whois|whois-fe1.gmx.tango.knipp.de
+#:whois|whois-fe1.gmx.tango.knipp.de
+:whois|whois.nic.gmx
 \.gmx$
 
 # Delegated on 5 September 2014
@@ -5257,10 +5258,12 @@
 :whois|whois.nic.weber
 \.weber$
 
-:whois|whois.nic.mobily
+#:whois|whois.nic.mobily
+:notice||Disallocated by IANA
 \.mobily$
 
-:whois|whois.nic.xn--mgbb9fbpob
+#:whois|whois.nic.xn--mgbb9fbpob
+:notice||Disallocated by IANA
 \.xn--mgbb9fbpob$
 
 :whois|whois.nic.bosch
