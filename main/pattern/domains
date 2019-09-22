@@ -954,8 +954,8 @@
 :whois|whois.nic.tc
 \.tc$
 
-#:notice||No whois, no domain list. Homepage http://www.sotel.td/ (last checked Sep 2005)
-:whois|41.74.44.44
+#:whois|41.74.44.44
+:whois|whois.nic.td
 \.td$
 
 :whois|whois.nic.tf
