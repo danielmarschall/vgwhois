@@ -1,4 +1,4 @@
-#: version 20190912
+#: version 20191109
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -412,9 +412,9 @@
 :notice||No whois, no domain list. Homepage http://psg.com/dns/gn (2/2008)
 \.gn$
 
-# :whois|whois.nic.gp
 # :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-:program|$vgwhois$/subprograms/mq_gf_gp
+# :program|$vgwhois$/subprograms/mq_gf_gp
+:whois|whois.nic.gp
 \.gp$
 
 #:notice||No whois, no domain list. Homepage http://www.getesa.gq/ (last checked Sep 2005)
@@ -1340,7 +1340,8 @@
 \.mil$
 
 #:whois|whois.dotmobiregistry.net
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.mobi
 \.mobi$
 
 #:whois|whois.museum
@@ -1512,7 +1513,8 @@
 :notice||Disallocated by IANA
 \.xn--zckzah$
 
-:whois|whois.nic.xxx
+#:whois|whois.nic.xxx
+:whois|whois.registrar.adult
 \.xxx$
 
 
@@ -3810,7 +3812,8 @@
 \.xn--hxt814e$
 
 #:whois|whois.nic.adult
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.registrar.adult
 \.adult$
 
 :whois|whois.nic.eurovision
@@ -3822,7 +3825,8 @@
 \.fashion$
 
 #:whois|whois.nic.porn
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.registrar.adult
 \.porn$
 
 :whois|whois.nic.trust
@@ -4349,7 +4353,8 @@
 :whois|whois.nic.seat
 \.seat$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.registrar.adult
 \.sex$
 
 :whois|whois.nic.weir
@@ -4435,7 +4440,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-20)
+:notice||Whois server unknown (2019-11-09)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5018,7 +5023,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-20)
+:notice||Whois server unknown (2019-11-09)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6330,7 +6335,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-20)
+:notice||Whois server unknown (2019-11-09)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6453,7 +6458,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-05-20)
+:notice||Whois server unknown (2019-11-09)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6534,3 +6539,9 @@
 
 :whois|whois.nic.gay
 \.gay$
+
+:whois|whois.eu
+\.xn--qxa6a$
+
+:whois|whois.nic.cpa
+\.cpa$
