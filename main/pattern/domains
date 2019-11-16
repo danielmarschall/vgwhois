@@ -1,4 +1,4 @@
-#: version 20191109
+#: version 20191116
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3782,7 +3782,7 @@
 :whois|whois.nic.coach
 \.coach$
 
-:whois|whois.nic.everbank
+:notice||Disallocated by IANA
 \.everbank$
 
 #:whois|whois.donuts.co
@@ -3841,7 +3841,7 @@
 :whois|whois.nic.samsung
 \.samsung$
 
-:whois|whois.nic.cartier
+:notice||Disallocated by IANA
 \.cartier$
 
 :whois|whois.nic.sky
@@ -4177,7 +4177,7 @@
 #:whois|whois.charlestonroadregistry.com
 \.page$
 
-:whois|whois.nic.piaget
+:notice||Disallocated by IANA
 \.piaget$
 
 #:whois|whois.centralnic.com
