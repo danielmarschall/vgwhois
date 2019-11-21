@@ -1,4 +1,4 @@
-#: version 20191116
+#: version 20191121
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4440,7 +4440,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-09)
+:notice||Whois server unknown (2019-11-16)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5023,7 +5023,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-09)
+:notice||Whois server unknown (2019-11-16)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -5673,7 +5673,7 @@
 :whois|whois.nic.olayan
 \.olayan$
 
-:whois|whois.nic.warman
+:notice||Disallocated by IANA
 \.warman$
 
 :whois|whois.nic.xn--mgba7c0bbn0a
@@ -6096,7 +6096,7 @@
 :whois|whois.nic.banamex
 \.banamex$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.chrysler$
 
 :whois|whois.nic.citi
@@ -6126,16 +6126,16 @@
 :whois|whois.nic.prudential
 \.prudential$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.srt$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.uconnect$
 
 :whois|whois.nic.visa
 \.visa$
 
-:whois|whois.nic.ladbrokes
+:notice||Disallocated by IANA
 \.ladbrokes$
 
 :whois|whois.nic.afamilycompany
@@ -6164,7 +6164,7 @@
 :whois|whois.nic.juniper
 \.juniper$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.mopar$
 
 :whois|whois.nic.nba
@@ -6189,7 +6189,7 @@
 :whois|whois.afilias-srs.net
 \.cbs$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.dodge$
 
 :whois|whois.nic.fidelity
@@ -6335,7 +6335,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-09)
+:notice||Whois server unknown (2019-11-16)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6458,7 +6458,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-09)
+:notice||Whois server unknown (2019-11-16)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
