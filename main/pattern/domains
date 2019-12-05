@@ -1,4 +1,4 @@
-#: version 20191121
+#: version 20191205
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4440,7 +4440,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-16)
+:notice||Whois server unknown (2019-11-30)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5023,7 +5023,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-16)
+:notice||Whois server unknown (2019-11-30)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -5984,7 +5984,7 @@
 :whois|whois.nic.homesense
 \.homesense$
 
-:whois|whois.nic.lancome
+:notice||Disallocated by IANA
 \.lancome$
 
 :whois|whois.nic.lundbeck
@@ -6335,7 +6335,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-16)
+:notice||Whois server unknown (2019-11-30)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6458,7 +6458,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-16)
+:notice||Whois server unknown (2019-11-30)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
