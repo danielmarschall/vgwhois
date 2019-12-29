@@ -1,4 +1,4 @@
-#: version 20191205
+#: version 20191228
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1127,6 +1127,8 @@
 
 # ** Method 1 (official; missing email address, modified date and registrar)
 #:whois|vunic.vu
+# Dec 2019: WHOIS does not show any useful information; refers to query RDDS
+#:whois|whois.dnrs.neustar
 #\.vu$
 # ** Method 2 (missing email address and registrar)
 #:cgi|http://www.vunic.vu/whois?~query~
@@ -4440,7 +4442,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-30)
+:notice||Whois server unknown (2019-12-28)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4635,8 +4637,7 @@
 :whois|whois.nic.hoteles
 \.hoteles$
 
-#:whois|whois-fe.movistar.tango.knipp.de
-:whois|whois.nic.movistar
+:notice||Disallocated by IANA
 \.movistar$
 
 :whois|whois.nic.omega
@@ -4645,8 +4646,7 @@
 :whois|whois.nic.swatch
 \.swatch$
 
-#:whois|whois-fe.telefonica.tango.knipp.de
-:whois|whois.nic.telefonica
+:notice||Disallocated by IANA
 \.telefonica$
 
 #:whois|whois.centralnic.com
@@ -5023,7 +5023,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-30)
+:notice||Whois server unknown (2019-12-28)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6335,7 +6335,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-30)
+:notice||Whois server unknown (2019-12-28)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6458,7 +6458,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2019-11-30)
+:notice||Whois server unknown (2019-12-28)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6545,3 +6545,6 @@
 
 :whois|whois.nic.cpa
 \.cpa$
+
+:whois|whois.uniregistry.net
+\.llp$
