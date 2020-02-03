@@ -967,7 +967,8 @@
 \.tg$
 
 #:whois|whois.thnic.net
-:whois|whois.thnic.co.th
+#:whois|whois.thnic.co.th
+:whois|whois.thains.co.th
 \.th$
 
 :cgi|http://www.nic.tj/cgi/whois2?domain=~namewotld~
@@ -1475,7 +1476,8 @@
 :cgipost|https://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~&Submit=Submit&upperlimit=&lowerlimit=
 \.xn--mgbx4cd0ab$
 
-:whois|whois.thnic.co.th
+#:whois|whois.thnic.co.th
+:whois|whois.thains.co.th
 \.xn--o3cw4h$
 
 # :notice||whois server unknown (last checked Dec 2011)

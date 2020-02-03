@@ -6,7 +6,7 @@
 # The whois servers should do referal whois redirects
 # --------------------------------------------------------------------
 
-#:cgi|https://oidplus.viathinksoft.com/oidplus/plugins/publicPages/100_whois/whois/webwhois.php?query=oid:~oid~
+#:cgi|https://oidplus.viathinksoft.com/oidplus/plugins/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
 :whois|whois.viathinksoft.de
 oid:1.3.6.1.4.1.37476
 oid:1.3.6.1.4.1.37553.8.8.2
