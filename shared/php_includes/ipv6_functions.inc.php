@@ -2,8 +2,8 @@
 
 /*
  * IPv6 functions for PHP
- * Copyright 2012-2014 Daniel Marschall, ViaThinkSoft
- * Version 2014-12-12
+ * Copyright 2012-2020 Daniel Marschall, ViaThinkSoft
+ * Version 2020-02-28
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,13 @@
  * limitations under the License.
  */
 
-# This library needs gmp! aptitude install php5-gmp
+# This library requires either the GMP extension (or BCMath if gmp_supplement.inc.php is present)
 
 // TODO: oop, exceptions?
 // TODO: variant without gmp ?
 // TODO: IPv6 auflösung 'ffff::192.168.69.1' -> 'ffff:0000:0000:0000:0000:0000:c0a8:4501' geht nicht!!!
+
+if (file_exists(__DIR__ . '/gmp_supplement.inc.php')) include_once __DIR__ . '/gmp_supplement.inc.php';
 
 define('GMP_ONE', gmp_init('1'));
 
@@ -388,14 +390,18 @@ function ipv6_line2range($line) {
 
 # ---
 
-function gmp_shiftl($x, $n) { // shift left
-	// http://www.php.net/manual/en/ref.gmp.php#99788
-	return gmp_mul($x, gmp_pow('2', $n));
+if (!function_exists('gmp_shiftl')) {
+	function gmp_shiftl($x, $n) { // shift left
+		// http://www.php.net/manual/en/ref.gmp.php#99788
+		return gmp_mul($x, gmp_pow('2', $n));
+	}
 }
 
-function gmp_shiftr($x, $n) { // shift right
-	// http://www.php.net/manual/en/ref.gmp.php#99788
-	return gmp_div($x, gmp_pow('2', $n));
+if (!function_exists('gmp_shiftr')) {
+	function gmp_shiftr($x, $n) { // shift right
+		// http://www.php.net/manual/en/ref.gmp.php#99788
+		return gmp_div($x, gmp_pow('2', $n));
+	}
 }
 
 $cache_ip2long6 = array();

@@ -1,4 +1,4 @@
-#: version 20200111
+#: version 20200201
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1105,9 +1105,8 @@
 :whois|whois2.afilias-grs.net
 \.vc$
 
-#:cgi|https://registro.nic.ve/modules/whois?query=~query~&submit=Consultar
-#:whois|whois.nic.ve
-:cgi|http://whois.nic.ve/whois/domain/~query~/
+#:cgi|https://whois.nic.ve/whois/domain/~query~/
+:whois|whois.nic.ve
 \.ve$
 
 #:whois|whois.nic.vg
@@ -4444,7 +4443,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-01-11)
+:notice||Whois server unknown (2020-02-01)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5025,7 +5024,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-01-11)
+:notice||Whois server unknown (2020-02-01)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6337,7 +6336,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-01-11)
+:notice||Whois server unknown (2020-02-01)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6460,7 +6459,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-01-11)
+:notice||Whois server unknown (2020-02-01)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6550,3 +6549,10 @@
 
 :whois|whois.uniregistry.net
 \.llp$
+
+# TODO: Entry generated automatically. Needs manual check.
+:notice||Whois server unknown (2020-02-01)
+\.xn--mgbcpq6gpa1a$
+
+:whois|whois.nic.la
+\.xn--q7ce6a$
