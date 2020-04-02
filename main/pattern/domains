@@ -1,4 +1,4 @@
-#: version 20200201
+#: version 20200402
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4419,7 +4419,7 @@
 :whois|whois.uniregistry.net
 \.lol$
 
-:whois|whois.nic.nadex
+:notice||Disallocated by IANA
 \.nadex$
 
 #:whois|whois.donuts.co
@@ -5070,7 +5070,8 @@
 :whois|whois.afilias-srs.net
 \.boehringer$
 
-:whois|whois-bostik.nic.fr
+#:whois|whois-bostik.nic.fr
+:whois|whois.nic.bostik
 \.bostik$
 
 :whois|whois.afilias-srs.net
