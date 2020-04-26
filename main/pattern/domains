@@ -4438,8 +4438,7 @@
 :whois|whois.nic.taxi
 \.taxi$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.xn--estv75g
+:notice||Disallocated by IANA
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
