@@ -1,4 +1,4 @@
-#: version 20200402
+#: version 20200621
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -650,7 +650,8 @@
 :whois|whois.dot.ml
 \.ml$
 
-:notice||Unknown if a whois service exist. See http://www.nic.mm/ for more information [Aug 2013]
+#:notice||Unknown if a whois service exist. See http://www.nic.mm/ for more information [Aug 2013]
+:whois|whois.registry.gov.mm
 \.mm$
 
 # :notice||Please visit http://www.domain.mn/domain.php?action=whois and enter the captcha [Aug 2013]
@@ -3800,7 +3801,8 @@
 :whois|whois.nic.money
 \.money$
 
-:whois|whois-aquarelle.nic.fr
+#:whois|whois-aquarelle.nic.fr
+:whois|whois.nic.aquarelle
 \.aquarelle$
 
 #:whois|whois.afilias-srs.net
@@ -4296,7 +4298,8 @@
 :whois|whois.nic.redstone
 \.redstone$
 
-:whois|whois-mma.nic.fr
+#:whois|whois-mma.nic.fr
+:whois|whois.nic.mma
 \.mma$
 
 #:whois|whois.nic.wang
@@ -4442,7 +4445,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-02-01)
+:notice||Whois server unknown (2020-06-21)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4530,7 +4533,8 @@
 :whois|whois.nic.bible
 \.bible$
 
-:whois|whois-sncf.nic.fr
+#:whois|whois-sncf.nic.fr
+:whois|whois.nic.sncf
 \.sncf$
 
 #:whois|whois.afilias-srs.net
@@ -4612,7 +4616,8 @@
 :whois|whois.nic.office
 \.office$
 
-:whois|whois.nic.scor
+#:whois|whois.nic.scor
+:notice||Disallocated by IANA
 \.scor$
 
 :whois|whois.nic.skype
@@ -4747,7 +4752,8 @@
 :whois|whois.nic.xn--rhqv96g
 \.xn--rhqv96g$
 
-:whois|whois-lancaster.nic.fr
+#:whois|whois-lancaster.nic.fr
+:whois|whois.nic.lancaster
 \.lancaster$
 
 :whois|whois.afilias-srs.net
@@ -5023,7 +5029,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-02-01)
+:notice||Whois server unknown (2020-06-21)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -5531,7 +5537,8 @@
 :whois|whois.nic.locus
 \.locus$
 
-:whois|whois-total.nic.fr
+#:whois|whois-total.nic.fr
+:whois|whois.nic.total
 \.total$
 
 :whois|whois.nic.stream
@@ -6078,7 +6085,8 @@
 :notice||Disallocated by IANA
 \.duns$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.esurance$
 
 :whois|whois.nic.msd
@@ -6336,7 +6344,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-02-01)
+:notice||Whois server unknown (2020-06-21)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6459,7 +6467,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-02-01)
+:notice||Whois server unknown (2020-06-21)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6551,8 +6559,17 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-02-01)
+:notice||Whois server unknown (2020-06-21)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
 \.xn--q7ce6a$
+
+:whois|whois.nic.amazon
+\.amazon$
+
+:whois|whois.nic.xn--cckwcxetd
+\.xn--cckwcxetd$
+
+:whois|whois.nic.xn--jlq480n2rg
+\.xn--jlq480n2rg$
