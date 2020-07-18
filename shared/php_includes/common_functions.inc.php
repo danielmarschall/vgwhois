@@ -264,8 +264,8 @@ function generateRandomToken($haystack, $length = 20) {
 
 function github_commit_count($user, $repo) {
 	$cont = file_get_contents("https://github.com/$user/$repo");
-	if (preg_match('@<strong>(\\d+)</strong>\s*<span aria-label="Commits on master">commits</span>@smU', $cont, $m)) {
-	    return $m[1];
+	if (preg_match('@<strong>(\\d+)</strong>\s*<span[^>]+aria-label="Commits on master"[^>]*>commits</span>@smU', $cont, $m)) {
+		return $m[1];
 	} else {
 		return "?";
 	}

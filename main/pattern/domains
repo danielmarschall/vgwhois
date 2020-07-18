@@ -1,4 +1,4 @@
-#: version 20200621
+#: version 20200712
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1487,7 +1487,7 @@
 :whois|whois.tcinet.ru
 \.xn--p1ai$
 
-:notice||whois server unknown (last checked Dec 2011)
+:whois|whois.ati.tn
 \.xn--pgbs0dh$
 
 :whois|whois.registry.in
@@ -4445,7 +4445,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-06-21)
+:notice||Whois server unknown (2020-07-12)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5029,7 +5029,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-06-21)
+:notice||Whois server unknown (2020-07-12)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -5224,14 +5224,14 @@
 :whois|whois.nic.wanggou
 \.wanggou$
 
-:whois|whois.nic.xn--kpu716f
+:notice||Disallocated by IANA
 \.xn--kpu716f$
 
 #:whois|whois.centralnic.com
 :whois|whois.nic.xn--ngbe9e0a
 \.xn--ngbe9e0a$
 
-:whois|whois.nic.xn--pbt977c
+:notice||Disallocated by IANA
 \.xn--pbt977c$
 
 :whois|whois.nic.ford
@@ -6280,7 +6280,7 @@
 :whois|whois.nic.hbo
 \.hbo$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.aigo$
 
 #:whois|whois.afilias-srs.net
@@ -6344,7 +6344,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-06-21)
+:notice||Whois server unknown (2020-07-12)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6467,7 +6467,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-06-21)
+:notice||Whois server unknown (2020-07-12)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6559,7 +6559,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-06-21)
+:notice||Whois server unknown (2020-07-12)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
