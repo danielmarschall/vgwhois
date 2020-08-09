@@ -1,4 +1,4 @@
-#: version 20200719
+#: version 20200802
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4445,7 +4445,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-07-19)
+:notice||Whois server unknown (2020-08-02)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5029,7 +5029,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-07-19)
+:notice||Whois server unknown (2020-08-02)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6064,7 +6064,7 @@
 :whois|whois.nic.raid
 \.raid$
 
-:whois|whois.nic.rightathome
+:notice||Disallocated by IANA
 \.rightathome$
 
 :whois|whois.nic.scjohnson
@@ -6344,7 +6344,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-07-19)
+:notice||Whois server unknown (2020-08-02)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6467,7 +6467,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-07-19)
+:notice||Whois server unknown (2020-08-02)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6559,7 +6559,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-07-19)
+:notice||Whois server unknown (2020-08-02)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
