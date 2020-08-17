@@ -25,6 +25,8 @@ whois.gal.coreregistry.net
 whois.mango.coreregistry.net
 whois.nic.cd
 whois.nic.ki
+whois.nic.org.uy
+whois.itdc.ge
 
 # does not listen to public IPs anymore. The whois server only accepts calls from the web interface
 whois.registry.hm

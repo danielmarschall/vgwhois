@@ -1090,8 +1090,18 @@
 :whois|whois.nic.us
 \.us$
 
+:notice||No WHOIS service available. Go to https://www.nic.uy/ and solve the CAPTCHA (August 2020).
+\.edu.\uy$
+\.net.\uy$
+\.org.\uy$
+
+:notice||No WHOIS service available. Go to https://www.dominios.gub.uy/ and solve the CAPTCHA (August 2020).
+\.gub.\uy$
+\.mil.\uy$
+
 #:whois|sepe.rau.edu.uy
-:whois|whois.nic.org.uy
+#:whois|whois.nic.org.uy
+:notice||No WHOIS service available. Go to https://www.dominios.gub.uy/ if you have a contract with AGESIC, otherwise to https://www.nic.uy/ and solve the CAPTCHA (August 2020).
 \.uy$
 
 #:whois|whois.uz
@@ -3699,13 +3709,12 @@
 :whois|whois.nic.taipei
 \.taipei$
 
-# Not listed in public newGTLD listing
-# TODO: check if it returns (incl. the description what it means)
-:whois|whois.itdc.ge
+# Note: This domain is not listed in the newGTLD list https://newgtlds.icann.org/en/program-status/delegated-strings
+# :whois|whois.itdc.ge
+:notice||WHOIS service gone. Go to http://billing.itdc.ge/ to reserve a domain name. (August 2020)
 \.xn--node$
 
-# Not listed in public newGTLD listing
-# TODO: check if it returns (incl. the description what it means)
+# Note: This domain is not listed in the newGTLD list https://newgtlds.icann.org/en/program-status/delegated-strings
 :whois|whois.marnet.mk
 \.xn--d1alf$
 
