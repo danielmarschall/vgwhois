@@ -1,4 +1,4 @@
-#: version 20200908
+#: version 20201118
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -482,7 +482,8 @@
 \.id$
 
 #:whois|whois.domainregistry.ie
-:whois|whois.iedr.ie
+#:whois|whois.iedr.ie
+:whois|whois.weare.ie
 \.ie$
 
 :whois|whois.isoc.org.il
@@ -4455,7 +4456,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-09-07)
+:notice||Whois server unknown (2020-11-16)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4885,13 +4886,15 @@
 :whois|whois.nic.xn--efvy88h
 \.xn--efvy88h$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.aco
 \.aco$
 
 :whois|whois.nic.aaa
 \.aaa$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.gea
 \.gea$
 
 #:whois|whois.centralnic.com
@@ -5039,7 +5042,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-09-07)
+:notice||Whois server unknown (2020-11-16)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -5585,7 +5588,8 @@
 :whois|whois.teleinfo.cn
 \.anquan$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.jcp$
 
 :whois|whois.nic.nissay
@@ -6129,7 +6133,7 @@
 :whois|whois.nic.hyatt
 \.hyatt$
 
-:whois|whois.nic.intel
+:notice||Disallocated by IANA
 \.intel$
 
 :whois|whois.afilias-srs.net
@@ -6353,7 +6357,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-09-07)
+:notice||Whois server unknown (2020-11-16)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6476,7 +6480,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-09-08)
+:notice||Whois server unknown (2020-11-18)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6568,7 +6572,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-09-08)
+:notice||Whois server unknown (2020-11-18)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
@@ -6582,3 +6586,6 @@
 
 :whois|whois.nic.xn--jlq480n2rg
 \.xn--jlq480n2rg$
+
+:whois|whois.afilias-srs.net
+\.spa$
