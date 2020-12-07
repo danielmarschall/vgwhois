@@ -1,4 +1,4 @@
-#: version 20201118
+#: version 20201207
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3930,8 +3930,7 @@
 :whois|whois.nic.zuerich
 \.zuerich$
 
-#:whois|whois.nic.shriram
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.shriram$
 
 :whois|whois.nic.bank
@@ -4412,12 +4411,12 @@
 :whois|whois.nic.aig
 \.aig$
 
-#:whois|whois.nic.auto
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.auto
 \.auto$
 
-#:whois|whois.nic.cars
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.cars
 \.cars$
 
 :whois|whois.nic.cfa
@@ -4456,7 +4455,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-11-16)
+:notice||Whois server unknown (2020-11-30)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4915,7 +4914,8 @@
 :whois|whois.nic.csc
 \.csc$
 
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.car
 \.car$
 
 #:whois|whois.centralnic.com
@@ -5042,7 +5042,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-11-16)
+:notice||Whois server unknown (2020-11-30)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6357,7 +6357,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-11-16)
+:notice||Whois server unknown (2020-11-30)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6480,7 +6480,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-11-18)
+:notice||Whois server unknown (2020-12-02)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6572,7 +6572,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-11-18)
+:notice||Whois server unknown (2020-12-02)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
