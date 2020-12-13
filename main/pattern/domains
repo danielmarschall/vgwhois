@@ -1,4 +1,4 @@
-#: version 20201207
+#: version 20201213
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4455,7 +4455,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-11-30)
+:notice||Whois server unknown (2020-12-07)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4499,7 +4499,8 @@
 :whois|whois-corsica.nic.fr
 \.corsica$
 
-:whois|whois.nic.lupin
+#:whois|whois.nic.lupin
+:notice||Disallocated by IANA
 \.lupin$
 
 :whois|whois.nic.men
@@ -4861,7 +4862,8 @@
 \.giving$
 
 #:whois|whois.nic.ceb
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.ceb$
 
 #:whois|whois.nic.fage
@@ -5042,7 +5044,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-11-30)
+:notice||Whois server unknown (2020-12-07)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6357,7 +6359,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-11-30)
+:notice||Whois server unknown (2020-12-07)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6480,7 +6482,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-12-02)
+:notice||Whois server unknown (2020-12-09)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6572,7 +6574,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2020-12-02)
+:notice||Whois server unknown (2020-12-09)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
