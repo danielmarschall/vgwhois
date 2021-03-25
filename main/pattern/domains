@@ -1,4 +1,4 @@
-#: version 20210203
+#: version 20210324
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -2891,7 +2891,8 @@
 \.xn--czr694b$
 
 # Delegated on 22 May 2014 to DERMotorcycles, LLC
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.motorcycles
 \.motorcycles$
 
 # Delegated on 22 May 2014 to dotreise GmbH
@@ -2905,11 +2906,13 @@
 \.versicherung$
 
 # Delegated on 22 May 2014 to DERAutos, LLC
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.autos
 \.autos$
 
 # Delegated on 22 May 2014 to DERHomes, LLC
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.homes
 \.homes$
 
 # Delegated on 22 May 2014 to Empresa Municipal de Informática SA - IPLANRIO
@@ -2917,7 +2920,8 @@
 \.rio$
 
 # Delegated on 22 May 2014 to DERYachts, LLC
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.yachts
 \.yachts$
 
 # Delegated on 28 May 2014 to Suhub Electronic Establishment
@@ -4095,7 +4099,8 @@
 :whois|whois.nic.gmo
 \.yodobashi$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.boats
 \.boats$
 
 # Alternative URL: http://nic.courses/
@@ -4457,7 +4462,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-02-03)
+:notice||Whois server unknown (2021-03-24)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5046,7 +5051,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-02-03)
+:notice||Whois server unknown (2021-03-24)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6361,7 +6366,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-02-03)
+:notice||Whois server unknown (2021-03-24)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6381,16 +6386,14 @@
 :whois|whois.nic.case
 \.case$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.caseih
+:notice||Disallocated by IANA
 \.caseih$
 
 #:whois|whois.afilias-srs.net
 :whois|whois.nic.iveco
 \.iveco$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.newholland
+:notice||Disallocated by IANA
 \.newholland$
 
 :whois|whois.nic.aol
@@ -6484,7 +6487,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-02-03)
+:notice||Whois server unknown (2021-03-24)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6576,7 +6579,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-02-03)
+:notice||Whois server unknown (2021-03-24)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
@@ -6593,3 +6596,6 @@
 
 :whois|whois.afilias-srs.net
 \.spa$
+
+:whois|whois.isoc.org.il
+\.xn--4dbrk0ce$
