@@ -1,4 +1,4 @@
-#: version 20210324
+#: version 20210331
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6005,7 +6005,7 @@
 :whois|whois.nic.beauty
 \.beauty$
 
-:whois|whois.nic.fujixerox
+:notice||Disallocated by IANA
 \.fujixerox$
 
 :whois|whois.nic.homegoods
