@@ -2,7 +2,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
-#  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2012-2021 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -23,7 +23,6 @@ whois.scot.coreregistry.net
 whois.eus.coreregistry.net
 whois.gal.coreregistry.net
 whois.mango.coreregistry.net
-whois.nic.cd
 whois.nic.ki
 whois.nic.org.uy
 whois.itdc.ge
