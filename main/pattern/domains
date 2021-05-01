@@ -1,4 +1,4 @@
-#: version 20210419
+#: version 20210501
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4176,7 +4176,7 @@
 :whois|whois.nic.cfd
 \.cfd$
 
-:whois|whois.nic.spreadbetting
+:notice||Disallocated by IANA
 \.spreadbetting$
 
 :whois|whois.nic.trading
@@ -4461,7 +4461,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-14)
+:notice||Whois server unknown (2021-04-28)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5050,7 +5050,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-14)
+:notice||Whois server unknown (2021-04-28)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6365,7 +6365,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-14)
+:notice||Whois server unknown (2021-04-28)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6388,8 +6388,7 @@
 :notice||Disallocated by IANA
 \.caseih$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.iveco
+:notice||Disallocated by IANA
 \.iveco$
 
 :notice||Disallocated by IANA
@@ -6486,7 +6485,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-14)
+:notice||Whois server unknown (2021-04-28)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6578,7 +6577,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-14)
+:notice||Whois server unknown (2021-04-28)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
