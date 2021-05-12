@@ -1,4 +1,4 @@
-#: version 20210501
+#: version 20210512
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4461,7 +4461,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-28)
+:notice||Whois server unknown (2021-05-05)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5050,7 +5050,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-28)
+:notice||Whois server unknown (2021-05-05)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -5626,7 +5626,8 @@
 :whois|whois.nic.mutual
 \.mutual$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.abbvie
 \.abbvie$
 
 :whois|whois.nic.abudhabi
@@ -6365,7 +6366,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-28)
+:notice||Whois server unknown (2021-05-05)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6485,7 +6486,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-28)
+:notice||Whois server unknown (2021-05-05)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6577,7 +6578,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-04-28)
+:notice||Whois server unknown (2021-05-05)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
