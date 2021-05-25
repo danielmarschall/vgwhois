@@ -2,8 +2,8 @@
 
 /*
  * IPv6 functions for PHP
- * Copyright 2012-2020 Daniel Marschall, ViaThinkSoft
- * Version 2020-02-28
+ * Copyright 2012-2021 Daniel Marschall, ViaThinkSoft
+ * Version 2021-05-21
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -678,7 +678,9 @@ if (!function_exists('ip2bin')) {
 		if (isset($cache_ip2bin[$ip])) return $cache_ip2bin[$ip];
 
 		if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) !== false) {
-			$out = base_convert(ip2long($ip), 10, 2);
+			$iplong = ip2long($ip);
+			assert($iplong !== false);
+			$out = base_convert((string)$iplong, 10, 2);
 			$cache_ip2bin[$ip] = $out;
 			return $out;
 		}
@@ -713,7 +715,8 @@ if (!function_exists('bin2ip')) {
 		if (isset($cache_bin2ip[$bin])) return $cache_bin2ip[$bin];
 
 		if (strlen($bin) <= 32) { // 32bits (ipv4)
-			$out = long2ip(base_convert($bin, 2, 10));
+			$iplong = base_convert($bin, 2, 10);
+			$out = long2ip(intval($iplong));
 			$cache_bin2ip[$bin] = $out;
 			return $out;
 		}

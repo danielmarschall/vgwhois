@@ -2,8 +2,8 @@
 
 /*
  * IPv4 functions for PHP
- * Copyright 2012-2019 Daniel Marschall, ViaThinkSoft
- * Version 2019-03-11
+ * Copyright 2012-2021 Daniel Marschall, ViaThinkSoft
+ * Version 2021-05-21
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -532,7 +532,9 @@ if (!function_exists('ip2bin')) {
 		# modified by VTS
 
 		if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) !== false) {
-			return base_convert(ip2long($ip), 10, 2);
+			$iplong = ip2long($ip);
+			assert($iplong !== false);
+			return base_convert((string)$iplong, 10, 2);
 		}
 		if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) === false) {
 			return false;
@@ -557,7 +559,8 @@ if (!function_exists('bin2ip')) {
 		# modified by VTS
 
 		if (strlen($bin) <= 32) { // 32bits (ipv4)
-			return long2ip(base_convert($bin, 2, 10));
+			$iplong = base_convert($bin, 2, 10);
+			return long2ip(intval($iplong));
 		}
 		if (strlen($bin) != 128) {
 			return false;

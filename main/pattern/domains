@@ -1,4 +1,4 @@
-#: version 20210512
+#: version 20210525
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -584,7 +584,8 @@
 :whois|whois.nic.la
 \.la$
 
-:cgipost|https://web.aub.edu.lb/cgi-bin/lbdr.pl|cn=~query~
+#:cgipost|https://web.aub.edu.lb/cgi-bin/lbdr.pl|cn=~query~
+:whois|whois.lbdr.org.lb
 \.lb$
 
 :whois|whois2.afilias-grs.net
@@ -4461,7 +4462,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-05)
+:notice||Whois server unknown (2021-05-19)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5050,7 +5051,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-05)
+:notice||Whois server unknown (2021-05-19)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6366,7 +6367,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-05)
+:notice||Whois server unknown (2021-05-19)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6486,7 +6487,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-05)
+:notice||Whois server unknown (2021-05-19)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6578,7 +6579,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-05)
+:notice||Whois server unknown (2021-05-19)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
