@@ -1,4 +1,4 @@
-#: version 20210525
+#: version 20210629
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1094,13 +1094,13 @@
 \.us$
 
 :notice||No WHOIS service available. Go to https://www.nic.uy/ and solve the CAPTCHA (August 2020).
-\.edu.\uy$
-\.net.\uy$
-\.org.\uy$
+\.edu\.uy$
+\.net\.uy$
+\.org\.uy$
 
 :notice||No WHOIS service available. Go to https://www.dominios.gub.uy/ and solve the CAPTCHA (August 2020).
-\.gub.\uy$
-\.mil.\uy$
+\.gub\.uy$
+\.mil\.uy$
 
 #:whois|sepe.rau.edu.uy
 #:whois|whois.nic.org.uy
@@ -4462,7 +4462,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-19)
+:notice||Whois server unknown (2021-06-25)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5051,7 +5051,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-19)
+:notice||Whois server unknown (2021-06-25)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6367,7 +6367,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-19)
+:notice||Whois server unknown (2021-06-25)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6487,7 +6487,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-19)
+:notice||Whois server unknown (2021-06-25)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6579,7 +6579,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-05-19)
+:notice||Whois server unknown (2021-06-25)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
