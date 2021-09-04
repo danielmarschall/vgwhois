@@ -1,4 +1,4 @@
-#: version 20210629
+#: version 20210904
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1531,8 +1531,8 @@
 :notice||Disallocated by IANA
 \.xn--zckzah$
 
-#:whois|whois.nic.xxx
-:whois|whois.registrar.adult
+:whois|whois.nic.xxx
+#:whois|whois.registrar.adult
 \.xxx$
 
 
@@ -3833,9 +3833,9 @@
 :whois|whois.nic.xn--hxt814e
 \.xn--hxt814e$
 
-#:whois|whois.nic.adult
+:whois|whois.nic.adult
 #:whois|whois.afilias-srs.net
-:whois|whois.registrar.adult
+#:whois|whois.registrar.adult
 \.adult$
 
 :whois|whois.nic.eurovision
@@ -3846,9 +3846,9 @@
 :whois|whois.nic.fashion
 \.fashion$
 
-#:whois|whois.nic.porn
+:whois|whois.nic.porn
 #:whois|whois.afilias-srs.net
-:whois|whois.registrar.adult
+#:whois|whois.registrar.adult
 \.porn$
 
 :whois|whois.nic.trust
@@ -4377,7 +4377,8 @@
 \.seat$
 
 #:whois|whois.afilias-srs.net
-:whois|whois.registrar.adult
+#:whois|whois.registrar.adult
+:whois|whois.nic.sex
 \.sex$
 
 :whois|whois.nic.weir
@@ -4462,7 +4463,7 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-06-25)
+:notice||Whois server unknown (2021-08-28)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -5051,7 +5052,7 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-06-25)
+:notice||Whois server unknown (2021-08-28)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -6367,7 +6368,7 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-06-25)
+:notice||Whois server unknown (2021-08-28)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6487,7 +6488,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-06-25)
+:notice||Whois server unknown (2021-08-28)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6579,7 +6580,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-06-25)
+:notice||Whois server unknown (2021-08-28)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
