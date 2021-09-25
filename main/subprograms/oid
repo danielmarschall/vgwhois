@@ -24,7 +24,7 @@ define('WALK_UP',            true);
 define('ASK_FRANCE_TELECOM', true);
 define('ASK_ALVESTRAND_NO',  false);
 
-$domain = $argv[1];
+$domain = isset($argv[1]) ? $argv[1] : '';
 
 # normalize to "2.999", removing leading zeros, urn:oid: and oid: as well as leading dot
 $domain = normalize_oid($domain, false);
@@ -126,7 +126,7 @@ function check_oidinfo_com($oid) {
 
 		return;
 	} else {
-		if ((strpos($x, '<td>(<a href="/faq.htm#17">ASN.1</a> notation)</td>') === false) &&
+		if ((strpos($x, '/faq.htm#17">ASN.1</a> notation)</td>') === false) &&
 			(strpos($x, 'This OID description has not yet been validated') === false)) {
 			echo "\nUnknown error! Please try again later.\n";
 
@@ -150,6 +150,7 @@ function check_oidinfo_com($oid) {
 			echo "\n\n";
 			echo "% ===========================================================\n";
 			echo "% Requesting father OID '$father'\n";
+
 			echo check_oidinfo_com($father);
 		}
 
