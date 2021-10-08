@@ -1,4 +1,4 @@
-#: version 20211002
+#: version 20211008
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -415,7 +415,8 @@
 
 # :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
 # :program|$vgwhois$/subprograms/mq_gf_gp
-:whois|whois.nic.gp
+# :whois|whois.nic.gp
+:notice||Please go to https://whois.nic.gp/ and enter the captcha. [Oct 2021]
 \.gp$
 
 #:notice||No whois, no domain list. Homepage http://www.getesa.gq/ (last checked Sep 2005)
@@ -6094,7 +6095,8 @@
 :whois|whois.nic.scjohnson
 \.scjohnson$
 
-:whois|whois.nic.swiftcover
+#:whois|whois.nic.swiftcover
+:notice||Disallocated by IANA
 \.swiftcover$
 
 :whois|whois.nic.amfam
