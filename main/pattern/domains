@@ -1,4 +1,4 @@
-#: version 20211008
+#: version 20211009
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6250,7 +6250,8 @@
 :whois|whois.nic.oldnavy
 \.oldnavy$
 
-:whois|whois.nic.qvc
+#:whois|whois.nic.qvc
+:notice||Disallocated by IANA
 \.qvc$
 
 :whois|whois.afilias-srs.net
