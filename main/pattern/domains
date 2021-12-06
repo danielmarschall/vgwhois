@@ -1,4 +1,4 @@
-#: version 20211009
+#: version 20211206
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1152,7 +1152,8 @@
 #:cgipost|http://www.vunic.vu/whoiss/process_whois.php?domain=~1~&ext=~2~
 #(.*)((|\.com|\.edu|\.net|\.org)\.vu)$
 # ** Method 4 (parsing web interface, most verbose, parse it manually)
-:program|$vgwhois$/subprograms/vu
+#:program|$vgwhois$/subprograms/vu
+:whois|whois.dnrs.vu
 \.vu$
 
 :whois|whois.nic.wf
@@ -1341,7 +1342,8 @@
 :multiple||whois::whois.dotgov.gov:::program::$vgwhois$/subprograms/gov
 \.gov$
 
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.info
 \.info$
 
 :whois|whois.iana.org
@@ -1376,7 +1378,8 @@
 
 #:whois|whois.registrypro.pro
 #:whois|whois.dotproregistry.net
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.pro
 \.pro$
 
 :whois|whois.nic.tel
@@ -2025,11 +2028,13 @@
 \.xn--fiq64b$
 
 # Delegated on 18 January 2014 to Afilias Limited
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.shiksha
 \.shiksha$
 
 # Delegated on 18 January 2014 to Afilias Limited
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.red
 \.red$
 
 # Delegated on 18 January 2014 to I-REGISTRY Ltd. Niederlassung Deutschland
@@ -2065,7 +2070,8 @@
 \.luxury$
 
 # Delegated on 18 January 2014 to Afilias Limited
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.pink
 \.pink$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
@@ -2092,7 +2098,8 @@
 \.cool$
 
 # Delegated on 23 January 2014 to Afilias Limited
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.kim
 \.kim$
 
 # Delegated on 23 January 2014 to Sand Shadow, LLC
@@ -2205,12 +2212,14 @@
 \.flights$
 
 # Delegated on 5 February 2014 to Afilias Limited
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.blue
 \.blue$
 
 # Delegated on 5 February 2014 to Afilias Limited
 # Chinese for "mobile"
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.xn--6frz82g
 \.xn--6frz82g$
 
 # Delegated on 11 February 2014 to Victor Frostbite, LLC
@@ -2357,11 +2366,13 @@
 \.bar$
 
 # Delegated on 2 March 2014 to Monolith Registry LLC
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.voto
 \.voto$
 
 # Delegated on 2 March 2014 to Monolith Registry LLC
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.vote
 \.vote$
 
 # Delegated on 2 March 2014 to BusinessRalliart Inc.
@@ -2456,12 +2467,14 @@
 .ren$
 
 # Delegated on 27 March 2014 to Afilias Limited
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.black
 \.black$
 
 # Delegated on 31 March 2014 to Starting Dot Limited
 #:whois|whois.ksregistry.net
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.archi
 \.archi$
 
 # Delegated on 31 March 2014 to Top Level Domain Holdings Limited
@@ -2659,7 +2672,8 @@
 \.frogans$
 
 # Delegated on 19 April 2014 to City of Paris
-:whois|whois-paris.nic.fr
+#:whois|whois-paris.nic.fr
+:whois|whois.nic.paris
 \.paris$
 
 # Delegated on 19 April 2014 to Charleston Road Registry
@@ -2996,7 +3010,8 @@
 
 # Delegated on 2 June 2014 to STARTING DOT LIMITED
 #:whois|whois.ksregistry.net
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.bio
 \.bio$
 
 # Delegated on 4 June 2014
@@ -3047,7 +3062,8 @@
 \.global$
 
 # Delegated on 13 June 2014
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.organic
 \.organic$
 
 # Delegated on 13 June 2014
@@ -3087,7 +3103,8 @@
 \.joburg$
 
 # Delegated on 19 June 2014
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.green
 \.green$
 
 # Delegated on 19 June 2014
@@ -3097,7 +3114,8 @@
 \.durban$
 
 # Delegated on 19 June 2014
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.lotto
 \.lotto$
 
 # Delegated on 19 June 2014
@@ -3111,7 +3129,8 @@
 \.capetown$
 
 # Delegated on 19 June 2014
-:whois|whois-ovh.nic.fr
+#:whois|whois-ovh.nic.fr
+:whois|whois.nic.ovh
 \.ovh$
 
 # Delegated on 21 June 2014
@@ -3182,7 +3201,8 @@
 \.gent$
 
 # Delegated on 18 July 2014
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.lgbt
 \.lgbt$
 
 # Delegated on 18 July 2014
@@ -3662,7 +3682,8 @@
 \.allfinanz$
 
 # Delegated on 4 October 2014
-:whois|whois-alsace.nic.fr
+#:whois|whois-alsace.nic.fr
+:whois|whois.nic.alsace
 \.alsace$
 
 # Delegated on 15 September 2014
@@ -3675,7 +3696,8 @@
 \.google$
 
 # Delegated on 15 October 2014
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.poker
 \.poker$
 
 # Delegated on 15 October 2014
@@ -4126,7 +4148,8 @@
 :whois|whois.nic.java
 \.java$
 
-:whois|whois-leclerc.nic.fr
+#:whois|whois-leclerc.nic.fr
+:whois|whois.nic.leclerc
 \.leclerc$
 
 :whois|whois.nic.maif
@@ -4464,7 +4487,8 @@
 \.xn--estv75g$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-10-02)
+# URL for registration services: http://domains.sd
+:notice||Whois server unknown (2021-12-03)
 \.xn--mgbpl2fh$
 
 :whois|whois.amnic.net
@@ -4505,7 +4529,8 @@
 :whois|whois.nic.cisco
 \.cisco$
 
-:whois|whois-corsica.nic.fr
+#:whois|whois-corsica.nic.fr
+:whois|whois.nic.corsica
 \.corsica$
 
 #:whois|whois.nic.lupin
@@ -4544,7 +4569,8 @@
 
 #:whois|whois.nic.ski
 #:whois|whois.ksregistry.net
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.ski
 \.ski$
 
 :whois|whois.nic.xn--imr513n
@@ -4785,7 +4811,8 @@
 :whois|whois.nic.itau
 \.itau$
 
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.bet
 \.bet$
 
 :whois|whois.nic.sanofi
@@ -4806,7 +4833,8 @@
 :whois|whois.nic.man
 \.man$
 
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.pet
 \.pet$
 
 :whois|whois.nic.toyota
@@ -5053,7 +5081,8 @@
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-10-02)
+# URL for registration services: http://www.gr
+:notice||Whois server unknown (2021-12-03)
 \.xn--qxam$
 
 :whois|whois.nic.ferrero
@@ -5338,7 +5367,8 @@
 :whois|whois.nic.living
 \.living$
 
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.promo
 \.promo$
 
 #:whois|whois.ngtld.cn
@@ -6077,22 +6107,22 @@
 :whois|whois.nic.doctor
 \.doctor$
 
-:whois|whois.nic.duck
+:notice||Disallocated by IANA
 \.duck$
 
 :whois|whois.nic.ieee
 \.ieee$
 
-:whois|whois.nic.off
+:notice||Disallocated by IANA
 \.off$
 
-:whois|whois.nic.raid
+:notice||Disallocated by IANA
 \.raid$
 
 :notice||Disallocated by IANA
 \.rightathome$
 
-:whois|whois.nic.scjohnson
+:notice||Disallocated by IANA
 \.scjohnson$
 
 #:whois|whois.nic.swiftcover
@@ -6140,7 +6170,7 @@
 :whois|whois.nic.discover
 \.discover$
 
-:whois|whois.nic.glade
+:notice||Disallocated by IANA
 \.glade$
 
 :whois|whois.nic.hyatt
@@ -6173,7 +6203,7 @@
 :notice||Disallocated by IANA
 \.ladbrokes$
 
-:whois|whois.nic.afamilycompany
+:notice||Disallocated by IANA
 \.afamilycompany$
 
 :whois|whois.nic.lilly
@@ -6314,8 +6344,7 @@
 :whois|whois.nic.hdfc
 \.hdfc$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.xn--3oq18vl8pn36a
+:notice||Disallocated by IANA
 \.xn--3oq18vl8pn36a$
 
 :whois|whois.nic.auspost
@@ -6371,7 +6400,8 @@
 \.xn--gk3at1e$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-10-02)
+# URL for registration services: http://domainreg.btcl.com.bd/
+:notice||Whois server unknown (2021-12-03)
 \.xn--54b7fta0cc$
 
 :whois|whois.nic.radio
@@ -6488,11 +6518,12 @@
 
 # Note: Both (cgi and whois) work well
 #:cgi|https://africa-whois.registry.net.za/whois/whois.sh?Domain=~query~
-:whois|africa-whois.registry.net.za
+#:whois|africa-whois.registry.net.za
+:whois|whois.nic.africa
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-10-02)
+:notice||Whois server unknown (2021-12-03)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6559,7 +6590,8 @@
 :whois|whois.nic.xn--otu796d
 \.xn--otu796d$
 
-:whois|whois.afilias.net
+#:whois|whois.afilias.net
+:whois|whois.nic.llc
 \.llc$
 
 :whois|whois.nic.charity
@@ -6584,7 +6616,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-10-02)
+:notice||Whois server unknown (2021-12-03)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
@@ -6604,3 +6636,6 @@
 
 :whois|whois.isoc.org.il
 \.xn--4dbrk0ce$
+
+:whois|whois.nic.music
+\.music$
