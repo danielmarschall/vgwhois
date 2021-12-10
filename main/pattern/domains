@@ -1,4 +1,4 @@
-#: version 20211206
+#: version 20211210
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3099,7 +3099,8 @@
 # Delegated on 19 June 2014
 # Note: Both (cgi and whois) work well
 #:cgi|https://joburg-whois.registry.net.za/whois/whois.sh?Domain=~query~
-:whois|joburg-whois.registry.net.za
+#:whois|joburg-whois.registry.net.za
+:whois|whois.nic.joburg
 \.joburg$
 
 # Delegated on 19 June 2014
@@ -3110,7 +3111,8 @@
 # Delegated on 19 June 2014
 # Note: Both (cgi and whois) work well
 #:cgi|https://durban-whois.registry.net.za/whois/whois.sh?Domain=~query~
-:whois|durban-whois.registry.net.za
+#:whois|durban-whois.registry.net.za
+:whois|whois.nic.durban
 \.durban$
 
 # Delegated on 19 June 2014
@@ -3125,7 +3127,8 @@
 # Delegated on 19 June 2014
 # Note: Both (cgi and whois) work well
 #:cgi|https://capetown-whois.registry.net.za/whois/whois.sh?Domain=~query~
-:whois|capetown-whois.registry.net.za
+#:whois|capetown-whois.registry.net.za
+:whois|whois.nic.capetown
 \.capetown$
 
 # Delegated on 19 June 2014
