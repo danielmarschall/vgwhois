@@ -20,7 +20,7 @@ require_once __DIR__ . '/../config.inc.php';
 
 if (!is_dir(dirname(WHOISPING_DB))) mkdir(dirname(WHOISPING_DB), 0755, true);
 $db = new SQLite3(WHOISPING_DB); # TODO: in config auslagern
-if (!$db) die ($error);
+if (!$db) die("Cannot open SQLite DB '" . WHOISPING_DB . "'");
 
 gwitc_initdb($db);
 

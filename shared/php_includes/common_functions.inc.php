@@ -45,7 +45,8 @@ function human_timediff($t) {
 # http://www.phpeasycode.com/whois/
 # TODO: code duplicate in maintenance/pattern-generator/generate_newgtld
 function QueryWhoisServer($whoisserver, $domain, $port=43, $timeout=10) {
-	$fp = @fsockopen($whoisserver, $port, $errno, $errstr, $timeout) or die("Socket Error " . $errno . " - " . $errstr);
+	$fp = @fsockopen($whoisserver, $port, $errno, $errstr, $timeout);
+	if (!$fp) die("Socket Error " . $errno . " - " . $errstr);
 	// if ($whoisserver == "whois.verisign-grs.com") $domain = "=$domain"; // whois.verisign-grs.com requires the equals sign ("=") or it returns any result containing the searched string.
 	fputs($fp, $domain . "\r\n");
 	$out = "";

@@ -45,7 +45,7 @@ function cached_file($url, $cache_dir, $max_age = /* 24*60*60 */ 86400) {
 	$cachefile = $cache_dir . '/' . sha1($url) . '.cache';
 	if (!is_dir($cache_dir)) mkdir($cache_dir, 0755, true);
 	if (file_age($cachefile) > $max_age) {
-		$cont = file_get_contents($url, 0, $context);
+		$cont = file_get_contents($url, false, $context);
 		file_put_contents($cachefile, $cont);
 	} else {
 		$cont = file_get_contents($cachefile);

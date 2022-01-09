@@ -1,0 +1,22 @@
+parameters:
+	level: 5
+	fileExtensions:
+		- gu
+		- php
+		- phps
+	paths:
+		- .
+	excludePaths:
+		analyse:
+			- shared/php_includes/idna_convert.class.php
+		analyseAndScan:
+			- .phpstan.tmp
+	tmpDir: .phpstan.tmp
+	bootstrapFiles:
+		- ./maintenance/qa-monitor/config.inc.php
+	ignoreErrors:
+		- '#is always (true|false)\.#'
+		#- '#Call to function assert\(\) with false will always evaluate to false\.#'
+		#- '#with no typehint specified\.#'
+		# Bug in PHPstan: If you have function() definitions after exit(), this error comes
+		- '#Unreachable statement - code above always terminates.#'
