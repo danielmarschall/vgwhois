@@ -16,7 +16,8 @@ do
 done
 
 # TODO: Adjust to your path
-php7 /root/phpstan.phar
+#php7 /root/phpstan.phar
+phpstan
 
 for ix in ${!array[*]}
 do

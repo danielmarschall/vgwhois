@@ -56,7 +56,7 @@ if ($domains_cont_original != $domains_cont_new) {
 // Step 2:
 // Search for new TLDs which are not in our pattern file
 
-if (!isset($iana_tld_data)) {
+if (is_null($iana_tld_data)) {
 	$iana_tld_data = explode("\n", cached_file(IANA_TLD_REGISTRY, CACHE_FILE_DIR));
 	$iana_tld_data = array_map('trim', $iana_tld_data);
 }

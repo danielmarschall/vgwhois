@@ -14,6 +14,8 @@ parameters:
 	tmpDir: .phpstan.tmp
 	bootstrapFiles:
 		- ./maintenance/qa-monitor/config.inc.php
+		- ./maintenance/pattern-generator/config.inc.php
+		#- ./maintenance/pattern-generator/rirs.inc.php
 	ignoreErrors:
 		- '#is always (true|false)\.#'
 		#- '#Call to function assert\(\) with false will always evaluate to false\.#'

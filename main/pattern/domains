@@ -1,4 +1,4 @@
-#: version 20211210
+#: version 20220110
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4876,7 +4876,8 @@
 :whois|whois.nic.xn--tckwe
 \.xn--tckwe$
 
-:whois|whois.nic.lixil
+#:whois|whois.nic.lixil
+:notice||Disallocated by IANA
 \.lixil$
 
 #:whois|whois.nic.boots
@@ -6526,7 +6527,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-12-03)
+:notice||Whois server unknown (2022-01-08)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6619,7 +6620,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2021-12-03)
+:notice||Whois server unknown (2022-01-08)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la

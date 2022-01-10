@@ -81,6 +81,8 @@ $rirs[] = 'iana';
 @mkdir(RIRSTATS_CACHE_DIR.'/', 0777, true);
 
 foreach ($rirs as $rir) {
+	if (!isset($rirstat_urls[$rir])) continue;
+
 	$url = $rirstat_urls[$rir];
 
 	$failcounter = 0;

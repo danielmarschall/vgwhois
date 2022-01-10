@@ -14,6 +14,16 @@ error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
 require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+/** @var array $rirs */
+/** @var array $supports_extended_rirstat */
+/** @var array $rir_whois_server */
+/** @var array $rir_domain */
+/** @var array $rirstat_urls */
+/** @var array $ipv4_additional_params */
+/** @var array $ipv6_additional_params */
+/** @var array $asn_additional_params */
+/** @var array $tld_additional_params */
 require_once __DIR__ . '/rirs.inc.php';
 
 $out = '';
@@ -40,6 +50,8 @@ if (preg_match('@# Latest update detected on (.*)@', $iana_tld_data[0], $m)) {
 	$version = substr($version, 0, 10);
 	$version = str_replace('-', '', $version);
 	if ($version > $max_version) $max_version = $version;
+} else {
+	throw new Exception("Cannot find version of IANA TLD Data");
 }
 
 array_shift($iana_tld_data);
@@ -72,6 +84,8 @@ if (preg_match('@# Version (\d+), Last Updated (.*)@', $iana_tld_data[0], $m)) {
 	$version = $m[1];
 	$version = substr($version, 0, 8);
 	if ($version > $max_version) $max_version = $version;
+} else {
+	throw new Exception("Cannot find version of IANA TLD Data");
 }
 
 array_shift($iana_tld_data);

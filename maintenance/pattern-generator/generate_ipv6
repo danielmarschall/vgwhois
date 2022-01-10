@@ -14,6 +14,16 @@ error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
 require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
+
+/** @var array $rirs */
+/** @var array $supports_extended_rirstat */
+/** @var array $rir_whois_server */
+/** @var array $rir_domain */
+/** @var array $rirstat_urls */
+/** @var array $ipv4_additional_params */
+/** @var array $ipv6_additional_params */
+/** @var array $asn_additional_params */
+/** @var array $tld_additional_params */
 require_once __DIR__ . '/rirs.inc.php';
 
 if (USE_IANA_DATA) {
