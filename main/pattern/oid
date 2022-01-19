@@ -2,8 +2,10 @@
 
 # Special: OIDs
 # There will be soon a RFC by Daniel Marschall, which will define how information about an OID can be queried over a whois service
+# This serivce is called "OID Information Protocol"
 # Generally, you can query a whois server with "oid:.2.999" or "oid:2.999"
 # The whois servers should do referal whois redirects
+# see https://datatracker.ietf.org/doc/draft-viathinksoft-oidip/
 # --------------------------------------------------------------------
 
 #:cgi|https://oidplus.viathinksoft.com/oidplus/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
