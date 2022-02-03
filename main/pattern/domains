@@ -1,4 +1,4 @@
-#: version 20220115
+#: version 20220203
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -300,8 +300,8 @@
 #:cgi|http://www.eldjazair.dz/template/rechercherdomaine.php?domain_name=~1~&domaine=~2~
 #(.*)(\.(?:com|org|asso|art|edu|gov|pol)\.dz)$
 #(.*)(\.dz)$
-#:cgi|http://www.nic.dz/en/index.php?domain_name=~namewotld~&rechercher.x=0&rechercher.y=0&option=com_whois
-:whois|whois.nic.dz
+:cgi|http://www.nic.dz/en/index.php?domain_name=~namewotld~&rechercher.x=0&rechercher.y=0&option=com_whois
+#:whois|whois.nic.dz
 \.dz$
 
 #:cgi|http://www.nic.ec/reg/eng/whois.asp?dominio=~query~
@@ -501,8 +501,8 @@
 :whois|whois.nic.io
 \.io$
 
-# :notice||No whois, no domain list, no nothing. (last checked Sep 2005)
-:whois|whois.cmc.iq
+#:whois|whois.cmc.iq
+:notice||Whois server is down since October 2019 (last checked February 2022)
 \.iq$
 
 :whois|whois.nic.ir
@@ -1463,7 +1463,8 @@
 :notice||No whois server is yet known ... (last checked Aug 2013)
 \.xn--l1acc$
 
-:whois|whois.nic.dz
+#:whois|whois.nic.dz
+:notice||Whois server gone since August 2021. More info at http://www.nic.dz/
 \.xn--lgbbat1ad8j$
 
 :whois|whois.nic.ir
@@ -3791,7 +3792,8 @@
 :whois|whois.nic.party
 \.party$
 
-:whois|whois.nic.xn--45q11c
+#:whois|whois.nic.xn--45q11c
+:whois|whois.gtld.knet.cn
 \.xn--45q11c$
 
 :whois|whois.nic.firmdale
@@ -3856,7 +3858,8 @@
 :whois|whois.nic.latrobe
 \.latrobe$
 
-:whois|whois.nic.xn--hxt814e
+#:whois|whois.nic.xn--hxt814e
+:whois|whois.gtld.knet.cn
 \.xn--hxt814e$
 
 :whois|whois.nic.adult
@@ -4954,7 +4957,8 @@
 :whois|whois.nic.stc
 \.stc$
 
-:whois|whois.nic.csc
+#:whois|whois.nic.csc
+:notice||Disallocated by IANA
 \.csc$
 
 #:whois|whois.uniregistry.net
@@ -5081,7 +5085,8 @@
 :whois|whois.afilias-srs.net
 \.beats$
 
-:whois|whois.cmc.iq
+#:whois|whois.cmc.iq
+:notice||Whois server is down since October 2019 (last checked February 2022)
 \.xn--mgbtx2b$
 
 # TODO: Entry generated automatically. Needs manual check.
@@ -6527,7 +6532,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-01-15)
+:notice||Whois server unknown (2022-01-29)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6620,7 +6625,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-01-15)
+:notice||Whois server unknown (2022-01-29)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la

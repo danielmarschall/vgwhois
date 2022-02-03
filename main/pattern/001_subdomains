@@ -1,4 +1,4 @@
-#: version 20190528
+#: version 20220203
 
 # Attention: Please note that vgwhois will take the first regex match only!
 # This means if you have subdomain-registries, then you must define them first before you define the main registry.
@@ -9,7 +9,8 @@
 # Subdomain-Registries for gTLD and other domains
 # --------------------------------------------------------------------
 
-:whois|whois.eu.org
+#:notice||Whois server gone since December 2021 (last checked February 2022). Visit http://eu.org for more information.
+#:whois|whois.eu.org
 \.eu\.org$
 
 #:notice||Please visit https://manage.centralnic.com/support/view_whois/ and enter the CAPTCHA.
