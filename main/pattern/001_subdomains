@@ -1,4 +1,4 @@
-#: version 20220203
+#: version 20220303
 
 # Attention: Please note that vgwhois will take the first regex match only!
 # This means if you have subdomain-registries, then you must define them first before you define the main registry.
@@ -9,8 +9,8 @@
 # Subdomain-Registries for gTLD and other domains
 # --------------------------------------------------------------------
 
-#:notice||Whois server gone since December 2021 (last checked February 2022). Visit http://eu.org for more information.
-#:whois|whois.eu.org
+#:notice||Visit http://eu.org for more information.
+:whois|whois.eu.org
 \.eu\.org$
 
 #:notice||Please visit https://manage.centralnic.com/support/view_whois/ and enter the CAPTCHA.
@@ -31,6 +31,7 @@
 :notice||Please go to http://www.de.ki/whois and enter the CAPTCHA.
 \.de\.ki$
 
+# DM 03.03.2022 freedomain.co.nr seems to be down. TODO: check some time later if it is really down forever
 :cgipost|https://www.freedomain.co.nr/whois.php|account=~1~&domain=co.nr&action=whois&submit=1
 (.*)\.co\.nr$
 
@@ -42,194 +43,196 @@
 # Search for new places using Google search:
 # https://www.google.de/#q=Whois++%22Please+provide+the+following+information.%22
 
-:notice||Please go to http://www.nic.de.be/us/whois/ and enter the CAPTCHA.
-\.de\.be$
+# DM 03.03.2022 : Removed them all. They seem to be defunct alltogether!
 
-:notice||Please go to http://www.nic.at.vu/us/whois/ and enter the CAPTCHA.
-\.at\.vu$
+#:notice||Please go to http://www.nic.de.be/us/whois/ and enter the CAPTCHA.
+#\.de\.be$
 
-:notice||Please go to http://www.nic.ch.vu/us/whois/ and enter the CAPTCHA.
-\.ch\.vu$
+#:notice||Please go to http://www.nic.at.vu/us/whois/ and enter the CAPTCHA.
+#\.at\.vu$
 
-:notice||Please go to http://www.nic.de.vu/us/whois/ and enter the captcha.
-\.de\.vu$
+#:notice||Please go to http://www.nic.ch.vu/us/whois/ and enter the CAPTCHA.
+#\.ch\.vu$
 
-:notice||Please go to http://us.cydots.com/whois/ and enter the CAPTCHA.
-\.net\.ms$
-\.info\.ms$
-\.us\.ms$
-\.shop\.ms$
-\.fr\.ms$
-\.au\.ms$
-\.com\.au\.ms$
-\.de\.ms$
-\.cn\.ms$
-\.hk\.ms$
-\.br\.ms$
-\.com\.br\.ms$
-\.net\.br\.ms$
-\.org\.br\.ms$
-\.biz\.br\.ms$
-\.info\.br\.ms$
-\.etc\.br\.ms$
+#:notice||Please go to http://www.nic.de.vu/us/whois/ and enter the captcha.
+#\.de\.vu$
 
-:notice||Please visit http://www.duonic.com/us/whois/ and enter the CAPTCHA.
-\.de\.nr$
-\.at\.nr$
-\.co\.at\.nr$
+#:notice||Please go to http://us.cydots.com/whois/ and enter the CAPTCHA.
+#\.net\.ms$
+#\.info\.ms$
+#\.us\.ms$
+#\.shop\.ms$
+#\.fr\.ms$
+#\.au\.ms$
+#\.com\.au\.ms$
+#\.de\.ms$
+#\.cn\.ms$
+#\.hk\.ms$
+#\.br\.ms$
+#\.com\.br\.ms$
+#\.net\.br\.ms$
+#\.org\.br\.ms$
+#\.biz\.br\.ms$
+#\.info\.br\.ms$
+#\.etc\.br\.ms$
 
-:notice||Please visit http://www.lavanic.com/us/whois/ and enter the CAPTCHA.
-\.de\.lv$
-\.at\.lv$
-\.co\.at\.lv$
-\.or\.at\.lv$
-\.ch\.lv$
+#:notice||Please visit http://www.duonic.com/us/whois/ and enter the CAPTCHA.
+#\.de\.nr$
+#\.at\.nr$
+#\.co\.at\.nr$
 
-:notice||Please visit http://www.europnic.com/us/whois/ and enter the CAPTCHA.
-\.de\.gg
-\.at\.gg
-\.co\.at\.gg
-\.ch\.gg
-\.fr\.gg
+#:notice||Please visit http://www.lavanic.com/us/whois/ and enter the CAPTCHA.
+#\.de\.lv$
+#\.at\.lv$
+#\.co\.at\.lv$
+#\.or\.at\.lv$
+#\.ch\.lv$
 
-:notice||Please visit http://www.homenic.com/us/whois/ and enter the CAPTCHA.
-\.at\.hm$
-\.co\.at\.hm$
-\.de\.hm$
+#:notice||Please visit http://www.europnic.com/us/whois/ and enter the CAPTCHA.
+#\.de\.gg
+#\.at\.gg
+#\.co\.at\.gg
+#\.ch\.gg
+#\.fr\.gg
 
-:notice||Please visit http://www.alpennic.com/us/whois/ or http://us.unonic.com/whois/ or http://us.aliasdomains.com/whois/ and enter the CAPTCHA.
-\.net\.tf$
-\.eu\.tf$
-\.int\.tf$
-\.edu\.tf$
-\.us\.tf$
-\.ca\.tf$
-\.bg\.tf$
-\.ru\.tf$
-\.pl\.tf$
-\.cz\.tf$
-\.de\.tf$
-\.at\.tf$
-\.co\.at\.tf$
-\.ch\.tf$
-\.sg\.tf$
+#:notice||Please visit http://www.homenic.com/us/whois/ and enter the CAPTCHA.
+#\.at\.hm$
+#\.co\.at\.hm$
+#\.de\.hm$
 
-:notice||Please visit http://us.hitnic.com/whois/ or http://www.vorname.de/whois/ and enter the CAPTCHA.
-\.at\.vg$
-\.ch\.vg$
-\.info\.vg$
-\.biz\.vg$
-\.web\.vg$
-\.int\.vg$
-\.fr\.vg$
-\.us\.vg$
-\.ca\.vg$
-\.au\.vg$
-\.com\.au\.vg$
-\.jp\.vg$
+#:notice||Please visit http://www.alpennic.com/us/whois/ or http://us.unonic.com/whois/ or http://us.aliasdomains.com/whois/ and enter the CAPTCHA.
+#\.net\.tf$
+#\.eu\.tf$
+#\.int\.tf$
+#\.edu\.tf$
+#\.us\.tf$
+#\.ca\.tf$
+#\.bg\.tf$
+#\.ru\.tf$
+#\.pl\.tf$
+#\.cz\.tf$
+#\.de\.tf$
+#\.at\.tf$
+#\.co\.at\.tf$
+#\.ch\.tf$
+#\.sg\.tf$
 
-:notice||Please visit http://www.nic.de.nu/us/whois/ and enter the CAPTCHA.
-\.de\.nu$
+#:notice||Please visit http://us.hitnic.com/whois/ or http://www.vorname.de/whois/ and enter the CAPTCHA.
+#\.at\.vg$
+#\.ch\.vg$
+#\.info\.vg$
+#\.biz\.vg$
+#\.web\.vg$
+#\.int\.vg$
+#\.fr\.vg$
+#\.us\.vg$
+#\.ca\.vg$
+#\.au\.vg$
+#\.com\.au\.vg$
+#\.jp\.vg$
 
-:notice||Please visit http://www.nic.tr.vu/us/whois/ and enter the CAPTCHA.
-\.tr\.vu$
-\.com\.tr\.vu$
-\.net\.tr\.vu$
-\.org\.tr\.vu$
-\.biz\.tr\.vu$
-\.info\.tr\.vu$
-\.web\.tr\.vu$
-\.name\.tr\.vu$
-\.gen\.tr\.vu$
-\.gov\.tr\.vu$
-\.edu\.tr\.vu$
-\.av\.tr\.vu$
-\.dr\.tr\.vu$
-\.pol\.tr\.vu$
-\.bel\.tr\.vu$
-\.tsk\.tr\.vu$
-\.k12\.tr\.vu$
-\.bbs\.tr\.vu$
-\.tel\.tr\.vu$
+#:notice||Please visit http://www.nic.de.nu/us/whois/ and enter the CAPTCHA.
+#\.de\.nu$
 
-:notice||Please visit http://www.neunic.com/us/whois/ and enter the CAPTCHA.
-\.de\.vc$
-\.at\.vc$
-\.co\.at\.vc$
-\.or\.at\.vc$
-\.ch\.vc$
+#:notice||Please visit http://www.nic.tr.vu/us/whois/ and enter the CAPTCHA.
+#\.tr\.vu$
+#\.com\.tr\.vu$
+#\.net\.tr\.vu$
+#\.org\.tr\.vu$
+#\.biz\.tr\.vu$
+#\.info\.tr\.vu$
+#\.web\.tr\.vu$
+#\.name\.tr\.vu$
+#\.gen\.tr\.vu$
+#\.gov\.tr\.vu$
+#\.edu\.tr\.vu$
+#\.av\.tr\.vu$
+#\.dr\.tr\.vu$
+#\.pol\.tr\.vu$
+#\.bel\.tr\.vu$
+#\.tsk\.tr\.vu$
+#\.k12\.tr\.vu$
+#\.bbs\.tr\.vu$
+#\.tel\.tr\.vu$
 
-:notice||Please visit http://us.popnic.com/whois/ and enter the CAPTCHA.
-\.de\.pn$
-\.at\.pn$
-\.co\.at\.pn$
-\.ch\.pn$
-\.fr\.pn$
-\.it\.pn$
-\.uk\.pn$
-\.co\.uk\.pn$
-\.us\.pn$
-\.ca\.pn$
-\.au\.pn$
-\.com\.au\.pn$
-\.cn\.pn$
-\.jp\.pn$
+#:notice||Please visit http://www.neunic.com/us/whois/ and enter the CAPTCHA.
+#\.de\.vc$
+#\.at\.vc$
+#\.co\.at\.vc$
+#\.or\.at\.vc$
+#\.ch\.vc$
 
-:notice||Please visit http://us.joynic.com/whois/ and enter the CAPTCHA.
-\.de\.vu$
-\.at\.vu$
-\.co\.at\.vu$
-\.or\.at\.vu$
-\.ch\.vu$
-\.nl\.vu$
-\.ca\.vu$
-\.tr\.vu$
-\.com\.tr\.vu$
-\.net\.tr\.vu$
-\.org\.tr\.vu$
-\.biz\.tr\.vu$
-\.info\.tr\.vu$
-\.web\.tr\.vu$
-\.name\.tr\.vu$
-\.gen\.tr\.vu$
-\.gov\.tr\.vu$
-\.edu\.tr\.vu$
-\.av\.tr\.vu$
-\.dr\.tr\.vu$
-\.pol\.tr\.vu$
-\.bel\.tr\.vu$
-\.tsk\.tr\.vu$
-\.k12\.tr\.vu$
-\.bbs\.tr\.vu$
-\.tel\.tr\.vu$
-\.gr\.vu$
-\.com\.gr\.vu$
-\.net\.gr\.vu$
-\.org\.gr\.vu$
-\.edu\.gr\.vu$
-\.gov\.gr\.vu$
-\.ru\.vu$
-\.pl\.vu$
-\.es\.vu$
-\.za\.vu$
+#:notice||Please visit http://us.popnic.com/whois/ and enter the CAPTCHA.
+#\.de\.pn$
+#\.at\.pn$
+#\.co\.at\.pn$
+#\.ch\.pn$
+#\.fr\.pn$
+#\.it\.pn$
+#\.uk\.pn$
+#\.co\.uk\.pn$
+#\.us\.pn$
+#\.ca\.pn$
+#\.au\.pn$
+#\.com\.au\.pn$
+#\.cn\.pn$
+#\.jp\.pn$
 
-:notice||Please visit http://us.mediadots.com/whois/ and enter the CAPTCHA.
-\.eu\.mn$
-\.at\.mn$
-\.co\.at\.mn$
-\.fr\.mn$
-\.uk\.mn$
-\.co\.uk\.mn$
-\.us\.mn$
-\.nl\.mn$
-\.it\.mn$
-\.au\.mn$
-\.com\.au\.mn$
-\.cn\.mn$
-\.jp\.mn$
+#:notice||Please visit http://us.joynic.com/whois/ and enter the CAPTCHA.
+#\.de\.vu$
+#\.at\.vu$
+#\.co\.at\.vu$
+#\.or\.at\.vu$
+#\.ch\.vu$
+#\.nl\.vu$
+#\.ca\.vu$
+#\.tr\.vu$
+#\.com\.tr\.vu$
+#\.net\.tr\.vu$
+#\.org\.tr\.vu$
+#\.biz\.tr\.vu$
+#\.info\.tr\.vu$
+#\.web\.tr\.vu$
+#\.name\.tr\.vu$
+#\.gen\.tr\.vu$
+#\.gov\.tr\.vu$
+#\.edu\.tr\.vu$
+#\.av\.tr\.vu$
+#\.dr\.tr\.vu$
+#\.pol\.tr\.vu$
+#\.bel\.tr\.vu$
+#\.tsk\.tr\.vu$
+#\.k12\.tr\.vu$
+#\.bbs\.tr\.vu$
+#\.tel\.tr\.vu$
+#\.gr\.vu$
+#\.com\.gr\.vu$
+#\.net\.gr\.vu$
+#\.org\.gr\.vu$
+#\.edu\.gr\.vu$
+#\.gov\.gr\.vu$
+#\.ru\.vu$
+#\.pl\.vu$
+#\.es\.vu$
+#\.za\.vu$
 
-:notice||Please visit http://www.nic.nl.vu/us/whois/ and enter the CAPTCHA.
-\.nl\.vu$
+#:notice||Please visit http://us.mediadots.com/whois/ and enter the CAPTCHA.
+#\.eu\.mn$
+#\.at\.mn$
+#\.co\.at\.mn$
+#\.fr\.mn$
+#\.uk\.mn$
+#\.co\.uk\.mn$
+#\.us\.mn$
+#\.nl\.mn$
+#\.it\.mn$
+#\.au\.mn$
+#\.com\.au\.mn$
+#\.cn\.mn$
+#\.jp\.mn$
+
+#:notice||Please visit http://www.nic.nl.vu/us/whois/ and enter the CAPTCHA.
+#\.nl\.vu$
 
 # Seems to be defunct, see some cached version of the old site here: http://feeds.feedburner.com/copasit
 # :notice||Please visit http://us.smartdots.com/whois/ and enter the CAPTCHA.

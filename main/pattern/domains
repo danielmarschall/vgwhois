@@ -1,4 +1,4 @@
-#: version 20220203
+#: version 20220303
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3626,7 +3626,8 @@
 
 # Delegated on 23 September 2014
 #:whois|whois-dub.mm-registry.com
-:whois|whois.nic.budapest
+#:whois|whois.nic.budapest
+:notice||Disallocated by IANA
 \.budapest$
 
 # Delegated on 23 September 2014
@@ -6532,7 +6533,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-01-29)
+:notice||Whois server unknown (2022-02-28)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6625,7 +6626,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-01-29)
+:notice||Whois server unknown (2022-02-28)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
