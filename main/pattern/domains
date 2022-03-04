@@ -2942,7 +2942,8 @@
 
 # Delegated on 28 May 2014 to Suhub Electronic Establishment
 # Arabic for "site"
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--4gbrim
 \.xn--4gbrim$
 
 # Delegated on 30 May 2014 to DotWebsite Inc.
