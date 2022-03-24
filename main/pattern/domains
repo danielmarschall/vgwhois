@@ -1,4 +1,4 @@
-#: version 20220303
+#: version 20220324
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -286,7 +286,8 @@
 #:cgipost|https://secure.domains.dm/tools/whois.jsp|whois=~namewotld~
 #:notice||Please go to http://www.nic.dm/whois.php (uses AJAX)
 #:cgi|http://www.nic.dm/getwhois.php?domain=~query~
-:whois|whois.nic.dm
+#:whois|whois.nic.dm
+:whois|whois.dmdomains.dm
 \.dm$
 
 #:cgipost|http://ns.nic.do/whois.php3|T1=~1~&do=~2~
@@ -6534,7 +6535,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-02-28)
+:notice||Whois server unknown (2022-03-22)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6627,7 +6628,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-02-28)
+:notice||Whois server unknown (2022-03-22)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
