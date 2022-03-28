@@ -1,4 +1,4 @@
-#: version 20220324
+#: version 20220328
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1050,6 +1050,7 @@
 :whois|whois.ati.tn
 \.tn$
 
+#:cgi|https://www.tonic.to/whois?~query~
 :whois|whois.tonic.to
 \.to$
 
@@ -2870,7 +2871,8 @@
 \.loans$
 
 # Delegated on 15 May 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.hiphop
 \.hiphop$
 
 # Delegated on 15 May 2014 to Uniregistry, Corp.
