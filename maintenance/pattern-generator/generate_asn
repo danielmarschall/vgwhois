@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
-#  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2012-2022 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -35,7 +35,13 @@ $iana_asn_data = array_map('trim', $iana_asn_data);
 
 echo "ASN: Parsing...\n";
 
-$version = trim(str_replace('-', '', $iana_asn_data[3]));
+$version = '';
+foreach ($iana_asn_data as $i => $line) {
+	if (trim($line) == 'Last Updated') {
+		$version = trim(str_replace('-', '', $iana_asn_data[$i+1]));
+	}
+}
+if ($version == '') die('ERROR: Cannot detect version of IANA ASN file ('.__FILE__.')');
 
 $iana_asn_data = grep($iana_asn_data, 'whois');
 
