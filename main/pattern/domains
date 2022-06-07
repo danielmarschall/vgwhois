@@ -1,4 +1,4 @@
-#: version 20220330
+#: version 20220607
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1375,7 +1375,8 @@
 :inicwhois|whois.verisign-grs.com
 \.net$
 
-:whois|whois.pir.org
+#:whois|whois.pir.org
+:whois|whois.publicinterestregistry.org
 \.org$
 
 #:whois|whois.registrypro.pro
@@ -2393,7 +2394,8 @@
 
 # Delegated on 5 March 2014 to Public Interest Registry
 # Russian for "organization/org"
-:whois|whois.publicinterestregistry.net
+#:whois|whois.publicinterestregistry.net
+:whois|whois.nic.xn--c1avg
 \.xn--c1avg$
 
 # Delegated on 9 March 2014 to Public Interest Registry
@@ -2404,12 +2406,14 @@
 
 # Delegated on 9 March 2014 to Public Interest Registry
 # Hindi for "organization/sangathana"
-:whois|whois.publicinterestregistry.net
+#:whois|whois.publicinterestregistry.net
+:whois|whois.nic.xn--i1b6b1a6a2e
 \.xn--i1b6b1a6a2e$
 
 # Delegated on 9 March 2014 to Public Interest Registry
 # Chinese for "agencies/institutions"
-:whois|whois.publicinterestregistry.net
+#:whois|whois.publicinterestregistry.net
+:whois|whois.nic.xn--nqv7f
 \.xn--nqv7f$
 
 # Delegated on 12 March 2014 to Stable Tone Limited
@@ -3226,7 +3230,8 @@
 \.nra$
 
 # Delegated on 18 July 2014
-:whois|whois.publicinterestregistry.net
+#:whois|whois.publicinterestregistry.net
+:whois|whois.nic.ngo
 \.ngo$
 
 # Delegated on 18 July 2014
@@ -3254,7 +3259,8 @@
 \.praxi$
 
 # Delegated on 28 July 2014
-:whois|whois.publicinterestregistry.net
+#:whois|whois.publicinterestregistry.net
+:whois|whois.nic.ong
 \.ong$
 
 # Delegated on 28 July 2014
@@ -6537,7 +6543,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-03-30)
+:notice||Whois server unknown (2022-06-03)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6630,7 +6636,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-03-30)
+:notice||Whois server unknown (2022-06-03)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
@@ -6653,3 +6659,6 @@
 
 :whois|whois.nic.music
 \.music$
+
+:whois|whois.afilias-srs.net
+\.kids$
