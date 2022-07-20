@@ -5,7 +5,7 @@ Comment: VGWhoIs (ViaThinkSoft Global WhoIs) is a fork of the package gwhois by 
 Files: *
 Copyright: 1998-2012, Juliane Holzt <debian@julijane.de> and contributors
                       Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.De> (Previous Co-Author)
-           2010-2019, Daniel Marschall <daniel-marschall@viathinksoft.de>
+           2010-2022, Daniel Marschall <daniel-marschall@viathinksoft.de>
 License: GPL-2
 
 Files: maintenance/*

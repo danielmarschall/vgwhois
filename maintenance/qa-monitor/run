@@ -206,41 +206,6 @@ if ($loc_good) {
 
 # ---
 
-echo "* Check if testcases require attention\n";
-
-$loc_good = true;
-
-# First check tesetcases in background, if necessary
-
-$out = array();
-exec(DIR . "/testcases/batch --mode b", $out, $ec);
-
-if ($ec > 2) {
-	$loc_good = false;
-	echo "[ !! ] testcases/batch error code $ec\n";
-	echo trim(implode("\n", $out))."\n";
-}
-
-# Now check if testcases require attention
-
-$out = array();
-exec(DIR . '/testcases/status_short', $out, $ec);
-
-if ($ec != 0) {
-	$loc_good = false;
-	echo trim(implode("\n", $out))."\n";
-}
-
-# Status?
-
-if ($loc_good) {
-	echo "[ OK ]\n";
-} else {
-	$global_status=1;
-}
-
-# ---
-
 echo "* Check the status of whois-ping\n";
 
 $loc_good = true;

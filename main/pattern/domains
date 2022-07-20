@@ -1,4 +1,4 @@
-#: version 20220710
+#: version 20220720
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6020,7 +6020,8 @@
 :whois|whois.nic.gmo
 \.fujitsu$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.godaddy
 \.godaddy$
 
 :whois|whois.nic.gmo
@@ -6544,7 +6545,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-07-10)
+:notice||Whois server unknown (2022-07-17)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6637,7 +6638,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-07-10)
+:notice||Whois server unknown (2022-07-17)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la

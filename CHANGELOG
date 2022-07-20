@@ -7,6 +7,10 @@ It was last forked / sync'ed with following gwhois version:
 
 === History of VGWhoIs ===
 
+(Note that VGWhoIs is very frequently updated in regards pattern files.
+ These regular pattern updates are not listed in this changelog.)
+
+2022-07-20	maintenance	marschall	"Test case" maintenance tool discontinued and removed from source code.
 2019-04-29	program		marschall	Removed Debian package code. Distribution now via SVN!
 						New directory structure strictly separates between gwhois itself ("main") and the maintenance programs ("maintenance")
 2015-05-06	program		marschall	pattern.d/* will now be preferred.
