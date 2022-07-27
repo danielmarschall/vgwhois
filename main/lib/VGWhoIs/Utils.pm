@@ -2,7 +2,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Main program
 #
-#  (c) 2010-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2010-2022 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #  based on the code (c) 1998-2010 by Juliane Holzt <debian@kju.de>
 #  Some early parts by Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.de>
 #
@@ -22,7 +22,25 @@ sub VGWhoIs::Utils::lynxsource {
 	$url = quotemeta($url);
 # LYNX sometimes hangs in combination with TOR
 #	return qx{lynx -connect_timeout=10 -source $url};
-	return qx{curl --user-agent "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0" --silent --max-time 10 $url};
+	return qx{curl --insecure --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" --silent --max-time 10 $url};
+}
+
+sub VGWhoIs::Utils::lynxrender {
+	my ($url) = @_;
+	$url = quotemeta($url);
+
+	use File::Basename;
+	my $script_dir = undef;
+	if(-l __FILE__) {
+		$script_dir = dirname(readlink(__FILE__));
+	} else {
+		$script_dir = dirname(__FILE__);
+	}
+	$script_dir = quotemeta($script_dir);
+
+	my $result = qx{lynx -cfg $script_dir/../lynx.cfg -dump -connect_timeout=10 $url 2>&1};
+	$result .= "FAILED with exit code $?\n\n" if $?;
+	return $result;
 }
 
 # $line = htmlpre($line);

@@ -2,7 +2,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Main program
 #
-#  (c) 2010-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2010-2022 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #  based on the code (c) 1998-2010 by Juliane Holzt <debian@kju.de>
 #  Some early parts by Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.de>
 #
@@ -334,26 +334,25 @@ sub VGWhoIs::Core::doquery {
 	elsif ($method eq 'cgi') {
 		my ($protocol, $hostname) = VGWhoIs::Utils::splitProtocolHost($host);
 
-		print "Querying $hostname ($protocol) with cgi.\n\n";
-#!!
-#		print "$host\n";
+		print "Querying $hostname ($protocol) with cgi:\n$host\n\n";
 
-# TODO: lynx seems to be better in some ways!
-#       For example, a website that outputs "text/plain" will be rendered correct in lynx!
-#		$result = `lynx -connect_timeout=10 -dump "$host" 2>&1`;
-#		$result .= "FAILED with exit code $?\n\n" if $?;
+		$result = VGWhoIs::Utils::lynxrender($host);
+
+
+# Old:
 
 #		$result = `curl --max-time 10 --stderr /dev/null "$host" 2>&1`; # TODO escape
 
 		# TODO: VGWhoIs::Core::getsource ok? war vorher IMMER lynx
-		my ($loc_text, $loc_exitcode) = VGWhoIs::Core::getsource($host);
+#		my ($loc_text, $loc_exitcode) = VGWhoIs::Core::getsource($host);
 
-		$exitcode = max($exitcode, $loc_exitcode);
-		if ($loc_exitcode) {
-			$result .= "Query to web server failed.\n";
-		} else {
-			$result = VGWhoIs::Utils::render_html($loc_text);
-		}
+#		$exitcode = max($exitcode, $loc_exitcode);
+#		if ($loc_exitcode) {
+#			$result .= "Query to web server failed.\n";
+#		} else {
+#			$result = VGWhoIs::Utils::render_html($loc_text);
+#		}
+
 	}
 
 	elsif ($method eq 'cgipost') {

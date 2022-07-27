@@ -1,4 +1,4 @@
-#: version 20220720
+#: version 20220727
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -866,7 +866,8 @@
 \.ru$
 
 #:cgipost|http://www.nic.rw/cgi-bin/whois.pl|DOMAINWHOIS=~query~
-:notice||A captcha is neccessary to access the information. Please visit: http://www.dnsafrica.net/cgi-bin/whois.pl (last checked Jan 2012)
+#:notice||A captcha is neccessary to access the information. Please visit: http://www.dnsafrica.net/cgi-bin/whois.pl (last checked Jan 2012)
+:whois|whois.ricta.org.rw
 \.rw$
 
 #:whois|whois.saudinic.net.sa
@@ -1080,7 +1081,8 @@
 :whois|whois.ua
 \.ua$
 
-:whois|whois.co.ug
+#:whois|whois.co.ug
+:cgi|https://whois.co.ug/?domain=~query~
 \.ug$
 
 :whois|whois.ja.net
@@ -6545,7 +6547,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-07-17)
+:notice||Whois server unknown (2022-07-24)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6638,7 +6640,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-07-17)
+:notice||Whois server unknown (2022-07-24)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
