@@ -1,4 +1,4 @@
-#: version 20220727
+#: version 20220804
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -2493,7 +2493,8 @@
 \.miami$
 
 # Delegated on 31 March 2014 to Dot Vegas, Inc.
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.vegas
 \.vegas$
 
 # Delegated on 31 March 2014 to Top Level Domain Holdings Limited
@@ -6547,7 +6548,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-07-24)
+:notice||Whois server unknown (2022-07-31)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6640,7 +6641,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-07-24)
+:notice||Whois server unknown (2022-07-31)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
