@@ -1,4 +1,4 @@
-#: version 20220804
+#: version 20220807
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -341,11 +341,20 @@
 :whois|whois.fi
 \.fi$
 
-# Whois server whois.domains.fj is online, but it is slowly and does not show the full address
-# so we use our subprogram that parses the website
-#:whois|whois.domains.fj
-#:cgi|http://domains.fj/public/whois.php?searchDomainName=~namewotld~&searchTopLevel=~tld~&submitSearch=Search
-:program|$vgwhois$/subprograms/fj
+#:notice||Go to https://www.whois.fj/whois.jsp and enter the CAPTCHA
+:whois|www.whois.fj
+# List according to https://www.domains.fj/cart.php?a=add&domain=register&query=test
+\.ac.fj$
+\.biz.fj$
+\.com.fj$
+\.info.fj$
+\.mil.fj$
+\.name.fj$
+\.net.fj$
+\.org.fj$
+\.pro.fj$
+# Other domains like isn.school.fj do not work via the WHOIS service
+:notice||No WHOIS service available for this FJ-subdomain. Please check https://www.whois.fj/whois.jsp and file a bug report at VGWhoIs if it is possible.
 \.fj$
 
 :notice||No whois, no domain list. Homepage http://www.fidc.org.fk/ (last checked Sep 2005)
@@ -6548,7 +6557,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-07-31)
+:notice||Whois server unknown (2022-08-07)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6641,7 +6650,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-07-31)
+:notice||Whois server unknown (2022-08-07)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
