@@ -1,4 +1,4 @@
-#: version 20220807
+#: version 20220829
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -2031,7 +2031,8 @@
 \.zone$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.guitars
 \.guitars$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
@@ -2091,7 +2092,8 @@
 \.pink$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.pics
 \.pics$
 
 # Delegated on 18 January 2014 to Plan Bee, LLC
@@ -2365,7 +2367,8 @@
 \.pub$
 
 # Delegated on 26 February 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.christmas
 \.christmas$
 
 # Delegated on 27 February 2014 to BestTLD Pty Ltd
@@ -2893,7 +2896,8 @@
 \.hiphop$
 
 # Delegated on 15 May 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.audio
 \.audio$
 
 # Delegated on 15 May 2014 to Snow Moon, LLC
@@ -3355,7 +3359,8 @@
 \.property$
 
 # Delegated on 16 August 2014
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.hosting
 \.hosting$
 
 # Delegated on 16 August 2014
@@ -3380,7 +3385,8 @@
 \.how$
 
 # Delegated on 16 August 2014
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.diet
 \.diet$
 
 # Delegated on 16 August 2014
@@ -3970,7 +3976,8 @@
 :whois|whois.nic.amsterdam
 \.amsterdam$
 
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.flowers
 \.flowers$
 
 #:whois|whois.nic.gmo
@@ -4491,7 +4498,8 @@
 \.liaison$
 
 #:whois|whois.nic.lol
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.lol
 \.lol$
 
 :notice||Disallocated by IANA
@@ -4753,7 +4761,8 @@
 :whois|whois.nic.bcn
 \.bcn$
 
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.game
 \.game$
 
 :whois|whois.nic.jprs
@@ -4949,7 +4958,8 @@
 :whois|whois.nic.seek
 \.seek$
 
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.mom
 \.mom$
 
 :whois|whois.nic.xn--efvy88h
@@ -5870,7 +5880,8 @@
 :whois|whois.nic.gmo
 \.hisamitsu$
 
-:whois|whois.nic.gmo
+#:whois|whois.nic.gmo
+:whois|whois.nic.pioneer
 \.pioneer$
 
 :whois|whois.nic.zappos
@@ -6557,7 +6568,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-08-07)
+:notice||Whois server unknown (2022-08-28)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6650,7 +6661,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-08-07)
+:notice||Whois server unknown (2022-08-28)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
