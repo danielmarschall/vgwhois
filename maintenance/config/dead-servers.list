@@ -30,8 +30,6 @@ whois.itdc.ge
 whois.nic.dz
 # first fail: 2019-10-02
 whois.cmc.iq
-# first fail: 2022-07-17
-whois.co.ug
 
 # does not listen to public IPs anymore. The whois server only accepts calls from the web interface
 whois.registry.hm

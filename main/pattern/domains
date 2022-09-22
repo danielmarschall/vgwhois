@@ -1,4 +1,4 @@
-#: version 20220829
+#: version 20220922
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1090,8 +1090,8 @@
 :whois|whois.ua
 \.ua$
 
-#:whois|whois.co.ug
-:cgi|https://whois.co.ug/?domain=~query~
+#:cgi|https://whois.co.ug/?domain=~query~
+:whois|whois.co.ug
 \.ug$
 
 :whois|whois.ja.net
@@ -6568,7 +6568,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-08-28)
+:notice||Whois server unknown (2022-09-19)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6661,7 +6661,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-08-28)
+:notice||Whois server unknown (2022-09-19)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
