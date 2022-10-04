@@ -2,8 +2,8 @@
 
 /*
  * IPv6 functions for PHP
- * Copyright 2012-2021 Daniel Marschall, ViaThinkSoft
- * Version 2021-05-21
+ * Copyright 2012-2022 Daniel Marschall, ViaThinkSoft
+ * Version 2022-09-22
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -378,11 +378,8 @@ function ipv6_line2range($line) {
 		$rng = ipv6_cidr2range($line);
 	} else {
 		$rng = explode('-', $line);
-		$rng[0] = trim($rng[0]);
-		$rng[1] = trim($rng[1]);
-		$rng[0] = ipv6_normalize($rng[0]);
-		if (!isset($rng[1])) $rng[1] = $rng[0];
-		$rng[1] = ipv6_normalize($rng[1]);
+		$rng[0] = ipv6_normalize(trim($rng[0]));
+		$rng[1] = isset($rng[1]) ? ipv6_normalize(trim($rng[1])) : $rng[0];
 	}
 
 	return $rng;
@@ -452,12 +449,7 @@ function long2ip6($ipv6long, $compress=true) {
 
 	// $bin = gmp_strval(gmp_init($ipv6long, 10), 2);
 	$bin = gmp_strval($ipv6long, 2);
-	if (strlen($bin) < 128) {
-		$pad = 128 - strlen($bin);
-		for ($i = 1; $i <= $pad; $i++) {
-			$bin = '0'.$bin;
-		}
-	}
+	$bin = str_pad($bin, 128, '0', STR_PAD_LEFT);
 
 	$bytes = 0;
 	$ipv6 = '';
@@ -724,10 +716,7 @@ if (!function_exists('bin2ip')) {
 			$cache_bin2ip[$bin] = false;
 			return false;
 		}
-		$pad = 128 - strlen($bin);
-		for ($i = 1; $i <= $pad; $i++) {
-			$bin = '0'.$bin;
-		}
+		//$bin = str_pad($bin, 128, '0', STR_PAD_LEFT);
 		$bits = 0;
 		$ipv6 = ''; # added by vts to avoid warning
 		while ($bits <= 7) {
