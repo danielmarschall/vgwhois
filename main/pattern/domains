@@ -1,4 +1,4 @@
-#: version 20221011
+#: version 20221016
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3190,7 +3190,7 @@
 \.direct$
 
 # Delegated on 3 July 2014
-:whois|whois.nic.cancerresearch
+:notice||Disallocated by IANA
 \.cancerresearch$
 
 # Delegated on 3 July 2014
@@ -3364,7 +3364,8 @@
 \.hosting$
 
 # Delegated on 16 August 2014
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.help
 \.help$
 
 # Delegated on 16 August 2014
@@ -5175,7 +5176,7 @@
 :whois|whois.nic.bostik
 \.bostik$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.bugatti$
 
 :whois|whois.afilias-srs.net
