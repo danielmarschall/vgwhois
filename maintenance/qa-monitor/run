@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
-#  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2012-2022 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -164,23 +164,23 @@ if ($loc_good) {
 
 # ---
 
-$own_debian = '20120626.1.3';
-$own_github = 4; // Latest commit f712050  on 30 Nov 2018
+$their_debian = getLatestGWIversion();
+$own_debian_base = '20120626.0-1'; // 17 October 2022: Taken over by Debian QA Team. No difference in the code towards gwhois_20120626-1.3, just Debian files changed.
+
+$their_github = github_commit_count('julijane', 'gwhois'); // this repo is dead
+$own_github_base = 4; // Latest commit f712050  on 30 Nov 2018
 
 echo "* Check if there is a newer official version of gwhois which needs to be merged with the ViaThinkSoft fork\n";
 
-$their_debian = str_replace('-', '.', getLatestGWIversion()); // they use the reserved '-' character in their versions (used for delimiting upstream versions)
-$their_github = github_commit_count('julijane', 'gwhois');
-
 $loc_good = true;
 
-if ($own_debian != $their_debian) {
-	echo '[ !! ] Their DEBIAN version: '.$their_debian." (Our version is based on: ".$own_debian.")\n";
+if ($own_debian_base != $their_debian) {
+	echo '[ !! ] Their DEBIAN version: '.$their_debian." (Our version is based on: ".$own_debian_base.")\n";
 	$loc_good = false;
 }
 
-if ($own_github != $their_github) {
-	echo '[ !! ] Their GITHUB version: '.$their_github." (Our version is based on: ".$own_github.")\n";
+if ($own_github_base != $their_github) {
+	echo '[ !! ] Their GITHUB version: '.$their_github." (Our version is based on: ".$own_github_base.")\n";
 	$loc_good = false;
 }
 
