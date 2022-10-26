@@ -1,4 +1,4 @@
-#: version 20221016
+#: version 20221025
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6569,7 +6569,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-10-11)
+:notice||Whois server unknown (2022-10-25)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6662,7 +6662,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-10-11)
+:notice||Whois server unknown (2022-10-25)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
