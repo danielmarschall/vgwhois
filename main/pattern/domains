@@ -1,4 +1,4 @@
-#: version 20221025
+#: version 20221103
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -777,7 +777,8 @@
 :whois|whois.iis.nu
 \.nu$
 
-:whois|whois.srs.net.nz
+#:whois|whois.srs.net.nz
+:whois|whois.irs.net.nz
 \.nz$
 
 # --- Dead code. omnic.om is not registered anymore.
@@ -6569,7 +6570,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-10-25)
+:notice||Whois server unknown (2022-11-01)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6662,7 +6663,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-10-25)
+:notice||Whois server unknown (2022-11-01)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
