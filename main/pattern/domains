@@ -1,4 +1,4 @@
-#: version 20221103
+#: version 20221120
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -389,17 +389,18 @@
 #:whois|whois.registration.ge
 #:cgi|https://nic.ge/en/search?domain=~query~
 #:whois|nic.net.ge
+#:whois|whois.itdc.ge
 :whois|whois.nic.ge
 \.ge$
 
 #:notice||Homepage http://www.nplus.gf/
-# :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-:program|$vgwhois$/subprograms/mq_gf_gp
+#:cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
+# Note: The program mq_gf_gp also works for .mq , but it is better to use a real whois server
+#:program|$vgwhois$/subprograms/mq_gf_gp
 # Note: IANA states that whois.mediaserv.net is the official whois.
-#        This whois server accepts the domainds "tld", "mq", "gf" and "gp"
-#        (A syntax can be displayed if you display something invalid to the whois server, for example "example.com")
-#        However, this whois-server don't seem to reply with verbose information. The holder, admin_c etc, shows "No object found"
-#:whois|whois.mediaserv.net
+#       The servers says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
+#       However, .gp does not seems to work, as everything is "object not found"
+:whois|whois.mediaserv.net
 \.gf$
 
 #:whois|whois.isles.net
@@ -423,10 +424,15 @@
 :notice||No whois, no domain list. Homepage http://psg.com/dns/gn (2/2008)
 \.gn$
 
-# :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-# :program|$vgwhois$/subprograms/mq_gf_gp
-# :whois|whois.nic.gp
-:notice||Please go to https://whois.nic.gp/ and enter the captcha. [Oct 2021]
+#:cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
+#:notice||Please go to https://whois.nic.gp/ and enter the captcha. [Oct 2021]
+# Note: The server whois.mediaserv.net says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
+#       However, .gp does not seems to work, as everything is "object not found"
+#       whois.nic.gp (= server in IANA DB) seems to be a real whois server, but it does not seem to accept
+#       connections from outside. The www.dom-enic.com page (called by the mq_gf_gp program)
+#       shows an output which seems to be an internal reply from whois.nic.gp.
+#:whois|whois.nic.gp
+:program|$vgwhois$/subprograms/mq_gf_gp
 \.gp$
 
 #:notice||No whois, no domain list. Homepage http://www.getesa.gq/ (last checked Sep 2005)
@@ -686,14 +692,14 @@
 :notice||Whois gone [Sep 2013]
 \.mp$
 
-# :notice||Homepage http://www.nic.mq/
-# :cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-:program|$vgwhois$/subprograms/mq_gf_gp
+#:notice||Homepage http://www.nic.mq/
+#:cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
+# Note: The program mq_gf_gp also works for .mq , but it is better to use a real whois server
+#:program|$vgwhois$/subprograms/mq_gf_gp
 # Note: IANA states that whois.mediaserv.net is the official whois.
-#        This whois server accepts the domainds "tld", "mq", "gf" and "gp"
-#        (A syntax can be displayed if you display something invalid to the whois server, for example "example.com")
-#        However, this whois-server don't seem to reply with verbose information. The holder, admin_c etc, shows "No object found"
-#:whois|whois.mediaserv.net
+#       The servers says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
+#       However, .gp does not seems to work, as everything is "object not found"
+:whois|whois.mediaserv.net
 \.mq$
 
 #:notice||No whois, no domain list. Homepage http://www.nic.mr/ (2/2008)
@@ -1670,7 +1676,8 @@
 \.construction$
 
 # Delegated on 14 November 2013 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.sexy
 \.sexy$
 
 # Delegated on 14 November 2013 to Sugar House, LLC
@@ -2527,8 +2534,8 @@
 
 # Delegated on 31 March 2014 to Uniregistry, Corp.
 #:whois|whois-dub.mm-registry.com
-#:whois|whois.nic.country
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.country
 \.country$
 
 # Delegated on 31 March 2014 to Top Level Domain Holdings Limited
@@ -2998,7 +3005,8 @@
 
 # Delegated on 31 May 2014 to dotHIV gemeinnuetziger e.V.
 #:whois|whois.afilias-srs.net
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.hiv
 \.hiv$
 
 # Delegated on 31 May 2014 to United TLD Holdco, Ltd.
@@ -3356,7 +3364,8 @@
 \.ltda$
 
 # Delegated on 16 August 2014
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.property
 \.property$
 
 # Delegated on 16 August 2014
@@ -3392,7 +3401,8 @@
 \.diet$
 
 # Delegated on 16 August 2014
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.click
 \.click$
 
 # Delegated on 22 August 2014
@@ -6570,7 +6580,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-11-01)
+:notice||Whois server unknown (2022-11-15)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6663,7 +6673,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-11-01)
+:notice||Whois server unknown (2022-11-15)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
