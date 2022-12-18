@@ -20,4 +20,4 @@ parameters:
 		#- '#Call to function assert\(\) with false will always evaluate to false\.#'
 		#- '#with no typehint specified\.#'
 		# Bug in PHPstan: If you have function() definitions after exit(), this error comes ( https://github.com/phpstan/phpstan/issues/4002 )
-		- '#Unreachable statement - code above always terminates.#'
+		#- '#Unreachable statement - code above always terminates.#'
