@@ -1,4 +1,4 @@
-#: version 20221218
+#: version 20221227
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -560,8 +560,7 @@
 :notice||No whois, no domain list. Homepage http://www.mptc.gov.kh/Reculation/dns_reualation.htm (last checked Sep 2005)
 \.kh$
 
-#:whois|whois.nic.ki
-:notice||Whois gone [Apr 2019]
+:whois|whois.nic.ki
 \.ki$
 
 :notice||No whois, no domain list. Homepage http://www.domaine.km/ (last checked Sep 2005)
@@ -2301,7 +2300,7 @@
 
 # Delegated on 12 February 2014 to dotCOOL, Inc.
 :whois|whois.nic.qpon
-.qpon$
+\.qpon$
 
 # Delegated on 16 February 2014 to Punto FA S.L.
 #:whois|whois.mango.coreregistry.net
@@ -2317,7 +2316,7 @@
 
 # Delegated on 19 February 2014 to NeuStar, Inc,
 :whois|whois.nic.neustar
-.neustar$
+\.neustar$
 
 # Delegated on 19 February 2014 to Top Level Design, LLC
 #:whois|whois.centralnic.com
@@ -2386,7 +2385,7 @@
 
 # Delegated on 27 February 2014 to KredTLD Pty Ltd
 :whois|whois.nic.kred
-.kred$
+\.kred$
 
 # Delegated on 27 February 2014 to Punto 2012 Sociedad Anonima Promotora de Inversion de Capital Variable
 #:whois|whois.centralnic.com
@@ -2405,7 +2404,7 @@
 
 # Delegated on 2 March 2014 to BusinessRalliart Inc.
 :whois|whois.nic.okinawa
-.okinawa$
+\.okinawa$
 
 # Delegated on 2 March 2014 to dot Bid Limited
 :whois|whois.nic.bid
@@ -2443,11 +2442,11 @@
 # Delegated on 12 March 2014 to Stable Tone Limited
 # Chinese for "world/shijie"
 :whois|whois.nic.xn--rhqv96g
-.xn--rhqv96g$
+\.xn--rhqv96g$
 
 # Delegated on 15 March 2014 to New TLD Company
 :whois|whois.nic.jetzt
-.jetzt$
+\.jetzt$
 
 # Delegated on 11 March 2014 to Top Level Design, LLC
 #:whois|whois.centralnic.com
@@ -2456,7 +2455,7 @@
 
 # Delegated on 11 March 2014 to Dai Nippon Printing Co., Ltd.
 :whois|whois.nic.dnp
-.dnp$
+\.dnp$
 
 # Delegated on 19 March 2014 to Elite Registry Limited
 :whois|whois.nic.trade
@@ -2468,7 +2467,7 @@
 
 # Delegated on 19 March 2014 to AXA SA
 :whois|whois.nic.axa
-.axa$
+\.axa$
 
 # Delegated on 19 March 2014 to NetCologne Gesellschaft fuer Telekommunikation mbH
 #:whois|whois-fe1.pdt.cologne.tango.knipp.de
@@ -2477,7 +2476,7 @@
 
 # Delegated on 20 March 2014 to The City of New York by and through the New York City Department of Information Technology & Telecommunications
 :whois|whois.nic.nyc
-.nyc$
+\.nyc$
 
 # Delegated on 22 March 2014 to Dot London Domains Limited
 #:whois|whois-lon.mm-registry.com
@@ -2486,7 +2485,7 @@
 
 # Delegated on 25 March 2014 to Sohu.com Limited
 :whois|whois.nic.sohu
-.sohu$
+\.sohu$
 
 # Delegated on 27 March 2014 to Afilias Limited
 #:whois|whois.afilias.net
@@ -2495,7 +2494,7 @@
 
 # Delegated on 27 March 2014 to Beijing Qianxiang Wangjing Technology Development Co., Ltd.
 :whois|whois.nic.ren
-.ren$
+\.ren$
 
 # Delegated on 27 March 2014 to Afilias Limited
 #:whois|whois.afilias.net
@@ -2831,7 +2830,7 @@
 
 # Delegated on 29 April 2014 to CITIC Group Corporation
 :whois|whois.nic.citic
-.citic$
+\.citic$
 
 # Delegated on 29 April 2014 to World Trade Centers Association, Inc.
 :whois|whois.nic.wtc
@@ -4814,42 +4813,6 @@
 :whois|whois.nic.ubs
 \.ubs$
 
-:whois|whois.nic.axa
-\.axa$
-
-:whois|whois.nic.citic
-\.citic$
-
-:whois|whois.nic.dnp
-\.dnp$
-
-:whois|whois.nic.jetzt
-\.jetzt$
-
-:whois|whois.nic.kred
-\.kred$
-
-:whois|whois.nic.neustar
-\.neustar$
-
-:whois|whois.nic.nyc
-\.nyc$
-
-:whois|whois.nic.okinawa
-\.okinawa$
-
-:whois|whois.nic.qpon
-\.qpon$
-
-:whois|whois.nic.ren
-\.ren$
-
-:whois|whois.nic.sohu
-\.sohu$
-
-:whois|whois.nic.xn--rhqv96g
-\.xn--rhqv96g$
-
 #:whois|whois-lancaster.nic.fr
 :whois|whois.nic.lancaster
 \.lancaster$
@@ -5550,7 +5513,7 @@
 \.wolterskluwer$
 
 :whois|whois.eu
-.xn--e1a4c$
+\.xn--e1a4c$
 
 :whois|whois.monic.mo
 \.xn--mix891f$
@@ -5934,9 +5897,6 @@
 
 :whois|whois.nic.tdk
 \.tdk$
-
-:whois|whois.eu
-\.xn--e1a4c$
 
 :whois|whois.nic.airbus
 \.airbus$
@@ -6580,7 +6540,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-12-13)
+:notice||Whois server unknown (2022-12-27)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6673,7 +6633,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2022-12-13)
+:notice||Whois server unknown (2022-12-27)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la

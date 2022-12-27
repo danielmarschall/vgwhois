@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
-#  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2012-2022 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -42,7 +42,7 @@ $domains_cont_new = preg_replace_callback(
 			return str_replace($in_ts, date('Y-m-d'), $in_all);
 		} else {
 			// Update the entry
-			return ":whois|$whois_serv\n.${in_tld}\$\n";
+			return ":whois|$whois_serv\n\\.${in_tld}\$\n";
 		}
 	},
 	$domains_cont_original
@@ -77,7 +77,7 @@ foreach ($iana_tld_data as $tld) {
 			$to_append .= "# TODO: Entry generated automatically. Needs manual check.\n";
 			$to_append .= ":notice||Whois server unknown (".date('Y-m-d').")\n";
 		}
-		$to_append .= "\\.$tld$\n";
+		$to_append .= "\\.$tld\$\n";
 
 		file_put_contents(DOMAINS_PATTERN_FILE, $to_append, FILE_APPEND);
 
@@ -154,6 +154,6 @@ function find_rootzone_whois_server($tld) {
 function iana_get_rootzone_whois_server($tld) {
 	$tld  = strtolower($tld);
 	$cont = QueryWhoisServer('whois.iana.org', $tld);
-	if (!preg_match('@whois:\\s*(\\S+)@i', $cont, $m)) return false;
+	if (!preg_match('@whois:[ \\t]*(\\S+)@i', $cont, $m)) return false;
 	return $m[1];
 }
