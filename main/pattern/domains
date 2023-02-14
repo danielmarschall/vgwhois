@@ -1,4 +1,4 @@
-#: version 20230123
+#: version 20230214
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1074,7 +1074,8 @@
 :notice||Disallocated by IANA. It was replaced with .tl
 \.tp$
 
-:whois|whois.nic.tr
+#:whois|whois.nic.tr
+:whois|whois.trabis.gov.tr
 \.tr$
 
 #:cgipost|http://www.nic.tt/cgi-bin/search.pl|name=~query~
@@ -6540,7 +6541,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-01-18)
+:notice||Whois server unknown (2023-02-08)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6634,7 +6635,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-01-18)
+:notice||Whois server unknown (2023-02-08)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
