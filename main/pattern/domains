@@ -1,4 +1,4 @@
-#: version 20230320
+#: version 20230601
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6231,7 +6231,7 @@
 :whois|whois.nic.mckinsey
 \.mckinsey$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.alfaromeo$
 
 :whois|whois.nic.bofa
@@ -6241,7 +6241,7 @@
 :whois|whois.nic.ferrari
 \.ferrari$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.fiat$
 
 :whois|whois.nic.juniper
@@ -6253,7 +6253,7 @@
 :whois|whois.nic.nba
 \.nba$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.abarth$
 
 :whois|whois.nic.athleta
@@ -6281,7 +6281,7 @@
 :whois|whois.nic.gap
 \.gap$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.lancia$
 
 #:whois|whois.afilias-srs.net
@@ -6291,8 +6291,7 @@
 :notice||Disallocated by IANA
 \.loft$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.maserati
+:notice||Disallocated by IANA
 \.maserati$
 
 :whois|whois.nic.oldnavy
@@ -6541,7 +6540,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-03-15)
+:notice||Whois server unknown (2023-06-01)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6635,7 +6634,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-03-15)
+:notice||Whois server unknown (2023-06-01)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
