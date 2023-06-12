@@ -1,4 +1,4 @@
-#: version 20230601
+#: version 20230612
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -5117,7 +5117,8 @@
 :whois|whois.nic.cityeats
 \.cityeats$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.creditunion
 \.creditunion$
 
 :whois|whois.nic.lifestyle
@@ -6540,7 +6541,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-06-01)
+:notice||Whois server unknown (2023-06-08)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6634,7 +6635,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-06-01)
+:notice||Whois server unknown (2023-06-08)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
