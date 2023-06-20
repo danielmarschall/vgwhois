@@ -1,4 +1,4 @@
-#: version 20230612
+#: version 20230620
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -5954,16 +5954,16 @@
 :whois|whois.nic.art
 \.art$
 
-:whois|whois.nic.cookingchannel
+:notice||Disallocated by IANA
 \.cookingchannel$
 
-:whois|whois.nic.foodnetwork
+:notice||Disallocated by IANA
 \.foodnetwork$
 
 :whois|whois.nic.frontdoor
 \.frontdoor$
 
-:whois|whois.nic.hgtv
+:notice||Disallocated by IANA
 \.hgtv$
 
 :whois|whois.nic.nfl
@@ -5972,7 +5972,7 @@
 :whois|whois.nic.politie
 \.politie$
 
-:whois|whois.nic.travelchannel
+:notice||Disallocated by IANA
 \.travelchannel$
 
 :whois|whois.nic.woodside
@@ -6541,7 +6541,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-06-08)
+:notice||Whois server unknown (2023-06-15)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6635,7 +6635,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-06-08)
+:notice||Whois server unknown (2023-06-15)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
