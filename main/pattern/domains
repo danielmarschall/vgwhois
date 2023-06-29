@@ -1,4 +1,4 @@
-#: version 20230620
+#: version 20230629
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1185,7 +1185,7 @@
 :whois|whois.website.ws
 \.ws$
 
-:notice||No whois, no domain list. Homepage http://www.nic.gov.ye/ (last checked Sep 2005)
+:whois|whois.y.net.ye
 \.ye$
 
 :whois|whois.nic.yt
@@ -6541,7 +6541,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-06-15)
+:notice||Whois server unknown (2023-06-29)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6635,7 +6635,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-06-15)
+:notice||Whois server unknown (2023-06-29)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
