@@ -1,4 +1,4 @@
-#: version 20230629
+#: version 20230711
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4736,7 +4736,7 @@
 :whois|whois.nic.cloud
 \.cloud$
 
-:whois|whois.nic.hoteles
+:notice||Disallocated by IANA
 \.hoteles$
 
 :notice||Disallocated by IANA
@@ -5576,10 +5576,10 @@
 :whois|whois.nic.jpmorgan
 \.jpmorgan$
 
-:whois|whois.nic.passagens
+:notice||Disallocated by IANA
 \.passagens$
 
-:whois|whois.nic.vuelos
+:notice||Disallocated by IANA
 \.vuelos$
 
 :whois|whois.nic.kerryhotels
@@ -6541,7 +6541,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-06-29)
+:notice||Whois server unknown (2023-07-06)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6635,7 +6635,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-06-29)
+:notice||Whois server unknown (2023-07-06)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
