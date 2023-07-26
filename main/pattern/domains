@@ -1,4 +1,4 @@
-#: version 20230711
+#: version 20230720
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -666,7 +666,8 @@
 \.mk$
 
 #:notice||No whois, no domain list. Homepage http://www.sotelma.ml/ (last checked Sep 2005)
-:whois|whois.dot.ml
+#:whois|whois.dot.ml
+:whois|whois.nic.ml
 \.ml$
 
 #:notice||Unknown if a whois service exist. See http://www.nic.mm/ for more information [Aug 2013]
@@ -6541,7 +6542,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-07-06)
+:notice||Whois server unknown (2023-07-20)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6635,7 +6636,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-07-06)
+:notice||Whois server unknown (2023-07-20)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
