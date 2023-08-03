@@ -1,4 +1,4 @@
-#: version 20230727
+#: version 20230803
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -5677,7 +5677,7 @@
 :whois|whois.nic.kpmg
 \.kpmg$
 
-:whois|whois.nic.mutual
+:notice||Disallocated by IANA
 \.mutual$
 
 #:whois|whois.afilias-srs.net
@@ -6542,7 +6542,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-07-27)
+:notice||Whois server unknown (2023-08-03)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6636,7 +6636,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-07-27)
+:notice||Whois server unknown (2023-08-03)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
