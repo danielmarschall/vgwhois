@@ -1,4 +1,4 @@
-#: version 20230803
+#: version 20230808
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1917,7 +1917,8 @@
 \.international$
 
 # Delegated on 28 December 2013 to I-REGISTRY Ltd. Niederlassung Deutschland
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.onl
 \.onl$
 
 # Delegated on 28 December 2013 to Black Cover, LLC
@@ -2065,7 +2066,8 @@
 \.red$
 
 # Delegated on 18 January 2014 to I-REGISTRY Ltd. Niederlassung Deutschland
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.rich
 \.rich$
 
 # Delegated on 18 January 2014 to Monash University
@@ -3362,7 +3364,8 @@
 \.cern$
 
 # Delegated on 16 August 2014
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ltda
 \.ltda$
 
 # Delegated on 16 August 2014
@@ -4031,7 +4034,8 @@
 :whois|whois.nic.lotte
 \.lotte$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.marriott
 \.marriott$
 
 :whois|whois.nic.one
@@ -4043,8 +4047,8 @@
 :whois|whois.nic.barclays
 \.barclays$
 
-#:whois|whois.nic.dabur
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.dabur
 \.dabur$
 
 :whois|whois.nic.google
@@ -4806,10 +4810,12 @@
 :whois|whois.nic.delta
 \.delta$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ist
 \.ist$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.istanbul
 \.istanbul$
 
 :whois|whois.nic.ubs
@@ -4835,7 +4841,8 @@
 :whois|whois.nic.sanofi
 \.sanofi$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.srl
 \.srl$
 
 :whois|whois.nic.tatamotors
@@ -4981,7 +4988,8 @@
 :whois|whois.nic.protection
 \.protection$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.stada
 \.stada$
 
 #:whois|whois.centralnic.com
@@ -5020,7 +5028,8 @@
 :whois|whois.nic.seven
 \.seven$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.stockholm
 \.stockholm$
 
 :whois|whois.nic.clubmed
@@ -5071,7 +5080,8 @@
 :whois|whois.nic.rwe
 \.rwe$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.zara
 \.zara$
 
 #:whois|whois.nic.meo
@@ -5446,7 +5456,8 @@
 :whois|whois.nic.lifeinsurance
 \.lifeinsurance$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.edeka
 \.edeka$
 
 #:whois|whois.nic.pamperedchef
@@ -5598,7 +5609,8 @@
 :whois|whois.nic.xn--w4r85el8fhu5dnra
 \.xn--w4r85el8fhu5dnra$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.avianca
 \.avianca$
 
 #:whois|whois.afilias-srs.net
@@ -6009,7 +6021,8 @@
 :notice||Disallocated by IANA
 \.zippo$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.mit
 \.mit$
 
 :whois|whois.nic.comcast
@@ -6271,7 +6284,8 @@
 :whois|whois.nic.calvinklein
 \.calvinklein$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.cbs
 \.cbs$
 
 :notice||Disallocated by IANA
@@ -6303,7 +6317,8 @@
 :notice||Disallocated by IANA
 \.qvc$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.showtime
 \.showtime$
 
 :whois|whois.nic.target
@@ -6651,7 +6666,8 @@
 :whois|whois.nic.xn--jlq480n2rg
 \.xn--jlq480n2rg$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.spa
 \.spa$
 
 :whois|whois.isoc.org.il
@@ -6660,5 +6676,6 @@
 :whois|whois.nic.music
 \.music$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.kids
 \.kids$
