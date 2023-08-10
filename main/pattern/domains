@@ -1,4 +1,4 @@
-#: version 20230808
+#: version 20230810
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3256,7 +3256,8 @@
 \.spiegel$
 
 # Delegated on 18 July 2014
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.nra
 \.nra$
 
 # Delegated on 18 July 2014
@@ -5699,7 +5700,8 @@
 :whois|whois.nic.abudhabi
 \.abudhabi$
 
-:whois|whois.nic.northwesternmutual
+#:whois|whois.nic.northwesternmutual
+:notice||Disallocated by IANA
 \.northwesternmutual$
 
 :whois|whois.afilias-srs.net
@@ -6557,7 +6559,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-03)
+:notice||Whois server unknown (2023-08-10)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6651,7 +6653,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-03)
+:notice||Whois server unknown (2023-08-10)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
