@@ -4093,12 +4093,12 @@
 :whois|whois.nic.gmo
 \.jcb$
 
-#:whois|whois.nic.temasek
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.temasek
 \.temasek$
 
-#:whois|whois.nic.xn--b4w605ferd
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.xn--b4w605ferd
 \.xn--b4w605ferd$
 
 #:whois|whois.nic.tokyo
@@ -4601,7 +4601,8 @@
 :whois|whois.nic.fyi
 \.fyi$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.jll
 \.jll$
 
 #:whois|whois.donuts.co
@@ -4669,7 +4670,8 @@
 :whois|whois.nic.windows
 \.windows$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.lasalle
 \.lasalle$
 
 :whois|whois.nic.bharti
@@ -4929,8 +4931,8 @@
 :notice||Disallocated by IANA
 \.ceb$
 
-#:whois|whois.nic.fage
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.fage
 \.fage$
 
 #:whois|whois.donuts.co
@@ -5048,7 +5050,8 @@
 :whois|whois.nic.yamaxun
 \.yamaxun$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.cipriani
 \.cipriani$
 
 :whois|whois.nic.kinder
@@ -5102,10 +5105,12 @@
 :whois|whois.nic.aarp
 \.aarp$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.apple
 \.apple$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.beats
 \.beats$
 
 #:whois|whois.cmc.iq
@@ -5158,7 +5163,8 @@
 :whois|whois.afilias-srs.net
 \.audi$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.boehringer
 \.boehringer$
 
 #:whois|whois-bostik.nic.fr
@@ -5265,7 +5271,8 @@
 :whois|whois.nic.tci
 \.tci$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.travelers
 \.travelers$
 
 :whois|whois.nic.zero
@@ -5279,10 +5286,12 @@
 :whois|whois.nic.xn--mgbt3dhd
 \.xn--mgbt3dhd$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.redumbrella
 \.redumbrella$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.trv
 \.trv$
 
 :whois|whois.nic.tushu
@@ -5304,7 +5313,8 @@
 :whois|whois.nic.shell
 \.shell$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.travelersinsurance
 \.travelersinsurance$
 
 :whois|whois.nic.wanggou
@@ -5520,7 +5530,8 @@
 :whois|whois.gtlds.nic.br
 \.natura$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.pwc
 \.pwc$
 
 #:whois|whois.afilias-srs.net
@@ -5567,7 +5578,8 @@
 :whois|whois.nic.store
 \.store$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.viking
 \.viking$
 
 :whois|whois.nic.xn--jvr189m
@@ -5704,7 +5716,8 @@
 :notice||Disallocated by IANA
 \.northwesternmutual$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.vig
 \.vig$
 
 #:whois|whois.afilias-srs.net
@@ -5757,7 +5770,8 @@
 :whois|whois.nic.mls
 \.mls$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.progressive
 \.progressive$
 
 :whois|whois.nic.lipsy
@@ -5955,7 +5969,8 @@
 :notice||Disallocated by IANA
 \.blanco$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.itv
 \.itv$
 
 #:whois|whois.donuts.co
@@ -6214,7 +6229,8 @@
 :notice||Disallocated by IANA
 \.intel$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.jeep
 \.jeep$
 
 :whois|whois.nic.pramerica
@@ -6415,10 +6431,12 @@
 :whois|whois.nic.monster
 \.monster$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.fido
 \.fido$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.rogers
 \.rogers$
 
 #:whois|whois.centralnic.com
