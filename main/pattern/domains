@@ -1,13 +1,17 @@
-#: version 20230810
+#: version 20230816
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
 # Info: A good resource for research: https://wiki.rrpproxy.net/
 
+# TODO: Recheck all definitions, especially:
+#       1. Check if "http://" URLs have been replaced by "https://"
+#       2. Re-check "last checked" notices with years 200x" and "201x"
+
 # ccTLD
 # --------------------------------------------------------------------
 
-#:notice||Please visit https://www.nic.ac/whois-search.htm and enter the CAPTCHA
+#:notice||Please visit https://www.nic.ac/whois-search.htm and solve the CAPTCHA
 :whois|whois.nic.ac
 \.ac$
 
@@ -18,11 +22,10 @@
 :whois|whois.aeda.net.ae
 \.ae$
 
-#:notice||Please go to http://whois.nic.af/whois.jsp (last checked Aug 2013)
+#:notice||Alternatively, use the online CAPTCHA protected WHOIS: https://whois.nic.af/public.jsp (last checked Aug 2023)
 :whois|whois.nic.af
 \.af$
 
-# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha (last checked Aug 2013)
 # :whois|whois2.afilias-grs.net
 :whois|whois.nic.ag
 \.ag$
@@ -42,7 +45,7 @@
 :notice||Disallocated by IANA
 \.an$
 
-:notice||No whois. Homepage http://www.dns.ao [5/2010]
+:notice||No whois. Homepage https://www.dns.ao/ (last checked Aug 2023)
 \.ao$
 
 :notice||No whois, no domain list, no nothing. [5/2010]
@@ -68,7 +71,7 @@
 :whois|whois.nic.ar
 \.ar$
 
-:multiple||whois::whois.nic.as:::notice::::For more information, please go to http://www.nic.as/whois.cfm
+:multiple||whois::whois.nic.as:::notice::::For more information, please go to https://nic.as/whois.cfm (last checked Aug 2023)
 \.as$
 
 :whois|whois.nic.at
@@ -81,7 +84,7 @@
 :whois|whois.auda.org.au
 \.au$
 
-# :notice||No whois, no domain list. Homepage http://www.setar.aw/ [5/2010]
+# :notice||No whois, no domain list. Homepage https://www.setar.aw/ [5/2010]
 :whois|whois.nic.aw
 \.aw$
 
@@ -89,16 +92,13 @@
 :whois|whois.ax
 \.ax$
 
-:cgipost|http://www.whois.az/cgi-bin/whois.cgi|lang=en&domain=~namewotld~&dom=.az
+:notice||CAPTCHA protected WHOIS can be found here: https://whois.az/
 \.az$
 
-# :notice||See http://www.nic.ba/stream/whois/, needs a image capable browser, therefore vgwhois can't use this. [5/2010]
-# TODO: we need some kind of OCR to read this (no CAPTCHA)
-:notice||See http://nic.ba/lat/menu/view/13 , needs an image capable browser. [7/2013]
+:notice||CAPTCHA protected WHOIS can be found here: https://nic.ba/ (last checked: Aug 2023)
 \.ba$
 
-#:notice||Captcha protected whois on http://www.barbadosdomains.net/search_domain.php [5/2010]
-:notice||Captcha protected whois on http://www.whois.telecoms.gov.bb/search_domain.php [7/2013]
+:cgi|https://whois.telecoms.gov.bb/status/~query~
 \.bb$
 
 #:cgi|https://www.registry.com.bd/whois.php?dName=~1~&Submit=Lookup+
@@ -133,7 +133,7 @@
 :notice||.bl is reserved
 \.bl$
 
-:notice||Please visit https://www.bermudanic.bm/whois.htm and enter the CAPTCHA [5/2019]
+:notice||Please visit https://www.bermudanic.bm/whois.htm and solve the CAPTCHA [5/2019]
 \.bm$
 
 #:notice||No whois, no domain list. Homepage http://www.brunet.bn/ (last checked Sep 2005)
@@ -176,7 +176,7 @@
 :whois|whois.cctld.by
 \.by$
 
-# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the CAPTCHA [Aug 2013]
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
 # :whois|whois2.afilias-grs.net
 # :program|$vgwhois$/subprograms/bz
 #:cgi|http://www.test.bz/Whois/index.php?query=~1~&output=nice&dotname=~2~&whois=Search
@@ -196,7 +196,8 @@
 \.cd$
 
 #:whois|whois.socatel.cf
-:whois|whois.dot.cf
+#:whois|whois.dot.cf
+:notice||Go to http://dot.cf to see if a domain is available (Whois might be possible through a password protected API)
 \.cf$
 
 #:cgipost|http://www.nic.cg/cgi-bin/whois.pl|DOMAINWHOIS=~query~
@@ -241,7 +242,7 @@
 :whois|whois.nic.co
 \.co$
 
-#:notice||Please visit http://www.nic.cr/niccr_publico/showWhoisScreen.do and enter the captcha. (Nov 2012)
+#:notice||Please visit http://www.nic.cr/niccr_publico/showWhoisScreen.do and solve the CAPTCHA. (Nov 2012)
 :whois|whois.nic.cr
 \.cr$
 
@@ -259,7 +260,7 @@
 :notice||No whois available (last checked May 2019). Domains can be registered here: https://www.uoc.cw/cw-registry
 \.cw$
 
-#:notice||Please go to http://whois.nic.cx/whois.jsp and enter the captcha. [May 2019]
+#:notice||Please go to http://whois.nic.cx/whois.jsp and solve the CAPTCHA. [May 2019]
 :whois|whois.nic.cx
 \.cx$
 
@@ -324,11 +325,11 @@
 \.er$
 
 #:cgi|https://www.nic.es/esnic/servlet/WhoisControllerHTML?dominio=~query~
-#:notice||For captcha-secured whois please see http://www.nic.es/ (last checked Jan 2012)
+#:notice||For CAPTCHA-secured whois please see http://www.nic.es/ (last checked Jan 2012)
 #Captcha at: https://www.nic.es/sgnd/dominio/publicValidacionDetalleWhois.action?volverWhoIs=1&TDominio.nombreDominio=~query~
 #:whois|whois.nic.es
 #This whois service needs a registration of the IP address and has a strict query limit...
-:multiple||whois::whois.nic.es:::notice::::For captcha-secured whois please see http://www.nic.es/ (last checked Jan 2012)
+:multiple||whois::whois.nic.es:::notice::::For CAPTCHA-secured whois please see http://www.nic.es/ (last checked Jan 2012)
 \.es$
 
 :notice||No whois, no domain list. Homepage http://www.telecom.net.et/ (last checked Sep 2005)
@@ -341,7 +342,7 @@
 :whois|whois.fi
 \.fi$
 
-#:notice||Go to https://www.whois.fj/whois.jsp and enter the CAPTCHA
+#:notice||Go to https://www.whois.fj/whois.jsp and solve the CAPTCHA
 :whois|www.whois.fj
 # List according to https://www.domains.fj/cart.php?a=add&domain=register&query=test
 \.ac.fj$
@@ -410,7 +411,7 @@
 :whois|whois.nic.gh
 \.gh$
 
-# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha [Aug 2013]
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
 :whois|whois2.afilias-grs.net
 \.gi$
 
@@ -425,7 +426,7 @@
 \.gn$
 
 #:cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-#:notice||Please go to https://whois.nic.gp/ and enter the captcha. [Oct 2021]
+#:notice||Please go to https://whois.nic.gp/ and solve the CAPTCHA. [Oct 2021]
 # Note: The server whois.mediaserv.net says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
 #       However, .gp does not seems to work, as everything is "object not found"
 #       whois.nic.gp (= server in IANA DB) seems to be a real whois server, but it does not seem to accept
@@ -440,10 +441,10 @@
 \.gq$
 
 # :cgipost|https://grweb.ics.forth.gr/Whois|domainName=~query~&lang=en
-:notice||Please visit https://grweb.ics.forth.gr/whois.jsp?lang=en and enter the CAPTCHA (last checked Nov 2012)
+:notice||Please visit https://grweb.ics.forth.gr/whois.jsp?lang=en and solve the CAPTCHA (last checked Nov 2012)
 \.gr$
 
-#:notice||Please go to http://whois.nic.gs/whois.jsp and enter the captcha. [Aug 2013]
+#:notice||Please go to http://whois.nic.gs/whois.jsp and solve the CAPTCHA. [Aug 2013]
 :whois|whois.nic.gs
 \.gs$
 
@@ -482,7 +483,7 @@
 \.hr$
 
 #:cgi|http://www.nic.ht/info/whois.cfm?domain=~query~
-#:notice||Please go to http://whois.nic.ht/whois.jsp and enter the captcha. [Aug 2013]
+#:notice||Please go to http://whois.nic.ht/whois.jsp and solve the CAPTCHA. [Aug 2013]
 :whois|whois.nic.ht
 \.ht$
 
@@ -492,10 +493,10 @@
 # :cgipost|http://www.idnic.net.id/cgi-bin/whois.cgi|domain=~1~&induk=~2~
 # What the hell is "war.net.id"?
 # (.*)\.((?:web|sch|or|co|ac|war\.net|net|mil|go)\.id)$
-#:notice||Please go to https://register.pandi.or.id/Index/whois/lang/en or https://www.pandi.or.id/whois/ and enter the CAPTCHA.
+#:notice||Please go to https://register.pandi.or.id/Index/whois/lang/en or https://www.pandi.or.id/whois/ and solve the CAPTCHA.
 #\.((?:ac|co|net|or|web|sch|mil|go|my|biz)\.id)$
 #:whois|whois.pandi.or.id
-#:multiple||whois::whois.pandi.or.id:::notice::::Please go to https://register.pandi.or.id/Index/whois/lang/en or https://www.pandi.or.id/whois/ and enter the CAPTCHA.
+#:multiple||whois::whois.pandi.or.id:::notice::::Please go to https://register.pandi.or.id/Index/whois/lang/en or https://www.pandi.or.id/whois/ and solve the CAPTCHA.
 :whois|whois.id
 \.id$
 
@@ -560,13 +561,13 @@
 :notice||No whois, no domain list. Homepage http://www.mptc.gov.kh/Reculation/dns_reualation.htm (last checked Sep 2005)
 \.kh$
 
-:whois|whois.nic.ki
+#:whois|whois.nic.ki
+:notice||Try visiting http://nic.ki/ for more information (domain nic.ki defunct as of Aug 2023)
 \.ki$
 
-:notice||No whois, no domain list. Homepage http://www.domaine.km/ (last checked Sep 2005)
+:notice||No whois, no domain list. Homepage http://www.domaine.km/ defunct (last checked Aug 2023)
 \.km$
 
-#:notice||No whois, no domain list, no nothing. (last checked Sep 2005)
 :whois|whois.nic.kn
 \.kn$
 
@@ -594,7 +595,7 @@
 \.kz$
 
 # This domain is managed by CentralNIC, see https://www.centralnic.com/portfolio/registration
-#:notice||Please visit https://manage.centralnic.com/support/view_whois/ and enter the CAPTCHA.
+#:notice||Please visit https://manage.centralnic.com/support/view_whois/ and solve the CAPTCHA.
 #:whois|whois.centralnic.net
 #:cgi|https://www.la/cart/search/~namewotld~
 :whois|whois.nic.la
@@ -614,12 +615,12 @@
 :notice||Domain search available at https://www.domains.lk/domainsearch/
 \.lk$
 
-:notice||No whois, no domain list. Homepage http://psg.com/dns/lr (last checked Sep 2005)
+:notice||No whois, no domain list. Homepage http://psg.com/dns/lr (last checked Sep 2023)
 \.lr$
 
 #:cgipost|http://www.org.ls/co.asp|CT_DNS_NAME=~query~
 #:cgipost|http://www.co.ls/co.asp|CT_DNS_NAME=~query~
-#:notice||Please go to http://nic.ls/whois/ and enter the CAPTCHA.
+#:notice||Please go to http://nic.ls/whois/ and solve the CAPTCHA.
 #:whois|196.11.175.58
 :whois|whois.nic.ls
 \.ls$
@@ -634,7 +635,8 @@
 :whois|whois.nic.lv
 \.lv$
 
-:whois|whois.nic.ly
+#:whois|whois.nic.ly
+:notice||Go to https://whois.nic.ly/public.jsp and solve the CAPTCHA
 \.ly$
 
 # Alternative: https://www.registre.ma/ressources/whois (requires CAPTCHA)
@@ -645,7 +647,6 @@
 :whois|whois.ripe.net|prefix=-B |
 \.mc$
 
-#:notice||Whois is secured by a captcha, please check yourself on http://www.nic.md/ (02/2008)
 :whois|whois.nic.md
 \.md$
 
@@ -658,14 +659,12 @@
 :whois|whois.nic.mg
 \.mg$
 
-:notice||No whois, no domain list. Homepage http://www.nic.net.mh/ (last checked Sep 2005)
+:notice||No whois, no domain list. Homepage http://www.nic.net.mh/ defunct (last checked Sep 2023)
 \.mh$
 
-#:notice||No whois, no domain list. Homepage http://www.mpt.com.mk/ (broken as of Sep 2005)
 :whois|whois.marnet.mk
 \.mk$
 
-#:notice||No whois, no domain list. Homepage http://www.sotelma.ml/ (last checked Sep 2005)
 #:whois|whois.dot.ml
 :whois|whois.nic.ml
 \.ml$
@@ -674,8 +673,8 @@
 :whois|whois.registry.gov.mm
 \.mm$
 
-# :notice||Please visit http://www.domain.mn/domain.php?action=whois and enter the captcha [Aug 2013]
-# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha [Aug 2013]
+# :notice||Please visit http://www.domain.mn/domain.php?action=whois and solve the CAPTCHA [Aug 2013]
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
 # Jan 2012 - Okt 2014 : Official service whois.nic.mn does not work, but whois2.afilias-grs.net works.
 # Nov 2014: whois.nic.mn works again
 # Jun 2016: whois.nic.mn is down again
@@ -684,12 +683,12 @@
 #:notice||Please visit http://domain.mn/domain-registration/domain-whois-lookup.php
 \.mn$
 
-:multiple||whois::whois.monic.mo:::notice::::For more information, please go to https://www.monic.mo/monic/faces/whois
+#:multiple||whois::whois.monic.mo:::notice::::For more information, please go to https://www.monic.mo/monic/faces/whois
+:notice||Go to https://monic.mo/monic/faces/whois and solve the CAPTCHA
 \.mo$
 
-#:notice||No whois, no domain list. Homepage http://www.nic.mp/ (last checked Sep 2005)
 #:whois|whois.nic.mp
-:notice||Whois gone [Sep 2013]
+:notice||Whois gone and homepage http://www.nic.mp/ defunct (last checked Sep 2023)
 \.mp$
 
 #:notice||Homepage http://www.nic.mq/
@@ -702,20 +701,19 @@
 :whois|whois.mediaserv.net
 \.mq$
 
-#:notice||No whois, no domain list. Homepage http://www.nic.mr/ (2/2008)
 :whois|whois.nic.mr
 \.mr$
 
-#:notice||Please go to http://whois.nic.ms/whois.jsp and enter the captcha. [Aug 2013]
+#:notice||Please go to http://whois.nic.ms/whois.jsp and solve the CAPTCHA. [Aug 2013]
 :whois|whois.nic.ms
 \.ms$
 
 #:whois|whois.nic.mt
-#:notice||Please go to https://www.nic.org.mt/dotmt/whois/ and enter the captcha. (Aug 2013)
+#:notice||Please go to https://www.nic.org.mt/dotmt/whois/ and solve the CAPTCHA. (Aug 2013)
 :whois|whois.nic.org.mt
 \.mt$
 
-#:notice||Please go to http://whois.nic.mu/whois.jsp and enter the captcha. [Aug 2013]
+#:notice||Please go to http://whois.nic.mu/whois.jsp and solve the CAPTCHA. [Aug 2013]
 :whois|whois.nic.mu
 \.mu$
 
@@ -744,7 +742,7 @@
 :whois|whois.na-nic.com.na
 \.na$
 
-#:notice||Captcha protected whois on http://www.domaine.nc/. Good look trying to read the captcha. (2/2008)
+#:notice||CAPTCHA protected whois on http://www.domaine.nc/. Good look trying to read the captcha. (2/2008)
 :whois|whois.nc
 \.nc$
 
@@ -752,7 +750,7 @@
 \.ne$
 
 #:notice||No whois, domain availability can be checked on https://secure.nf/ (2/2008)
-#:notice||Please go to http://whois.nic.nf/whois.jsp and enter the captcha. [Aug 2013]
+#:notice||Please go to http://whois.nic.nf/whois.jsp and solve the CAPTCHA. [Aug 2013]
 #:whois|whois.nic.net.nf
 :whois|whois.nic.nf
 \.nf$
@@ -805,7 +803,7 @@
 :program|$vgwhois$/subprograms/pa
 \.pa$
 
-#:notice||Please go to https://punto.pe/whois.php and enter the CAPTCHA.
+#:notice||Please go to https://punto.pe/whois.php and solve the CAPTCHA.
 :whois|kero.yachay.pe
 \.pe$
 
@@ -819,7 +817,7 @@
 \.pg$
 
 #:cgi|http://www.domains.ph/WhoIs.asp?Domain=~query~
-:notice||Please visit http://www.dot.ph/whois and enter the CAPTCHA (last checked Nov 2012)
+:notice||Please visit http://www.dot.ph/whois and solve the CAPTCHA (last checked Nov 2012)
 \.ph$
 
 #:cgipost|https://pk6.pknic.net.pk/pk5/lookup.PK|name=~query~
@@ -846,7 +844,9 @@
 :whois|whois.afilias-srs.net
 \.pr$
 
-:cgi|https://www.pnina.ps/whois/?domain=~query~
+#:whois|whois.pnina.ps
+#:cgi|https://www.pnina.ps/whois/?domain=~query~
+:cgi|https://pnina.ps/whois/?domain=~query~
 \.ps$
 
 :whois|whois.dns.pt
@@ -854,7 +854,7 @@
 
 # :notice||No whois, no domain list. Homepage http://www.pwregistry.pw/ (2/2008)
 # This domain is managed by CentralNIC, see https://www.centralnic.com/portfolio/registration
-#:notice||Please visit https://manage.centralnic.com/support/view_whois/ and enter the CAPTCHA.
+#:notice||Please visit https://manage.centralnic.com/support/view_whois/ and solve the CAPTCHA.
 #:whois|whois.centralnic.net
 #:cgi|http://registry.pw/whois/?query=~namewotld~&output=nice
 :whois|whois.nic.pw
@@ -882,7 +882,7 @@
 \.ru$
 
 #:cgipost|http://www.nic.rw/cgi-bin/whois.pl|DOMAINWHOIS=~query~
-#:notice||A captcha is neccessary to access the information. Please visit: http://www.dnsafrica.net/cgi-bin/whois.pl (last checked Jan 2012)
+#:notice||A CAPTCHA is neccessary to access the information. Please visit: http://www.dnsafrica.net/cgi-bin/whois.pl (last checked Jan 2012)
 :whois|whois.ricta.org.rw
 \.rw$
 
@@ -890,12 +890,12 @@
 :whois|whois.nic.net.sa
 \.sa$
 
-#:notice||Please go to http://whois.nic.sb/whois.jsp and enter the captcha. [Aug 2013]
+#:notice||Please go to http://whois.nic.sb/whois.jsp and solve the CAPTCHA. [Aug 2013]
 :whois|whois.nic.net.sb
 #:whois|whois.nic.sb
 \.sb$
 
-# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha [Aug 2013]
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
 :whois|whois2.afilias-grs.net
 \.sc$
 
@@ -910,7 +910,7 @@
 :whois|whois.sgnic.sg
 \.sg$
 
-:multiple||whois::whois.nic.sh:::notice::::For more information, please visit https://www.nic.sh/whois-search.htm and enter the CAPTCHA
+:multiple||whois::whois.nic.sh:::notice::::For more information, please visit https://www.nic.sh/whois-search.htm and solve the CAPTCHA
 \.sh$
 
 #:whois|whois.arnes.si
@@ -1003,7 +1003,7 @@
 #:cgipost|http://my.dot.tk/cgi-bin/whois.taloha|domainname=~namewotld~
 \.tk$
 
-#:notice||Please go to http://whois.nic.tl/whois.jsp and enter the captcha. [Aug 2013]
+#:notice||Please go to http://whois.nic.tl/whois.jsp and solve the CAPTCHA. [Aug 2013]
 :whois|whois.nic.tl
 \.tl$
 
@@ -1139,7 +1139,7 @@
 :notice||No whois, no domain list. Homepage http://www.vatican.va/ (last checked Jan 2012)
 \.va$
 
-# :notice||Please go to http://www.afilias-grs.info/public/whois_search and enter the captcha [Aug 2013]
+# :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
 :whois|whois2.afilias-grs.net
 \.vc$
 
@@ -1160,7 +1160,7 @@
 \.vi$
 
 #:cgipost|http://www.tenmien.vn/jsp/jsp/tracuudomainchitiet.jsp?type=~query~
-:notice||Please go to http://www.tenmien.vn/ and enter the captcha.
+:notice||Please go to http://www.tenmien.vn/ and solve the CAPTCHA.
 \.vn$
 
 # ** Method 1 (official; missing email address, modified date and registrar)
@@ -1211,7 +1211,7 @@
 :whois|co-whois.registry.net.za
 \.co\.za$
 
-:notice||Please go to https://whois.edu.za/ and enter the CAPTCHA.
+:notice||Please go to https://whois.edu.za/ and solve the CAPTCHA.
 \.edu\.za$
 
 :cgipost|http://dnsadmin.gov.za/navail.php|domnam=~query~&submit=Start
@@ -1242,7 +1242,7 @@
 :whois|web-whois.registry.net.za
 \.web\.za$
 
-:notice||Please go to https://whois.alt.za/ and enter the CAPTCHA.
+:notice||Please go to https://whois.alt.za/ and solve the CAPTCHA.
 \.alt\.za$
 
 :notice||No whois service currently available [5/2019]
@@ -1554,7 +1554,9 @@
 :whois|whois.nic.kz
 \.xn--80ao21a$
 
-:whois|whois.pnina.ps
+#:whois|whois.pnina.ps
+#:cgi|https://www.pnina.ps/whois/?domain=~query~
+:cgi|https://pnina.ps/whois/?domain=~query~
 \.xn--ygbi2ammx$
 
 :notice||Disallocated by IANA
@@ -3967,8 +3969,8 @@
 :whois|whois.nic.schwarz
 \.schwarz$
 
-#:whois|whois.nic.sew
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.sew
 \.sew$
 
 :whois|whois.nic.google
@@ -5541,7 +5543,8 @@
 :whois|whois.eu
 \.xn--e1a4c$
 
-:whois|whois.monic.mo
+#:whois|whois.monic.mo
+:notice||Go to https://monic.mo/monic/faces/whois and solve the CAPTCHA
 \.xn--mix891f$
 
 :whois|whois.nic.flickr

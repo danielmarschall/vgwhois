@@ -29,6 +29,16 @@ whois.itdc.ge
 whois.nic.dz
 # first fail: 2019-10-02
 whois.cmc.iq
+# first fail: 2023-05-28
+whois.pnina.ps
+# first fail: 2023-05-20 (probably permanently replaced by CAPTCHA)
+whois.monic.mo
+# first fail: 2023-05-13
+whois.dot.cf
+# first fail: 2023-04-05 (whole nic.ki domain seems to be missing as of 16 Aug 2023)
+whois.nic.ki
+# first fail: 2023-08-08 (probably permanently replaced by CAPTCHA)
+whois.nic.ly
 
 # does not listen to public IPs anymore. The whois server only accepts calls from the web interface
 whois.registry.hm

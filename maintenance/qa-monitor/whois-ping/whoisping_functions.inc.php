@@ -31,7 +31,7 @@ function gwitc_checkage_succ($db, $server) {
 	$result = $db->query($stm);
 	if (!$result) die("Cannot execute query.");
 	$row = $result->fetchArray(SQLITE3_ASSOC);
-	$ts = (int)$row['lastsucc'];
+	$ts = (int)($row['lastsucc']);
 	$now = time();
 
 	return ($now-$ts);
@@ -42,7 +42,7 @@ function gwitc_checkage_check($db, $server) {
 	$result = $db->query($stm);
 	if (!$result) die("Cannot execute query.");
 	$row = $result->fetchArray(SQLITE3_ASSOC);
-	$ts = (int)$row['lastcheck'];
+	$ts = (int)($row['lastcheck']);
 	$now = time();
 
 	return ($now-$ts);
@@ -53,7 +53,7 @@ function gwitc_reborn_val($db, $server) {
 	$result = $db->query($stm);
 	if (!$result) die("Cannot execute query.");
 	$row = $result->fetchArray(SQLITE3_ASSOC);
-	return (int)$row['reborn'];
+	return (int)($row['reborn']);
 }
 
 function gwitc_fail_duration($db, $server) {
@@ -61,9 +61,9 @@ function gwitc_fail_duration($db, $server) {
 	$result = $db->query($stm);
 	if (!$result) die("Cannot execute query.");
 	$row = $result->fetchArray(SQLITE3_ASSOC);
-	$lastsucc = (int)$row['lastsucc'];
-	$firstfail = (int)$row['firstfail'];
-	$lastfail = (int)$row['lastfail'];
+	$lastsucc = (int)($row['lastsucc']);
+	$firstfail = (int)($row['firstfail']);
+	$lastfail = (int)($row['lastfail']);
 
 	if ($firstfail == 0) return 0;
 	if ($lastsucc > $lastfail) return 0;
@@ -76,8 +76,8 @@ function gwitc_first_fail($db, $server) {
 	$result = $db->query($stm);
 	if (!$result) die("Cannot execute query.");
 	$row = $result->fetchArray(SQLITE3_ASSOC);
-	$lastsucc = (int)$row['lastsucc'];
-	$firstfail = (int)$row['firstfail'];
+	$lastsucc = (int)($row['lastsucc']);
+	$firstfail = (int)($row['firstfail']);
 
 	if ($firstfail == 0) return 0;
 
@@ -89,10 +89,10 @@ function gwitc_set_reborn($db, $server, $val) {
 	$result = $db->query($stm);
 	if (!$result) die("Cannot execute query.");
 	$row = $result->fetchArray(SQLITE3_ASSOC);
-	$fails = 0; // (int)$row['fails'];
+	$fails = 0; // (int)($row['fails']);
 	$ts = time();
-	$lastsucc = $ts; // (int)$row['lastsucc'];
-	$firstfail = 0; // (int)$row['firstfail'];
+	$lastsucc = $ts; // (int)($row['lastsucc']);
+	$firstfail = 0; // (int)($row['firstfail']);
 	$stm = "REPLACE INTO gwi_tc_whois_ping (server,fails,lastcheck,lastsucc,lastfail,firstfail,reborn) VALUES ('$server', $fails, $ts, $lastsucc, $ts, $firstfail, $val)";
 	$ok = $db->exec($stm);
 	if (!$ok) die("Cannot execute query.");
@@ -105,12 +105,12 @@ function gwitc_incr_failcounter($db, $server) {
 	$result = $db->query($stm);
 	if (!$result) die("Cannot execute query.");
 	$row = $result->fetchArray(SQLITE3_ASSOC);
-	$fails = (int)$row['fails'];
-	$lastsucc = (int)$row['lastsucc'];
+	$fails = (int)($row['fails']);
+	$lastsucc = (int)($row['lastsucc']);
 
 	$fails++;
 	$ts = time();
-	$firstfail = ($fails == 1) ? $ts : (int)$row['firstfail'];
+	$firstfail = ($fails == 1) ? $ts : (int)($row['firstfail']);
 	$reborn = 0; // wenn er failed ist, kann er nicht reborned sein
 
 	$stm = "REPLACE INTO gwi_tc_whois_ping (server,fails,lastcheck,lastsucc,lastfail,firstfail,reborn) VALUES ('$server', $fails, $ts, $lastsucc, $ts, $firstfail, $reborn)";
@@ -125,9 +125,9 @@ function gwitc_reset_failcounter($db, $server) {
 	$result = $db->query($stm);
 	if (!$result) die("Cannot execute query.");
 	$row = $result->fetchArray(SQLITE3_ASSOC);
-	$lastfail = (int)$row['lastfail'];
+	$lastfail = (int)($row['lastfail']);
 	$ts = time();
-	$reborn = (int)$row['reborn'];
+	$reborn = (int)($row['reborn']);
 
 	$stm = "REPLACE INTO gwi_tc_whois_ping (server,fails,lastcheck,lastsucc,lastfail,firstfail,reborn) VALUES ('$server', 0, $ts, $ts, $lastfail, 0, $reborn)";
 	$ok = $db->exec($stm);
