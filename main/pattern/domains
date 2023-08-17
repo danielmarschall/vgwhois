@@ -1,4 +1,4 @@
-#: version 20230816
+#: version 20230817
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4233,7 +4233,8 @@
 :whois|whois.nic.gmo
 \.nissan$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.abbott
 \.abbott$
 
 :whois|whois.nic.pictet
@@ -5663,7 +5664,8 @@
 :whois|whois.nic.aws
 \.aws$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.extraspace
 \.extraspace$
 
 :whois|whois.nic.talk
@@ -6580,7 +6582,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-10)
+:notice||Whois server unknown (2023-08-17)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6674,7 +6676,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-10)
+:notice||Whois server unknown (2023-08-17)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
