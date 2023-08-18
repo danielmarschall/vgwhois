@@ -1,4 +1,4 @@
-#: version 20230817
+#: version 20230818
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -315,7 +315,7 @@
 :whois|whois.tld.ee
 \.ee$
 
-:notice||No whois, no domain list. Homepage http://www.egregistry.eg/ (2/2008)
+:notice||No whois, no domain list. Homepage https://domain.eg/ (last checked Aug 2023)
 \.eg$
 
 :notice||.eh is reserved. No whois, no domain list, no nothing. (last checked Sep 2005)
@@ -5163,7 +5163,8 @@
 :whois|whois.nic.broadway
 \.broadway$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.audi
 \.audi$
 
 #:whois|whois.afilias-srs.net
@@ -5177,7 +5178,8 @@
 :notice||Disallocated by IANA
 \.bugatti$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.lamborghini
 \.lamborghini$
 
 :whois|whois.nic.verisign
@@ -5427,8 +5429,8 @@
 :whois|whois.nic.fresenius
 \.fresenius$
 
-#:whois|whois.nic.volkswagen
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.volkswagen
 \.volkswagen$
 
 :whois|whois.nic.tube
@@ -6078,7 +6080,8 @@
 :whois|whois.nic.mint
 \.mint$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.allstate
 \.allstate$
 
 :notice||Disallocated by IANA
