@@ -2,7 +2,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
-#  (c) 2012-2021 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2012-2023 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -37,8 +37,6 @@ whois.monic.mo
 whois.dot.cf
 # first fail: 2023-04-05 (whole nic.ki domain seems to be missing as of 16 Aug 2023)
 whois.nic.ki
-# first fail: 2023-08-08 (probably permanently replaced by CAPTCHA)
-whois.nic.ly
 
 # does not listen to public IPs anymore. The whois server only accepts calls from the web interface
 whois.registry.hm

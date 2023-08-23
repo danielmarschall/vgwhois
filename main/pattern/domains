@@ -1,4 +1,4 @@
-#: version 20230818
+#: version 20230823
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -635,8 +635,8 @@
 :whois|whois.nic.lv
 \.lv$
 
-#:whois|whois.nic.ly
-:notice||Go to https://whois.nic.ly/public.jsp and solve the CAPTCHA
+#:notice||Go to https://whois.nic.ly/public.jsp and solve the CAPTCHA
+:whois|whois.nic.ly
 \.ly$
 
 # Alternative: https://www.registre.ma/ressources/whois (requires CAPTCHA)
@@ -3363,7 +3363,8 @@
 \.caravan$
 
 # Delegated on 16 August 2014
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.cern
 \.cern$
 
 # Delegated on 16 August 2014
