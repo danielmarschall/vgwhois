@@ -1,4 +1,4 @@
-#: version 20230823
+#: version 20230828
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -5748,16 +5748,20 @@
 :whois|whois.nic.teva
 \.teva$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.agakhan
 \.agakhan$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.akdn
 \.akdn$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.imamat
 \.imamat$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.ismaili
 \.ismaili$
 
 #:whois|whois.afilias-srs.net
@@ -6586,7 +6590,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-17)
+:notice||Whois server unknown (2023-08-24)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6680,7 +6684,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-17)
+:notice||Whois server unknown (2023-08-24)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
