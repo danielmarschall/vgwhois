@@ -1,4 +1,4 @@
-#: version 20230828
+#: version 20230831
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3341,7 +3341,8 @@
 \.restaurant$
 
 # Delegated on 14 August 2014
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.bnpparibas
 \.bnpparibas$
 
 # Delegated on 14 August 2014
@@ -6590,7 +6591,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-24)
+:notice||Whois server unknown (2023-08-31)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6684,7 +6685,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-24)
+:notice||Whois server unknown (2023-08-31)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
