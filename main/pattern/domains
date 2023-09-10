@@ -1,4 +1,4 @@
-#: version 20230831
+#: version 20230907
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -281,7 +281,8 @@
 :notice||No whois, no domain list. Homepage http://www.adjib.dj/ (last checked Sep 2005)
 \.dj$
 
-:whois|whois.dk-hostmaster.dk|prefix=--show-handles |
+#:whois|whois.dk-hostmaster.dk|prefix=--show-handles |
+:whois|whois.punktum.dk
 \.dk$
 
 #:cgipost|https://secure.domains.dm/tools/whois.jsp|whois=~namewotld~
@@ -2092,7 +2093,8 @@
 \.gift$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.photo
 \.photo$
 
 # Delegated on 18 January 2014 to Luxury Partners, LLC
@@ -2747,7 +2749,8 @@
 \.clinic$
 
 # Delegated on 23 April 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.blackfriday
 \.blackfriday$
 
 # Delegated on 23 April 2014 to Holly Hill, LLC
@@ -4087,8 +4090,8 @@
 #:whois|whois.charlestonroadregistry.com
 \.hangout$
 
-#:whois|whois.nic.hermes
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.hermes
 \.hermes$
 
 :whois|whois.nic.ifm
@@ -6591,7 +6594,7 @@
 \.africa$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-31)
+:notice||Whois server unknown (2023-09-07)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6685,7 +6688,7 @@
 \.llp$
 
 # TODO: Entry generated automatically. Needs manual check.
-:notice||Whois server unknown (2023-08-31)
+:notice||Whois server unknown (2023-09-07)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
