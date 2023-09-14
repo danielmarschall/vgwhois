@@ -22,12 +22,12 @@ fi
 # --- STEP 1: Install required packages
 
 # Required for the program itself:
-#  - perl (used by vgwhois main program. used by 6to4 and Teredo subprogram) 
-#  - libwww-perl (cpan LWP::Simple; used by vgwhois main program) 
-#  - libnet-libidn-perl (cpan Net::LibIDN; used by vgwhois main program) 
+#  - perl (used by vgwhois main program. used by 6to4 and Teredo subprogram)
+#  - libwww-perl (cpan LWP::Simple; used by vgwhois main program)
+#  - libnet-libidn-perl (cpan Net::LibIDN; used by vgwhois main program)
 #  - (commented out) libencode-detect-perl (cpan Encode::Detect; used by vgwhois main program)
-#  - curl (used by some parts of the vgwhois main program. used by pattern generator and subprograms) 
-#  - lynx-cur (used by some parts of the vgwhois main program)
+#  - curl (used by some parts of the vgwhois main program. used by pattern generator and subprograms)
+#  - lynx (used by some parts of the vgwhois main program)
 #  - libnet-ip-perl (cpan Net::IP; used for IPv6 interpretation by Teredo subprogram and vgwhois main program)
 #  - libnet-dns-perl (cpan Net::DNS; used by Teredo subprogram)
 #  - libmath-bigint-gmp-perl (cpan Math::BigInt; used for IPv6 masking by vgwhois main program)
@@ -38,11 +38,12 @@ fi
 #  - netcat (used by the whois-ping maintainance program)
 #  - php7.0-sqlite3 (used by the whois-ping maintainance program)
 #
-# TODO: how can be avoid the "php7.0" name? are there generic package names?
 # TODO: How to make the installation of the packages fit to most distros?
 
 apt-get update
-apt-get install perl libwww-perl libnet-libidn-perl curl lynx-cur libnet-ip-perl libnet-dns-perl libmath-bigint-gmp-perl php7.0-cli php7.0-gmp netcat php7.0-sqlite3
+apt-get install perl libwww-perl libnet-libidn-perl curl lynx libnet-ip-perl \
+                libnet-dns-perl libmath-bigint-gmp-perl php-cli php-gmp netcat \
+                php-sqlite3 libmath-bigint-perl php-gmp
 
 # --- STEP 2: "Install" symlinks
 
