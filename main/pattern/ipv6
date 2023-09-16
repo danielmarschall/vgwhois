@@ -3,6 +3,13 @@
 # IPv6
 # --------------------------------------------------------------------
 
+# Private enterprises with their own whois service
+
+# ViaThinkSoft
+:whois|whois.viathinksoft.de
+=2001:1af8:4900:a012:2::/112
+=2001:1af8:4700:a014:3::/112
+
 # 6Bone v6
 #    "The 6bone was an IPv6 testbed to assist in the evolution and deployment of IPv6. It was phased out on the 6th of June 2006 per agreements with the IETF IPv6 community.
 #     No 3FFE prefixes are to be in use after 6 June 2006 as these 6bone testbed prefixes have all been returned to the IANA."
@@ -10,10 +17,6 @@
 #:whois|whois.6bone.net
 #^3ffe:
 #=3ffe::/16
-
-:whois|whois.viathinksoft.de
-=2001:1af8:4900:a012:2::/112
-=2001:1af8:4700:a014:3::/112
 
 # RIRs
 
@@ -69,12 +72,6 @@ ff00::/8
 2001:db8::/32
 # NAT64 (RFC 6146)
 64:ff9b::/96
-
-# --- Private enterprises which offer a whois service
-
-# ViaThinkSoft
-:whois|whois.viathinksoft.de
-=2001:1af8:4100:a061:1::/112
 
 # ---
 

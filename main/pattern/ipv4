@@ -3,6 +3,13 @@
 # IPv4
 # --------------------------------------------------------------------
 
+# Private enterprises with their own whois service
+
+# ViaThinkSoft
+:whois|whois.viathinksoft.de
+=212.32.236.132/32
+=5.79.68.235/32
+
 # Private address space (unrouteable)
 
 # IANA's output is very short and not so informative
@@ -15,10 +22,6 @@
 #=192.168/16
 ## Loopback
 #=127/8
-
-:whois|whois.viathinksoft.de
-=212.32.236.132/32
-=5.79.68.235/32
 
 # IANA
 :whois|whois.iana.org
@@ -117,13 +120,6 @@
 # Brazil
 :whois|whois.registro.br
 =200.128/9
-
-# --- Private enterprises which offer a whois service
-
-# ViaThinkSoft
-:whois|whois.viathinksoft.de
-=95.211.38.42/32
-=95.211.38.108/32
 
 # ---
 
