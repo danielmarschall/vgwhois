@@ -1,4 +1,4 @@
-#: version 20230914
+#: version 20231004
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -729,11 +729,9 @@
 :whois|whois.mx
 \.mx$
 
-# Port 43 of whois.mynic.my is only open to authorized resellers ( see https://www.mynic.my/en/faq.php?id=40#115 )
 # :whois|whois.mynic.net.my
 # :whois|whois.domainregistry.my
-# :whois|whois.mynic.my
-:cgipost|https://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~&Submit=Submit&upperlimit=&lowerlimit=
+:whois|whois.mynic.my
 \.my$
 
 # :notice||No whois, no domain list. Homepage http://www.ci.uem.mz/ (last checked Sep 2005)
@@ -1513,10 +1511,8 @@
 :whois|whois.nic.net.sa
 \.xn--mgberp4a5d4ar$
 
-# Port 43 of whois.mynic.my ist only open to authorized resellers ( see https://www.mynic.my/en/faq.php?id=40#115 )
 # :whois|whois.domainregistry.my
-# :whois|whois.mynic.my
-:cgipost|https://whois.mynic.my/index.jsp|type=domain&searchtxt=~namewotld~&ext=.~tld~&Submit=Submit&upperlimit=&lowerlimit=
+ :whois|whois.mynic.my
 \.xn--mgbx4cd0ab$
 
 #:whois|whois.thnic.co.th
@@ -4836,7 +4832,8 @@
 :whois|whois.nic.lancaster
 \.lancaster$
 
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.nokia
 \.nokia$
 
 :whois|whois.nic.ice

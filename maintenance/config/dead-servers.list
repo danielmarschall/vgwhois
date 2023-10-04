@@ -41,8 +41,5 @@ whois.nic.ki
 # does not listen to public IPs anymore. The whois server only accepts calls from the web interface
 whois.registry.hm
 
-# Only opened for authorized resellers. Maybe they will open for the public again
-whois.mynic.my
-
 # This was the registry of 210.8/14 (AAPT Limited)
 whois.connect.com.au
