@@ -1,4 +1,4 @@
-#: version 20231004
+#: version 20231006
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -108,8 +108,9 @@
 :whois|whois.dns.be
 \.be$
 
-#:notice||Go to http://www.nic.bf/ . (At the moment, the lookup service is not available. Last checked Jan 2012)
-:notice||URL for registration services: http://www.arce.bf/domaine.php
+#:notice||Go to http://www.nic.bf/
+#:notice||URL for registration services: http://www.arce.bf/domaine.php
+:whois|whois.registre.bf
 \.bf$
 
 :whois|whois.register.bg
@@ -1511,8 +1512,8 @@
 :whois|whois.nic.net.sa
 \.xn--mgberp4a5d4ar$
 
-# :whois|whois.domainregistry.my
- :whois|whois.mynic.my
+#:whois|whois.domainregistry.my
+:whois|whois.mynic.my
 \.xn--mgbx4cd0ab$
 
 #:whois|whois.thnic.co.th
