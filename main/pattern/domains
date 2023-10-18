@@ -1,4 +1,4 @@
-#: version 20231006
+#: version 20231018
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -3786,7 +3786,8 @@
 \.band$
 
 # Delegated on 22 October 2014
-:whois|whois.afilias-srs.net
+#:whois|whois.afilias-srs.net
+:whois|whois.nic.emerck
 \.emerck$
 
 :notice||Disallocated by IANA
