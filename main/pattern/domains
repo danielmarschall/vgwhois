@@ -1,4 +1,4 @@
-#: version 20231018
+#: version 20231026
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -5138,7 +5138,7 @@
 :whois|whois.nic.rocher
 \.rocher$
 
-:whois|whois.nic.cityeats
+:notice||Disallocated by IANA
 \.cityeats$
 
 #:whois|whois.afilias-srs.net
@@ -6005,7 +6005,7 @@
 :notice||Disallocated by IANA
 \.foodnetwork$
 
-:whois|whois.nic.frontdoor
+:notice||Disallocated by IANA
 \.frontdoor$
 
 :notice||Disallocated by IANA
