@@ -1,4 +1,4 @@
-#: version 20231026
+#: version 20231103
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6318,8 +6318,7 @@
 :whois|whois.nic.calvinklein
 \.calvinklein$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.cbs
+:notice||Disallocated by IANA
 \.cbs$
 
 :notice||Disallocated by IANA
@@ -6351,8 +6350,7 @@
 :notice||Disallocated by IANA
 \.qvc$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.showtime
+:notice||Disallocated by IANA
 \.showtime$
 
 :whois|whois.nic.target
