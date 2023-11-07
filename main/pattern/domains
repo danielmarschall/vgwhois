@@ -1,4 +1,4 @@
-#: version 20231103
+#: version 20231107
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -424,7 +424,8 @@
 :whois|whois.ripe.net|prefix=-B |
 \.gm$
 
-:notice||No whois, no domain list. Homepage http://psg.com/dns/gn (2/2008)
+#:notice||No whois, no domain list. Homepage http://psg.com/dns/gn (2/2008)
+:whois|whois.ande.gov.gn
 \.gn$
 
 #:cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
@@ -5061,7 +5062,7 @@
 :whois|whois.nic.cipriani
 \.cipriani$
 
-:whois|whois.nic.kinder
+:notice||Disallocated by IANA
 \.kinder$
 
 :whois|whois.nic.dell
@@ -5135,7 +5136,7 @@
 :whois|whois.nic.playstation
 \.playstation$
 
-:whois|whois.nic.rocher
+:notice||Disallocated by IANA
 \.rocher$
 
 :notice||Disallocated by IANA
