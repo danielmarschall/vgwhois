@@ -1,4 +1,4 @@
-#: version 20231107
+#: version 20231120
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -6607,10 +6607,10 @@
 :whois|whois.nic.xn--ngbrx
 \.xn--ngbrx$
 
-:whois|whois.centralnic.com
+:notice||Disallocated by IANA
 \.etisalat$
 
-:whois|whois.centralnic.com
+:notice||Disallocated by IANA
 \.xn--mgbaakc7dvf$
 
 :whois|whois.nic.grocery
