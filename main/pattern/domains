@@ -1,4 +1,4 @@
-#: version 20231120
+#: version 20231123
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1670,7 +1670,8 @@
 \.technology$
 
 # Delegated on 14 November 2013 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.nic.tattoo
 \.tattoo$
 
 # Delegated on 14 November 2013 to Fox Dynamite, LLC
@@ -5434,8 +5435,7 @@
 :whois|whois.nic.fresenius
 \.fresenius$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.volkswagen
+:notice||Disallocated by IANA
 \.volkswagen$
 
 :whois|whois.nic.tube
