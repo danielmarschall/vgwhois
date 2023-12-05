@@ -263,11 +263,10 @@ function generateRandomToken($haystack, $length = 20) {
 	return $t;
 }
 
-function github_commit_count($user, $repo) {
-	$cont = file_get_contents("https://github.com/$user/$repo");
-	if (preg_match('@<strong>(\\d+)</strong>\s*<span[^>]+aria-label="Commits on master"[^>]*>\s*commits\s*</span>@smU', $cont, $m)) {
-		return $m[1];
-	} else {
-		return "?";
-	}
+function github_latest_commit($author, $repo) {
+	$cont = file_get_contents2("https://api.github.com/repos/$author/$repo/commits");
+	if ($cont === false) return false;
+	$json = json_decode($cont, true);
+	if ($json === false) return false;
+	return $json[0]['sha'] ?? false;
 }
