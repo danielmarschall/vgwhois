@@ -1,4 +1,4 @@
-#: version 20231123
+#: version 20231213
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -117,7 +117,8 @@
 \.bg$
 
 #:cgipost|http://oldinet.arabian.net/include/domaincheckmodule.asp|txtWebDomain=~query~
-:notice||Whois server gone [2015/05]
+#:notice||Whois server gone [2015/05]
+:whois|whois.nic.bh
 \.bh$
 
 #:program|$vgwhois$/subprograms/bi
@@ -3358,7 +3359,7 @@
 \.xn--xhq521b$
 
 # Delegated on 14 August 2014
-:whois|whois.nic.sca
+:notice||Disallocated by IANA
 \.sca$
 
 # Delegated on 14 August 2014
