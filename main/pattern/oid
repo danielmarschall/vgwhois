@@ -1,4 +1,4 @@
-#: version 20231120
+#: version 20231213
 
 # Special: OIDs
 # There will be soon a RFC by Daniel Marschall, which will define how information about an OID can be queried over a whois service
@@ -8,7 +8,7 @@
 # see https://datatracker.ietf.org/doc/draft-viathinksoft-oidip/
 # --------------------------------------------------------------------
 
-#:cgi|https://oidplus.viathinksoft.com/oidplus/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
+#:cgi|https://hosted.oidplus.com/viathinksoft/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
 :whois|whois.viathinksoft.de
 oid:1.3.6.1.4.1.37476
 oid:1.3.6.1.4.1.37553.8.8.2
