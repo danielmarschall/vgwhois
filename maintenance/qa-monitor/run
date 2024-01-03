@@ -261,7 +261,7 @@ exit($global_status);
 # ---
 
 function getLatestGWIversion() {
-	$x = cached_file('http://packages.debian.org/search?searchon=names&keywords=gwhois', CACHE_FILE_DIR);
+	$x = cached_file('https://packages.debian.org/search?searchon=names&keywords=gwhois', CACHE_FILE_DIR);
 	preg_match_all('@<br>(.*): all@isU', $x, $m);
 	$m = $m[1];
 	rsort($m);
