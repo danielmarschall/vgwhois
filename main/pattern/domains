@@ -1,4 +1,4 @@
-#: version 20231213
+#: version 20240202
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -901,7 +901,7 @@
 :whois|whois2.afilias-grs.net
 \.sc$
 
-:notice||No whois, no domain list. Homepage http://www.sdnic.sd/ (2/2008)
+:whois|whois.nic.sd
 \.sd$
 
 #:whois|whois.nic-se.se
@@ -6310,7 +6310,7 @@
 :whois|whois.nic.athleta
 \.athleta$
 
-:whois|whois.nic.bananarepublic
+:notice||Disallocated by IANA
 \.bananarepublic$
 
 #:whois|whois.afilias-srs.net
@@ -6345,7 +6345,7 @@
 :notice||Disallocated by IANA
 \.maserati$
 
-:whois|whois.nic.oldnavy
+:notice||Disallocated by IANA
 \.oldnavy$
 
 #:whois|whois.nic.qvc
