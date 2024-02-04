@@ -4,7 +4,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Common functions in PHP
 #
-#  (c) 2013-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2013-2024 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -46,7 +46,7 @@ function cached_file($url, $cache_dir, $max_age = /* 24*60*60 */ 86400) {
 	if (!is_dir($cache_dir)) mkdir($cache_dir, 0755, true);
 	if (file_age($cachefile) > $max_age) {
 		$cont = file_get_contents($url, false, $context);
-		file_put_contents($cachefile, $cont);
+		if ($cont !== false) file_put_contents($cachefile, $cont);
 	} else {
 		$cont = file_get_contents($cachefile);
 	}

@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
-#  (c) 2012-2019 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2012-2024 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -43,7 +43,8 @@ function rir_download_report($url, $outfile, $do_md5_check = true) {
 		$md5_ist  = md5_file($outfile);
 		$md5_soll = rir_get_md5_sum($url);
 		if ($md5_soll == $md5_ist) {
-			touch("$outfile.success");
+			@unlink("$outfile.fail");
+			@touch("$outfile.success");
 			return true;
 		}
 	}
@@ -51,7 +52,8 @@ function rir_download_report($url, $outfile, $do_md5_check = true) {
 	$cont = file_get_contents($url);
 
 	if (!$cont) {
-		touch("$outfile.fail");
+		@unlink("$outfile.success");
+		@touch("$outfile.fail");
 		return false;
 	}
 
@@ -59,7 +61,8 @@ function rir_download_report($url, $outfile, $do_md5_check = true) {
 		$md5_ist = md5($cont);
 		if (!isset($md5_soll)) $md5_soll = rir_get_md5_sum($url);
 		if ($md5_soll != $md5_ist) {
-			touch("$outfile.fail");
+			@unlink("$outfile.success");
+			@touch("$outfile.fail");
 			return false;
 		}
 	}
@@ -67,12 +70,14 @@ function rir_download_report($url, $outfile, $do_md5_check = true) {
 	$h = fopen($outfile, 'w');
 	if (!$h) return false;
 	if (!fwrite($h, $cont)) {
-		touch("$outfile.fail");
+		@unlink("$outfile.success");
+		@touch("$outfile.fail");
 		return false;
 	}
 	fclose($h);
 
-	touch("$outfile.success");
+	@unlink("$outfile.fail");
+	@touch("$outfile.success");
 	return true;
 }
 
