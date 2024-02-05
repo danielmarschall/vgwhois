@@ -57,8 +57,8 @@ sub VGWhoIs::Core::whoisaccess {
 }
 
 # ($result, $exitcode) = VGWhoIs::Core::inicwhoisaccess($host,$port,$query)
-sub VGWhoIs::Core::inicwhoisaccess { # todo: mehr als 1 redirect möglich, z.b. bei rwhois??
-#TODO: hier auch $mirror unterstützung?
+sub VGWhoIs::Core::inicwhoisaccess { # todo: mehr als 1 redirect mÃ¶glich, z.b. bei rwhois??
+#TODO: hier auch $mirror unterstÃ¼tzung?
 	my ($host,$port,$query) = @_;
 	my ($queryresult, $result);
 	my $exitcode;

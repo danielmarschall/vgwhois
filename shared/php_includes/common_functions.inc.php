@@ -4,7 +4,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Common functions in PHP
 #
-#  (c) 2011-2013 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2011-2024 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -136,18 +136,21 @@ function file_get_contents2($url, $postvalues='', $headers=array()) {
 }
 
 function make_tabs($text, $abstand = 4) {
+	$encoding = @ini_get('default_charset');
+	if ($encoding === false) $encoding = null;
 	$ary = explode("\n", $text);
 	$longest = 0;
 	foreach ($ary as $a) {
 		$bry = explode(':', $a, 2);
 		if (count($bry) < 2) continue;
-		$c = strlen($bry[0]);
+		$c = !is_null($encoding) ? mb_strlen($bry[0], $encoding) : strlen($bry[0]);
 		if ($c > $longest) $longest = $c;
 	}
 	foreach ($ary as $n => $a) {
 		$bry = explode(':', $a, 2);
 		if (count($bry) < 2) continue;
-		$rep = $longest-strlen($bry[0]) + $abstand;
+		$c_ = !is_null($encoding) ? mb_strlen($bry[0], $encoding) : strlen($bry[0]);
+		$rep = $longest - $c_ + $abstand;
 		if ($rep < 1) {
 			$wh = '';
 		} else {
@@ -157,13 +160,6 @@ function make_tabs($text, $abstand = 4) {
 	}
 	$x = implode("\n", $ary);
 	return $x;
-}
-
-function uc_latin1($str) {
-	# Source: http://de3.php.net/manual/en/function.strtoupper.php#82592
-	$str = strtoupper(strtr($str, "àáâãäåæçèéêëìíîïðñòóôõöøùúûüý",
-	                              "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝ"));
-	return strtr($str, array("ß" => "SS"));
 }
 
 /**

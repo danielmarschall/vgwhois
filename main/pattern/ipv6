@@ -24,7 +24,7 @@
 
 # IANA
 :whois|whois.iana.org
-# TODO: prüfen ob das alles von http://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xml abdeckt
+# TODO: prÃ¼fen ob das alles von http://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xml abdeckt
 =2001::/23
 # www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xml
 # The assignable Global Unicast Address space is defined in RFC4291 as being the address block defined by the

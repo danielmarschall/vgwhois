@@ -13,13 +13,13 @@
 # TODO: strikte trennung zwischen pattern entwicklung ( = im sdk enthalten ) und lokaler gwi entwicklung ( = packages, eigene vwi services )
 # TODO: alles modular machen, vieles cachen
 
-# TODO: was wenn ein rwi entfernt wird? pr¸fung notwendig dann!
+# TODO: was wenn ein rwi entfernt wird? pr√ºfung notwendig dann!
 #       --> das wird im whois-ping test geprueft
 # TODO: auch unnoetige excludes (anormalities) in config.inc.php melden
 
 # TODO pattern.d/tld --> check if all existing and disallocated TLDs are inside
 
-# TODO: konsolenfarben z.b. gr¸n f¸r qa-audit
+# TODO: konsolenfarben z.b. gr√ºn f√ºr qa-audit
 
 error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
@@ -107,7 +107,7 @@ echo "* Check if TLDs have the latest Root-Whois-Server URLs ( ".ROOT_WHOIS_SERV
 # TODO: geht nicht wenn 2 TLDs sich einen :whois teilen
 # geht auch nicht mit domains mit third level tlds oder regexes usw
 
-# TODO: allerdings wird keine kontrolle gemacht ob die auskommentierte Zeile wirklich zu $tld gehˆrt!
+# TODO: allerdings wird keine kontrolle gemacht ob die auskommentierte Zeile wirklich zu $tld geh√∂rt!
 echo "Note: For following TLDs, the root whois server may be commented out: ".implode(', ', $anormale_whois)."\n";
 
 $loc_good = true;
@@ -117,7 +117,7 @@ foreach ($rws_cont as $tld => $whois) {
 
 	$g = false;
 	if (in_arrayi($tld, $anormale_whois)) {
-		# Sonderf‰lle... whois server die nicht gehen...
+		# Sonderf√§lle... whois server die nicht gehen...
 		# Der Server muss dann nur irgendwo vorkommen, in Form einer auskommentierten Zeile
 		$g = (
 			(stripos($pattern_cont, ':whois|'.$whois."\n") !== false) ||
@@ -128,7 +128,7 @@ foreach ($rws_cont as $tld => $whois) {
 			(stripos($pattern_cont, 'inicwhois::'.$whois."\n") !== false) // multiple
 		);
 	} else {
-		# TODO: auch auskommentierte eintr‰ge erlauben, falls die RWI outdated ist
+		# TODO: auch auskommentierte eintr√§ge erlauben, falls die RWI outdated ist
 		$regex = "@\\n:(inic){0,1}whois\\|".preg_quote($whois, '@')."(\\|.*)*\\n(#.*\n)*\\\\.".preg_quote($tld, '@')."\\$@ismU";
 		$g = preg_match($regex, $pattern_cont);
 

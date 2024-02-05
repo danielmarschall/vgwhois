@@ -20,6 +20,8 @@
 
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
+ini_set('default_charset', 'UTF-8');
+
 define('WALK_UP',            true);
 define('ASK_FRANCE_TELECOM', true);
 define('ASK_ALVESTRAND_NO',  false);
@@ -69,7 +71,7 @@ $x = ob_get_contents();
 ob_end_clean();
 
 $x = wordwrap($x, 75, "\n", false);
-echo html_entity_decode($x, ENT_QUOTES, 'utf-8');
+echo html_entity_decode($x);
 #echo $x;
 
 # ----------------- FRANCE TELECOM OID REPOSITORY
@@ -246,7 +248,7 @@ function check_oidinfo_com($oid) {
 	);
 
 	foreach ($special_words as $s) {
-		$x = str_replace("\n$s\n", "\n\n".strtoupper($s)."\n\n", $x);
+		$x = str_replace("\n$s\n", "\n\n".mb_strtoupper($s)."\n\n", $x);
 	}
 
 	$x = preg_replace("/To contact the (first|current) Registration Authority, replace \"&\" by \"@\" in the email address\n/ismU", '', $x);

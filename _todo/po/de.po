@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: German Translation Team <german-l10n-german@lists.debian.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: boolean
@@ -29,8 +29,8 @@ msgid ""
 "If gwhois is installed as a whois proxy server (using inetd) it will listen "
 "on the standard whois port (43) allowing normal whois clients to query it."
 msgstr ""
-"Wenn Gwhois als whois-Proxy (mit inetd) betrieben wird, können Abfragen mit "
-"einem normalen whois-Client über den normalen whois-Port (43) vorgenommen "
+"Wenn Gwhois als whois-Proxy (mit inetd) betrieben wird, kÃ¶nnen Abfragen mit "
+"einem normalen whois-Client Ã¼ber den normalen whois-Port (43) vorgenommen "
 "werden."
 
 #. Type: boolean
@@ -42,16 +42,16 @@ msgid ""
 "client (e.g. a windows client) and still make use of the intelligent "
 "features of gwhois."
 msgstr ""
-"Dies könnte interessant sein, um einen zentralen whois-Server für Ihre Firma "
-"oder Kollegen bereitzustellen. Diese können einen normalen whois-Client (z."
-"B. für Windows) verwenden und dennoch die intelligenten Funktionen von "
+"Dies kÃ¶nnte interessant sein, um einen zentralen whois-Server fÃ¼r Ihre Firma "
+"oder Kollegen bereitzustellen. Diese kÃ¶nnen einen normalen whois-Client (z."
+"B. fÃ¼r Windows) verwenden und dennoch die intelligenten Funktionen von "
 "Gwhois nutzen."
 
 #. Type: error
 #. Description
 #: ../templates:2001
 msgid "Inetd or compatible replacement not installed."
-msgstr "Inetd oder Kompatibilitätsersatz nicht installiert."
+msgstr "Inetd oder KompatibilitÃ¤tsersatz nicht installiert."
 
 #. Type: error
 #. Description
@@ -61,9 +61,9 @@ msgid ""
 "a compatible replacement (in particular the 'update-inetd' binary) which was "
 "not found."
 msgstr ""
-"Sie haben Gwhois konfiguriert, um als Proxy-Server zu agieren. Dies benötigt "
+"Sie haben Gwhois konfiguriert, um als Proxy-Server zu agieren. Dies benÃ¶tigt "
 "inetd oder einen kompatiblen Ersatz (inbesondere das Programm "
-"»update-inetd«), der aber nicht gefunden werden konnte."
+"Â»update-inetdÂ«), der aber nicht gefunden werden konnte."
 
 #. Type: error
 #. Description

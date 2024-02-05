@@ -12,6 +12,8 @@
 
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
+ini_set('default_charset', 'UTF-8');
+
 $domain = isset($argv[1]) ? $argv[1] : '';
 
 $url = "https://pk6.pknic.net.pk/pk5/lookup.PK";
@@ -37,17 +39,6 @@ if (!isset($m[1][0])) {
 $x = $m[1][0];
 
 $x = strip_tags($x);
-
-// é -> É @ strtoupper()
-/*
-$locals = array('es_ES@euro', 'es_ES', 'es');
-reset($locals);
-while (list(, $locale) = each ($locals)) {
-	if ( setlocale(LC_CTYPE, $locale) == $locale ) {                
-		break; // Exit when we were successfull
-	}
-}
-*/
 
 $x = str_replace('&nbsp;', ' ', $x);
 
@@ -83,7 +74,7 @@ $special_words = array(
 );
 
 foreach ($special_words as $s) {
-	$x = str_replace($s, "\n".uc_latin1($s)."\n", $x);
+	$x = str_replace($s, "\n".mb_strtoupper($s)."\n", $x);
 }
 
 echo $res.trim_each_line($x)."\n";

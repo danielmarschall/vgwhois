@@ -5,19 +5,21 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Subprogram: cu TLD whois
 #
-#  (c) 2011-2012 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2011-2024 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
+ini_set('default_charset', 'UTF-8');
+
 $domain = isset($argv[1]) ? $argv[1] : '';
 
 define('BEGIN', '<!-- InstanceBeginEditable name="MainRgn" -->');
 define('END',   '<!-- InstanceEndEditable -->');
 
-$url = "http://www.nic.cu/dom_det.php?domsrch=$domain";
+$url = "https://www.nic.cu/dom_det.php?domsrch=$domain";
 
 $res  = "% Parsing via regex from '$url'\n\n";
 
@@ -26,24 +28,13 @@ $x = file_get_contents2($url);
 preg_match_all('@'.preg_quote(BEGIN, '@').'(.*)'.preg_quote(END, '@').'@ismU', $x, $m);
 
 if (!isset($m[1][0])) {
-	echo "Error while parsing the web content. Could not find limitations.\n";
+	echo "Error while parsing the web content (RegEx failed).\n";
 	exit(1);
 }
 
 $x = $m[1][0];
 
 $x = strip_tags($x);
-
-// é -> É @ strtoupper()
-/*
-$locals = array('es_ES@euro', 'es_ES', 'es');
-reset($locals);
-while (list(, $locale) = each ($locals)) {
-	if ( setlocale(LC_CTYPE, $locale) == $locale ) {                
-		break; // Exit when we were successfull
-	}
-}
-*/
 
 $x = str_replace('&nbsp;', ' ', $x);
 
@@ -58,31 +49,25 @@ $x = str_replace(":\n", ": ", $x);
 
 $special_words = array(
 	'Detalles del dominio',
-	'Información general del dominio',
+	'InformaciÃ³n general del dominio',
 	'DNS Primario',
-	'Contacto Técnico',
+	'Contacto TÃ©cnico',
 	'Contacto Administrativo',
 	'Contacto Financiero'
 );
 
 foreach ($special_words as $s) {
-	$x = str_replace($s, "\n".uc_latin1($s)."\n", $x);
+	$x = str_replace($s, "\n".mb_strtoupper($s)."\n", $x);
 }
 
-$x = str_replace('< Regresar a la página anterior', '', $x);
+$x = str_replace('< Regresar a la pÃ¡gina anterior', '', $x);
 
 $x = make_tabs($x);
 
 $x = trim($x);
 
-if (strpos($x, 'Dominio: Organización: Dirección:') !== false) {
+if (preg_match('@Dominio: *OrganizaciÃ³n: *DirecciÃ³n:@', $x)) {
 	$x = 'Domain does not exist.';
-}
-
-#does not work...
-#if ($x == 'DETALLES DEL DOMINIO\n\nINFORMACIÓN GENERAL DEL DOMINIO\n\nDominio:     Organización: Dirección:\n\nDNS\nNombre:      Dirección IP:\nContacto\nNombre:      Organización: Dirección: Teléfono: Fax:') {
-if (md5($x) == '82f755ffa4a436159afec22d69be304c') {
-	$x = 'Domain not available.';
 }
 
 echo $res.trim_each_line($x)."\n";

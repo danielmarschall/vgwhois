@@ -12,28 +12,19 @@
 
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
+ini_set('default_charset', 'UTF-8');
+
 $domain = isset($argv[1]) ? $argv[1] : '';
 
 $url = "http://nic.pa/es/whois/dominio/$domain";
 $res  = "% Parsing via regex from '$url'\n\n";
-$cont = file_get_contents($url);
+$cont = file_get_contents2($url);
 
 if (preg_match('@<h2>Nombre del Dominio:\s*(.+)\s*</h2>(.+)</div>@ismU', $cont, $m)) {
 	$cont = "Domain ".$m[1].":\n".$m[2];
 }
 
 $x = strip_tags($cont);
-
-// é -> É @ strtoupper()
-/*
-$locals = array('es_ES@euro', 'es_ES', 'es');
-reset($locals);
-while (list(, $locale) = each ($locals)) {
-	if ( setlocale(LC_CTYPE, $locale) == $locale ) {
-		break; // Exit when we were successfull
-	}
-}
-*/
 
 $x = str_replace('&nbsp;', ' ', $x);
 
@@ -52,22 +43,22 @@ $x = str_replace("Nombre\n", 'Nombre ', $x);
 $x = str_replace("Contacto\n", 'Contacto ', $x);
 $x = str_replace("Fecha\n", 'Fecha ', $x);
 
-if (strpos($x, 'Fecha de Creación: 0000-00-00') !== false) {
+if (strpos($x, 'Fecha de CreaciÃ³n: 0000-00-00') !== false) {
 	echo "Domain '$domain' does not exist!";
 	exit(2);
 }
 
 $special_words = array(
-        "Información del Dominio $domain",
+        "InformaciÃ³n del Dominio $domain",
 );
 
 foreach ($special_words as $s) {
-        $x = str_replace($s, "\n".uc_latin1($s)."\n", $x);
+        $x = str_replace($s, "\n".mb_strtoupper($s)."\n", $x);
 }
 
 $x = str_replace("Datos Obtenidos de nuestra base de datos ...\n$domain\n", "\n>>>>", $x);
 
-# Emulate tabulators.
+// Emulate tabulators.
 $cry = explode(">>>>", $x, 2);
 $x = make_tabs($cry[0]);
 

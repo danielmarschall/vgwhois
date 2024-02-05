@@ -12,6 +12,8 @@
 
 require_once __DIR__ . '/../../../shared/php_includes/common_functions.inc.php';
 
+ini_set('default_charset', 'UTF-8');
+
 $domain = isset($argv[1]) ? $argv[1] : '';
 
 $url = "http://www.nic.ac/cgi-bin/whois?query=$domain";
@@ -46,7 +48,7 @@ $special_words = array(
 );
 
 foreach ($special_words as $s) {
-	$x = str_replace($s, "\n".strtoupper($s)."\n", $x);
+	$x = str_replace($s, "\n".mb_strtoupper($s)."\n", $x);
 }
 
 $x = make_tabs($x);

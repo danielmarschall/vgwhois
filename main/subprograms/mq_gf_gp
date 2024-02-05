@@ -14,6 +14,8 @@
 
 require_once __DIR__ . '/../../shared/php_includes/common_functions.inc.php';
 
+ini_set('default_charset', 'UTF-8');
+
 $domain = isset($argv[1]) ? $argv[1] : '';
 
 $url = "https://www.dom-enic.com/whois.html";
@@ -47,7 +49,7 @@ if (strpos($x, /* $domain. */ ' est disponible.') !== false) {
 preg_match_all('@'.preg_quote(BEGIN, '@').'(.*)'.preg_quote(END, '@').'@ismU', $x, $m);
 
 if (!isset($m[1][0])) {
-	echo "Error while parsing the web content. Could not find limitations.\n";
+	echo "Error while parsing the web content (RegEx failed).\n";
 	exit(1);
 }
 $x = $m[1][0];
@@ -56,17 +58,6 @@ $x = preg_replace('@<br />(?!\n)@', "\n", $x);
 $x = strip_tags($x);
 
 $x = html_entity_decode($x);
-
-// é -> É @ strtoupper()
-/*
-$locals = array('es_ES@euro', 'es_ES', 'es');
-reset($locals);
-while (list(, $locale) = each ($locals)) {
-	if ( setlocale(LC_CTYPE, $locale) == $locale ) {                
-		break; // Exit when we were successfull
-	}
-}
-*/
 
 $x = preg_replace("@\n\s+\n@", "\n\n", $x);
 while (strpos($x, "\n\n\n") !== false) $x = str_replace("\n\n\n", "\n\n", $x);
@@ -79,7 +70,7 @@ $special_words = array(
 );
 
 foreach ($special_words as $s) {
-	$x = str_replace($s, "\n".uc_latin1($s)."\n", $x);
+	$x = str_replace($s, "\n".mb_strtoupper($s)."\n", $x);
 }
 
 $x = trim($x);
