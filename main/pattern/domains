@@ -1,4 +1,4 @@
-#: version 20240202
+#: version 20240213
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -256,7 +256,8 @@
 :program|$vgwhois$/subprograms/cu
 \.cu$
 
-:notice||A whois form is available at http://www.dns.cv/tldcv_si/publico
+#:notice||A whois form is available at http://www.dns.cv/tldcv_si/publico
+:whois|whois.nic.cv
 \.cv$
 
 :notice||No whois available (last checked May 2019). Domains can be registered here: https://www.uoc.cw/cw-registry
@@ -6059,7 +6060,7 @@
 :whois|whois.nic.mit
 \.mit$
 
-:whois|whois.nic.comcast
+:notice||Disallocated by IANA
 \.comcast$
 
 :whois|whois.nic.gmo
@@ -6072,7 +6073,7 @@
 :whois|whois.nic.gmo
 \.mitsubishi$
 
-:whois|whois.nic.xfinity
+:notice||Disallocated by IANA
 \.xfinity$
 
 :whois|whois.nic.nike
