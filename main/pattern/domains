@@ -1,4 +1,4 @@
-#: version 20240213
+#: version 20240228
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1159,7 +1159,8 @@
 
 #:cgipost|http://www.nic.vi/whois.asp|text1=~query~
 #:cgipost|https://secure.nic.vi/whois-lookup/|domainName=~query~&submitted=true
-:program|$vgwhois$/subprograms/vi
+#:program|$vgwhois$/subprograms/vi
+:whois|whois.nic.vi
 \.vi$
 
 #:cgipost|http://www.tenmien.vn/jsp/jsp/tracuudomainchitiet.jsp?type=~query~
