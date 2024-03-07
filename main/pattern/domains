@@ -1,4 +1,4 @@
-#: version 20240229
+#: version 20240307
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -5845,7 +5845,7 @@
 :whois|whois.nic.hkt
 \.hkt$
 
-:whois|whois.nic.guardian
+:notice||Disallocated by IANA
 \.guardian$
 
 :whois|whois.nic.xn--w4rs40l
