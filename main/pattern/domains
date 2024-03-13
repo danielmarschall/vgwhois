@@ -1,4 +1,4 @@
-#: version 20240307
+#: version 20240313
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -135,7 +135,8 @@
 :notice||.bl is reserved
 \.bl$
 
-:notice||Please visit https://www.bermudanic.bm/whois.htm and solve the CAPTCHA [5/2019]
+#:notice||Please visit https://www.bermudanic.bm/whois.htm and solve the CAPTCHA [5/2019]
+:whois|whois.nic.bm
 \.bm$
 
 #:notice||No whois, no domain list. Homepage http://www.brunet.bn/ (last checked Sep 2005)
