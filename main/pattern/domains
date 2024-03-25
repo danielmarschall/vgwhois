@@ -1,4 +1,4 @@
-#: version 20240313
+#: version 20240325
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1439,7 +1439,8 @@
 :notice||Disallocated by IANA
 \.xn--9t4b11yi5a$
 
-:whois|whois.sgnic.sg
+#:whois|whois.sgnic.sg
+:whois|whois.ta.sgnic.sg
 \.xn--clchc0ea0b2g2a9gcd$
 
 :notice||Disallocated by IANA
@@ -1552,7 +1553,8 @@
 :whois|whois.registry.in
 \.xn--xkc2dl3a5ee0h$
 
-:whois|whois.sgnic.sg
+#:whois|whois.sgnic.sg
+:whois|whois.zh.sgnic.sg
 \.xn--yfro4i67o$
 
 :whois|whois.nic.kz
