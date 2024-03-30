@@ -1,4 +1,4 @@
-#: version 20240325
+#: version 20240330
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1113,8 +1113,6 @@
 :whois|whois.nic.uk
 \.uk$
 
-#:notice||No whois, no domain list. Homepage http://www.nic.um/ (last checked Sep 2005)
-#\.um$
 :notice||Disallocated by IANA
 \.um$
 
@@ -1198,9 +1196,6 @@
 :whois|whois.nic.yt
 \.yt$
 
-#:cgi|http://www.nic.yu/cgi-bin/checkavail.cgi?domain=~1~&suffix=~2~
-#(.*)(\.(?:bg\.ac|ac|co|org|edu)\.yu)$
-#(.*)(.yu)$
 :notice||Disallocated by IANA
 \.yu$
 
@@ -3213,7 +3208,6 @@
 :whois|whois.nic.direct
 \.direct$
 
-# Delegated on 3 July 2014
 :notice||Disallocated by IANA
 \.cancerresearch$
 
@@ -3262,7 +3256,6 @@
 :whois|whois.nic.lacaixa
 \.lacaixa$
 
-# Delegated on 18 July 2014
 :notice||Disallocated by IANA
 \.spiegel$
 
@@ -3364,7 +3357,6 @@
 :whois|whois.ngtld.cn
 \.xn--xhq521b$
 
-# Delegated on 14 August 2014
 :notice||Disallocated by IANA
 \.sca$
 
@@ -3684,9 +3676,6 @@
 :whois|whois.nic.world
 \.world$
 
-# Delegated on 23 September 2014
-#:whois|whois-dub.mm-registry.com
-#:whois|whois.nic.budapest
 :notice||Disallocated by IANA
 \.budapest$
 
@@ -3960,7 +3949,6 @@
 :whois|whois.nic.sky
 \.sky$
 
-#:whois|whois.nic.doosan
 :notice||Disallocated by IANA
 \.doosan$
 
@@ -3968,7 +3956,6 @@
 :whois|whois.nic.garden
 \.garden$
 
-#:whois|whois.nic.iwc
 :notice||Disallocated by IANA
 \.iwc$
 
@@ -4237,8 +4224,6 @@
 :whois|whois.nic.gmo
 \.infiniti$
 
-#:whois|whois.nic.gmo
-#:whois|whois.nic.mtpc
 :notice||Disallocated by IANA
 \.mtpc$
 
@@ -4256,7 +4241,6 @@
 :whois|whois.nic.xin
 \.xin$
 
-#:whois|whois.nic.chloe
 :notice||Disallocated by IANA
 \.chloe$
 
@@ -4357,7 +4341,6 @@
 :whois|whois.nic.date
 \.date$
 
-#:whois|whois.nic.doha
 :notice||Disallocated by IANA
 \.doha$
 
@@ -4605,7 +4588,6 @@
 :whois|whois.nic.corsica
 \.corsica$
 
-#:whois|whois.nic.lupin
 :notice||Disallocated by IANA
 \.lupin$
 
@@ -4663,7 +4645,6 @@
 :whois|whois.nic.xbox
 \.xbox$
 
-#:whois|whois.nic.montblanc
 :notice||Disallocated by IANA
 \.montblanc$
 
@@ -4723,7 +4704,6 @@
 :whois|whois.nic.ricoh
 \.ricoh$
 
-#:whois|whois.nic.starhub
 :notice||Disallocated by IANA
 \.starhub$
 
@@ -4736,7 +4716,6 @@
 :whois|whois.nic.office
 \.office$
 
-#:whois|whois.nic.scor
 :notice||Disallocated by IANA
 \.scor$
 
@@ -4747,8 +4726,6 @@
 :whois|whois.nic.law
 \.law$
 
-#:whois|whois.afilias-srs.net
-#:whois|whois.nic.bnl
 :notice||Disallocated by IANA
 \.bnl$
 
@@ -4916,11 +4893,9 @@
 :whois|whois.nic.xn--tckwe
 \.xn--tckwe$
 
-#:whois|whois.nic.lixil
 :notice||Disallocated by IANA
 \.lixil$
 
-#:whois|whois.nic.boots
 :notice||Disallocated by IANA
 \.boots$
 
@@ -4935,15 +4910,12 @@
 :whois|whois.nic.wine
 \.wine$
 
-#:whois|whois.nic.xperia
 :notice||Disallocated by IANA
 \.xperia$
 
 :whois|whois.nic.giving
 \.giving$
 
-#:whois|whois.nic.ceb
-#:whois|whois.afilias-srs.net
 :notice||Disallocated by IANA
 \.ceb$
 
@@ -4995,7 +4967,6 @@
 :whois|whois.nic.stc
 \.stc$
 
-#:whois|whois.nic.csc
 :notice||Disallocated by IANA
 \.csc$
 
@@ -5104,14 +5075,12 @@
 :whois|whois.nic.zara
 \.zara$
 
-#:whois|whois.nic.meo
 :notice||Disallocated by IANA
 \.meo$
 
 :whois|whois.nic.ping
 \.ping$
 
-#:whois|whois.nic.sapo
 :notice||Disallocated by IANA
 \.sapo$
 
@@ -5383,11 +5352,9 @@
 :whois|whois.nic.weber
 \.weber$
 
-#:whois|whois.nic.mobily
 :notice||Disallocated by IANA
 \.mobily$
 
-#:whois|whois.nic.xn--mgbb9fbpob
 :notice||Disallocated by IANA
 \.xn--mgbb9fbpob$
 
@@ -5454,7 +5421,6 @@
 :whois|whois.nic.compare
 \.compare$
 
-#:whois|whois.nic.iselect
 :notice||Disallocated by IANA
 \.iselect$
 
@@ -5488,7 +5454,6 @@
 :whois|whois.nic.edeka
 \.edeka$
 
-#:whois|whois.nic.pamperedchef
 :notice||Disallocated by IANA
 \.pamperedchef$
 
@@ -5606,7 +5571,6 @@
 :whois|whois.nic.song
 \.song$
 
-#:whois|whois.nic.telecity
 :notice||Disallocated by IANA
 \.telecity$
 
@@ -5640,8 +5604,7 @@
 :whois|whois.nic.xn--w4r85el8fhu5dnra
 \.xn--w4r85el8fhu5dnra$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.avianca
+:notice||Disallocated by IANA
 \.avianca$
 
 #:whois|whois.afilias-srs.net
@@ -5694,7 +5657,6 @@
 :whois|whois.teleinfo.cn
 \.anquan$
 
-#:whois|whois.afilias-srs.net
 :notice||Disallocated by IANA
 \.jcp$
 
@@ -5714,7 +5676,6 @@
 :whois|whois.teleinfo.cn
 \.yun$
 
-#:whois|whois.nic.htc
 :notice||Disallocated by IANA
 \.htc$
 
@@ -5731,7 +5692,6 @@
 :whois|whois.nic.abudhabi
 \.abudhabi$
 
-#:whois|whois.nic.northwesternmutual
 :notice||Disallocated by IANA
 \.northwesternmutual$
 
@@ -6199,7 +6159,6 @@
 :notice||Disallocated by IANA
 \.scjohnson$
 
-#:whois|whois.nic.swiftcover
 :notice||Disallocated by IANA
 \.swiftcover$
 
@@ -6215,7 +6174,6 @@
 :notice||Disallocated by IANA
 \.duns$
 
-#:whois|whois.afilias-srs.net
 :notice||Disallocated by IANA
 \.esurance$
 
@@ -6225,7 +6183,6 @@
 :whois|whois.nic.americanfamily
 \.americanfamily$
 
-#:whois|whois.nic.honeywell
 :notice||Disallocated by IANA
 \.honeywell$
 
@@ -6354,7 +6311,6 @@
 :notice||Disallocated by IANA
 \.oldnavy$
 
-#:whois|whois.nic.qvc
 :notice||Disallocated by IANA
 \.qvc$
 
@@ -6370,11 +6326,9 @@
 :whois|whois.nic.amex
 \.amex$
 
-#:whois|whois.nic.mcd
 :notice||Disallocated by IANA
 \.mcd$
 
-#:whois|whois.nic.mcdonalds
 :notice||Disallocated by IANA
 \.mcdonalds$
 
@@ -6539,9 +6493,6 @@
 :whois|whois.nic.ril
 \.ril$
 
-# Alternative URL: http://nic.rmit/
-#:whois|whois.aridnrs.net.au
-#:whois|whois.nic.rmit
 :notice||Disallocated by IANA
 \.rmit$
 
