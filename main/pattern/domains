@@ -1,4 +1,4 @@
-#: version 20240330
+#: version 20240503
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -900,7 +900,8 @@
 \.sb$
 
 # :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
-:whois|whois2.afilias-grs.net
+#:whois|whois2.afilias-grs.net
+:whois|whois.nic.sc
 \.sc$
 
 :whois|whois.nic.sd
