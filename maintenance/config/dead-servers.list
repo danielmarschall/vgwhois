@@ -35,8 +35,6 @@ whois.pnina.ps
 #whois.monic.mo
 # first fail: 2023-05-13
 whois.dot.cf
-# first fail: 2023-04-05 (whole nic.ki domain seems to be missing as of 16 Aug 2023)
-whois.nic.ki
 
 # does not listen to public IPs anymore. The whois server only accepts calls from the web interface
 whois.registry.hm

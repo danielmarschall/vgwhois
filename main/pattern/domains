@@ -567,8 +567,7 @@
 :notice||No whois, no domain list. Homepage http://www.mptc.gov.kh/Reculation/dns_reualation.htm (last checked Sep 2005)
 \.kh$
 
-#:whois|whois.nic.ki
-:notice||Try visiting http://nic.ki/ for more information (domain nic.ki defunct as of Aug 2023)
+:whois|whois.nic.ki
 \.ki$
 
 :notice||No whois, no domain list. Homepage http://www.domaine.km/ defunct (last checked Aug 2023)
@@ -5510,7 +5509,8 @@
 \.hdfcbank$
 
 #:whois|whois.afilias-srs.net
-:whois|whois.gtlds.nic.br
+#:whois|whois.gtlds.nic.br
+:notice||Disallocated by IANA
 \.natura$
 
 #:whois|whois.afilias-srs.net
