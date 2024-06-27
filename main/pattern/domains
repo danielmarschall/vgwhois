@@ -1,4 +1,4 @@
-#: version 20240503
+#: version 20240627
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -417,7 +417,8 @@
 \.gh$
 
 # :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
-:whois|whois2.afilias-grs.net
+#:whois|whois2.afilias-grs.net
+:whois|whois.identitydigital.services
 \.gi$
 
 #:cgi|http://search.greennet.gl/cgi-bin/dnscheck/eng.dnscheck.pl?action=dnscheck&webaddress=~query~
