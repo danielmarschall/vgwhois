@@ -1143,7 +1143,8 @@
 \.va$
 
 # :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
-:whois|whois2.afilias-grs.net
+#:whois|whois2.afilias-grs.net
+:whois|whois.identitydigital.services
 \.vc$
 
 #:cgi|https://whois.nic.ve/whois/domain/~query~/
@@ -5630,7 +5631,7 @@
 :whois|whois.nic.gallo
 \.gallo$
 
-:whois|whois.afilias-srs.net
+:notice||Disallocated by IANA
 \.shaw$
 
 #:whois|whois.afilias-srs.net
