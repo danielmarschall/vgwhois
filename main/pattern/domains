@@ -1,4 +1,4 @@
-#: version 20240627
+#: version 20240729
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4490,7 +4490,8 @@
 :whois|whois.nic.gmo
 \.hitachi$
 
-:whois|whois.nic.sener
+#:whois|whois.nic.sener
+:whois|whois.nic.rwe
 \.sener$
 
 :whois|whois.nic.toray
