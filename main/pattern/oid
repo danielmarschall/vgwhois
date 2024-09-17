@@ -1,11 +1,11 @@
-#: version 20240905
+#: version 20240917
 
 # Special: OIDs
 # The OID Information Protocol (OID-IP) can be used to query OID information in a WHOIS like protocol.
 # Generally, you can query a whois server with "oid:.2.999" or "oid:2.999"
 # The whois servers should do referal whois redirects
 # see:
-# - https://github.com/ViaThinkSoft/standards/blob/main/viathinksoft-std-0002-oidip.txt
+# - https://www.viathinksoft.de/std/viathinksoft-std-0002-oidip.html
 # - https://datatracker.ietf.org/doc/draft-viathinksoft-oidip/
 # --------------------------------------------------------------------
 
@@ -15,6 +15,7 @@
 oid:1.3.6.1.4.1.37476
 oid:1.3.6.1.4.1.37553.8.8.2
 oid:1.3.6.1.4.1.54392.5.1908
+oid:1.3.6.1.4.1.61117.1.131072
 
 # OIDplus System ID 211014765
 #:cgi|https://oid.rdubois.fr/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
