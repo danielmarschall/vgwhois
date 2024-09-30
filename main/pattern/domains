@@ -1,4 +1,4 @@
-#: version 20240729
+#: version 20240930
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4052,8 +4052,7 @@
 :whois|whois.nic.barclays
 \.barclays$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.dabur
+:notice||Disallocated by IANA
 \.dabur$
 
 :whois|whois.nic.google
