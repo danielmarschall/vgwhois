@@ -89,16 +89,16 @@ function fto_link_replacing_cb($treffer) {
 
 	# relative -> absolute links
 	if (substr($link, 0, 3) == '../') {
-		$link = 'http://oid-info.com/'.$link;
+		$link = 'https://www.oid-base.com/'.$link;
 	} else if ($link[0] == '/') {
-		$link = 'http://oid-info.com'.$link;
+		$link = 'https://www.oid-base.com'.$link;
 	}
 
 	return $name . ' &lt;' . $link . '&gt;';
 }
 
 function check_oidinfo_com($oid) {
-	$url = "http://oid-info.com/get/$oid";
+	$url = "https://www.oid-base.com/get/$oid";
 
 	$x = file_get_contents2($url);
 
@@ -186,10 +186,10 @@ function check_oidinfo_com($oid) {
 	$x = preg_replace('|<mailto:(.*)&(.*)>|ismU', '<$1@$2>', $x);
 	$x = str_replace("<#top>\n", '', $x);
 
-	$x = str_replace('(OID-IRI <http://oid-info.com/faq.htm#iri> notation)', '(OID-IRI notation)', $x);
-	$x = str_replace('(ASN.1 <http://oid-info.com/faq.htm#17> notation)', '(ASN.1 notation)', $x);
-	$x = str_replace('(dot <http://oid-info.com/faq.htm#14> notation)', '(dot notation)', $x);
-	$x = str_replace(' <http://oid-info.com/faq.htm#iri>', '', $x);
+	$x = str_replace('(OID-IRI <https://oid-base.com/faq.htm#iri> notation)', '(OID-IRI notation)', $x);
+	$x = str_replace('(ASN.1 <https://oid-base.com/faq.htm#17> notation)', '(ASN.1 notation)', $x);
+	$x = str_replace('(dot <https://oid-base.com/faq.htm#14> notation)', '(dot notation)', $x);
+	$x = str_replace(' <https://oid-base.com/faq.htm#iri>', '', $x);
 
 
 	$prev_swap_lines = array(
@@ -293,14 +293,14 @@ function fto_find_father($content) {
 
 	$last = $m[1][$c-1];
 	$last = str_replace('/cgi-bin/manage?action=create&oid=', '', $last);
-	$last = str_replace('http://www.oid-info.com/get/', '', $last);
-	$last = str_replace('http://oid-info.com/get/', '', $last);
+	$last = str_replace('https://www.oid-base.com/get/', '', $last);
+	$last = str_replace('https://oid-base.com/get/', '', $last);
 
 	return $last;
 }
 
 # ----------------- ALVESTRAND.NO
-# Note that oid-info.com usually contains all OIDs in alvestrands repository.
+# Note that oid-base.com usually contains all OIDs in alvestrands repository.
 
 # todo: + submissions checken (not proofread)
 # todo: 404
