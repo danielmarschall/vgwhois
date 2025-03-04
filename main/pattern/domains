@@ -1,4 +1,4 @@
-#: version 20240930
+#: version 20250304
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -612,7 +612,8 @@
 :whois|whois.lbdr.org.lb
 \.lb$
 
-:whois|whois2.afilias-grs.net
+#:whois|whois2.afilias-grs.net
+:notice||Try http://www.nic.lc/whois.htm (service defunct, last checked March 2025)
 \.lc$
 
 :whois|whois.nic.li
@@ -721,7 +722,8 @@
 \.mt$
 
 #:notice||Please go to http://whois.nic.mu/whois.jsp and solve the CAPTCHA. [Aug 2013]
-:whois|whois.nic.mu
+#:whois|whois.nic.mu
+:whois|whois.tld.mu
 \.mu$
 
 :notice||No whois, no domain list, no nothing. (last checked Sep 2005)
@@ -744,7 +746,8 @@
 :whois|whois.nic.mz
 \.mz$
 
-:whois|whois.na-nic.com.na
+# :whois|whois.na-nic.com.na
+:notice||WHOIS service not available anymore (last checked March 2025), please check http://www.na-nic.com.na/ (no HTTPS)
 \.na$
 
 #:notice||CAPTCHA protected whois on http://www.domaine.nc/. Good look trying to read the captcha. (2/2008)
@@ -1075,7 +1078,8 @@
 \.tn$
 
 #:cgi|https://www.tonic.to/whois?~query~
-:whois|whois.tonic.to
+#:whois|whois.tonic.to
+:notice||WHOIS service unavailable (last checked March 2025), please check https://www.tonic.to/
 \.to$
 
 :notice||Disallocated by IANA. It was replaced with .tl
@@ -5596,7 +5600,7 @@
 :whois|whois.nic.kerryhotels
 \.kerryhotels$
 
-:whois|whois.nic.kerrylogistics
+:notice||Disallocated by IANA
 \.kerrylogistics$
 
 :whois|whois.nic.kerryproperties
@@ -5761,7 +5765,7 @@
 :whois|whois.nic.progressive
 \.progressive$
 
-:whois|whois.nic.lipsy
+:notice||Disallocated by IANA
 \.lipsy$
 
 :whois|whois.nic.next
@@ -6553,7 +6557,9 @@
 :whois|whois.nic.africa
 \.africa$
 
-:whois|whois.nic.xn--mgbai9azgqp6j
+# Pakistan
+#:whois|whois.nic.xn--mgbai9azgqp6j
+:notice||WHOIS service not available (last checked March 2025)
 \.xn--mgbai9azgqp6j$
 
 :whois|whois.nic.hotels
@@ -6646,7 +6652,9 @@
 :whois|whois.nic.llp
 \.llp$
 
-:whois|whois.nic.xn--mgbcpq6gpa1a
+# Bahrain
+#:whois|whois.nic.xn--mgbcpq6gpa1a
+:notice||WHOIS service not available (last checked March 2025)
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la

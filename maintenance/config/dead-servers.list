@@ -35,6 +35,16 @@ whois.pnina.ps
 #whois.monic.mo
 # first fail: 2023-05-13
 whois.dot.cf
+# first fail: 2023-09-30
+whois.na-nic.com.na
+# first fail: 2023-12-06
+whois2.afilias-grs.net
+# first fail: 2024-02-03
+whois.tonic.to
+# first fail: 2023-09-21
+whois.nic.xn--mgbai9azgqp6j
+# first fail: 2023-09-21
+whois.nic.xn--mgbcpq6gpa1a
 
 # does not listen to public IPs anymore. The whois server only accepts calls from the web interface
 whois.registry.hm
