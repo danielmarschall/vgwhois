@@ -1,4 +1,4 @@
-#: version 20250402
+#: version 20250411
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -821,7 +821,8 @@
 \.pf$
 
 #:notice||No whois, no domain list. Homepage http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm (last checked Jan 2005)
-:notice||No whois, no domain list. Homepage http://www.unitech.ac.pg/Frm_Information_about.aspx?ID=130 (last checked Jan 2013)
+#:notice||No whois, no domain list. Homepage http://www.unitech.ac.pg/Frm_Information_about.aspx?ID=130 (last checked Jan 2013)
+:whois|whois.nic.pg
 \.pg$
 
 #:cgi|http://www.domains.ph/WhoIs.asp?Domain=~query~
