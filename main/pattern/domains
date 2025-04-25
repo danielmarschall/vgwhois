@@ -1,4 +1,4 @@
-#: version 20250411
+#: version 20250425
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4799,7 +4799,7 @@
 :whois|whois.nic.studio
 \.studio$
 
-:whois|whois.nic.bentley
+:notice||Disallocated by IANA
 \.bentley$
 
 :whois|whois.nic.hsbc
