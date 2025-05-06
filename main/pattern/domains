@@ -1,4 +1,4 @@
-#: version 20250425
+#: version 20250506
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4826,8 +4826,7 @@
 :whois|whois.nic.ubs
 \.ubs$
 
-#:whois|whois-lancaster.nic.fr
-:whois|whois.nic.lancaster
+:notice||Disallocated by IANA
 \.lancaster$
 
 #:whois|whois.afilias-srs.net
