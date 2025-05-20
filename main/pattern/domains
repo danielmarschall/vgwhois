@@ -1,4 +1,4 @@
-#: version 20250506
+#: version 20250520
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -845,7 +845,8 @@
 (.*)\.((?:co|net|org)\.pn)$
 (.*)\.(pn)$
 
-:whois|whois.dotpostregistry.net
+#:whois|whois.dotpostregistry.net
+:whois|whois.nic.post
 \.post$
 
 #:whois|whois.uprr.pr
@@ -6224,7 +6225,7 @@
 :whois|whois.nic.jeep
 \.jeep$
 
-:whois|whois.nic.pramerica
+:notice||Disallocated by IANA
 \.pramerica$
 
 :whois|whois.nic.pru
