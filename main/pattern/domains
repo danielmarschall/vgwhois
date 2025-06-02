@@ -1,4 +1,4 @@
-#: version 20250520
+#: version 20250602
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -520,7 +520,8 @@
 \.im$
 
 #:whois|whois.inregistry.net
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.in$
 
 :whois|whois.nic.io
@@ -1431,7 +1432,8 @@
 :whois|whois.kr
 \.xn--3e0b707e$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--45brj9c$
 
 :notice||Disallocated by IANA
@@ -1458,7 +1460,8 @@
 :whois|whois.cnnic.cn
 \.xn--fiqz9s$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--fpcrj9c3d$
 
 :notice||whois server unknown (last checked Dec 2011)
@@ -1467,10 +1470,12 @@
 :notice||Disallocated by IANA
 \.xn--g6w251d$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--gecrj9c$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--h2brj9c$
 
 :notice||Disallocated by IANA
@@ -1516,7 +1521,8 @@
 :whois|whois.registry.om
 \.xn--mgb9awbf$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--mgbbh1a71e$
 
 :notice||whois server unknown (last checked Dec 2011)
@@ -1544,7 +1550,8 @@
 :whois|whois.ati.tn
 \.xn--pgbs0dh$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--s9brj9c$
 
 :notice||whois server unknown (last checked Dec 2011)
@@ -1556,7 +1563,8 @@
 :notice||whois server unknown (last checked Dec 2011)
 \.xn--xkc2al3hye2a$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--xkc2dl3a5ee0h$
 
 #:whois|whois.sgnic.sg
@@ -6596,28 +6604,36 @@
 :whois|whois.nic.google
 \.search$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--2scrj9c$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--3hcrj9c$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--45br5cyl$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--h2breg3eve$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--h2brj9c8c$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--mgbbh1a$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--mgbgu82a$
 
-:whois|whois.registry.in
+#:whois|whois.registry.in
+:whois|whois.nixiregistry.in
 \.xn--rvc1e0am3e$
 
 :whois|whois.nic.merckmsd
