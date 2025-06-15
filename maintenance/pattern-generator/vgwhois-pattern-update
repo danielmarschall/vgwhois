@@ -18,8 +18,6 @@ echo "=================== VGWHOIS PATTERN UPDATE ==================="
 echo "This script downloads the latest RIR statistics"
 echo "and renews the pattern files of VGWhoIs to provide"
 echo "up-to-date informations of IPv4, IPv6 and ASN resources."
-echo "ATTENTION: The parsing of the downloaded files will take"
-echo "approximately 15-20 minutes!!!"
 echo "=============================================================="
 
 # RIR stats are necessary for generate_ipv4 and generate_ipv6

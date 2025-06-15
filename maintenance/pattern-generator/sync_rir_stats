@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
-#  (c) 2012-2024 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2012-2025 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -16,25 +16,28 @@ require_once __DIR__ . '/config.inc.php';
 require_once __DIR__ . '/rirs.inc.php';
 
 function rir_get_md5_sum($url) {
-	// MD5 (/var/opt/ftp/pub/apnic/stats/apnic/delegated-apnic-extended-latest) = 82c291bb5d4363a3db254853c1602777
-	// MD5 (delegated-lacnic-extended-latest) = 2815f0b5837d5658acf1659dff98bb52
-	// MD5 (delegated-ripencc-extended-latest) = d4caddde59952c44b584cacf720ef836
-	// MD5 (delegated-arin-latest) = 3137d635d5e647481af972ddc87e5570
-	// MD5 (delegated-afrinic-latest) = 9c1cd55e8894402062282e3ebdcf53c8             <-- WRONG FILE NAME SHOWN FOR delegated-afrinic-extended-latest.md5!
+	// As of 16 June 2025, the RIRs are outputting the following contents for "delegated-...-extended-latest.md5"
+	// MD5 (delegated-afrinic-extended-latest) = a8049729882f34dc158da987508b5806
+	// MD5 (delegated-apnic-extended-latest) = b008ab8e4c22e2537ce04b409c7f7cea
+	// 6d23ed5278c9d21741b1595f4369f0a1  delegated-arin-extended-20250615
+	// MD5 (delegated-lacnic-extended-latest) = 1c3553246b034ec19a743cf88d71e109
+	// MD5 (delegated-ripencc-extended-latest) = 45417d14f60629c09aad1aeef6de8890
 
-	$md5_cont = file_get_contents($url.'.md5');
+	$options = [
+	    "http" => [
+	        "method" => "GET",
+	        "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) " .
+	                    "AppleWebKit/537.36 (KHTML, like Gecko) " .
+	                    "Chrome/114.0.0.0 Safari/537.36\r\n"
+	    ]
+	];
+	$context = stream_context_create($options);
+	$md5_cont = file_get_contents($url.'.md5', false, $context);
 
 	if (substr($md5_cont, 0, 5) != 'MD5 (') {
-		// Some older *.md5 files of AfriNIC have following formats:
-		// 73d5e32afd43eac0beb4635b6a9056c4  delegated-afrinic-latest
-		// since 2012-06-25 AfriNIC uses the "normal" format
-		// MD5 (delegated-afrinic-latest) = 9c1cd55e8894402062282e3ebdcf53c8
-		// however, the filename is wrong (delegated-afrinic-latest instead of delegated-afrinic-extended-latest)
 		return substr($md5_cont, 0, 32);
 	} else {
-		// Die anderen RIRs
-		$tmp = explode(' = ', $md5_cont);
-		return trim($tmp[1]);
+		return trim(explode(' = ', $md5_cont)[1] ?? '');
 	}
 }
 
@@ -49,11 +52,22 @@ function rir_download_report($url, $outfile, $do_md5_check = true) {
 		}
 	}
 
-	$cont = file_get_contents($url);
+	$options = [
+	    "http" => [
+	        "method" => "GET",
+	        "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) " .
+	                    "AppleWebKit/537.36 (KHTML, like Gecko) " .
+	                    "Chrome/114.0.0.0 Safari/537.36\r\n"
+	    ]
+	];
+	$context = stream_context_create($options);
+	$cont = file_get_contents($url, false, $context);
 
 	if (!$cont) {
+		echo "$url: Download fail\n";
 		@unlink("$outfile.success");
-		@touch("$outfile.fail");
+		//@touch("$outfile.fail");
+		file_put_contents("$outfile.fail", "$url: Download fail\n");
 		return false;
 	}
 
@@ -61,8 +75,10 @@ function rir_download_report($url, $outfile, $do_md5_check = true) {
 		$md5_ist = md5($cont);
 		if (!isset($md5_soll)) $md5_soll = rir_get_md5_sum($url);
 		if ($md5_soll != $md5_ist) {
+			echo "$url : MD5 fail (calculated $md5_ist, should be $md5_soll)\n";
 			@unlink("$outfile.success");
-			@touch("$outfile.fail");
+			//@touch("$outfile.fail");
+			file_put_contents("$outfile.fail", "$url: Download fail\n");
 			return false;
 		}
 	}
@@ -70,8 +86,10 @@ function rir_download_report($url, $outfile, $do_md5_check = true) {
 	$h = fopen($outfile, 'w');
 	if (!$h) return false;
 	if (!fwrite($h, $cont)) {
+		echo "Write $url to $outfile failed\n";
 		@unlink("$outfile.success");
-		@touch("$outfile.fail");
+		//@touch("$outfile.fail");
+		file_put_contents("$outfile.fail", "Write $url to $outfile failed\n");
 		return false;
 	}
 	fclose($h);

@@ -48,12 +48,12 @@ $rir_domain['iana']    = 'iana.org';
 // If the RIR offers and extended format, use it instead!
 // Alternative address: ftp://ftp.iana.org/pub/mirror/rirstats/
 $rirstat_urls = array();
-$rirstat_urls['afrinic'] = 'ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest';
-$rirstat_urls['apnic']   = 'ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-extended-latest';
-$rirstat_urls['arin']    = 'ftp://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest';
-$rirstat_urls['lacnic']  = 'ftp://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest';
-$rirstat_urls['ripencc'] = 'ftp://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest';
-$rirstat_urls['iana']    = 'ftp://ftp.apnic.net/pub/stats/iana/delegated-iana-latest'; # This is a service by apnic.net . IANA is not running a public service, NRO EC resolution needed
+$rirstat_urls['afrinic'] = 'https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest'; // alternatively, ftp://
+$rirstat_urls['apnic']   = 'https://ftp.apnic.net/pub/stats/apnic/delegated-apnic-extended-latest'; // alternatively, ftp://
+$rirstat_urls['arin']    = 'https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest'; // ftp:// server is down for 80+ days (2025-06-16)
+$rirstat_urls['lacnic']  = 'https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest'; // alternatively, ftp://
+$rirstat_urls['ripencc'] = 'https://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest'; // alternatively, ftp://
+$rirstat_urls['iana']    = 'https://ftp.apnic.net/pub/stats/iana/delegated-iana-latest'; // This is a service by apnic.net . IANA is not running a public service, NRO EC resolution needed
 
 $ipv4_additional_params = array();
 $ipv4_additional_params['afrinic'] = '';

@@ -1,4 +1,4 @@
-#: version 20250523
+#: version 20250616
 
 # Special: OIDs
 # The OID Information Protocol (OID-IP) can be used to query OID information in a WHOIS like protocol.
@@ -71,8 +71,8 @@ oid:1.3.6.1.4.1.54392.5.1891
 oid:1.3.6.1.4.1.61117
 
 # OIDplus System ID 2100915359
-#:cgi|https://isn.ext.io/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
-:cgi|https://x.weid.info/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
+:cgi|https://isn.ext.io/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
+#:cgi|https://x.weid.info/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
 oid:1.3.6.1.4.1.37553.8.8.7.456
 oid:1.3.6.1.4.1.37553.8.33
 oid:1.3.6.1.4.1.37553.8.32092
