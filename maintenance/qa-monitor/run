@@ -165,7 +165,7 @@ if ($loc_good) {
 # ---
 
 $their_debian = getLatestGWIversion();
-$own_debian_base = '20120626.0-1'; // 17 October 2022: Taken over by Debian QA Team. No difference in the code towards gwhois_20120626-1.3, just Debian files changed.
+$own_debian_base = '20120626.0-2'; // Taken over by Debian QA Team in October 2022. No difference in the code towards gwhois_20120626-1.3, just Debian files changed.
 
 $their_github = github_latest_commit('julijane', 'gwhois'); // this repo is dead
 $own_github_base = 'f7120506ac40dfc6b58ffbaf42096fc0c40d00b2'; // Latest commit f712050  on 30 Nov 2018

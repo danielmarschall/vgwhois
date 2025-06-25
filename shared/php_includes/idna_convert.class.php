@@ -25,8 +25,8 @@ Der Damals aufgetretene Fehler bei 'xn--p1ai' ist mittlerweile behoben.
 // | Lesser General Public License for more details.                      |
 // |                                                                      |
 // | You should have received a copy of the GNU Lesser General Public     |
-// | License along with this library; if not, write to the Free Software  |
-// | Foundation, Inc., 51 Franklin St, Boston, MA 02110, United States    |
+// | License along with this program; if not, see                         |
+// | https://www.gnu.org/licenses/.                                       |
 // +----------------------------------------------------------------------+
 //
 // }}}
