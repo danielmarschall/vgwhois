@@ -1,4 +1,4 @@
-#: version 20250602
+#: version 20250701
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -956,7 +956,8 @@
 \.so$
 
 #:notice||Whois gone, homepage http://www.sr.net (2/2008)
-:notice||Domain check available at: https://www.register.sr/domainchecker.php (last checked Jan 2012)
+#:notice||Domain check available at: https://www.register.sr/domainchecker.php (last checked Jan 2012)
+:whois|whois.sr
 \.sr$
 
 :whois|whois.nic.ss
