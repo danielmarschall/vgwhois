@@ -1,4 +1,4 @@
-#: version 20250701
+#: version 20250704
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1503,7 +1503,7 @@
 :whois|whois.twnic.net.tw
 \.xn--kpry57d$
 
-:notice||No whois server is yet known ... (last checked Aug 2013)
+:whois|whois.mn
 \.xn--l1acc$
 
 #:whois|whois.nic.dz
