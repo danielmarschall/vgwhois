@@ -1,4 +1,4 @@
-#: version 20250704
+#: version 20250716
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -224,7 +224,8 @@
 
 #:whois|whois.ripe.net|prefix=-B |
 #:cgipost|http://register.cm/whois.php|domain=~query~&submit=Go
-:notice||A whois query form is available at http://whois.cm:8080/
+#:notice||A whois query form is available at http://whois.cm:8080/
+:whois|whois.nic.cm
 \.cm$
 
 # Third level registrations also available (Apr 2012 via DE Wikipedia):
