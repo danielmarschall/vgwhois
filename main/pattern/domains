@@ -1,4 +1,4 @@
-#: version 20250716
+#: version 20250807
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1084,7 +1084,8 @@
 
 #:cgi|https://www.tonic.to/whois?~query~
 #:whois|whois.tonic.to
-:notice||WHOIS service unavailable (last checked March 2025), please check https://www.tonic.to/
+#:notice||WHOIS service unavailable (last checked March 2025), please check https://www.tonic.to/
+:whois|whois.tonicregistry.to
 \.to$
 
 :notice||Disallocated by IANA. It was replaced with .tl
