@@ -1,4 +1,4 @@
-#: version 20250807
+#: version 20250828
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4410,8 +4410,7 @@
 :whois|whois.nic.afl
 \.afl$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.redstone
+:notice||Disallocated by IANA
 \.redstone$
 
 #:whois|whois-mma.nic.fr
