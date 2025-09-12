@@ -1,4 +1,4 @@
-#: version 20250828
+#: version 20250912
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1705,7 +1705,8 @@
 
 # Delegated on 14 November 2013 to Uniregistry, Corp.
 #:whois|whois.uniregistry.net
-:whois|whois.nic.sexy
+#:whois|whois.nic.sexy
+:whois|whois.tucowsregistry.net
 \.sexy$
 
 # Delegated on 14 November 2013 to Sugar House, LLC
@@ -2073,7 +2074,8 @@
 \.guitars$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.tucowsregistry.net
 \.link$
 
 # Delegated on 18 January 2014 to CITIC Group Corporation
@@ -2112,7 +2114,8 @@
 \.xn--io0a7i$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
-:whois|whois.uniregistry.net
+#:whois|whois.uniregistry.net
+:whois|whois.tucowsregistry.net
 \.gift$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
@@ -2566,7 +2569,8 @@
 # Delegated on 31 March 2014 to Uniregistry, Corp.
 #:whois|whois-dub.mm-registry.com
 #:whois|whois.uniregistry.net
-:whois|whois.nic.country
+#:whois|whois.nic.country
+:whois|whois.tucowsregistry.net
 \.country$
 
 # Delegated on 31 March 2014 to Top Level Domain Holdings Limited
@@ -3038,7 +3042,8 @@
 # Delegated on 31 May 2014 to dotHIV gemeinnuetziger e.V.
 #:whois|whois.afilias-srs.net
 #:whois|whois.uniregistry.net
-:whois|whois.nic.hiv
+#:whois|whois.nic.hiv
+:whois|whois.tucowsregistry.net
 \.hiv$
 
 # Delegated on 31 May 2014 to United TLD Holdco, Ltd.
@@ -3398,7 +3403,8 @@
 
 # Delegated on 16 August 2014
 #:whois|whois.uniregistry.net
-:whois|whois.nic.property
+#:whois|whois.nic.property
+:whois|whois.tucowsregistry.net
 \.property$
 
 # Delegated on 16 August 2014
@@ -3435,7 +3441,8 @@
 
 # Delegated on 16 August 2014
 #:whois|whois.uniregistry.net
-:whois|whois.nic.click
+#:whois|whois.nic.click
+:whois|whois.tucowsregistry.net
 \.click$
 
 # Delegated on 22 August 2014
@@ -3953,7 +3960,8 @@
 #:whois|whois.registrar.adult
 \.porn$
 
-:whois|whois.nic.trust
+#:whois|whois.nic.trust
+:whois|whois.tucowsregistry.net
 \.trust$
 
 #:whois|whois.nic.xn--czrs0t
@@ -4773,7 +4781,8 @@
 \.telefonica$
 
 #:whois|whois.centralnic.com
-:whois|whois.nic.forum
+#:whois|whois.nic.forum
+:whois|whois.registry.click
 \.forum$
 
 #:whois|whois.centralnic.com
@@ -5143,10 +5152,12 @@
 :whois|whois.nic.creditunion
 \.creditunion$
 
-:whois|whois.nic.lifestyle
+#:whois|whois.nic.lifestyle
+:whois|whois.tucowsregistry.net
 \.lifestyle$
 
-:whois|whois.nic.vana
+#:whois|whois.nic.vana
+:whois|whois.tucowsregistry.net
 \.vana$
 
 :whois|whois.nic.fairwinds
@@ -5411,7 +5422,8 @@
 :whois|whois.nic.clinique
 \.clinique$
 
-:whois|whois.nic.living
+#:whois|whois.nic.living
+:whois|whois.tucowsregistry.net
 \.living$
 
 #:whois|whois.afilias.net
@@ -6414,7 +6426,8 @@
 :whois|whois.nic.walmart
 \.walmart$
 
-:whois|whois.nic.diy
+#:whois|whois.nic.diy
+:whois|whois.tucowsregistry.net
 \.diy$
 
 #:whois|whois.afilias-srs.net
@@ -6487,7 +6500,8 @@
 :whois|whois.nic.free
 \.free$
 
-:whois|whois.nic.food
+#:whois|whois.nic.food
+:whois|whois.tucowsregistry.net
 \.food$
 
 # Alternative URL: http://nic.box/

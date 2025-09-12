@@ -1,4 +1,4 @@
-#: version 20250616
+#: version 20250912
 
 # Special: OIDs
 # The OID Information Protocol (OID-IP) can be used to query OID information in a WHOIS like protocol.
@@ -54,8 +54,8 @@ oid:1.3.6.1.4.1.56776
 oid:1.3.6.1.4.1.63313
 
 # OIDplus System ID 1530250353
-#:cgi|https://registry.frdl.de/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
-:cgi|https://webfan.de/apps/registry/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
+:cgi|https://registry.frdl.de/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
+#:cgi|https://webfan.de/apps/registry/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
 oid:1.3.6.1.4.1.37553
 
 # OIDplus System ID 1542975656
@@ -76,6 +76,11 @@ oid:1.3.6.1.4.1.61117
 oid:1.3.6.1.4.1.37553.8.8.7.456
 oid:1.3.6.1.4.1.37553.8.33
 oid:1.3.6.1.4.1.37553.8.32092
+
+# Not in reg2
+https://oid.colean.cc/
+:cgi|https://oid.colean.cc/plugins/viathinksoft/publicPages/100_whois/whois/webwhois.php?query=oid%3A~oid~
+oid:1.3.6.1.4.1.37476.9000.204
 
 # --------------------------------------------------------------------
 
