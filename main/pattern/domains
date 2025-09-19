@@ -1,4 +1,4 @@
-#: version 20250912
+#: version 20250919
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -2643,7 +2643,8 @@
 
 # Delegated on 10 April 2014 to Top Level Spectrum, Inc.
 #:whois|whois.centralnic.com
-:whois|whois.nic.feedback
+#:whois|whois.nic.feedback
+:whois|whois.registry.click
 \.feedback$
 
 # Delegated on 10 April 2014 to Desi Networks, LLC
@@ -5373,7 +5374,8 @@
 :whois|whois.nic.contact
 \.contact$
 
-:whois|whois.nic.pid
+#:whois|whois.nic.pid
+:whois|whois.registry.click
 \.pid$
 
 #:whois|whois.afilias-srs.net
