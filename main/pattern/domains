@@ -1,4 +1,4 @@
-#: version 20250919
+#: version 20251009
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -244,7 +244,8 @@
 #(.*)\.([^\.]*)\.co$
 #(.*)()\.co$
 #:program|$vgwhois$/subprograms/co
-:whois|whois.nic.co
+#:whois|whois.nic.co
+:whois|whois.registry.co
 \.co$
 
 #:notice||Please visit http://www.nic.cr/niccr_publico/showWhoisScreen.do and solve the CAPTCHA. (Nov 2012)
