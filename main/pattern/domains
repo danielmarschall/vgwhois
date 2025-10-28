@@ -1,4 +1,4 @@
-#: version 20251009
+#: version 20251028
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -5954,8 +5954,7 @@
 :whois|whois.nic.alstom
 \.alstom$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.dunlop
+:notice||Disallocated by IANA
 \.dunlop$
 
 :whois|whois.nic.dupont
