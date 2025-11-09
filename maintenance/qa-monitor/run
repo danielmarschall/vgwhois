@@ -5,7 +5,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Maintenance / Developer utilities
 #
-#  (c) 2012-2022 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2012-2025 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
@@ -261,11 +261,9 @@ exit($global_status);
 # ---
 
 function getLatestGWIversion() {
-	$x = cached_file('https://packages.debian.org/search?searchon=names&keywords=gwhois', CACHE_FILE_DIR);
-	preg_match_all('@<br>(.*): all@isU', $x, $m);
-	$m = $m[1];
-	rsort($m);
-	return $m[0]; // biggest version
+	$json = cached_file("https://sources.debian.org/api/src/gwhois/", CACHE_FILE_DIR);
+	$data = json_decode($json, true);
+	return $data['versions'][0]['version'];
 }
 
 // RWS = Root Whois Server List functions

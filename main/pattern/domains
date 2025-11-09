@@ -1,4 +1,4 @@
-#: version 20251028
+#: version 20251109
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -149,7 +149,8 @@
 #:cgipost|https://nic.bo/whois.php|dominio=~1~&subdominio=~2~&enviar=
 #(.*)(\.([^\.]*)\.bo)$
 #(.*)(\.bo)$
-:whois|whois.nic.bo
+#:whois|whois.nic.bo
+:notice||Please visit https://nic.bo/whois.php#whois
 \.bo$
 
 #:whois|registro.br
@@ -315,8 +316,8 @@
 \.dz$
 
 #:cgi|http://www.nic.ec/reg/eng/whois.asp?dominio=~query~
-#:whois|whois.nic.ec
-:notice||Please visit https://nic.ec/domain-registration/domain-whois-lookup.php
+#:notice||Please visit https://nic.ec/domain-registration/domain-whois-lookup.php
+:whois|whois.nic.ec
 \.ec$
 
 #:whois|whois.eenet.ee
@@ -537,7 +538,8 @@
 \.ir$
 
 #:whois|whois.isnet.is
-:whois|whois.isnic.is
+#:whois|whois.isnic.is
+:cgi|https://www.isnic.is/en/whois/search?query=~query~
 \.is$
 
 :whois|whois.nic.it
@@ -766,8 +768,8 @@
 :whois|whois.nic.nf
 \.nf$
 
-#:notice||No whois, no domain list. Homepage http://psg.com/dns/ng (last checked Sep 2005)
-:whois|whois.nic.net.ng
+#:whois|whois.nic.net.ng
+:notice||Please visit https://www.nira.org.ng/
 \.ng$
 
 :notice||No (usable) whois. Partial domain list at homepage http://www.nic.ni/ (last checked Sep 2005)
@@ -819,8 +821,8 @@
 \.pe$
 
 #:notice||No whois, no domain list. Homepage http://www.mana.pf/ (last checked Sep 2005)
-# This is the server according to IANA, but it does not currently work [Jul 2013]
-:whois|whois.registry.pf
+#:whois|whois.registry.pf
+:notice||Whois server gone (last checked Nov 2025), homepage http://www.mana.pf/ redirects to "vini.pf" which does not write anything about domains?!
 \.pf$
 
 #:notice||No whois, no domain list. Homepage http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm (last checked Jan 2005)
@@ -904,8 +906,8 @@
 \.sa$
 
 #:notice||Please go to http://whois.nic.sb/whois.jsp and solve the CAPTCHA. [Aug 2013]
-:whois|whois.nic.net.sb
-#:whois|whois.nic.sb
+#:whois|whois.nic.net.sb
+:whois|whois.nic.sb
 \.sb$
 
 # :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
@@ -1014,8 +1016,9 @@
 \.tj$
 
 #:notice||Please go to http://www.dot.tk/en/whois.html
-:whois|whois.dot.tk
+#:whois|whois.dot.tk
 #:cgipost|http://my.dot.tk/cgi-bin/whois.taloha|domainname=~namewotld~
+:notice||Please go to http://www.dot.tk/de/index.html
 \.tk$
 
 #:notice||Please go to http://whois.nic.tl/whois.jsp and solve the CAPTCHA. [Aug 2013]
@@ -1173,8 +1176,9 @@
 #:cgipost|http://www.nic.vi/whois.asp|text1=~query~
 #:cgipost|https://secure.nic.vi/whois-lookup/|domainName=~query~&submitted=true
 #:program|$vgwhois$/subprograms/vi
-#:whois|whois.nic.vi
-:whois|virgil.nic.vi
+:whois|whois.nic.vi
+#:whois|virgil.nic.vi
+#:notice||Please visit https://secure.nic.vi/index.php?m=whois
 \.vi$
 
 #:cgipost|http://www.tenmien.vn/jsp/jsp/tracuudomainchitiet.jsp?type=~query~
@@ -1388,7 +1392,8 @@
 \.int$
 
 #:inicwhois|jobswhois.verisign-grs.com
-:whois|whois.nic.jobs
+#:whois|whois.nic.jobs
+:notice||Whois server gone. (last checked November 2025)
 \.jobs$
 
 #:whois|whois.nic.mil
@@ -4973,14 +4978,16 @@
 \.xn--efvy88h$
 
 #:whois|whois.afilias-srs.net
-:whois|whois.nic.aco
+#:whois|whois.nic.aco
+:notice||Whois server gone [Nov 2025]
 \.aco$
 
 :whois|whois.nic.aaa
 \.aaa$
 
 #:whois|whois.afilias-srs.net
-:whois|whois.nic.gea
+#:whois|whois.nic.gea
+:notice||Whois server gone [Nov 2025]
 \.gea$
 
 #:whois|whois.centralnic.com
@@ -5175,7 +5182,8 @@
 \.comsec$
 
 #:whois|whois-cl01.mm-registry.com
-:whois|whois.nic.broadway
+#:whois|whois.nic.broadway
+:notice||Whois server gone [Nov 2025]
 \.broadway$
 
 #:whois|whois.afilias-srs.net
