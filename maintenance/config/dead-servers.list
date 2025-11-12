@@ -7,6 +7,10 @@
 #  License: https://www.gnu.org/licenses/gpl-2.0.html (GPL version 2)
 #
 
+# does not listen to public IPs anymore. The whois server only accepts calls from the web interface
+whois.registry.hm
+# This was the registry of 210.8/14 (AAPT Limited)
+whois.connect.com.au
 # These whois servers are dead and we have no replacement. We list them here so we get notified when they come back.
 # whois.6bone.net
 whois.kcce.kp
@@ -163,9 +167,5 @@ whois.nic.aco
 whois.gtlds.nic.br
 # first fail: 2025-09-23
 whois.nic.net.ng
-
-# does not listen to public IPs anymore. The whois server only accepts calls from the web interface
-whois.registry.hm
-
-# This was the registry of 210.8/14 (AAPT Limited)
-whois.connect.com.au
+# first fail: 2025-10-22
+whois.mn

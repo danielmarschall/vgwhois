@@ -1512,7 +1512,8 @@
 :whois|whois.twnic.net.tw
 \.xn--kpry57d$
 
-:whois|whois.mn
+#:whois|whois.mn
+:notice||Whois server gone since 2025-10-22. URL for registration services: https://www.datacom.mn/
 \.xn--l1acc$
 
 #:whois|whois.nic.dz
