@@ -92,8 +92,8 @@
 :whois|whois.nic.fr
 ^fr-[^.]+$
 
-:whois|whois.isnet.is
--is$
+#:whois|whois.isnet.is
+#-is$
 
 :whois|whois.nic.ad.jp|trailer=/e
 # ^[^.]*jp$

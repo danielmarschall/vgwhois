@@ -2,7 +2,7 @@
 #  VGWhoIs (ViaThinkSoft Global WhoIs, a fork of generic Whois / gwhois)
 #  Main program
 #
-#  (c) 2010-2022 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
+#  (c) 2010-2025 by Daniel Marschall, ViaThinkSoft <info@daniel-marschall.de>
 #  based on the code (c) 1998-2010 by Juliane Holzt <debian@kju.de>
 #  Some early parts by Lutz Donnerhacke <Lutz.Donnerhacke@Jena.Thur.de>
 #
@@ -329,6 +329,11 @@ sub VGWhoIs::Core::doquery {
 		my ($loc_text, $loc_exitcode) = VGWhoIs::Core::inicwhoisaccess($host,$port,$query);
 		$result .= $loc_text;
 		$exitcode = max($exitcode, $loc_exitcode);
+	}
+
+	elsif ($method eq 'rdap') {
+# TODO: parse RDAP and show it in a human readable format
+		print "The RDAP record can be seen here:\n$host/domain/$query\n\n";
 	}
 
 	elsif ($method eq 'cgi') {

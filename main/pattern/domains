@@ -1,4 +1,4 @@
-#: version 20251109
+#: version 20251112
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -7,6 +7,8 @@
 # TODO: Recheck all definitions, especially:
 #       1. Check if "http://" URLs have been replaced by "https://"
 #       2. Re-check "last checked" notices with years 200x" and "201x"
+
+# TODO: Add RDAP for every domain; read/sync the RDAP URLs using the maintenance tools from the IANA TLD DB
 
 # ccTLD
 # --------------------------------------------------------------------
@@ -118,7 +120,6 @@
 \.bg$
 
 #:cgipost|http://oldinet.arabian.net/include/domaincheckmodule.asp|txtWebDomain=~query~
-#:notice||Whois server gone [2015/05]
 :whois|whois.nic.bh
 \.bh$
 
@@ -176,7 +177,6 @@
 :whois|whois.nic.net.bw
 \.bw$
 
-# Gone (Mar 2012)
 #:cgi|http://www.tld.by/cgi-bin/registry.cgi?domain=~namewotld~&lang=e&mode=slquest
 :whois|whois.cctld.by
 \.by$
@@ -217,7 +217,7 @@
 \.ci$
 
 #:whois|whois.nic.ck
-:notice||Whois server gone [Nov 2013]
+:notice||Whois server gone [Nov 2013]. URL for registration services: http://www.vodafone.co.ck
 \.ck$
 
 :whois|whois.nic.cl
@@ -584,7 +584,7 @@
 \.kn$
 
 #:whois|whois.kcce.kp
-:notice||Whois gone [Sep 2013]
+:notice||Whois gone [Sep 2013]. URL for registration services: http://www.star.co.kp
 \.kp$
 
 #:whois|whois.nic.or.kr
@@ -701,7 +701,7 @@
 \.mo$
 
 #:whois|whois.nic.mp
-:notice||Whois gone and homepage http://www.nic.mp/ defunct (last checked Sep 2023)
+:notice||Whois gone. URL for registration services: https://get.mp/
 \.mp$
 
 #:notice||Homepage http://www.nic.mq/
@@ -959,7 +959,7 @@
 :whois|whois.nic.so
 \.so$
 
-#:notice||Whois gone, homepage http://www.sr.net (2/2008)
+#:notice||Whois gone, homepage http://www.sr.net (Feb 2008)
 #:notice||Domain check available at: https://www.register.sr/domainchecker.php (last checked Jan 2012)
 :whois|whois.sr
 \.sr$
@@ -1393,7 +1393,8 @@
 
 #:inicwhois|jobswhois.verisign-grs.com
 #:whois|whois.nic.jobs
-:notice||Whois server gone. (last checked November 2025)
+#:notice||Whois server gone. (last checked November 2025)
+:rdap|https://rdap.nominet.uk/jobs
 \.jobs$
 
 #:whois|whois.nic.mil
@@ -1772,7 +1773,8 @@
 
 # Delegated on 23 November 2013 to Charleston  Road Registry, Inc.
 # Japanese for "everyone"
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -2180,7 +2182,8 @@
 
 # Delegated on 23 January 2014 to Atgron, Inc.
 #:whois|whois.coccaregistry.org
-:whois|whois.nic.wed
+#:whois|whois.nic.wed
+:rdap|https://rdap.nominet.uk/wed
 \.wed$
 
 # Delegated on 23 January 2014 to Little Dynamite, LLC
@@ -2344,7 +2347,7 @@
 
 # Delegated on 16 February 2014 to Punto FA S.L.
 #:whois|whois.mango.coreregistry.net
-#:notice||Whois server gone. You might find more information at http://mango.com
+#:notice||You might find more information at http://mango.com
 :whois|whois.nic.mango
 \.mango$
 
@@ -2529,7 +2532,8 @@
 
 # Delegated on 27 March 2014 to Afilias Limited
 #:whois|whois.afilias.net
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 \.meet$
 
 # Delegated on 27 March 2014 to Beijing Qianxiang Wangjing Technology Development Co., Ltd.
@@ -2628,7 +2632,8 @@
 
 # Delegated on 4 April 2014 to Republican State Leadership Committee, Inc.
 #:whois|whois-cl01.mm-registry.com
-:whois|whois.nic.gop
+#:whois|whois.nic.gop
+:rdap|https://rdap.nominet.uk/gop
 \.gop$
 
 # Delegated on 10 April 2014 to Hu Yi Global Information Resources (Holding) Company Hong Kong Limited
@@ -2655,7 +2660,8 @@
 
 # Delegated on 10 April 2014 to Desi Networks, LLC
 #:whois|whois.ksregistry.net
-:whois|whois.nic.desi
+#:whois|whois.nic.desi
+:rdap|https://rdap.nominet.uk/desi
 \.desi$
 
 # Delegated on 11 April 2014 to Delta Mill, LLC
@@ -2700,7 +2706,8 @@
 \.town$
 
 # Delegated on 11 April 2014 to dotCareer LLC
-:whois|whois.nic.career
+#:whois|whois.nic.career
+:rdap|https://rdap.nominet.uk/career
 \.career$
 
 # Delegated on 11 April 2014 to Grand Glen, LLC
@@ -2750,7 +2757,8 @@
 \.paris$
 
 # Delegated on 19 April 2014 to Charleston Road Registry
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -2759,7 +2767,8 @@
 \.soy$
 
 # Delegated on 19 April 2014 to Lifestyle Domain Holdings, Inc.
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -2905,7 +2914,8 @@
 \.bayern$
 
 # Delegated on 3 May 2014 to Globo Comunicação e Participações S.A
-:whois|whois.gtlds.nic.br
+#:whois|whois.gtlds.nic.br
+:rdap|https://rdap.gtlds.nic.br/
 \.globo$
 
 # Delegated on 3 May 2014 to GMO Internet, Inc.
@@ -3007,7 +3017,8 @@
 \.homes$
 
 # Delegated on 22 May 2014 to Empresa Municipal de Informática SA - IPLANRIO
-:whois|whois.gtlds.nic.br
+#:whois|whois.gtlds.nic.br
+:rdap|https://rdap.gtlds.nic.br/
 \.rio$
 
 # Delegated on 22 May 2014 to DERYachts, LLC
@@ -3168,11 +3179,13 @@
 \.surf$
 
 # Delegated on 18 June 2014
-:whois|whois.nic.brussels
+#:whois|whois.nic.brussels
+:rdap|https://rdap.nic.brussels
 \.brussels$
 
 # Delegated on 18 June 2014
-:whois|whois.nic.vlaanderen
+#:whois|whois.nic.vlaanderen
+:rdap|https://rdap.nic.vlaanderen
 \.vlaanderen$
 
 # Delegated on 19 June 2014
@@ -3337,7 +3350,8 @@
 \.williamhill$
 
 # Delegated on 30 July 2014
-:whois|whois.nic.realtor
+#:whois|whois.nic.realtor
+:rdap|https://rdap.nominet.uk/realtor
 \.realtor$
 
 # Delegated on 30 July 2014
@@ -3354,7 +3368,8 @@
 \.tatar$
 
 # Delegated on 7 August 2014
-:whois|whois.nic.wales
+#:whois|whois.nic.wales
+:rdap|https://rdap.nominet.uk/wales
 \.wales$
 
 # Delegated on 8 August 2014
@@ -3368,7 +3383,8 @@
 \.sarl$
 
 # Delegated on 8 August 2014
-:whois|whois.nic.cymru
+#:whois|whois.nic.cymru
+:rdap|https://rdap.nominet.uk/cymru/
 \.cymru$
 
 # Delegated on 8 August 2014
@@ -3425,7 +3441,8 @@
 \.help$
 
 # Delegated on 16 August 2014
-:whois|whois.gtlds.nic.br
+#:whois|whois.gtlds.nic.br
+:rdap|https://rdap.gtlds.nic.br/
 \.uol$
 
 # Delegated on 16 August 2014
@@ -3433,7 +3450,8 @@
 \.ooo$
 
 # Delegated on 16 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3473,7 +3491,8 @@
 \.otsuka$
 
 # Delegated on 27 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3482,7 +3501,8 @@
 \.gbiz$
 
 # Delegated on 27 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3501,7 +3521,8 @@
 \.immo$
 
 # Delegated on 29 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3510,7 +3531,8 @@
 \.esq$
 
 # Delegated on 29 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3519,7 +3541,8 @@
 \.prod$
 
 # Delegated on 29 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3528,7 +3551,8 @@
 \.here$
 
 # Delegated on 29 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3537,7 +3561,8 @@
 \.youtube$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3546,7 +3571,8 @@
 \.meme$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3555,7 +3581,8 @@
 \.eat$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3564,7 +3591,8 @@
 \.rsvp$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3573,7 +3601,8 @@
 \.mov$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3582,7 +3611,8 @@
 \.new$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3595,7 +3625,8 @@
 \.frl$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3604,7 +3635,8 @@
 \.day$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3613,7 +3645,8 @@
 \.dad$
 
 # Delegated on 30 August 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3627,7 +3660,8 @@
 \.gmx$
 
 # Delegated on 5 September 2014
-:whois|whois.nic.pharmacy
+#:whois|whois.nic.pharmacy
+:rdap|https://rdap.nominet.uk/pharmacy
 \.pharmacy$
 
 # Delegated on 10 September 2014
@@ -3636,7 +3670,8 @@
 \.wme$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3645,7 +3680,8 @@
 \.chrome$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3654,7 +3690,8 @@
 \.cal$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3663,7 +3700,8 @@
 \.zip$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3672,7 +3710,8 @@
 \.gle$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3681,7 +3720,8 @@
 \.prof$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3690,7 +3730,8 @@
 \.channel$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3699,7 +3740,8 @@
 \.nexus$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3742,7 +3784,8 @@
 
 # Delegated on 27 September 2014
 # Russian for "Russian"
-:whois|whois.nic.xn--p1acf
+#:whois|whois.nic.xn--p1acf
+:rdap|https://api.rdap.nic.xn--p1acf
 \.xn--p1acf$
 
 # Delegated on 27 September 2014
@@ -3777,7 +3820,8 @@
 \.alsace$
 
 # Delegated on 15 September 2014
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3858,7 +3902,8 @@
 :whois|whois.nic.sydney
 \.sydney$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3898,7 +3943,8 @@
 :whois|whois.nic.mormon
 \.mormon$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3906,7 +3952,8 @@
 #:whois|whois.charlestonroadregistry.com
 \.xn--flw351e$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -3983,7 +4030,8 @@
 :notice||Disallocated by IANA
 \.cartier$
 
-:whois|whois.nic.sky
+#:whois|whois.nic.sky
+:rdap|https://rdap.nominet.uk/sky
 \.sky$
 
 :notice||Disallocated by IANA
@@ -4009,7 +4057,8 @@
 :whois|whois.nic.sew
 \.sew$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -4017,7 +4066,8 @@
 #:whois|whois.charlestonroadregistry.com
 \.dev$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -4089,7 +4139,8 @@
 :notice||Disallocated by IANA
 \.dabur$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|whois.nic.dclk
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
@@ -4103,7 +4154,8 @@
 \.design$
 
 #:whois|whois.nic.goog
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -4112,7 +4164,8 @@
 \.goog$
 
 #:whois|whois.nic.hangout
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -4186,7 +4239,8 @@
 \.cbn$
 
 #:whois|whois.gdnregistry.com
-:whois|whois.nic.gdn
+#:whois|whois.nic.gdn
+:rdap|https://rdap.nic.gdn
 \.gdn$
 
 :whois|whois.cctld.by
@@ -4306,7 +4360,8 @@
 :whois|whois.nic.online
 \.online$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -4325,7 +4380,8 @@
 :whois|whois.teleinfo.cn
 \.xn--vuq861b$
 
-:whois|whois.nic.bbc
+#:whois|whois.nic.bbc
+:rdap|https://rdap.nominet.uk/bbc/
 \.bbc$
 
 #:whois|whois.rightside.co
@@ -4336,7 +4392,8 @@
 :whois|whois.nic.tech
 \.tech$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -4355,7 +4412,8 @@
 :whois|whois.nic.golf
 \.golf$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 #:whois|domain-registry-whois.l.google.com
 #:notice||Please visit http://www.google.com/registry/whois.html?q=~query~
 #:cgi|https://domain-registry.appspot.com/whois/~query~
@@ -4393,7 +4451,8 @@
 :whois|whois.nic.movie
 \.movie$
 
-:whois|whois.nic.mtn
+#:whois|whois.nic.mtn
+:rdap|https://rdap.nominet.uk/mtn
 \.mtn$
 
 :notice||Disallocated by IANA
@@ -4646,7 +4705,8 @@
 :whois|whois.nic.thd
 \.thd$
 
-:whois|whois.nic.bbva
+#:whois|whois.nic.bbva
+:rdap|https://rdap.nominet.uk/bbva
 \.bbva$
 
 :whois|whois.nic.sandvik
@@ -4678,28 +4738,34 @@
 :whois|whois.nic.homedepot
 \.homedepot$
 
-:whois|whois.nic.xbox
+#:whois|whois.nic.xbox
+:rdap|https://rdap.nominet.uk/xbox
 \.xbox$
 
 :notice||Disallocated by IANA
 \.montblanc$
 
-:whois|whois.nic.azure
+#:whois|whois.nic.azure
+:rdap|https://rdap.nominet.uk/azure
 \.azure$
 
-:whois|whois.nic.bing
+#:whois|whois.nic.bing
+:rdap|https://rdap.nominet.uk/bing
 \.bing$
 
-:whois|whois.nic.hotmail
+#:whois|whois.nic.hotmail
+:rdap|https://rdap.nominet.uk/hotmail
 \.hotmail$
 
 :notice||Disallocated by IANA
 \.jlc$
 
-:whois|whois.nic.microsoft
+#:whois|whois.nic.microsoft
+:rdap|https://rdap.nominet.uk/microsoft
 \.microsoft$
 
-:whois|whois.nic.windows
+#:whois|whois.nic.windows
+:rdap|https://rdap.nominet.uk/windows
 \.windows$
 
 #:whois|whois.afilias-srs.net
@@ -4719,13 +4785,15 @@
 \.aeg$
 
 #:whois|whois.nic.drive
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 \.drive$
 
 :whois|whois.nic.genting
 \.genting$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 \.play$
 
 :whois|whois.nic.cba
@@ -4749,13 +4817,15 @@
 :notice||Disallocated by IANA
 \.vistaprint$
 
-:whois|whois.nic.office
+#:whois|whois.nic.office
+:rdap|https://rdap.nominet.uk/office
 \.office$
 
 :notice||Disallocated by IANA
 \.scor$
 
-:whois|whois.nic.skype
+#:whois|whois.nic.skype
+:rdap|https://rdap.nominet.uk/skype
 \.skype$
 
 #:whois|whois-dub.mm-registry.com
@@ -4778,10 +4848,12 @@
 :notice||Disallocated by IANA
 \.movistar$
 
-:whois|whois.nic.omega
+#:whois|whois.nic.omega
+:rdap|https://rdap.nominet.uk/omega/
 \.omega$
 
-:whois|whois.nic.swatch
+#:whois|whois.nic.swatch
+:rdap|https://rdap.nominet.uk/swatch/
 \.swatch$
 
 :notice||Disallocated by IANA
@@ -4796,7 +4868,8 @@
 :whois|whois.nic.realty
 \.realty$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 \.app$
 
 :whois|whois.nic.sakura
@@ -4979,7 +5052,8 @@
 
 #:whois|whois.afilias-srs.net
 #:whois|whois.nic.aco
-:notice||Whois server gone [Nov 2025]
+#:notice||Whois server gone [Nov 2025]
+:rdap|https://rdap.nic.aco
 \.aco$
 
 :whois|whois.nic.aaa
@@ -4987,7 +5061,8 @@
 
 #:whois|whois.afilias-srs.net
 #:whois|whois.nic.gea
-:notice||Whois server gone [Nov 2025]
+#:notice||Whois server gone [Nov 2025]
+:rdap|https://rdap.nic.gea
 \.gea$
 
 #:whois|whois.centralnic.com
@@ -5041,10 +5116,12 @@
 :whois|whois.nic.obi
 \.obi$
 
-:whois|whois.gtlds.nic.br
+#:whois|whois.gtlds.nic.br
+:rdap|https://rdap.gtlds.nic.br/
 \.bom$
 
-:whois|whois.gtlds.nic.br
+#:whois|whois.gtlds.nic.br
+:rdap|https://rdap.gtlds.nic.br/
 \.final$
 
 :whois|whois.nic.hyundai
@@ -5063,16 +5140,19 @@
 :whois|whois.nic.clubmed
 \.clubmed$
 
-:whois|whois.nic.moi
+#:whois|whois.nic.moi
+:rdap|https://rdap.nominet.uk/moi/
 \.moi$
 
 :whois|whois.nic.mtr
 \.mtr$
 
-:whois|whois.nic.virgin
+#:whois|whois.nic.virgin
+:rdap|https://rdap.nominet.uk/virgin/
 \.virgin$
 
-:whois|whois.nic.yamaxun
+#:whois|whois.nic.yamaxun
+:rdap|https://rdap.nominet.uk/yamaxun/
 \.yamaxun$
 
 #:whois|whois.afilias-srs.net
@@ -5097,7 +5177,8 @@
 :notice||Disallocated by IANA
 \.mutuelle$
 
-:whois|whois.nic.gucci
+#:whois|whois.nic.gucci
+:rdap|https://rdap.nominet.uk/gucci/
 \.gucci$
 
 :whois|whois.nic.jaguar
@@ -5169,7 +5250,8 @@
 :whois|whois.tucowsregistry.net
 \.vana$
 
-:whois|whois.nic.fairwinds
+#:whois|whois.nic.fairwinds
+:rdap|https://rdap.nominet.uk/fairwinds/
 \.fairwinds$
 
 :whois|whois.nic.grainger
@@ -5183,7 +5265,8 @@
 
 #:whois|whois-cl01.mm-registry.com
 #:whois|whois.nic.broadway
-:notice||Whois server gone [Nov 2025]
+#:notice||Whois server gone [Nov 2025]
+:rdap|https://rdap.nominet.uk/broadway
 \.broadway$
 
 #:whois|whois.afilias-srs.net
@@ -5218,7 +5301,8 @@
 :whois|whois.nic.insurance
 \.insurance$
 
-:whois|whois.nic.med
+#:whois|whois.nic.med
+:rdap|https://rdap.nominet.uk/med/
 \.med$
 
 :whois|whois.nic.norton
@@ -5227,57 +5311,73 @@
 :notice||Disallocated by IANA
 \.symantec$
 
-:whois|whois.nic.author
+#:whois|whois.nic.author
+:rdap|https://rdap.nominet.uk/author/
 \.author$
 
-:whois|whois.nic.book
+#:whois|whois.nic.book
+:rdap|https://rdap.nominet.uk/book/
 \.book$
 
-:whois|whois.nic.bot
+#:whois|whois.nic.bot
+:rdap|https://rdap.nominet.uk/bot/
 \.bot$
 
 #:whois|whois.afilias-srs.net
-:whois|whois.nic.buy
+#:whois|whois.nic.buy
+:rdap|https://rdap.nominet.uk/buy/
 \.buy$
 
-:whois|whois.nic.call
+#:whois|whois.nic.call
+:rdap|https://rdap.nominet.uk/call/
 \.call$
 
-:whois|whois.nic.circle
+#:whois|whois.nic.circle
+:rdap|https://rdap.nominet.uk/circle/
 \.circle$
 
-:whois|whois.nic.fast
+#:whois|whois.nic.fast
+:rdap|https://rdap.nominet.uk/fast/
 \.fast$
 
 :whois|whois.nic.firestone
 \.firestone$
 
-:whois|whois.nic.got
+#:whois|whois.nic.got
+:rdap|https://rdap.nominet.uk/got/
 \.got$
 
-:whois|whois.nic.jot
+#:whois|whois.nic.jot
+:rdap|https://rdap.nominet.uk/jot/
 \.jot$
 
-:whois|whois.nic.joy
+#:whois|whois.nic.joy
+:rdap|https://rdap.nominet.uk/joy/
 \.joy$
 
-:whois|whois.nic.like
+#:whois|whois.nic.like
+:rdap|https://rdap.nominet.uk/like/
 \.like$
 
 #:whois|whois.agitsys.net
-:whois|whois.nic.nowruz
+#:whois|whois.nic.nowruz
+:rdap|https://rdap.nominet.uk/nowruz
 \.nowruz$
 
-:whois|whois.nic.pin
+#:whois|whois.nic.pin
+:rdap|https://rdap.nominet.uk/pin/
 \.pin$
 
-:whois|whois.nic.read
+#:whois|whois.nic.read
+:rdap|https://rdap.nominet.uk/read/
 \.read$
 
-:whois|whois.nic.room
+#:whois|whois.nic.room
+:rdap|https://rdap.nominet.uk/room/
 \.room$
 
-:whois|whois.nic.safe
+#:whois|whois.nic.safe
+:rdap|https://rdap.nominet.uk/safe/
 \.safe$
 
 #:whois|whois.nic.salon
@@ -5289,14 +5389,17 @@
 \.sharp$
 
 #:whois|whois.agitsys.net
-:whois|whois.nic.shia
+#:whois|whois.nic.shia
+:rdap|https://rdap.nominet.uk/shia/
 \.shia$
 
-:whois|whois.nic.smile
+#:whois|whois.nic.smile
+:rdap|https://rdap.nominet.uk/smile/
 \.smile$
 
 #:whois|whois.agitsys.net
-:whois|whois.nic.tci
+#:whois|whois.nic.tci
+:rdap|https://rdap.nominet.uk/tci
 \.tci$
 
 #:whois|whois.afilias-srs.net
@@ -5307,11 +5410,13 @@
 \.zero$
 
 #:whois|whois.agitsys.net
-:whois|whois.nic.pars
+#:whois|whois.nic.pars
+:rdap|https://rdap.nominet.uk/pars/
 \.pars$
 
 #:whois|whois.agitsys.net
-:whois|whois.nic.xn--mgbt3dhd
+#:whois|whois.nic.xn--mgbt3dhd
+:rdap|https://rdap.nominet.uk/xn--mgbt3dhd/
 \.xn--mgbt3dhd$
 
 #:whois|whois.afilias-srs.net
@@ -5322,7 +5427,8 @@
 :whois|whois.nic.trv
 \.trv$
 
-:whois|whois.nic.tushu
+#:whois|whois.nic.tushu
+:rdap|https://rdap.nominet.uk/tushu/
 \.tushu$
 
 :whois|whois.nic.watches
@@ -5338,14 +5444,16 @@
 :whois|whois.nic.kpn
 \.kpn$
 
-:whois|whois.nic.shell
+#:whois|whois.nic.shell
+:rdap|https://rdap.nominet.uk/shell/
 \.shell$
 
 #:whois|whois.afilias-srs.net
 :whois|whois.nic.travelersinsurance
 \.travelersinsurance$
 
-:whois|whois.nic.wanggou
+#:whois|whois.nic.wanggou
+:rdap|https://rdap.nominet.uk/wanggou/
 \.wanggou$
 
 :notice||Disallocated by IANA
@@ -5551,8 +5659,6 @@
 :whois|whois.nic.hdfcbank
 \.hdfcbank$
 
-#:whois|whois.afilias-srs.net
-#:whois|whois.gtlds.nic.br
 :notice||Disallocated by IANA
 \.natura$
 
@@ -5584,7 +5690,8 @@
 :whois|whois.nic.coupon
 \.coupon$
 
-:whois|whois.nic.spot
+#:whois|whois.nic.spot
+:rdap|https://rdap.nominet.uk/spot/
 \.spot$
 
 :whois|whois.nic.xn--1ck2e1b
@@ -5618,7 +5725,8 @@
 :notice||Disallocated by IANA
 \.telecity$
 
-:whois|whois.nic.tunes
+#:whois|whois.nic.tunes
+:rdap|https://rdap.nominet.uk/tunes/
 \.tunes$
 
 :whois|whois.nic.chase
@@ -5659,7 +5767,8 @@
 :whois|whois.nic.gmbh
 \.gmbh$
 
-:whois|whois.nic.locus
+#:whois|whois.nic.locus
+:rdap|https://rdap.nominet.uk/locus/
 \.locus$
 
 #:whois|whois-total.nic.fr
@@ -5682,20 +5791,23 @@
 :whois|whois.nic.barefoot
 \.barefoot$
 
-:whois|whois.nic.aws
+#:whois|whois.nic.aws
+:rdap|https://rdap.nominet.uk/aws/
 \.aws$
 
 #:whois|whois.afilias-srs.net
 :whois|whois.nic.extraspace
 \.extraspace$
 
-:whois|whois.nic.talk
+#:whois|whois.nic.talk
+:rdap|https://rdap.nominet.uk/talk/
 \.talk$
 
 :whois|whois.nic.xn--fct429k
 \.xn--fct429k$
 
-:whois|whois.nic.you
+#:whois|whois.nic.you
+:rdap|https://rdap.nominet.uk/you/
 \.you$
 
 :whois|whois.teleinfo.cn
@@ -5730,7 +5842,8 @@
 \.mutual$
 
 #:whois|whois.afilias-srs.net
-:whois|whois.nic.abbvie
+#:whois|whois.nic.abbvie
+:rdap|https://rdap.nominet.uk/abbvie/
 \.abbvie$
 
 :whois|whois.nic.abudhabi
@@ -5868,7 +5981,8 @@
 :whois|whois.nic.aetna
 \.aetna$
 
-:whois|whois.nic.realestate
+#:whois|whois.nic.realestate
+:rdap|https://rdap.nominet.uk/realestate/
 \.realestate$
 
 :whois|whois.nic.shop
@@ -5914,43 +6028,54 @@
 \.hisamitsu$
 
 #:whois|whois.nic.gmo
-:whois|whois.nic.pioneer
+#:whois|whois.nic.pioneer
+:rdap|https://rdap.nominet.uk/pioneer/
 \.pioneer$
 
-:whois|whois.nic.zappos
+#:whois|whois.nic.zappos
+:rdap|https://rdap.nominet.uk/zappos/
 \.zappos$
 
-:whois|whois.nic.audible
+#:whois|whois.nic.audible
+:rdap|https://rdap.nominet.uk/audible/
 \.audible$
 
 :whois|whois.nic.chintai
 \.chintai$
 
-:whois|whois.nic.deal
+#:whois|whois.nic.deal
+:rdap|https://rdap.nominet.uk/deal/
 \.deal$
 
 :notice||Disallocated by IANA
 \.epost$
 
-:whois|whois.nic.fire
+#:whois|whois.nic.fire
+:rdap|https://rdap.nominet.uk/fire/
 \.fire$
 
-:whois|whois.nic.imdb
+#:whois|whois.nic.imdb
+:rdap|https://rdap.nominet.uk/imdb/
 \.imdb$
 
-:whois|whois.nic.kindle
+#:whois|whois.nic.kindle
+:rdap|https://rdap.nominet.uk/kindle/
 \.kindle$
 
-:whois|whois.nic.now
+#:whois|whois.nic.now
+:rdap|https://rdap.nominet.uk/now/
 \.now$
 
-:whois|whois.nic.prime
+#:whois|whois.nic.prime
+:rdap|https://rdap.nominet.uk/prime/
 \.prime$
 
-:whois|whois.nic.save
+#:whois|whois.nic.save
+:rdap|https://rdap.nominet.uk/save/
 \.save$
 
-:whois|whois.nic.silk
+#:whois|whois.nic.silk
+:rdap|https://rdap.nominet.uk/silk/
 \.silk$
 
 :whois|whois.nic.tdk
@@ -6187,7 +6312,8 @@
 :notice||Disallocated by IANA
 \.duck$
 
-:whois|whois.nic.ieee
+#:whois|whois.nic.ieee
+:rdap|https://rdap.nominet.uk/ieee/
 \.ieee$
 
 :notice||Disallocated by IANA
@@ -6385,17 +6511,20 @@
 :whois|whois.nic.dish
 \.dish$
 
-:whois|whois.nic.hot
+#:whois|whois.nic.hot
+:rdap|https://rdap.nominet.uk/hot/
 \.hot$
 
 #:whois|whois.afilias-srs.net
 :whois|whois.nic.hughes
 \.hughes$
 
-:whois|whois.nic.pay
+#:whois|whois.nic.pay
+:rdap|https://rdap.nominet.uk/pay/
 \.pay$
 
-:whois|whois.nic.secure
+#:whois|whois.nic.secure
+:rdap|https://rdap.nominet.uk/secure/
 \.secure$
 
 #:whois|whois.afilias-srs.net
@@ -6463,7 +6592,8 @@
 :whois|whois.nic.observer
 \.observer$
 
-:whois|whois.nic.wow
+#:whois|whois.nic.wow
+:rdap|https://rdap.nominet.uk/wow/
 \.wow$
 
 #:whois|whois.afilias-srs.net
@@ -6507,7 +6637,8 @@
 :whois|whois.nic.aol
 \.aol$
 
-:whois|whois.nic.free
+#:whois|whois.nic.free
+:rdap|https://rdap.nominet.uk/free/
 \.free$
 
 #:whois|whois.nic.food
@@ -6621,13 +6752,16 @@
 :whois|whois.nic.grocery
 \.grocery$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 \.map$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 \.phd$
 
-:whois|whois.nic.google
+#:whois|whois.nic.google
+:rdap|https://pubapi.registry.google/rdap
 \.search$
 
 #:whois|whois.registry.in
@@ -6705,13 +6839,16 @@
 :whois|whois.nic.la
 \.xn--q7ce6a$
 
-:whois|whois.nic.amazon
+#:whois|whois.nic.amazon
+:rdap|https://rdap.nominet.uk/amazon/
 \.amazon$
 
-:whois|whois.nic.xn--cckwcxetd
+#:whois|whois.nic.xn--cckwcxetd
+:rdap|https://rdap.nominet.uk/xn--cckwcxetd/
 \.xn--cckwcxetd$
 
-:whois|whois.nic.xn--jlq480n2rg
+#:whois|whois.nic.xn--jlq480n2rg
+:rdap|https://rdap.nominet.uk/xn--jlq480n2rg/
 \.xn--jlq480n2rg$
 
 #:whois|whois.afilias-srs.net

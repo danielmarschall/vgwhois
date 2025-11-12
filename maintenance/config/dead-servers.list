@@ -50,24 +50,119 @@ whois.nic.net.sb
 whois.dot.tk
 # first fail: 2024-05-18
 whois.eu.org
+# first fail: 2025-01-31
+whois.nic.desi
+whois.nic.career
+whois.nic.realtor
+whois.nic.bbc
+whois.nic.mtn
+whois.nic.bbva
+whois.nic.xbox
+whois.nic.azure
+whois.nic.bing
+whois.nic.hotmail
+whois.nic.microsoft
+whois.nic.windows
+whois.nic.office
+whois.nic.skype
+whois.nic.omega
+whois.nic.swatch
+whois.nic.moi
+whois.nic.virgin
+whois.nic.yamaxun
+whois.nic.gucci
+whois.nic.fairwinds
+whois.nic.med
+whois.nic.author
+whois.nic.book
+whois.nic.bot
+whois.nic.buy
+whois.nic.call
+whois.nic.circle
+whois.nic.fast
+whois.nic.got
+whois.nic.jot
+whois.nic.joy
+whois.nic.like
+whois.nic.pin
+whois.nic.read
+whois.nic.room
+whois.nic.safe
+whois.nic.smile
+whois.nic.tushu
+whois.nic.shell
+whois.nic.wanggou
+whois.nic.spot
+whois.nic.tunes
+whois.nic.locus
+whois.nic.aws
+whois.nic.talk
+whois.nic.you
+whois.nic.abbvie
+whois.nic.realestate
+whois.nic.pioneer
+whois.nic.zappos
+whois.nic.audible
+whois.nic.deal
+whois.nic.fire
+whois.nic.imdb
+whois.nic.kindle
+whois.nic.now
+whois.nic.prime
+whois.nic.save
+whois.nic.silk
+whois.nic.ieee
+whois.nic.hot
+whois.nic.pay
+whois.nic.secure
+whois.nic.wow
+whois.nic.free
+whois.nic.amazon
+whois.nic.xn--cckwcxetd
+whois.nic.xn--jlq480n2rg
 # first fail: 2025-02-02
 whois.nic.jobs
+whois.nic.wed
+whois.nic.nowruz
+whois.nic.shia
+whois.nic.tci
+whois.nic.pars
+whois.nic.xn--mgbt3dhd
+# first fail: 2025-02-07
+whois.nic.sky
+# first fail: 2025-02-14
+whois.nic.gdn
+# first fail: 2025-04-01
+whois.nic.xn--p1acf
+# first fail: 2025-04-16
+whois.nic.google
+# first fail: 2025-05-22
+whois.nic.gop
+whois.nic.broadway
+whois.nic.pharmacy
 # first fail: 2025-05-30
 whois.nic.gea
+# first fail: 2025-06-13
+whois.nic.wales
+whois.nic.cymru
+# first fail: 2025-06-20
+whois.nic.vlaanderen
+whois.nic.brussels
 # first fail: 2025-06-27 (but whois.nic.vi works)
 :whois|virgil.nic.vi
 # first fail: 2025-06-28 (but CGI https://www.isnic.is/en/whois/search?query=isnic.is works)
 whois.isnic.is
+whois.isnet.is
 # first fail: 2025-07-15
 whois.nic.bo
 # first fail: 2025-08-02
 whois.registry.pf
 # first fail: 2025-08-10
 whois.nic.aco
+# first fail: 2025-08-17
+whois.gtlds.nic.br
 # first fail: 2025-09-23
 whois.nic.net.ng
-# first fail: 2025-05-22
-whois.nic.broadway
 
 # does not listen to public IPs anymore. The whois server only accepts calls from the web interface
 whois.registry.hm
