@@ -22,6 +22,10 @@ use VGWhoIs::Utils;
 
 use List::Util 'max';
 
+# For RDAP
+use JSON;
+use Text::Table;
+
 $VGWhoIs::Core::confdir = "$FindBin::RealBin/pattern/";
 
 # DM 11.09.2017: There is a weird bug: If I use TOR in combination with LWP on a Gopher protocol, I get error 500.
@@ -332,8 +336,61 @@ sub VGWhoIs::Core::doquery {
 	}
 
 	elsif ($method eq 'rdap') {
-# TODO: parse RDAP and show it in a human readable format
-		print "The RDAP record can be seen here:\n$host/domain/$query\n\n";
+		$host =~ s/\/$//;
+		my $url = "$host/domain/$query";
+
+		print "Fetching RDAP data from: $url\n\n";
+
+		# === RDAP JSON holen ===
+		my $json_text = get($url);
+		if (!$json_text) {
+			die "Error: Could not fetch RDAP data from $url\n";
+		}
+
+		# === JSON parsen ===
+		my $data = decode_json($json_text);
+
+		# === Tabelle vorbereiten ===
+		my $table = Text::Table->new(
+			'Field', 'Value'
+		);
+
+		# === Wichtige Felder auslesen ===
+		my %fields = (
+		    'Domain'        => $data->{ldhName} // '',
+		    'Handle'        => $data->{handle} // '',
+		    'Status'        => join(', ', @{$data->{status} // []}),
+		    'Registrar'     => $data->{entities}[0]{vcardArray}[1][1][3] // '',  # oft in vcardArray
+		    'Created'       => '',
+		    'Last Changed'  => '',
+		    'Expiry'        => '',
+		);
+
+		# === Events (Created / Changed / Expiry) ===
+		if (exists $data->{events}) {
+		    for my $e (@{$data->{events}}) {
+		        my $type = $e->{eventAction} // '';
+		        my $date = $e->{eventDate} // '';
+		        if ($type eq 'registration') {
+		            $fields{'Created'} = $date;
+		        } elsif ($type eq 'last changed') {
+		            $fields{'Last Changed'} = $date;
+		        } elsif ($type eq 'expiration') {
+		            $fields{'Expiry'} = $date;
+		        }
+		    }
+		}
+
+		# === Tabelle befüllen ===
+		for my $key (sort keys %fields) {
+		    $table->add($key, $fields{$key});
+		}
+
+		# === Ausgabe ===
+		print $table;
+
+		print "\n\nRaw JSON (for reference):\n";
+		print to_json($data, { utf8 => 1, pretty => 1 });
 	}
 
 	elsif ($method eq 'cgi') {
