@@ -538,8 +538,8 @@
 \.ir$
 
 #:whois|whois.isnet.is
-#:whois|whois.isnic.is
-:cgi|https://www.isnic.is/en/whois/search?query=~query~
+:whois|whois.isnic.is
+#:cgi|https://www.isnic.is/en/whois/search?query=~query~
 \.is$
 
 :whois|whois.nic.it
