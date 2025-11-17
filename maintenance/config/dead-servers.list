@@ -154,8 +154,7 @@ whois.nic.vlaanderen
 whois.nic.brussels
 # first fail: 2025-06-27 (but whois.nic.vi works)
 :whois|virgil.nic.vi
-# first fail: 2025-06-28 (but CGI https://www.isnic.is/en/whois/search?query=isnic.is works)
-whois.isnic.is
+# first fail: 2025-06-28 (but CGI https://www.isnic.is/en/whois/search?query=isnic.is and whois.isnic.is works)
 whois.isnet.is
 # first fail: 2025-07-15
 whois.nic.bo
