@@ -1,4 +1,4 @@
-#: version 20251112
+#: version 20260112
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -26,7 +26,8 @@
 \.ae$
 
 #:notice||Alternatively, use the online CAPTCHA protected WHOIS: https://whois.nic.af/public.jsp (last checked Aug 2023)
-:whois|whois.nic.af
+#:whois|whois.nic.af
+:notice|WHOIS server is gone. Please try http://www.nic.af
 \.af$
 
 # :whois|whois2.afilias-grs.net
@@ -269,7 +270,8 @@
 \.cw$
 
 #:notice||Please go to http://whois.nic.cx/whois.jsp and solve the CAPTCHA. [May 2019]
-:whois|whois.nic.cx
+#:whois|whois.nic.cx
+:rdap|https://cxda.org.cx
 \.cx$
 
 # TODO: Output is a bit messy. We probably need a subprogram to clean up
@@ -410,7 +412,8 @@
 # Note: IANA states that whois.mediaserv.net is the official whois.
 #       The servers says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
 #       However, .gp does not seems to work, as everything is "object not found"
-:whois|whois.mediaserv.net
+#:whois|whois.mediaserv.net
+:notice||Whois server gone. URL for registration services: https://www.dom-enic.com
 \.gf$
 
 #:whois|whois.isles.net
@@ -456,7 +459,8 @@
 \.gr$
 
 #:notice||Please go to http://whois.nic.gs/whois.jsp and solve the CAPTCHA. [Aug 2013]
-:whois|whois.nic.gs
+#:whois|whois.nic.gs
+:rdap|https://rdap.nic.gs
 \.gs$
 
 #:cgi|http://www.gt/cgi-bin/whois.cgi?domain=~query~
@@ -472,7 +476,8 @@
 :notice||No whois, no domain list, no nothing. (last checked Sep 2005)
 \.gw$
 
-:whois|whois.registry.gy
+#:whois|whois.registry.gy
+:rdap|https://rdap.registry.gy
 \.gy$
 
 #:whois|whois.hkdnr.net.hk
@@ -495,7 +500,8 @@
 
 #:cgi|http://www.nic.ht/info/whois.cfm?domain=~query~
 #:notice||Please go to http://whois.nic.ht/whois.jsp and solve the CAPTCHA. [Aug 2013]
-:whois|whois.nic.ht
+#:whois|whois.nic.ht
+:rdap|https://rdap.nic.ht
 \.ht$
 
 :whois|whois.nic.hu
@@ -574,7 +580,8 @@
 :notice||No whois, no domain list. Homepage http://www.mptc.gov.kh/Reculation/dns_reualation.htm (last checked Sep 2005)
 \.kh$
 
-:whois|whois.nic.ki
+#:whois|whois.nic.ki
+:notice||Whois server gone. Try http://www.nic.ki
 \.ki$
 
 :notice||No whois, no domain list. Homepage http://www.domaine.km/ defunct (last checked Aug 2023)
@@ -657,7 +664,8 @@
 :whois|whois.registre.ma
 \.ma$
 
-:whois|whois.ripe.net|prefix=-B |
+#:whois|whois.ripe.net|prefix=-B |
+:whois|whois.nic.mc
 \.mc$
 
 :whois|whois.nic.md
@@ -711,7 +719,8 @@
 # Note: IANA states that whois.mediaserv.net is the official whois.
 #       The servers says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
 #       However, .gp does not seems to work, as everything is "object not found"
-:whois|whois.mediaserv.net
+#:whois|whois.mediaserv.net
+:notice||Whois server gone. URL for registration services: https://www.dom-enic.com
 \.mq$
 
 :whois|whois.nic.mr
@@ -765,7 +774,8 @@
 #:notice||No whois, domain availability can be checked on https://secure.nf/ (2/2008)
 #:notice||Please go to http://whois.nic.nf/whois.jsp and solve the CAPTCHA. [Aug 2013]
 #:whois|whois.nic.net.nf
-:whois|whois.nic.nf
+#:whois|whois.nic.nf
+:rdap|https://rdap.nic.nf
 \.nf$
 
 #:whois|whois.nic.net.ng
@@ -907,7 +917,8 @@
 
 #:notice||Please go to http://whois.nic.sb/whois.jsp and solve the CAPTCHA. [Aug 2013]
 #:whois|whois.nic.net.sb
-:whois|whois.nic.sb
+#:whois|whois.nic.sb
+:notice||Whois server gone. Try http://www.nic.net.sb/
 \.sb$
 
 # :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
@@ -1022,7 +1033,8 @@
 \.tk$
 
 #:notice||Please go to http://whois.nic.tl/whois.jsp and solve the CAPTCHA. [Aug 2013]
-:whois|whois.nic.tl
+#:whois|whois.nic.tl
+:notice||Whois server gone. Try http://www.nic.tl
 \.tl$
 
 :whois|whois.nic.tm
@@ -2640,7 +2652,8 @@
 # Delegated on 10 April 2014 to Hu Yi Global Information Resources (Holding) Company Hong Kong Limited
 # Chinese for "network address"
 #:whois|whois.registry.knet.cn
-:whois|whois.nic.xn--ses554g
+#:whois|whois.nic.xn--ses554g
+:rdap|https://rdap.zdnsgtld.com/xn--ses554g
 \.xn--ses554g$
 
 # Delegated on 10 April 2014 to Ruby Moon, LLC
@@ -2916,7 +2929,7 @@
 
 # Delegated on 3 May 2014 to Globo Comunicação e Participações S.A
 #:whois|whois.gtlds.nic.br
-:rdap|https://rdap.gtlds.nic.br/
+:rdap|https://rdap.gtlds.nic.br
 \.globo$
 
 # Delegated on 3 May 2014 to GMO Internet, Inc.
@@ -3019,7 +3032,7 @@
 
 # Delegated on 22 May 2014 to Empresa Municipal de Informática SA - IPLANRIO
 #:whois|whois.gtlds.nic.br
-:rdap|https://rdap.gtlds.nic.br/
+:rdap|https://rdap.gtlds.nic.br
 \.rio$
 
 # Delegated on 22 May 2014 to DERYachts, LLC
@@ -3385,7 +3398,7 @@
 
 # Delegated on 8 August 2014
 #:whois|whois.nic.cymru
-:rdap|https://rdap.nominet.uk/cymru/
+:rdap|https://rdap.nominet.uk/cymru
 \.cymru$
 
 # Delegated on 8 August 2014
@@ -3443,7 +3456,7 @@
 
 # Delegated on 16 August 2014
 #:whois|whois.gtlds.nic.br
-:rdap|https://rdap.gtlds.nic.br/
+:rdap|https://rdap.gtlds.nic.br
 \.uol$
 
 # Delegated on 16 August 2014
@@ -4382,7 +4395,7 @@
 \.xn--vuq861b$
 
 #:whois|whois.nic.bbc
-:rdap|https://rdap.nominet.uk/bbc/
+:rdap|https://rdap.nominet.uk/bbc
 \.bbc$
 
 #:whois|whois.rightside.co
@@ -4850,11 +4863,11 @@
 \.movistar$
 
 #:whois|whois.nic.omega
-:rdap|https://rdap.nominet.uk/omega/
+:rdap|https://rdap.nominet.uk/omega
 \.omega$
 
 #:whois|whois.nic.swatch
-:rdap|https://rdap.nominet.uk/swatch/
+:rdap|https://rdap.nominet.uk/swatch
 \.swatch$
 
 :notice||Disallocated by IANA
@@ -5118,11 +5131,11 @@
 \.obi$
 
 #:whois|whois.gtlds.nic.br
-:rdap|https://rdap.gtlds.nic.br/
+:rdap|https://rdap.gtlds.nic.br
 \.bom$
 
 #:whois|whois.gtlds.nic.br
-:rdap|https://rdap.gtlds.nic.br/
+:rdap|https://rdap.gtlds.nic.br
 \.final$
 
 :whois|whois.nic.hyundai
@@ -5142,18 +5155,18 @@
 \.clubmed$
 
 #:whois|whois.nic.moi
-:rdap|https://rdap.nominet.uk/moi/
+:rdap|https://rdap.nominet.uk/moi
 \.moi$
 
 :whois|whois.nic.mtr
 \.mtr$
 
 #:whois|whois.nic.virgin
-:rdap|https://rdap.nominet.uk/virgin/
+:rdap|https://rdap.nominet.uk/virgin
 \.virgin$
 
 #:whois|whois.nic.yamaxun
-:rdap|https://rdap.nominet.uk/yamaxun/
+:rdap|https://rdap.nominet.uk/yamaxun
 \.yamaxun$
 
 #:whois|whois.afilias-srs.net
@@ -5179,7 +5192,7 @@
 \.mutuelle$
 
 #:whois|whois.nic.gucci
-:rdap|https://rdap.nominet.uk/gucci/
+:rdap|https://rdap.nominet.uk/gucci
 \.gucci$
 
 :whois|whois.nic.jaguar
@@ -5211,7 +5224,8 @@
 \.aarp$
 
 #:whois|whois.afilias-srs.net
-:whois|whois.nic.apple
+#:whois|whois.nic.apple
+:rdap|https://rdap.nic.apple
 \.apple$
 
 #:whois|whois.afilias-srs.net
@@ -5252,7 +5266,7 @@
 \.vana$
 
 #:whois|whois.nic.fairwinds
-:rdap|https://rdap.nominet.uk/fairwinds/
+:rdap|https://rdap.nominet.uk/fairwinds
 \.fairwinds$
 
 :whois|whois.nic.grainger
@@ -5303,7 +5317,7 @@
 \.insurance$
 
 #:whois|whois.nic.med
-:rdap|https://rdap.nominet.uk/med/
+:rdap|https://rdap.nominet.uk/med
 \.med$
 
 :whois|whois.nic.norton
@@ -5313,51 +5327,51 @@
 \.symantec$
 
 #:whois|whois.nic.author
-:rdap|https://rdap.nominet.uk/author/
+:rdap|https://rdap.nominet.uk/author
 \.author$
 
 #:whois|whois.nic.book
-:rdap|https://rdap.nominet.uk/book/
+:rdap|https://rdap.nominet.uk/book
 \.book$
 
 #:whois|whois.nic.bot
-:rdap|https://rdap.nominet.uk/bot/
+:rdap|https://rdap.nominet.uk/bot
 \.bot$
 
 #:whois|whois.afilias-srs.net
 #:whois|whois.nic.buy
-:rdap|https://rdap.nominet.uk/buy/
+:rdap|https://rdap.nominet.uk/buy
 \.buy$
 
 #:whois|whois.nic.call
-:rdap|https://rdap.nominet.uk/call/
+:rdap|https://rdap.nominet.uk/call
 \.call$
 
 #:whois|whois.nic.circle
-:rdap|https://rdap.nominet.uk/circle/
+:rdap|https://rdap.nominet.uk/circle
 \.circle$
 
 #:whois|whois.nic.fast
-:rdap|https://rdap.nominet.uk/fast/
+:rdap|https://rdap.nominet.uk/fast
 \.fast$
 
 :whois|whois.nic.firestone
 \.firestone$
 
 #:whois|whois.nic.got
-:rdap|https://rdap.nominet.uk/got/
+:rdap|https://rdap.nominet.uk/got
 \.got$
 
 #:whois|whois.nic.jot
-:rdap|https://rdap.nominet.uk/jot/
+:rdap|https://rdap.nominet.uk/jot
 \.jot$
 
 #:whois|whois.nic.joy
-:rdap|https://rdap.nominet.uk/joy/
+:rdap|https://rdap.nominet.uk/joy
 \.joy$
 
 #:whois|whois.nic.like
-:rdap|https://rdap.nominet.uk/like/
+:rdap|https://rdap.nominet.uk/like
 \.like$
 
 #:whois|whois.agitsys.net
@@ -5366,19 +5380,19 @@
 \.nowruz$
 
 #:whois|whois.nic.pin
-:rdap|https://rdap.nominet.uk/pin/
+:rdap|https://rdap.nominet.uk/pin
 \.pin$
 
 #:whois|whois.nic.read
-:rdap|https://rdap.nominet.uk/read/
+:rdap|https://rdap.nominet.uk/read
 \.read$
 
 #:whois|whois.nic.room
-:rdap|https://rdap.nominet.uk/room/
+:rdap|https://rdap.nominet.uk/room
 \.room$
 
 #:whois|whois.nic.safe
-:rdap|https://rdap.nominet.uk/safe/
+:rdap|https://rdap.nominet.uk/safe
 \.safe$
 
 #:whois|whois.nic.salon
@@ -5391,11 +5405,11 @@
 
 #:whois|whois.agitsys.net
 #:whois|whois.nic.shia
-:rdap|https://rdap.nominet.uk/shia/
+:rdap|https://rdap.nominet.uk/shia
 \.shia$
 
 #:whois|whois.nic.smile
-:rdap|https://rdap.nominet.uk/smile/
+:rdap|https://rdap.nominet.uk/smile
 \.smile$
 
 #:whois|whois.agitsys.net
@@ -5412,12 +5426,12 @@
 
 #:whois|whois.agitsys.net
 #:whois|whois.nic.pars
-:rdap|https://rdap.nominet.uk/pars/
+:rdap|https://rdap.nominet.uk/pars
 \.pars$
 
 #:whois|whois.agitsys.net
 #:whois|whois.nic.xn--mgbt3dhd
-:rdap|https://rdap.nominet.uk/xn--mgbt3dhd/
+:rdap|https://rdap.nominet.uk/xn--mgbt3dhd
 \.xn--mgbt3dhd$
 
 #:whois|whois.afilias-srs.net
@@ -5429,7 +5443,7 @@
 \.trv$
 
 #:whois|whois.nic.tushu
-:rdap|https://rdap.nominet.uk/tushu/
+:rdap|https://rdap.nominet.uk/tushu
 \.tushu$
 
 :whois|whois.nic.watches
@@ -5446,7 +5460,7 @@
 \.kpn$
 
 #:whois|whois.nic.shell
-:rdap|https://rdap.nominet.uk/shell/
+:rdap|https://rdap.nominet.uk/shell
 \.shell$
 
 #:whois|whois.afilias-srs.net
@@ -5454,7 +5468,7 @@
 \.travelersinsurance$
 
 #:whois|whois.nic.wanggou
-:rdap|https://rdap.nominet.uk/wanggou/
+:rdap|https://rdap.nominet.uk/wanggou
 \.wanggou$
 
 :notice||Disallocated by IANA
@@ -5692,7 +5706,7 @@
 \.coupon$
 
 #:whois|whois.nic.spot
-:rdap|https://rdap.nominet.uk/spot/
+:rdap|https://rdap.nominet.uk/spot
 \.spot$
 
 :whois|whois.nic.xn--1ck2e1b
@@ -5727,7 +5741,7 @@
 \.telecity$
 
 #:whois|whois.nic.tunes
-:rdap|https://rdap.nominet.uk/tunes/
+:rdap|https://rdap.nominet.uk/tunes
 \.tunes$
 
 :whois|whois.nic.chase
@@ -5769,7 +5783,7 @@
 \.gmbh$
 
 #:whois|whois.nic.locus
-:rdap|https://rdap.nominet.uk/locus/
+:rdap|https://rdap.nominet.uk/locus
 \.locus$
 
 #:whois|whois-total.nic.fr
@@ -5793,7 +5807,7 @@
 \.barefoot$
 
 #:whois|whois.nic.aws
-:rdap|https://rdap.nominet.uk/aws/
+:rdap|https://rdap.nominet.uk/aws
 \.aws$
 
 #:whois|whois.afilias-srs.net
@@ -5801,14 +5815,14 @@
 \.extraspace$
 
 #:whois|whois.nic.talk
-:rdap|https://rdap.nominet.uk/talk/
+:rdap|https://rdap.nominet.uk/talk
 \.talk$
 
 :whois|whois.nic.xn--fct429k
 \.xn--fct429k$
 
 #:whois|whois.nic.you
-:rdap|https://rdap.nominet.uk/you/
+:rdap|https://rdap.nominet.uk/you
 \.you$
 
 :whois|whois.teleinfo.cn
@@ -5844,7 +5858,7 @@
 
 #:whois|whois.afilias-srs.net
 #:whois|whois.nic.abbvie
-:rdap|https://rdap.nominet.uk/abbvie/
+:rdap|https://rdap.nominet.uk/abbvie
 \.abbvie$
 
 :whois|whois.nic.abudhabi
@@ -5983,7 +5997,7 @@
 \.aetna$
 
 #:whois|whois.nic.realestate
-:rdap|https://rdap.nominet.uk/realestate/
+:rdap|https://rdap.nominet.uk/realestate
 \.realestate$
 
 :whois|whois.nic.shop
@@ -6030,53 +6044,53 @@
 
 #:whois|whois.nic.gmo
 #:whois|whois.nic.pioneer
-:rdap|https://rdap.nominet.uk/pioneer/
+:rdap|https://rdap.nominet.uk/pioneer
 \.pioneer$
 
 #:whois|whois.nic.zappos
-:rdap|https://rdap.nominet.uk/zappos/
+:rdap|https://rdap.nominet.uk/zappos
 \.zappos$
 
 #:whois|whois.nic.audible
-:rdap|https://rdap.nominet.uk/audible/
+:rdap|https://rdap.nominet.uk/audible
 \.audible$
 
 :whois|whois.nic.chintai
 \.chintai$
 
 #:whois|whois.nic.deal
-:rdap|https://rdap.nominet.uk/deal/
+:rdap|https://rdap.nominet.uk/deal
 \.deal$
 
 :notice||Disallocated by IANA
 \.epost$
 
 #:whois|whois.nic.fire
-:rdap|https://rdap.nominet.uk/fire/
+:rdap|https://rdap.nominet.uk/fire
 \.fire$
 
 #:whois|whois.nic.imdb
-:rdap|https://rdap.nominet.uk/imdb/
+:rdap|https://rdap.nominet.uk/imdb
 \.imdb$
 
 #:whois|whois.nic.kindle
-:rdap|https://rdap.nominet.uk/kindle/
+:rdap|https://rdap.nominet.uk/kindle
 \.kindle$
 
 #:whois|whois.nic.now
-:rdap|https://rdap.nominet.uk/now/
+:rdap|https://rdap.nominet.uk/now
 \.now$
 
 #:whois|whois.nic.prime
-:rdap|https://rdap.nominet.uk/prime/
+:rdap|https://rdap.nominet.uk/prime
 \.prime$
 
 #:whois|whois.nic.save
-:rdap|https://rdap.nominet.uk/save/
+:rdap|https://rdap.nominet.uk/save
 \.save$
 
 #:whois|whois.nic.silk
-:rdap|https://rdap.nominet.uk/silk/
+:rdap|https://rdap.nominet.uk/silk
 \.silk$
 
 :whois|whois.nic.tdk
@@ -6314,7 +6328,7 @@
 \.duck$
 
 #:whois|whois.nic.ieee
-:rdap|https://rdap.nominet.uk/ieee/
+:rdap|https://rdap.nominet.uk/ieee
 \.ieee$
 
 :notice||Disallocated by IANA
@@ -6513,7 +6527,7 @@
 \.dish$
 
 #:whois|whois.nic.hot
-:rdap|https://rdap.nominet.uk/hot/
+:rdap|https://rdap.nominet.uk/hot
 \.hot$
 
 #:whois|whois.afilias-srs.net
@@ -6521,11 +6535,11 @@
 \.hughes$
 
 #:whois|whois.nic.pay
-:rdap|https://rdap.nominet.uk/pay/
+:rdap|https://rdap.nominet.uk/pay
 \.pay$
 
 #:whois|whois.nic.secure
-:rdap|https://rdap.nominet.uk/secure/
+:rdap|https://rdap.nominet.uk/secure
 \.secure$
 
 #:whois|whois.afilias-srs.net
@@ -6594,7 +6608,7 @@
 \.observer$
 
 #:whois|whois.nic.wow
-:rdap|https://rdap.nominet.uk/wow/
+:rdap|https://rdap.nominet.uk/wow
 \.wow$
 
 #:whois|whois.afilias-srs.net
@@ -6639,7 +6653,7 @@
 \.aol$
 
 #:whois|whois.nic.free
-:rdap|https://rdap.nominet.uk/free/
+:rdap|https://rdap.nominet.uk/free
 \.free$
 
 #:whois|whois.nic.food
@@ -6841,15 +6855,15 @@
 \.xn--q7ce6a$
 
 #:whois|whois.nic.amazon
-:rdap|https://rdap.nominet.uk/amazon/
+:rdap|https://rdap.nominet.uk/amazon
 \.amazon$
 
 #:whois|whois.nic.xn--cckwcxetd
-:rdap|https://rdap.nominet.uk/xn--cckwcxetd/
+:rdap|https://rdap.nominet.uk/xn--cckwcxetd
 \.xn--cckwcxetd$
 
 #:whois|whois.nic.xn--jlq480n2rg
-:rdap|https://rdap.nominet.uk/xn--jlq480n2rg/
+:rdap|https://rdap.nominet.uk/xn--jlq480n2rg
 \.xn--jlq480n2rg$
 
 #:whois|whois.afilias-srs.net
