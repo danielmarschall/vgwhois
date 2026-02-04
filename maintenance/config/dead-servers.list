@@ -158,8 +158,6 @@ whois.nic.brussels
 whois.isnet.is
 # first fail: 2025-07-15
 whois.nic.bo
-# first fail: 2025-08-02
-whois.registry.pf
 # first fail: 2025-08-10
 whois.nic.aco
 # first fail: 2025-08-17
@@ -168,17 +166,6 @@ whois.gtlds.nic.br
 whois.nic.net.ng
 # first fail: 2025-10-22
 whois.mn
-# first fail: 2025-12-01
-whois.nic.sb
-# first fail: 2025-12-02
-whois.nic.af
-whois.nic.cx
-whois.nic.gs
-whois.registry.gy
-whois.nic.ht
-whois.nic.ki
-whois.nic.nf
-whois.nic.tl
 # 2025-12-05
 whois.mediaserv.net
 # 2025-12-13

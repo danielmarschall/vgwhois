@@ -1,4 +1,4 @@
-#: version 20260112
+#: version 20260204
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -26,8 +26,7 @@
 \.ae$
 
 #:notice||Alternatively, use the online CAPTCHA protected WHOIS: https://whois.nic.af/public.jsp (last checked Aug 2023)
-#:whois|whois.nic.af
-:notice|WHOIS server is gone. Please try http://www.nic.af
+:whois|whois.nic.af
 \.af$
 
 # :whois|whois2.afilias-grs.net
@@ -270,8 +269,8 @@
 \.cw$
 
 #:notice||Please go to http://whois.nic.cx/whois.jsp and solve the CAPTCHA. [May 2019]
-#:whois|whois.nic.cx
-:rdap|https://cxda.org.cx
+#:rdap|https://cxda.org.cx
+:whois|whois.nic.cx
 \.cx$
 
 # TODO: Output is a bit messy. We probably need a subprogram to clean up
@@ -459,8 +458,8 @@
 \.gr$
 
 #:notice||Please go to http://whois.nic.gs/whois.jsp and solve the CAPTCHA. [Aug 2013]
-#:whois|whois.nic.gs
-:rdap|https://rdap.nic.gs
+#:rdap|https://rdap.nic.gs
+:whois|whois.nic.gs
 \.gs$
 
 #:cgi|http://www.gt/cgi-bin/whois.cgi?domain=~query~
@@ -476,8 +475,8 @@
 :notice||No whois, no domain list, no nothing. (last checked Sep 2005)
 \.gw$
 
-#:whois|whois.registry.gy
-:rdap|https://rdap.registry.gy
+#:rdap|https://rdap.registry.gy
+:whois|whois.registry.gy
 \.gy$
 
 #:whois|whois.hkdnr.net.hk
@@ -500,8 +499,8 @@
 
 #:cgi|http://www.nic.ht/info/whois.cfm?domain=~query~
 #:notice||Please go to http://whois.nic.ht/whois.jsp and solve the CAPTCHA. [Aug 2013]
-#:whois|whois.nic.ht
-:rdap|https://rdap.nic.ht
+#:rdap|https://rdap.nic.ht
+:whois|whois.nic.ht
 \.ht$
 
 :whois|whois.nic.hu
@@ -580,8 +579,7 @@
 :notice||No whois, no domain list. Homepage http://www.mptc.gov.kh/Reculation/dns_reualation.htm (last checked Sep 2005)
 \.kh$
 
-#:whois|whois.nic.ki
-:notice||Whois server gone. Try http://www.nic.ki
+:whois|whois.nic.ki
 \.ki$
 
 :notice||No whois, no domain list. Homepage http://www.domaine.km/ defunct (last checked Aug 2023)
@@ -774,8 +772,8 @@
 #:notice||No whois, domain availability can be checked on https://secure.nf/ (2/2008)
 #:notice||Please go to http://whois.nic.nf/whois.jsp and solve the CAPTCHA. [Aug 2013]
 #:whois|whois.nic.net.nf
-#:whois|whois.nic.nf
-:rdap|https://rdap.nic.nf
+#:rdap|https://rdap.nic.nf
+:whois|whois.nic.nf
 \.nf$
 
 #:whois|whois.nic.net.ng
@@ -831,8 +829,7 @@
 \.pe$
 
 #:notice||No whois, no domain list. Homepage http://www.mana.pf/ (last checked Sep 2005)
-#:whois|whois.registry.pf
-:notice||Whois server gone (last checked Nov 2025), homepage http://www.mana.pf/ redirects to "vini.pf" which does not write anything about domains?!
+:whois|whois.registry.pf
 \.pf$
 
 #:notice||No whois, no domain list. Homepage http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm (last checked Jan 2005)
@@ -917,8 +914,7 @@
 
 #:notice||Please go to http://whois.nic.sb/whois.jsp and solve the CAPTCHA. [Aug 2013]
 #:whois|whois.nic.net.sb
-#:whois|whois.nic.sb
-:notice||Whois server gone. Try http://www.nic.net.sb/
+:whois|whois.nic.sb
 \.sb$
 
 # :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
@@ -1033,8 +1029,7 @@
 \.tk$
 
 #:notice||Please go to http://whois.nic.tl/whois.jsp and solve the CAPTCHA. [Aug 2013]
-#:whois|whois.nic.tl
-:notice||Whois server gone. Try http://www.nic.tl
+:whois|whois.nic.tl
 \.tl$
 
 :whois|whois.nic.tm
