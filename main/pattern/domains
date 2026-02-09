@@ -1,4 +1,4 @@
-#: version 20260204
+#: version 20260209
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -4298,7 +4298,7 @@
 :whois|whois.nic.epson
 \.epson$
 
-:whois|whois.nic.gmo
+:notice||Disallocated by IANA
 \.goo$
 
 :whois|whois.nic.java
