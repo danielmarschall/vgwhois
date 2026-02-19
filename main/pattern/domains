@@ -1,4 +1,4 @@
-#: version 20260209
+#: version 20260219
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -406,13 +406,8 @@
 
 #:notice||Homepage http://www.nplus.gf/
 #:cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-# Note: The program mq_gf_gp also works for .mq , but it is better to use a real whois server
-#:program|$vgwhois$/subprograms/mq_gf_gp
-# Note: IANA states that whois.mediaserv.net is the official whois.
-#       The servers says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
-#       However, .gp does not seems to work, as everything is "object not found"
-#:whois|whois.mediaserv.net
-:notice||Whois server gone. URL for registration services: https://www.dom-enic.com
+#:notice||URL for registration services: https://www.dom-enic.com
+:whois|whois.mediaserv.net
 \.gf$
 
 #:whois|whois.isles.net
@@ -441,12 +436,12 @@
 #:cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
 #:notice||Please go to https://whois.nic.gp/ and solve the CAPTCHA. [Oct 2021]
 # Note: The server whois.mediaserv.net says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
-#       However, .gp does not seems to work, as everything is "object not found"
+#       However, .gp does not seems to work, as everything is "object not found" (last verified in Feb 2026)
 #       whois.nic.gp (= server in IANA DB) seems to be a real whois server, but it does not seem to accept
-#       connections from outside. The www.dom-enic.com page (called by the mq_gf_gp program)
+#       connections from outside. The www.dom-enic.com page
 #       shows an output which seems to be an internal reply from whois.nic.gp.
 #:whois|whois.nic.gp
-:program|$vgwhois$/subprograms/mq_gf_gp
+:notice||Please visit https://whois.nic.gp/ and solve the CAPTCHA, alternatively https://www.dom-enic.com/whois.html (last checked Feb 2026)
 \.gp$
 
 #:notice||No whois, no domain list. Homepage http://www.getesa.gq/ (last checked Sep 2005)
@@ -712,13 +707,8 @@
 
 #:notice||Homepage http://www.nic.mq/
 #:cgipost|https://www.dom-enic.com/whois.html|domain=~namewotld~&extension=~tld~&Submit=Soumettre
-# Note: The program mq_gf_gp also works for .mq , but it is better to use a real whois server
-#:program|$vgwhois$/subprograms/mq_gf_gp
-# Note: IANA states that whois.mediaserv.net is the official whois.
-#       The servers says "This is JWhoisServer serving ccTLD tld;mq;gf;gp"
-#       However, .gp does not seems to work, as everything is "object not found"
-#:whois|whois.mediaserv.net
-:notice||Whois server gone. URL for registration services: https://www.dom-enic.com
+#:notice||URL for registration services: https://www.dom-enic.com
+:whois|whois.mediaserv.net
 \.mq$
 
 :whois|whois.nic.mr
@@ -5676,8 +5666,7 @@
 :whois|whois.nic.pwc
 \.pwc$
 
-#:whois|whois.afilias-srs.net
-:whois|whois.nic.wolterskluwer
+:notice||Disallocated by IANA
 \.wolterskluwer$
 
 :whois|whois.eu
