@@ -1,4 +1,4 @@
-#: version 20260219
+#: version 20260414
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -312,8 +312,8 @@
 #:cgi|http://www.eldjazair.dz/template/rechercherdomaine.php?domain_name=~1~&domaine=~2~
 #(.*)(\.(?:com|org|asso|art|edu|gov|pol)\.dz)$
 #(.*)(\.dz)$
-:cgi|http://www.nic.dz/en/index.php?domain_name=~namewotld~&rechercher.x=0&rechercher.y=0&option=com_whois
-#:whois|whois.nic.dz
+#:cgi|http://www.nic.dz/en/index.php?domain_name=~namewotld~&rechercher.x=0&rechercher.y=0&option=com_whois
+:whois|whois.nic.dz
 \.dz$
 
 #:cgi|http://www.nic.ec/reg/eng/whois.asp?dominio=~query~
@@ -1513,8 +1513,8 @@
 :notice||Whois server gone since 2025-10-22. URL for registration services: https://www.datacom.mn/
 \.xn--l1acc$
 
-#:whois|whois.nic.dz
-:notice||Whois server gone since August 2021. More info at http://www.nic.dz/
+#:notice||Whois server gone since August 2021. More info at http://www.nic.dz/
+:whois|whois.nic.dz
 \.xn--lgbbat1ad8j$
 
 :whois|whois.nic.ir
@@ -2010,7 +2010,8 @@
 \.kiwi$
 
 # Delegated on 3 January 2014 to Zodiac Leo Limited
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.zdns.cn
 \.wang$
 
 # Delegated on 3 January 2014 to TLD Registry Limited
@@ -2021,12 +2022,14 @@
 
 # Delegated on 3 January 2014 to Tycoon Treasure Limited
 # Chinese for "I love you"
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.zdns.cn
 \.xn--6qq986b3xl$
 
 # Delegated on 3 January 2014 to Eagle Horizon Limited
 # Chinese for "group"
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.zdns.cn
 \.xn--3bst00m$
 
 # Delegated on 8 January 2014 to dotBERLIN GmbH & Co. KG
@@ -2571,7 +2574,8 @@
 
 # Delegated on 31 March 2014 to Zodiac Capricorn Limited
 # Chinese for "mall"
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.zdns.cn
 \.xn--czru2d$
 
 # Delegated on 31 March 2014 to Uniregistry, Corp.
@@ -3924,7 +3928,8 @@
 \.party$
 
 #:whois|whois.nic.xn--45q11c
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.zdns.cn
 \.xn--45q11c$
 
 :whois|whois.nic.firmdale
@@ -3992,7 +3997,8 @@
 \.latrobe$
 
 #:whois|whois.nic.xn--hxt814e
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.zdns.cn
 \.xn--hxt814e$
 
 :whois|whois.nic.adult
@@ -4477,7 +4483,8 @@
 \.bond$
 
 #:whois|whois.nic.wang
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.zdns.cn
 \.xn--9et52u$
 
 :whois|whois.nic.afl
@@ -4491,7 +4498,8 @@
 \.mma$
 
 #:whois|whois.nic.wang
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.zdns.cn
 \.xn--30rr7y$
 
 #:whois|whois.centralnic.com
@@ -5046,7 +5054,8 @@
 :whois|whois.nic.mom
 \.mom$
 
-:whois|whois.nic.xn--efvy88h
+#:whois|whois.nic.xn--efvy88h
+:whois|whois.zdns.cn
 \.xn--efvy88h$
 
 #:whois|whois.afilias-srs.net
