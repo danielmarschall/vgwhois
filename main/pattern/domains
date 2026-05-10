@@ -1,4 +1,4 @@
-#: version 20260414
+#: version 20260510
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -150,8 +150,8 @@
 #:cgipost|https://nic.bo/whois.php|dominio=~1~&subdominio=~2~&enviar=
 #(.*)(\.([^\.]*)\.bo)$
 #(.*)(\.bo)$
-#:whois|whois.nic.bo
-:notice||Please visit https://nic.bo/whois.php#whois
+#:notice||Please visit https://nic.bo/whois.php#whois
+:whois|whois.nic.bo
 \.bo$
 
 #:whois|registro.br
@@ -6866,9 +6866,13 @@
 :whois|whois.isoc.org.il
 \.xn--4dbrk0ce$
 
-:whois|whois.nic.music
+#:whois|whois.nic.music
+:whois|whois.registryservices.music
 \.music$
 
 #:whois|whois.afilias-srs.net
 :whois|whois.nic.kids
 \.kids$
+
+:whois|whois.nic.merck
+\.merck$
