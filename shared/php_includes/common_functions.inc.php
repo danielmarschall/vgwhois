@@ -76,12 +76,6 @@ function gwitc_is_port_open($server, $default_port, $timeout=3) {
 	$host = $x[0];
 	$port = isset($x[1]) ? $x[1] : $default_port;
 
-	// First try with TOR
-#	$cmd = "vtor -- nc -zw$timeout $host $port 2>/dev/null";
-#	exec($cmd, $out, $code);
-#	if ($code == 0) return true;
-
-	// Try without TOR
 	$cmd = "nc -zw$timeout $host $port 2>/dev/null";
 	exec($cmd, $out, $code);
 	return ($code == 0);

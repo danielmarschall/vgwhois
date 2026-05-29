@@ -31,7 +31,6 @@ $viewstate = str_replace('/', '%2F', $viewstate);
 # ---
 
 $bef  = '';
-#$bef .= 'vtor -- ';
 $bef .= 'curl "https://domains.dotgov.gov/dotgov-web/registration/whois.xhtml" ';
 #$bef .= ' -H "Cookie: JSESSIONID='.$session_id.'; seen-cookie-message=yes';
 $bef .= ' --cookie ~/.cookiejar --cookie-jar ~/.cookiejar  ';   # <-- cookiejar is maintained by file_get_contents2()
