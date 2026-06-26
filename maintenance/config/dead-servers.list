@@ -158,8 +158,6 @@ whois.isnet.is
 whois.nic.aco
 # first fail: 2025-08-17
 whois.gtlds.nic.br
-# first fail: 2025-09-23
-whois.nic.net.ng
 # first fail: 2025-10-22
 whois.mn
 # 2025-12-13

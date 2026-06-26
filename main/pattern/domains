@@ -1,4 +1,4 @@
-#: version 20260529
+#: version 20260626
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -766,8 +766,8 @@
 :whois|whois.nic.nf
 \.nf$
 
-#:whois|whois.nic.net.ng
-:notice||Please visit https://www.nira.org.ng/
+#:notice||Please visit https://www.nira.org.ng/
+:whois|whois.nic.net.ng
 \.ng$
 
 :notice||No (usable) whois. Partial domain list at homepage http://www.nic.ni/ (last checked Sep 2005)
@@ -1711,7 +1711,8 @@
 # Delegated on 14 November 2013 to Uniregistry, Corp.
 #:whois|whois.uniregistry.net
 #:whois|whois.nic.sexy
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.sexy$
 
 # Delegated on 14 November 2013 to Sugar House, LLC
@@ -2092,7 +2093,8 @@
 
 # Delegated on 18 January 2014 to CITIC Group Corporation
 # Chinese for "CITIC"
-:whois|whois.gtld.knet.cn
+#:whois|whois.gtld.knet.cn
+:whois|whois.gtld.zdns.cn
 \.xn--fiq64b$
 
 # Delegated on 18 January 2014 to Afilias Limited
@@ -2127,7 +2129,8 @@
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
 #:whois|whois.uniregistry.net
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.gift
 \.gift$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
@@ -2586,7 +2589,8 @@
 #:whois|whois-dub.mm-registry.com
 #:whois|whois.uniregistry.net
 #:whois|whois.nic.country
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.country$
 
 # Delegated on 31 March 2014 to Top Level Domain Holdings Limited
@@ -3068,7 +3072,8 @@
 #:whois|whois.afilias-srs.net
 #:whois|whois.uniregistry.net
 #:whois|whois.nic.hiv
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.hiv$
 
 # Delegated on 31 May 2014 to United TLD Holdco, Ltd.
@@ -3434,7 +3439,8 @@
 # Delegated on 16 August 2014
 #:whois|whois.uniregistry.net
 #:whois|whois.nic.property
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.property$
 
 # Delegated on 16 August 2014
@@ -3474,7 +3480,8 @@
 # Delegated on 16 August 2014
 #:whois|whois.uniregistry.net
 #:whois|whois.nic.click
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.click$
 
 # Delegated on 22 August 2014
@@ -4026,7 +4033,8 @@
 \.porn$
 
 #:whois|whois.nic.trust
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.trust$
 
 #:whois|whois.nic.xn--czrs0t
@@ -5261,11 +5269,13 @@
 \.creditunion$
 
 #:whois|whois.nic.lifestyle
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.lifestyle$
 
 #:whois|whois.nic.vana
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.vana$
 
 #:whois|whois.nic.fairwinds
@@ -5560,7 +5570,8 @@
 \.clinique$
 
 #:whois|whois.nic.living
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.living$
 
 #:whois|whois.afilias.net
@@ -6583,7 +6594,8 @@
 \.walmart$
 
 #:whois|whois.nic.diy
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.diy$
 
 #:whois|whois.afilias-srs.net
@@ -6659,7 +6671,8 @@
 \.free$
 
 #:whois|whois.nic.food
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.registry.click
 \.food$
 
 # Alternative URL: http://nic.box/
