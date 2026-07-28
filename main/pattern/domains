@@ -1,4 +1,4 @@
-#: version 20260626
+#: version 20260728
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -1847,12 +1847,14 @@
 
 # Delegated on 17 December 2013 to China Organizational Name Administration Center
 # Chinese for "government"
-:whois|whois.conac.cn
+#:whois|whois.conac.cn
+:whois|whois.nic.xn--zfr164b
 \.xn--zfr164b$
 
 # Delegated on 17 December 2013 to China Organizational Name Administration Center
 # Chinese for "charity"
-:whois|whois.conac.cn
+#:whois|whois.conac.cn
+:whois|whois.nic.xn--55qw42g
 \.xn--55qw42g$
 
 # Delegated on 17 December 2013 to Half Sunset, LLC
@@ -2087,8 +2089,8 @@
 \.guitars$
 
 # Delegated on 18 January 2014 to Uniregistry, Corp.
-#:whois|whois.uniregistry.net
-:whois|whois.tucowsregistry.net
+#:whois|whois.tucowsregistry.net
+:whois|whois.uniregistry.net
 \.link$
 
 # Delegated on 18 January 2014 to CITIC Group Corporation
@@ -5360,6 +5362,7 @@
 :rdap|https://rdap.nominet.uk/call
 \.call$
 
+# Alternative:
 #:whois|whois.nic.circle
 :rdap|https://rdap.nominet.uk/circle
 \.circle$
@@ -5371,10 +5374,12 @@
 :whois|whois.nic.firestone
 \.firestone$
 
+# Alternative:
 #:whois|whois.nic.got
 :rdap|https://rdap.nominet.uk/got
 \.got$
 
+# Alternative:
 #:whois|whois.nic.jot
 :rdap|https://rdap.nominet.uk/jot
 \.jot$
@@ -6898,3 +6903,6 @@
 
 :whois|whois.nic.merck
 \.merck$
+
+:whois|whois.nic.web
+\.web$
