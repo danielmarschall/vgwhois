@@ -1,4 +1,4 @@
-#: version 20260728
+#: version 20260824
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -555,7 +555,8 @@
 #:cgi|http://www.nis.gov.jo/pls/dns/jo_organization_info?dom=~1~&subd=~2~
 #(.*)\.(com|edu|org|gov|net)\.jo$
 #:cgi|http://www.nis.gov.jo/pls/dns/jo_organization_info?dom=~namewotld~&subd=-
-:notice||For a whois query, please visit https://www.dns.jo/en.aspx [25 May 2019]
+#:notice||For a whois query, please visit https://www.dns.jo/en.aspx [25 May 2019]
+:whois|whois.nic.net.jo
 \.jo$
 
 #:whois|whois.jp|trailer=/e
