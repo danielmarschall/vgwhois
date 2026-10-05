@@ -46,8 +46,6 @@ whois.tonic.to
 whois.nic.xn--mgbai9azgqp6j
 # first fail: 2023-09-21
 whois.nic.xn--mgbcpq6gpa1a
-# first fail: 2024-05-13 (but whois.nic.sb works)
-whois.nic.net.sb
 # first fail: 2024-05-15
 whois.dot.tk
 # first fail: 2024-05-18

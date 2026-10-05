@@ -1,4 +1,4 @@
-#: version 20260824
+#: version 20261005
 # Domains
 # This file can be updated by running "vgwhois-pattern-update", but it does only ADD new "New gTLDs".
 
@@ -120,7 +120,8 @@
 \.bg$
 
 #:cgipost|http://oldinet.arabian.net/include/domaincheckmodule.asp|txtWebDomain=~query~
-:whois|whois.nic.bh
+#:whois|whois.nic.bh
+:whois|whois.bhregistry.bh
 \.bh$
 
 #:program|$vgwhois$/subprograms/bi
@@ -904,6 +905,7 @@
 \.sa$
 
 #:notice||Please go to http://whois.nic.sb/whois.jsp and solve the CAPTCHA. [Aug 2013]
+# Note: Both whois servers work
 #:whois|whois.nic.net.sb
 :whois|whois.nic.sb
 \.sb$
@@ -6461,7 +6463,7 @@
 :notice||Disallocated by IANA
 \.fiat$
 
-:whois|whois.nic.juniper
+:notice||Disallocated by IANA
 \.juniper$
 
 :notice||Disallocated by IANA
@@ -6869,7 +6871,7 @@
 
 # Bahrain
 #:whois|whois.nic.xn--mgbcpq6gpa1a
-:notice||WHOIS service not available (last checked March 2025)
+:whois|whois.bhregistry.bh
 \.xn--mgbcpq6gpa1a$
 
 :whois|whois.nic.la
