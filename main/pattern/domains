@@ -906,8 +906,8 @@
 
 #:notice||Please go to http://whois.nic.sb/whois.jsp and solve the CAPTCHA. [Aug 2013]
 # Note: Both whois servers work
-#:whois|whois.nic.net.sb
-:whois|whois.nic.sb
+#:whois|whois.nic.sb
+:whois|whois.nic.net.sb
 \.sb$
 
 # :notice||Please go to http://www.afilias-grs.info/public/whois_search and solve the CAPTCHA [Aug 2013]
